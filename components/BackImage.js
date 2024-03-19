@@ -167,7 +167,6 @@ const BackImage = ({ movieId }) => {
     setShowPopup(false);
   };
 
-
   return (
     <div>
       {showPopup && movieData && !countdownExpired && (
