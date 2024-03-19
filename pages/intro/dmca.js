@@ -7,12 +7,12 @@ const Dmca = () => {
 
             <div>
       <Head>
-        <title>Watch Movies Online™ DMCA</title>
+        <title>Uwatchfree™ DMCA</title>
       
 	<meta name="description" content="Watch
  now the Best TV shows and Movies " />
 	<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-	<meta name="keywords" content="Watch Movies Online,streaming,latest movies,online tv,latest free movies,watch latest movies online,latest full movies online" />
+	<meta name="keywords" content="uwatchfree,streaming,latest movies,online tv,latest free movies,watch latest movies online,latest full movies online" />
 	<meta name="revisit-after" content="1 days" />
 	<meta property="og:locale" content="en_US" />   
 
@@ -21,34 +21,34 @@ const Dmca = () => {
   <meta name="robots" content="index, follow" />
 	
 	<link rel="icon" type="image/x-icon" href="favicon.ico" />
-	<meta property="og:site_name" content="Watch Movies Online™ | Watch Movies, TV-Series & Sports Live Online Free " />
+	<meta property="og:site_name" content="Uwatchfree™ | Watch Movies, TV-Series & Sports Live Online Free " />
 	<meta property="og:type" content="website" />
 	<meta property="og:image:height" content="1280"/>
 	<meta property="og:image:width" content="720"/>
-	<meta property="og:title" content="Watch Movies Online™ | Watch Movies, TV-Series & Sports Live Online Free " />
+	<meta property="og:title" content="Uwatchfree™ | Watch Movies, TV-Series & Sports Live Online Free " />
 	<meta property="og:description" content="Watch Movies, TV-Series & Sports Live Online Free " />
-	<meta property="og:url" content="https://watchmoviesonline.vercel.app/" />
+	<meta property="og:url" content="http://localhost:3000/" />
 	<meta property="og:image:type" content="image/jpeg" />
-	<meta property="og:image" content="https://watchmoviesonline.vercel.app/og_image.jpg" />
-	<meta property="og:image:secure_url" content="https://watchmoviesonline.vercel.app/og_image.jpg" />
+	<meta property="og:image" content="http://localhost:3000/og_image.jpg" />
+	<meta property="og:image:secure_url" content="http://localhost:3000/og_image.jpg" />
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="Watch Movies Online™ " />
+	<meta name="twitter:title" content="Uwatchfree™ " />
 	<meta name="twitter:description" content=" Watch Movies, TV-Series & Sports Live Online Free " />
-	<meta name="twitter:image" content="https://watchmoviesonline.vercel.app/og_image.jpg" />
+	<meta name="twitter:image" content="http://localhost:3000/og_image.jpg" />
 	
   
   <meta name="google-site-verification" content="WQh7UdOVLh--PluVaU8U1m1IHrAPjaWmaItVOdek8tg" />
-  <link rel="alternate" hrefLang="en-us" href="https://watchmoviesonline.vercel.app/"/>
-	<link rel="alternate" hrefLang="en-gb" 	href="https://watchmoviesonline.vercel.app/"/>
-	<link rel="alternate" hrefLang="en-ca" 	href="https://watchmoviesonline.vercel.app/"/>
-	<link rel="alternate" hrefLang="en-au" 	href="https://watchmoviesonline.vercel.app/"/>
-	<link rel="alternate" hrefLang="en-se" 	href="https://watchmoviesonline.vercel.app/"/>
-	<link rel="alternate" hrefLang="en-fr" 	href="https://watchmoviesonline.vercel.app/"/>
-	<link rel="alternate" hrefLang="en-dk" 	href="https://watchmoviesonline.vercel.app/"/>
-	<link rel="alternate" hrefLang="en-no" 	href="https://watchmoviesonline.vercel.app/"/>
-	<link rel="alternate" hrefLang="x-default" 	href="https://watchmoviesonline.vercel.app/"/>
+  <link rel="alternate" hrefLang="en-us" href="http://localhost:3000/"/>
+	<link rel="alternate" hrefLang="en-gb" 	href="http://localhost:3000/"/>
+	<link rel="alternate" hrefLang="en-ca" 	href="http://localhost:3000/"/>
+	<link rel="alternate" hrefLang="en-au" 	href="http://localhost:3000/"/>
+	<link rel="alternate" hrefLang="en-se" 	href="http://localhost:3000/"/>
+	<link rel="alternate" hrefLang="en-fr" 	href="http://localhost:3000/"/>
+	<link rel="alternate" hrefLang="en-dk" 	href="http://localhost:3000/"/>
+	<link rel="alternate" hrefLang="en-no" 	href="http://localhost:3000/"/>
+	<link rel="alternate" hrefLang="x-default" 	href="http://localhost:3000/"/>
       </Head>
-{/* <Script src="../../propler/ads.js" defer /> */}
+<Script src="../../propler/ads.js" defer />
       
          <div className="container my-24 px-6 mx-auto">
 
@@ -56,13 +56,13 @@ const Dmca = () => {
   <div className="flex flex-wrap">
     <div className="grow-0 shrink-0 basis-auto mb-12 md:mb-0 w-full  px-3 lg:px-6">
       <h1 className="text-3xl font-bold mb-6">D.M.C.A Notices</h1>
-      <p className="font-bold mb-2">Watch Movies Online</p>
+      <p className="font-bold mb-2">Uwatchfree</p>
       <p className="text-gray-500 mb-6">
-      Watch Movies Online is an online service provider as defined in the Digital Millennium Copyright Act. We provide legal copyright owners with the ability to self-publish on the Internet by uploading, storing, and displaying various types of media. We do not actively monitor, screen, or otherwise review the media which is uploaded to our servers by users of the service.
+      uwatchfree is an online service provider as defined in the Digital Millennium Copyright Act. We provide legal copyright owners with the ability to self-publish on the Internet by uploading, storing, and displaying various types of media. We do not actively monitor, screen, or otherwise review the media which is uploaded to our servers by users of the service.
       </p>
     
       <p className="text-gray-500 mb-6">
-      We take copyright violations very seriously and will vigorously protect the rights of legal copyright owners. If you are the copyright owner of content which appears on the <a href='https://watchmoviesonline.vercel.app/' className="text-blue-500 mb-6" > Watch Movies Online.vercel.app</a> website and you did not authorize the use of the content you must notify us in writing in order for us to identify the allegedly infringing content and take action.
+      We take copyright violations very seriously and will vigorously protect the rights of legal copyright owners. If you are the copyright owner of content which appears on the <a href='http://localhost:3000/' className="text-blue-500 mb-6" > uwatchfree.vercel.app</a> website and you did not authorize the use of the content you must notify us in writing in order for us to identify the allegedly infringing content and take action.
       </p>
      
       <p className="text-gray-500 mb-6">

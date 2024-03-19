@@ -1,512 +1,183 @@
+import React, { useEffect } from 'react';
+import styled from 'styled-components';
+import Link from 'next/link';
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import HeroBanner from '../components/HeroBanner';
+import style from '../styles/styles.module.css';
+import BackgroundVideo from '../components/BackgroundVideo';
 import ShareButtons from '@components/ShareButtons';
-import { useRouter } from 'next/router';
-import { useState, useRef, useEffect } from "react";
-import Script from 'next/script';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
+import { Image } from 'cloudinary-react'
 
 
 const scrollSearch = myKey => {
   window.scrollTo(0, 0);
-  frontMatter.handleSearch(myKey);
+  frontMatter.handleSearch(myKey)
 };
 
-export default function Home({ movie }) {
-  const [hovered, setHovered] = useState(false);
-
-  const [isMobile, setIsMobile] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
-  const videoRef = useRef(null);
-
-  const router = useRouter();
-  const [searchTerm, setSearchTerm] = useState('');
-  
-  const handleSearch = (event) => {
-    event.preventDefault();
-    let searchTermLower = searchTerm.toLowerCase();
-    let searchURL = `https://www.google.com/search?q=${encodeURIComponent(searchTermLower)}`;
-    router.push(searchURL);
-  };
-  
-  // Inside your component
-  const [hoveredIndex, setHoveredIndex] = useState(-1);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 768px)');
-    setIsMobile(mediaQuery.matches);
-
-    
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        setIsVisible(entry.isIntersecting);
-      });
-    });
-
-    if (videoRef.current) {
-      observer.observe(videoRef.current);
-    }
-
-    return () => {
-      observer.disconnect();
-    };
-  }, [videoRef.current]);
-
-  useEffect(() => {
-    if (isMobile && isVisible && isPlaying) {
-      videoRef.current.play();
-    }
-  }, [isMobile, isVisible, isPlaying]);
-
-  const handleVideoClick = () => {
-    if (isMobile && !isPlaying) {
-      setIsPlaying(true);
-    }
-  };
-
-  useEffect(() => {
-    // Your other useEffect code here
-    // Initialize Webpushr tracking code
-    (function (w, d, s, id) {
-      if (typeof (w.webpushr) !== 'undefined') return;
-      w.webpushr = w.webpushr || function () { (w.webpushr.q = w.webpushr.q || []).push(arguments) };
-      var js, fjs = d.getElementsByTagName(s)[0];
-      js = d.createElement(s); js.id = id; js.async = 1;
-      js.src = "https://cdn.webpushr.com/app.min.js";
-      fjs.parentNode.appendChild(js);
-    }(window, document, 'script', 'webpushr-jssdk'));
-
-    webpushr('setup', { 'key': 'BPAY4eP3ztVpPCXE9qfVajNsvYu1uH5najgQ_XROuxAfuf_2oBsIlKWsRr4KiJTHxndjoaXkUrNhVc-Ivel3jKM' });
-  }, []);
 
 
-  const [showAd, setShowAd] = useState(false);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setShowAd(true);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const handleAdClose = () => {
-    setShowAd(false);
-  };
-
-  const [movies, setMovies] = useState([]);
-
-  useEffect(() => {
-    async function fetchMovies() {
-      const response = await fetch('/movies.json');
-      const data = await response.json();
-      setMovies(data);
-    }
-    fetchMovies();
-  }, []);
-
-  useEffect(() => {
-    const handleContextmenu = e => {
-      e.preventDefault();
-    }
-    document.addEventListener('contextmenu', handleContextmenu);
-    return () => {
-      document.removeEventListener('contextmenu', handleContextmenu);
-    };
-  }, []);
-
-  const rankMathSchema = JSON.stringify({
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Person",
-        "@id": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/",
-        "name": "Dr Trailer",
-        "url": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/",
-        "image": {
-          "@type": "ImageObject",
-          "@id": "https://gravatar.com/drtrailer2022",
-          "url": "https://gravatar.com/drtrailer2022",
-          "caption": "Dr Trailer",
-          "inLanguage": "en-US"
+const schemaData   = {
+  "@context":"https://schema.org",
+  "@graph":[
+    {
+      "@type":"CollectionPage",
+      "@id":"http://localhost:3000/",
+      "url":"http://localhost:3000/",
+      "name":"Uwatchfree™ | Watch Movies, TV-Series & Sports Live Online Free",
+      "isPartOf":{
+        "@id":"http://localhost:3000/#website"
+      },
+      "about":{
+        "@id":"http://localhost:3000/#organization"
+      },
+      "description":"Uwatchfree™ - Watch Movies, TV-Series & Sports Live Online Free",
+      "breadcrumb":{
+        "@id":"http://localhost:3000/#breadcrumb"
+      },
+      "inLanguage":"en-US"
+    },
+    {
+      "@type":"BreadcrumbList",
+      "@id":"http://localhost:3000/#breadcrumb",
+      "itemListElement":[
+        {
+          "@type":"ListItem",
+          "position":1,
+          "name":"Uwatchfree™ | Watch Movies, TV-Series & Sports Live Online Free"
         }
+      ]
+    },
+    {
+      "@type":"WebSite",
+      "@id":"http://localhost:3000/#website",
+      "url":"http://localhost:3000/",
+      "name":"Uwatchfree™ | Watch Movies, TV-Series & Sports Live Online Free",
+      "description":"Uwatchfree™ - Watch Movies, TV-Series & Sports Live Online Free",
+      "publisher":{
+        "@id":"http://localhost:3000/#organization"
       },
-      {
-        "@type": "Organization",
-        "@id": "https://watchmoviesonline.vercel.app/#organization",
-        "name": "Watch Movies Online™",
-        "url": "https://watchmoviesonline.vercel.app"
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://watchmoviesonline.vercel.app/#website",
-        "url": "https://watchmoviesonline.vercel.app",
-        "name": "Watch Movies Online™",
-        "publisher": {
-          "@type": "Organization",
-          "@id": "https://watchmoviesonline.vercel.app/#organization"
-        },
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://watchmoviesonline.vercel.app/?s={search_term_string}",
-          "query-input": "required name=search_term_string"
+      "potentialAction":[
+        {
+          "@type":"SearchAction",
+          "target":{
+            "@type":"EntryPoint",
+            "urlTemplate":"http://localhost:3000/?s={search_term_string}"
+          },
+          "query-input":"required name=search_term_string"
         }
+      ],
+      "inLanguage":"en-US"
+    },
+    {
+      "@type":"Organization",
+      "@id":"http://localhost:3000/#organization",
+      "name":"Uwatchfree™ | Watch Movies, TV-Series & Sports Live Online Free",
+      "url":"http://localhost:3000/",
+      "logo":{
+        "@type":"ImageObject",
+        "inLanguage":"en-US",
+        "@id":"http://localhost:3000/#/schema/logo/image/",
+        "url":"http://localhost:3000/logo.png",
+        "contentUrl":"http://localhost:3000/logo.png",
+        "width":834,
+        "height":135,
+        "caption":"Uwatchfree™ | Watch Movies, TV-Series & Sports Live Online Free"
       },
-      {
-        "@type": "WebPage",
-        "@id": "https://watchmoviesonline.vercel.app/#webpage",
-        "url": "https://watchmoviesonline.vercel.app/",
-        "name": "Movie",
-        "datePublished": "2024-01-13T13:00:00+00:00",
-        "dateModified": "2024-01-13T13:13:00+00:00",
-        "about": {
-          "@type": "Person",
-          "@id": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/",
-          "name": "Dr Trailer",
-          "url": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/",
-          "image": {
-            "@type": "ImageObject",
-            "@id": "https://gravatar.com/drtrailer2022",
-            "url": "https://gravatar.com/drtrailer2022",
-            "caption": "Dr Trailer",
-            "inLanguage": "en-US"
-          }
-        },
-        "isPartOf": {
-          "@id": "https://watchmoviesonline.vercel.app/#website"
-        },
-        "inLanguage": "en-US",
-        "mainEntity": [
-          {
-            "@type": "Article",
-            "@id": "https://watchmoviesonline.vercel.app/",
-            "url": "https://watchmoviesonline.vercel.app/",
-            "headline": "Movie",
-            "datePublished": "2024-01-13T13:00:00+00:00",
-            "dateModified": "2024-01-13T13:13:00+00:00",
-            "author": {
-              "@type": "Person",
-              "@id": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/",
-              "name": "Dr Trailer",
-              "url": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/",
-              "image": {
-                "@type": "ImageObject",
-                "@id": "https://gravatar.com/drtrailer2022",
-                "url": "https://gravatar.com/drtrailer2022",
-                "caption": "Dr Trailer",
-                "inLanguage": "en-US"
-              }
-            },
-            "publisher": {
-              "@type": "Organization",
-              "@id": "https://watchmoviesonline.vercel.app/#organization",
-              "name": "Watch Movies Online™",
-              "url": "https://watchmoviesonline.vercel.app"
-            }
-          },
-          {
-            "@type": "Article",
-            "@id": "https://watchmoviesonline.vercel.app/",
-            "url": "https://watchmoviesonline.vercel.app/",
-            "headline": "Tvshow",
-            "datePublished": "2024-01-13T13:00:00+00:00",
-            "dateModified": "2024-01-13T13:13:00+00:00",
-            "author": {
-              "@type": "Person",
-              "@id": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/",
-              "name": "Dr Trailer",
-              "url": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/",
-              "image": {
-                "@type": "ImageObject",
-                "@id": "https://gravatar.com/drtrailer2022",
-                "url": "https://gravatar.com/drtrailer2022",
-                "caption": "Dr Trailer",
-                "inLanguage": "en-US"
-              }
-            },
-            "publisher": {
-              "@type": "Organization",
-              "@id": "https://watchmoviesonline.vercel.app/#organization",
-              "name": "Watch Movies Online™",
-              "url": "https://watchmoviesonline.vercel.app"
-            }
-          },
-          {
-            "@type": "Article",
-            "@id": "https://watchmoviesonline.vercel.app/",
-            "url": "https://watchmoviesonline.vercel.app/",
-            "headline": "Adult",
-            "datePublished": "2024-01-13T13:00:00+00:00",
-            "dateModified": "2024-01-13T13:13:00+00:00",
-            "author": {
-              "@type": "Person",
-              "@id": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/",
-              "name": "Dr Trailer",
-              "url": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/",
-              "image": {
-                "@type": "ImageObject",
-                "@id": "https://gravatar.com/drtrailer2022",
-                "url": "https://gravatar.com/drtrailer2022",
-                "caption": "Dr Trailer",
-                "inLanguage": "en-US"
-              }
-            },
-            "publisher": {
-              "@type": "Organization",
-              "@id": "https://watchmoviesonline.vercel.app/#organization",
-              "name": "Watch Movies Online™",
-              "url": "https://watchmoviesonline.vercel.app"
-            }
-          }
-        ]
+      "image":{
+        "@id":"http://localhost:3000/#/schema/logo/image/"
       }
-    ]
-  });
+    }
+  ]
+};
+
+const LandingPage = () => {
   
+
   return (
-    <div className={`w-full bg-gray-600 shadow`}>
-      
-      <Script
-        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        strategy="beforeInteractive"
-      />
-
-      <Script
-        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        strategy="beforeInteractive"
-      />
-
-      <Script
-        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        strategy="beforeInteractive"
-      />
-
+    <>
+     <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+  />
+     <Head>
+        <title>Uwatchfree™ | Watch Movies, TV-Series & Sports Live Online Free</title>
+        <meta name="robots" content="index, follow" />  
+        <meta name="revisit-after" content="1 days" />
+        <meta name="facebook-domain-verification" content="13auzwhblf4oo4jn5vl6gcmebugsqb" />
+        <meta property="fb:app_id" content="602176271414602" />
+        <meta name='dailymotion-domain-verification' content='dmv6sg06w9r5eji88' />
+        <meta name="monetag" content="076afbb772da1a62ef6f43756dfa5f65"></meta>
+        <meta name="google-site-verification" content="4dFu4PUk1pc1IYqU6Brt84akCwNxaoUpKSO3gDW0kJ0" />
+        <meta name="description" content="Uwatchfree™ - Watch Movies, TV-Series & Sports Live Online Free" />
+      <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+      <meta name="keywords" content="uwatchfree,streaming,latest movies,online tv,latest free movies,watch latest movies online" />
+	     <meta property="og:locale" content="en_US" /> 
+      <meta property="og:locale" content="en_US" />   
+      <meta property=" Content-Security-Policy: frame-ancestors 'self' uwatchfree.vercel.app *.uwatchfree.vercel.app;" />
+      <meta property="og:site_name" content="Uwatchfree™ | Watch Movies, TV-Series & Sports Live Online Free " />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Uwatchfree™ | Watch Movies, TV-Series & Sports Live Online Free " />
+      <meta property="og:description" content="Uwatchfree™ - Watch Movies, TV-Series & Sports Live Online Free " />
+      <meta property="og:url" content="http://localhost:3000/" />
+      <meta property="og:image:type" content="image/jpeg" />
+      <meta property="og:image" content="http://localhost:3000/og_image.jpg" />
+      <meta property="og:image:secure_url" content="http://localhost:3000/og_image.jpg" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="Uwatchfree™ - Watch Movies, TV-Series & Sports Live Online Free " />
+      <meta name="twitter:description" content=" Uwatchfree™ - Watch Movies, TV-Series & Sports Live Online Free " />
+      <meta name="twitter:image" content="http://localhost:3000/og_image.jpg" />
     
-      <div className={styles.container}>
-      <Head>
-  <title> Watch Online Free - The Best Movies & Tv Shows Platform HD </title>
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://watchmoviesonline.vercel.app/sitemap.xml" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/x-icon" href="wp-content/uploads/2023/05/favicon.ico" />
+   
+      <link rel="alternate" hrefLang="en-us" 	href="http://localhost:3000/"/>
+  <link rel="alternate" hrefLang="en-gb" 	href="http://localhost:3000/"/>
+  <link rel="alternate" hrefLang="en-ca" 	href="http://localhost:3000/"/>
+  <link rel="alternate" hrefLang="en-au" 	href="http://localhost:3000/"/>
+  <link rel="alternate" hrefLang="en-se" 	href="http://localhost:3000/"/>
+  <link rel="alternate" hrefLang="en-fr" 	href="http://localhost:3000/"/>
+  <link rel="alternate" hrefLang="en-dk" 	href="http://localhost:3000/"/>
+  <link rel="alternate" hrefLang="en-no" 	href="http://localhost:3000/"/>
+  <link rel="alternate" hrefLang="x-default" 	href="http://localhost:3000/"/>
+  
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-  <meta name="googlebot" content="index,follow" />
-  <meta name="revisit-after" content="1 days" />
-  <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
-  <meta name="keywords" content="movies, watch movie online, free movies, free movies online, free movie streaming, watch movies online free streaming, download free" />
-  <meta name="description" content="Watch free movies and TV shows online in HD on any device. We offer streaming movies in genres like Action, Horror, Sci-Fi, Crime and Comedy. Watch now !!!" />
-  <link rel="canonical" href="https://watchmoviesonline.vercel.app/" />
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Watch Online Free - The Best Movies & Tv Shows Platform HD" />
-  <meta property="og:description" content="Watch free movies and TV shows online in HD on any device. We offer streaming movies in genres like Action, Horror, Sci-Fi, Crime and Comedy. Watch now !!!" />
-  <meta property="og:url" content="https://watchmoviesonline.vercel.app/" />
-  <meta property="og:site_name" content="Watch Online Free - The Best Movies & Tv Shows Platform HD" />
-  <meta property="og:image" content="https://watchmoviesonline.vercel.app/og_image.jpg" style={{ borderRadius: '10%' }} />
-  <meta property="og:image:width" content="1280" />
-  <meta property="og:image:height" content="720" />
-  <meta property="og:image:type" content="image/webp" />
-  <meta name="application-name" content="Watch Movies Online" />
-  <meta property="article:modified_time" content="2024-01-01T13:13:13+00:00" />
-  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://watchmoviesonline.vercel.app/sitemap.xml" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="google-site-verification" content="4dFu4PUk1pc1IYqU6Brt84akCwNxaoUpKSO3gDW0kJ0" />
-  <meta name="facebook-domain-verification" content="du918bycikmo1jw78wcl9ih6ziphd7" />
-  <meta name='dailymotion-domain-verification' content='dm0zffs8dj8pcb3gd' />
-  <meta name="monetag" content="d37258c385441961edc42bec3fb9b7e8" />
-  <script
-          type='application/ld+json'
-          dangerouslySetInnerHTML={{ __html: rankMathSchema }}
-        />
-</Head>
- 
-        <main className={styles.main} >
-     
-     
-        <div className="py-8">
-          <div id="main">
-            <div className="container" style={{ justifyContent: 'center', alignItems: 'center', height: '10vh', marginTop: '10px', marginBottom: '10px' }}>
-              <div className="home-main">
-                <div className="hm-logo"><a title="" href="https://watchmoviesonline.vercel.app" id="logo-home"></a></div>
-                <div className="addthis_inline_share_toolbox mb10"></div>
-                <div id="hm-search">
-                  <div id="search-homepage" className="search-content">
-                    <form onSubmit={handleSearch}>
-                      <input
-                        className="form-control search-input"
-                        type="text"
-                        placeholder="Search.."
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                      />
-                      <button type="submit"><i className="fa fa-search"></i></button>
-                    </form>
-                    <div id="search-homepage-results"></div>
-                  </div>
-                </div>
-                <div className="hm-button"><a href="https://watchmoviesonline.vercel.app/" className="btn btn-lg btn-successful" style={{ color: '#40D7BC', fontSize: '24px', textShadow: '3px 5px 5px #000' }}>Watch Movies Online™</a></div>
-              </div>
-            </div>
-          </div>
-        </div>
+  <link rel="manifest" href="/site.webmanifest"></link>
+  <link
+        rel="preload"
+        href="https://res.cloudinary.com/dezf3wemk/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1681610087/og_image_okmgde.jpg"
+        as="image"
+      />
+  <link rel="canonical" href="http://localhost:3000/" />
+
+      </Head>
+      <div className="bg-gray-600 shadow ">
+   
+      <Image
+  src="https://res.cloudinary.com/dezf3wemk/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1681610087/og_image_okmgde.jpg"
+  alt="Hero banner"
+  loading="lazy"
+  priority={true}
+  style={{ display: "block", width: "100%" }}
+/>
+
+       <ShareButtons url="http://localhost:3000" title="Watch Movies, TV-Series & Sports Live Online Free" image="http://localhost:3000/og_image.jpg" />
       
-        <h1 className="flex flex-col text-center py-5 font-bold text-3xl items-center justify-center" style={{ color: "#40D7BC", textShadow: "5px 5px 2px #000" }}>Watch Movies Online™ - The Best Movies Platform HD Movies {movie && movie.title} </h1>
-        
-          <div className="container mt-0 "  >
-      
-            <Tabs>
-              <TabList className={styles.tabList} >
-                <Tab className={`${styles.tab} ${styles.home}`} style={{  fontWeight:'bold', textShadow: '2px 5px 5px #000000' }} >Home</Tab>
-                <Tab className={`${styles.tab} ${styles.movies}`} style={{  fontWeight:'bold', textShadow: '2px 5px 5px #000000' }} >Movies</Tab>
-                <Tab className={`${styles.tab} ${styles.tvshows}`} style={{  fontWeight:'bold', textShadow: '2px 5px 5px #000000' }} >TV Shows</Tab>
-                <Tab className={`${styles.tab} ${styles.adult}`} style={{  fontWeight:'bold', textShadow: '2px 5px 5px #000000' }} >Adult</Tab>
-              </TabList>
 
-              <TabPanel>
-  <div className={`row ${styles.movieList}`} style={{ display: 'flex', justifyContent: 'center' }}>
-    {/* Dummy images for Movies */}
-    {movies.map((movie, index) => (
-      <div key={index} className={`col-md-3 col-sm-6 mb-3 ${styles.movieContainer}`} style={{ position: 'relative' }}>
-        <a href={movie["movie.watch"]} className="w-img">
-          <div className={`image-container ${styles.moviePoster}`}>
-            <img
-              src={movie.image}
-              alt={movie.title}
-              className={` img-fluid lazyload ${styles.movieImage}`}
-              style={{
-                filter: 'contrast(1.1) saturate(1.2) brightness(1.3) hue-rotate(0deg)',
-                margin: '0 10px', // Adjust the margin as needed
-                borderRadius: '20px', // Set border radius
-              }}
-              loading="lazy"
-            />
-            <div  style={{ position: 'absolute', top: '10px', right: '10px', backgroundColor: 'rgba(0, 0, 0, 0.5)', color: '#fff', padding: '5px', borderRadius: '5px' }}>{movie.badge}</div>
-            <div style={{ position: 'absolute', bottom: '10px', left: '50%', transform: 'translateX(-50%)', backgroundColor: 'rgba(0, 0, 0, 0.5)', color: '#fff', padding: '5px', borderRadius: '5px',  fontSize: '20px', textShadow: '3px 3px 3px #40D7BC' }}>{movie.badgegroup}</div>
-            
-          </div>
-        </a>
+         <h1 className="text-center font-bold text-3xl  py-5" style={{ color: "#40D7BC", textShadow: "5px 5px 2px #000" }}>Uwatchfree™ -Watch Movies Tv Series & Sports Live. </h1>
+       
+     
+
+      <BackgroundVideo  
+        src="https://ik.imagekit.io/lwkyvy5lo/trailer.mp4?updatedAt=1683813651866"
+        srcMobile="https://ik.imagekit.io/lwkyvy5lo/trailer.mp4?updatedAt=1683813651866"
+      />
+
       </div>
-    ))}
-  </div>  
-  {/* 
-  className='animate-blink'
-  color: #1e06fa; 
-   justify-content: center;
-            align-items: center;
-            text-shadow: 3px 5px 5px #1e06fa;
-  */}
-  {/* <style jsx>{`
-          .animate-blink {
-            animation: blink 3s infinite;
-                   
-          }
+   
 
-          @keyframes blink {
-            0% {
-              opacity: 1;
-            }
-            50% {
-              opacity: 0;
-            }
-            100% {
-              opacity: 1;
-            }
-          }
-        `}</style> */}
-
-</TabPanel>
-
-
-
-<TabPanel>
-  <div className={`row ${styles.movieList}`} style={{ display: 'flex', justifyContent: 'center' }}>
-    {/* Dummy images for Movies */}
-    {movies.filter(movie => movie.group === "movies").map((movie, index) => (
-      <div key={index} className={`col-md-3 mb-3 ${styles.movieContainer}`}>
-        <a href={movie["movie.watch"]} className="w-img">
-          <div className={`image-container ${styles.moviePoster}`}>
-            <img
-              src={movie.image}
-              alt={movie.title}
-              className={`img-fluid lazyload ${styles.movieImage} `}
-              style={{
-                filter: 'contrast(1.1) saturate(1.2) brightness(1.3) hue-rotate(0deg)',
-                margin: '0 10px', // Adjust the margin as needed
-                borderRadius: '20px', // Set border radius
-              }}
-              loading="lazy"
-            />
-           <div style={{ position: 'absolute', top: '10px', right: '10px', backgroundColor: 'rgba(0, 0, 0, 0.5)', color: '#fff', padding: '5px', borderRadius: '5px' }}>{movie.badge}</div>
-           <div style={{ position: 'absolute', bottom: '10px', left: '50%', transform: 'translateX(-50%)', backgroundColor: 'rgba(0, 0, 0, 0.5)', color: '#fff', padding: '5px', borderRadius: '5px', fontSize: '18px', textShadow: '3px 3px 3px #40D7BC'  }}>{movie.genre}</div>
-          </div>
-        </a>
-      </div>
-    ))}
-  </div>
-</TabPanel>
-
-<TabPanel>
-  <div className={`row ${styles.movieList}`} style={{ display: 'flex', justifyContent: 'center' }}>
-    {/* Dummy images for TV Shows */}
-    {movies.filter(movie => movie.group === "tvshow").map((movie, index) => (
-      <div key={index} className={`col-md-3 mb-3 ${styles.movieContainer}`}>
-        <a href={movie["movie.watch"]} className="w-img">
-          <div className={`image-container ${styles.moviePoster}`}>
-            <img
-              src={movie.image}
-              alt={movie.title}
-              className={`rounded-2xl curve img-fluid lazyload ${styles.movieImage}`}
-              style={{
-                filter: 'contrast(1.1) saturate(1.2) brightness(1.3) hue-rotate(0deg)',
-                margin: '0 10px', // Adjust the margin as needed
-                borderRadius: '20px', // Set border radius
-              }}
-              loading="lazy"
-            />
-              <div style={{ position: 'absolute', top: '10px', right: '10px', backgroundColor: 'rgba(0, 0, 0, 0.5)', color: '#fff', padding: '5px', borderRadius: '5px' }}>{movie.badge}</div>
-              <div style={{ position: 'absolute', bottom: '10px', left: '50%', transform: 'translateX(-50%)', backgroundColor: 'rgba(0, 0, 0, 0.5)', color: '#fff', padding: '5px', borderRadius: '5px', fontSize: '18px', textShadow: '3px 3px 3px #40D7BC'   }}>{movie.genre}</div>
-          </div>
-        </a>
-      </div>
-    ))}
-  </div>
-</TabPanel>
-
-<TabPanel>
-  <div className={`row ${styles.movieList}`} style={{ display: 'flex', justifyContent: 'center' }}>
-    {/* Dummy images for Adult */}
-    {movies.filter(movie => movie.group === "adult").map((movie, index) => (
-      <div key={index} className={`col-md-3 mb-3 ${styles.movieContainer}`}>
-        <a href={movie["movie.watch"]} className="w-img">
-          <div className={`image-container ${styles.moviePoster}`}>
-            <img
-              src={movie.image}
-              alt={movie.title}
-              className={`rounded-2xl curve img-fluid lazyload ${styles.movieImage}`}
-              style={{
-                filter: 'contrast(1.1) saturate(1.2) brightness(1.3) hue-rotate(0deg)',
-                margin: '0 10px', // Adjust the margin as needed
-                borderRadius: '20px', // Set border radius
-              }}
-              loading="lazy"
-            />
-           <div style={{ position: 'absolute', top: '10px', right: '10px', backgroundColor: 'rgba(0, 0, 0, 0.5)', color: '#fff', padding: '5px', borderRadius: '5px' }}>{movie.badge}</div>
-           <div style={{ position: 'absolute', bottom: '10px', left: '50%', transform: 'translateX(-50%)', backgroundColor: 'rgba(0, 0, 0, 0.5)', color: '#fff', padding: '5px', borderRadius: '5px', fontSize: '18px', textShadow: '3px 3px 3px #40D7BC'  }}>{movie.genre}</div>
-          </div>
-        </a>
-      </div>
-    ))}
-  </div>
-</TabPanel>
-
-            </Tabs>
-          </div>
-          
-        </main>
-      </div>
-    </div>
+    </>
   );
 }
+
+export default LandingPage;

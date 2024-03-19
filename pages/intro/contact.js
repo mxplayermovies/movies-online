@@ -7,12 +7,12 @@ const contact = () => {
   return (
     <div>
         <Head>
-        <title>Watch Movies Online™ Contact Us</title>
+        <title>Uwatchfree™ Contact Us</title>
       
 	<meta name="description" content="Watch
  now the Best TV shows and Movies " />
 	<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-	<meta name="keywords" content="Watch Movies Online,streaming,latest movies,online tv,latest free movies,watch latest movies online,latest full movies online" />
+	<meta name="keywords" content="uwatchfree,streaming,latest movies,online tv,latest free movies,watch latest movies online,latest full movies online" />
 	<meta name="revisit-after" content="1 days" />
 	<meta property="og:locale" content="en_US" />   
 
@@ -21,34 +21,34 @@ const contact = () => {
   <meta name="robots" content="index, follow" />
 	
 	<link rel="icon" type="image/x-icon" href="favicon.ico" />
-	<meta property="og:site_name" content="Watch Movies Online™ | Watch Movies, TV-Series & Sports Live Online Free " />
+	<meta property="og:site_name" content="Uwatchfree™ | Watch Movies, TV-Series & Sports Live Online Free " />
 	<meta property="og:type" content="website" />
 	<meta property="og:image:height" content="1280"/>
 	<meta property="og:image:width" content="720"/>
-	<meta property="og:title" content="Watch Movies Online™ | Watch Movies, TV-Series & Sports Live Online Free " />
+	<meta property="og:title" content="Uwatchfree™ | Watch Movies, TV-Series & Sports Live Online Free " />
 	<meta property="og:description" content="Watch Movies, TV-Series & Sports Live Online Free " />
-	<meta property="og:url" content="https://watchmoviesonline.vercel.app/" />
+	<meta property="og:url" content="http://localhost:3000/" />
 	<meta property="og:image:type" content="image/jpeg" />
-	<meta property="og:image" content="https://watchmoviesonline.vercel.app/og_image.jpg" />
-	<meta property="og:image:secure_url" content="https://watchmoviesonline.vercel.app/og_image.jpg" />
+	<meta property="og:image" content="http://localhost:3000/og_image.jpg" />
+	<meta property="og:image:secure_url" content="http://localhost:3000/og_image.jpg" />
 	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="Watch Movies Online™ " />
+	<meta name="twitter:title" content="Uwatchfree™ " />
 	<meta name="twitter:description" content=" Watch Movies, TV-Series & Sports Live Online Free " />
-	<meta name="twitter:image" content="https://watchmoviesonline.vercel.app/og_image.jpg" />
+	<meta name="twitter:image" content="http://localhost:3000/og_image.jpg" />
   
   
   <meta name="google-site-verification" content="WQh7UdOVLh--PluVaU8U1m1IHrAPjaWmaItVOdek8tg" />
-  <link rel="alternate" hrefLang="en-us" 	href="https://watchmoviesonline.vercel.app/"/>
-	<link rel="alternate" hrefLang="en-gb" 	href="https://watchmoviesonline.vercel.app/"/>
-	<link rel="alternate" hrefLang="en-ca" 	href="https://watchmoviesonline.vercel.app/"/>
-	<link rel="alternate" hrefLang="en-au" 	href="https://watchmoviesonline.vercel.app/"/>
-	<link rel="alternate" hrefLang="en-se" 	href="https://watchmoviesonline.vercel.app/"/>
-	<link rel="alternate" hrefLang="en-fr" 	href="https://watchmoviesonline.vercel.app/"/>
-	<link rel="alternate" hrefLang="en-dk" 	href="https://watchmoviesonline.vercel.app/"/>
-	<link rel="alternate" hrefLang="en-no" 	href="https://watchmoviesonline.vercel.app/"/>
-	<link rel="alternate" hrefLang="x-default" 	href="https://watchmoviesonline.vercel.app/"/>
+  <link rel="alternate" hrefLang="en-us" 	href="http://localhost:3000/"/>
+	<link rel="alternate" hrefLang="en-gb" 	href="http://localhost:3000/"/>
+	<link rel="alternate" hrefLang="en-ca" 	href="http://localhost:3000/"/>
+	<link rel="alternate" hrefLang="en-au" 	href="http://localhost:3000/"/>
+	<link rel="alternate" hrefLang="en-se" 	href="http://localhost:3000/"/>
+	<link rel="alternate" hrefLang="en-fr" 	href="http://localhost:3000/"/>
+	<link rel="alternate" hrefLang="en-dk" 	href="http://localhost:3000/"/>
+	<link rel="alternate" hrefLang="en-no" 	href="http://localhost:3000/"/>
+	<link rel="alternate" hrefLang="x-default" 	href="http://localhost:3000/"/>
       </Head>
-{/* <Script src="../../propler/ads.js" defer /> */}
+<Script src="../../propler/ads.js" defer />
   
 <div className="container my-24 px-6 mx-auto">
 
