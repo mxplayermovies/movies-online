@@ -1519,7 +1519,7 @@ const trunk_locked_in_2023 = ({ movie }) => {
               >
                 Official Trailer {movie && movie.name}
               </h2>
-             {/* <div
+              {/* <div
                 id='player'
                 style={{
                   filter:
@@ -1574,7 +1574,7 @@ const trunk_locked_in_2023 = ({ movie }) => {
             </div>
           </div>
         )}
-       <style jsx>{`
+     <style jsx>{`
   .popup-overlay {
     position: fixed;
     top: 0;
