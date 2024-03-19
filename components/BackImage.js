@@ -16,8 +16,7 @@ const BackImage = ({ movieId }) => {
         console.error('Error fetching movie data:', error)
       }
     }
-
-    
+  
 
     fetchMovieDetails()
   }, [movieId])
