@@ -105,7 +105,6 @@ import React, { useState, useEffect, useRef } from 'react';
 const BackImage = ({ movieId }) => {
   const [movieData, setMovieData] = useState(null);
   const [showPopup, setShowPopup] = useState(true);
-  const [endTime, setEndTime] = useState(null);
   const [countdownExpired, setCountdownExpired] = useState(false);
   const timingRef = useRef(null);
 
@@ -125,18 +124,23 @@ const BackImage = ({ movieId }) => {
   }, [movieId]);
 
   useEffect(() => {
-    if (!movieData) return;
+    const endTime = localStorage.getItem('endTime');
 
-    const customDate = new Date();
-    customDate.setHours(customDate.getHours() + 24);
-    const endTime = customDate.getTime();
-
-    setEndTime(endTime);
+    if (endTime) {
+      const currentTime = new Date().getTime();
+      if (currentTime > parseInt(endTime)) {
+        // If the countdown has expired, clear local storage
+        localStorage.removeItem('endTime');
+        setCountdownExpired(true);
+      } else {
+        startCountdown(parseInt(endTime));
+      }
+    } else if (movieData) {
+      startCountdown(new Date().getTime() + 24 * 60 * 60 * 1000);
+    }
   }, [movieData]);
 
-  useEffect(() => {
-    if (!endTime) return;
-
+  const startCountdown = endTime => {
     const timer = setInterval(() => {
       const now = new Date().getTime();
       const x = endTime - now;
@@ -151,18 +155,15 @@ const BackImage = ({ movieId }) => {
         timingRef.current.innerHTML = 'Countdown expired';
         setCountdownExpired(true);
         clearInterval(timer);
+        localStorage.removeItem('endTime');
       }
     }, 1000);
-
-    return () => clearInterval(timer);
-  }, [endTime]);
+  };
 
   const handleClose = () => {
     setShowPopup(false);
   };
 
-
-  
   return (
     <div>
       {showPopup && movieData && !countdownExpired && (
@@ -172,9 +173,9 @@ const BackImage = ({ movieId }) => {
               className="content-container"
               style={{ backgroundImage: `url(${movieData.poster})` }}
             >
-              <h2>Coming Soon</h2>
-              <div className="timing" ref={timingRef}>
-                24h : 00m : 00s
+              <h2 style={{ fontWeight: 'bold', textShadow: '5px 5px 2px #000' }}>Coming Soon</h2>
+              <div className="timing" ref={timingRef} style={{ fontWeight: 'bold', textShadow: '5px 5px 2px #000' }}>
+                <span id="countdown"></span>
               </div>
               <p style={{ color: '#000', fontSize: '25px', fontWeight: 'bold', textShadow: '5px 5px 2px #fff' }}>
                 We Are currently Working on the Movie or Tv Show. Please Check After Some Time
