@@ -160,6 +160,8 @@ const BackImage = ({ movieId }) => {
   const handleClose = () => {
     setShowPopup(false);
   };
+
+
   
   return (
     <div>
