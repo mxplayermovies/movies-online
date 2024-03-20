@@ -871,7 +871,7 @@ const dead_hot_season_01_2024 = ({ movie }) => {
             </div>
           )}
         </div>
-        <BackImage movieId='INDEX109' />
+        {/* <BackImage movieId='INDEX109' />  */}
         <h1
           className='flex flex-col text-center py-5 font-bold text-3xl items-center justify-center'
           style={{ color: '#40D7BC', textShadow: '5px 5px 2px #000' }}
