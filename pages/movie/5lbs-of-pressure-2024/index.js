@@ -12,7 +12,7 @@ import DailyMotionBackground from '@components/DailyMotionBackground'
 import Max from '@components/Max'
 import Script from 'next/script'
 
-const 5lbs_of_pressure_2024 = ({ movie }) => {
+const five_lbs_of_pressure_2024 = ({ movie }) => {
   const [movieData, setMovieData] = useState(null)
   const [showPopup, setShowPopup] = useState(false)
   const [messageShown, setMessageShown] = useState(false) // Define messageShown state
@@ -1683,4 +1683,4 @@ export async function getServerSideProps () {
   }
 }
 
-export default 5lbs_of_pressure_2024;
+export default five_lbs_of_pressure_2024;
