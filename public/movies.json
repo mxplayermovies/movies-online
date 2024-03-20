@@ -132,7 +132,7 @@
     "backimage": "https://m.media-amazon.com/images/M/MV5BMjdjYTc2MTUtNWZiYi00MjEyLWFkZjgtMzRlZTcxM2I3NTA0XkEyXkFqcGdeQXVyMTU5MzcxNjQ5._V1_.jpg",
     "image": "/wp-content/uploads/2023/06/dead_hot_s01_2024.webp",
     "movie.watch": "../tvshow/dead-hot-s01-2024/",
-    "numberOfEpisodes": 8,
+    "numberOfEpisodes": 6,
     "partOfSeries": {
       "@type": "TVSeries",
       "name": "Dead Hot 01",
@@ -173,18 +173,6 @@
         "@type": "TVEpisode",
         "episodeNumber": 6,
         "name": "Onyx",
-        "description": "Currently no description available. Sorry about that."
-      },
-      {
-        "@type": "TVEpisode",
-        "episodeNumber": 7,
-        "name": "Thermopylae",
-        "description": "Currently no description available. Sorry about that."
-      },
-      {
-        "@type": "TVEpisode",
-        "episodeNumber": 8,
-        "name": "Halo",
         "description": "Currently no description available. Sorry about that."
       }
     ],
