@@ -142,37 +142,49 @@
       {
         "@type": "TVEpisode",
         "episodeNumber": 1,
-        "name": "Sanctuary",
-        "description": "A deadly evacuation mission signals a shift in Master Chief's war with the Covenant. On Reach, a new regime takes the reins at FLEETCOM. John senses a looming threat close to home."
+        "name": "Episode 1",
+        "description": "Currently no description available. Sorry about that."
       },
       {
         "@type": "TVEpisode",
         "episodeNumber": 2,
-        "name": "Sword",
-        "description": "John pushes Silver Team to its limit as he searches for missing Spartans; Kai worries about John's stability. Kwan finds the Rubble is a far more dangerous place in Soren's absence. Halsey seeks the identity of her captor."
+        "name": "Episode 2",
+        "description": "Currently no description available. Sorry about that."
       },
       {
         "@type": "TVEpisode",
         "episodeNumber": 3,
-        "name": "Visegrad",
-        "description": "John and Silver Team embark on an unsanctioned mission. Laera, Kwan and Kessler must escape Soren's mutinous crew. Ackerson receives troubling intelligence from Cortana. The threat of an attack forces Ackerson to make an irrevocable decision."
+        "name": "Episode 3",
+        "description": "Currently no description available. Sorry about that."
       },
       {
         "@type": "TVEpisode",
         "episodeNumber": 4,
-        "name": "Reach",
+        "name": "Episode 4",
         "description": "Currently no description available. Sorry about that."
       },
       {
         "@type": "TVEpisode",
         "episodeNumber": 5,
-        "name": "Aleria",
+        "name": "Episode 5",
         "description": "Currently no description available. Sorry about that."
       },
       {
         "@type": "TVEpisode",
         "episodeNumber": 6,
-        "name": "Onyx",
+        "name": "Episode 6",
+        "description": "Currently no description available. Sorry about that."
+      },
+      {
+        "@type": "TVEpisode",
+        "episodeNumber": 7,
+        "name": "Episode 7",
+        "description": "Currently no description available. Sorry about that."
+      },
+      {
+        "@type": "TVEpisode",
+        "episodeNumber": 8,
+        "name": "Episode 8",
         "description": "Currently no description available. Sorry about that."
       }
     ],
@@ -198,24 +210,24 @@
     "episode4sa1ser3": "https://vidsrc.to/embed/tv/tt29964473/1/4/",
     "episode5sa1ser3": "https://vidsrc.to/embed/tv/tt29964473/1/5/",
     "episode6sa1ser3": "https://vidsrc.to/embed/tv/tt29964473/1/6/",
-    "download1s1ser1": "https://hellabyte.one/drive/s/65de512ba3fb848ac149af3f",
-    "download2s1ser1": "https://hellabyte.one/drive/s/65de5176a3fb848ac149be58",
-    "download3s1ser1": "https://hellabyte.one/drive/s/65eebfdba3fb848ac1b19cfa",
-    "download4s1ser1": "https://hellabyte.one/drive/s/65eebfdba3fb848ac1b19cfa",
-    "download5s1ser1": "https://hellabyte.one/drive/s/65eebfdba3fb848ac1b19cfa",
-    "download6s1ser1": "https://hellabyte.one/drive/s/65eebfdba3fb848ac1b19cfa",
+    "download1s1ser1": "https://hellabyte.one/drive/s/65fac853a3fb848ac1b58188",
+    "download2s1ser1": "https://hellabyte.one/drive/s/65fac882a3fb848ac1b588d3",
+    "download3s1ser1": "https://hellabyte.one/drive/s/65fac8a9a3fb848ac1b58e5f",
+    "download4s1ser1": "https://hellabyte.one/drive/s/65fac8cea3fb848ac1b594f3",
+    "download5s1ser1": "https://hellabyte.one/drive/s/65fac8f0a3fb848ac1b59a54",
+    "download6s1ser1": "https://hellabyte.one/drive/s/65fac90fa3fb848ac1b59ea6",
     "download1s1ser2": "https://doods.pro/d/e2r8st7qx2f4",
     "download2s1ser2": "https://doods.pro/d/kvjvqb23wb72",
     "download3s1ser2": "https://doods.pro/d/4arpv2xx5azw",
     "download4s1ser2": "https://doods.pro/d/bbjp224tboc9",
     "download5s1ser2": "https://doods.pro/d/hlhcc0u39g80",
     "download6s1ser2": "https://doods.pro/d/wsdbj08hzhs5",
-    "download1s1ser3": "magnet:?xt=urn:btih:93758897a56b4f917496caceda23452566f32368&amp;dn=Shogun.2024.S01E01.2160p.WEB.H265-SuccessfulCrab%5BTGx%5D-S1E1&amp;tr=udp://tracker.coppersurfer.tk:80&amp;tr=udp://glotorrents.pw:6969/announce&amp;tr=udp://tracker.leechers-paradise.org:6969&amp;tr=udp://tracker.opentrackr.org:1337/announce&amp;tr=udp://exodus.desync.com:6969",
-    "download2s1ser3": "magnet:?xt=urn:btih:b23eb4286f8a20ea0b30fbdd13f6cf5686df951b&amp;dn=Shogun+2024+S01E02+MULTI+1080p+WEB+H264-HiggsBoson+EZTV-S1E2&amp;tr=udp://tracker.coppersurfer.tk:80&amp;tr=udp://glotorrents.pw:6969/announce&amp;tr=udp://tracker.leechers-paradise.org:6969&amp;tr=udp://tracker.opentrackr.org:1337/announce&amp;tr=udp://exodus.desync.com:6969",
-    "download3s1ser3": "magnet:?xt=urn:btih:1008a50ae1e883923ecccdfcf9c30afbf0aaf173&amp;dn=Shogun+S01E03+MULTI+1080p+WEB+H264-HiggsBoson+EZTV-S1E3&amp;tr=udp://tracker.coppersurfer.tk:80&amp;tr=udp://glotorrents.pw:6969/announce&amp;tr=udp://tracker.leechers-paradise.org:6969&amp;tr=udp://tracker.opentrackr.org:1337/announce&amp;tr=udp://exodus.desync.com:6969",
-    "download4s1ser3": "magnet:?xt=urn:btih:1008a50ae1e883923ecccdfcf9c30afbf0aaf173&amp;dn=Shogun+S01E03+MULTI+1080p+WEB+H264-HiggsBoson+EZTV-S1E3&amp;tr=udp://tracker.coppersurfer.tk:80&amp;tr=udp://glotorrents.pw:6969/announce&amp;tr=udp://tracker.leechers-paradise.org:6969&amp;tr=udp://tracker.opentrackr.org:1337/announce&amp;tr=udp://exodus.desync.com:6969",
-    "download5s1ser3": "magnet:?xt=urn:btih:1008a50ae1e883923ecccdfcf9c30afbf0aaf173&amp;dn=Shogun+S01E03+MULTI+1080p+WEB+H264-HiggsBoson+EZTV-S1E3&amp;tr=udp://tracker.coppersurfer.tk:80&amp;tr=udp://glotorrents.pw:6969/announce&amp;tr=udp://tracker.leechers-paradise.org:6969&amp;tr=udp://tracker.opentrackr.org:1337/announce&amp;tr=udp://exodus.desync.com:6969",
-    "download6s1ser3": "magnet:?xt=urn:btih:1008a50ae1e883923ecccdfcf9c30afbf0aaf173&amp;dn=Shogun+S01E03+MULTI+1080p+WEB+H264-HiggsBoson+EZTV-S1E3&amp;tr=udp://tracker.coppersurfer.tk:80&amp;tr=udp://glotorrents.pw:6969/announce&amp;tr=udp://tracker.leechers-paradise.org:6969&amp;tr=udp://tracker.opentrackr.org:1337/announce&amp;tr=udp://exodus.desync.com:6969",
+    "download1s1ser3": "magnet:?xt=urn:btih:ee2a96fe4b88644d79e9dfa401dff2dfc8ce95aa&amp;dn=Dead+Hot+S01E01+1080p+WEB+H264-GlossyQualifiedZebuOfRefinement+EZTV-S1E1&amp;tr=udp://tracker.coppersurfer.tk:80&amp;tr=udp://glotorrents.pw:6969/announce&amp;tr=udp://tracker.leechers-paradise.org:6969&amp;tr=udp://tracker.opentrackr.org:1337/announce&amp;tr=udp://exodus.desync.com:6969",
+    "download2s1ser3": "magnet:?xt=urn:btih:171e9ec4c5cf5d562d6fae1e6eeeefc94e467395&amp;dn=Dead+Hot+S01E02+1080p+WEB+H264-UbiquitousApricotSkuaOfSuperiority+EZTV-S1E2&amp;tr=udp://tracker.coppersurfer.tk:80&amp;tr=udp://glotorrents.pw:6969/announce&amp;tr=udp://tracker.leechers-paradise.org:6969&amp;tr=udp://tracker.opentrackr.org:1337/announce&amp;tr=udp://exodus.desync.com:6969",
+    "download3s1ser3": "magnet:?xt=urn:btih:2b9fbba5acba2cbdc965e7855039e69521b51cbe&amp;dn=Dead+Hot+S01E03+1080p+WEB+H264-PuzzlingGreenAgoutiOfSuccess+EZTV-S1E3&amp;tr=udp://tracker.coppersurfer.tk:80&amp;tr=udp://glotorrents.pw:6969/announce&amp;tr=udp://tracker.leechers-paradise.org:6969&amp;tr=udp://tracker.opentrackr.org:1337/announce&amp;tr=udp://exodus.desync.com:6969",
+    "download4s1ser3": "magnet:?xt=urn:btih:d39873d467e9144442088bc02260806302215067&amp;dn=Dead+Hot+S01E04+1080p+WEB+H264-ResourcefulLoriOfInfiniteChampagne+EZTV-S1E4&amp;tr=udp://tracker.coppersurfer.tk:80&amp;tr=udp://glotorrents.pw:6969/announce&amp;tr=udp://tracker.leechers-paradise.org:6969&amp;tr=udp://tracker.opentrackr.org:1337/announce&amp;tr=udp://exodus.desync.com:6969",
+    "download5s1ser3": "magnet:?xt=urn:btih:3c612e27b480cd2c3c83fb99fa7741d4584d3a8d&amp;dn=Dead+Hot+S01E05+1080p+WEB+H264-DivergentQuietZebraFromHeaven+EZTV-S1E5&amp;tr=udp://tracker.coppersurfer.tk:80&amp;tr=udp://glotorrents.pw:6969/announce&amp;tr=udp://tracker.leechers-paradise.org:6969&amp;tr=udp://tracker.opentrackr.org:1337/announce&amp;tr=udp://exodus.desync.com:6969",
+    "download6s1ser3": "magnet:?xt=urn:btih:715c22c7a69bcfa4fb26b6c04f79f5d99e5a2a87&amp;dn=Dead+Hot+S01E06+1080p+WEB+H264-BrightAquamarineSeriemaFromUranus+EZTV-S1E6&amp;tr=udp://tracker.coppersurfer.tk:80&amp;tr=udp://glotorrents.pw:6969/announce&amp;tr=udp://tracker.leechers-paradise.org:6969&amp;tr=udp://tracker.opentrackr.org:1337/announce&amp;tr=udp://exodus.desync.com:6969",
     "trailer": {
       "@type": "VideoObject",
       "name": "Official Trailer",
@@ -226,54 +238,54 @@
       },
       "thumbnailUrl": "https://m.media-amazon.com/images/S/pv-target-images/bb066c7c28c5c74319c021d513c44e94f550369999d11832bc4677d8675ba1ae.jpg",
       "url": "https://watchmoviesonline.vercel.app/tvshow/dead-hot-s01-2024/",
-      "description": "Shogun, the highly anticipated American historical drama limited series, made its debut with a captivating premiere on February 27, 2024, simultaneously airing on Hulu and FX. Adapted from the renowned 1975 novel by James Clavell, the series promises an immersive journey into feudal Japan's rich tapestry, offering viewers a glimpse into a world of intrigue, power struggles, and cultural clashes. Set in the year 1600, against the backdrop of feudal Japan, Shogun follows the remarkable journey of John Blackthorne, portrayed by the talented Cosmo Jarvis. Shipwrecked off the coast of Japan, Blackthorne finds himself thrust into a perilous world he never imagined, where survival depends on mastering the intricate customs and traditions of a foreign land.Captured by the enigmatic Lord Toranaga, portrayed by the esteemed Hiroyuki Sanada, Blackthorne is drawn into the complex web of political intrigue and power dynamics that define Japan's tumultuous landscape. As he navigates the treacherous waters of the shogun's court in Edo, now Tokyo, Blackthorne must confront his own preconceptions and prejudices while forging unexpected alliances and facing formidable adversaries. Shogun Season 1 promises to be an epic saga, spanning 10 riveting episodes, each unveiling new layers of complexity and intrigue. From breathtaking visuals to meticulously crafted storytelling, the series transports viewers to a bygone era, immersing them in the sights, sounds, and customs of feudal Japan.",
-      "duration": "PT02M09S",
+      "description": "Dead Hot, a 2024 British comedy thriller television series, emerges as a captivating exploration of friendship and identity on Amazon Prime Video. Created by Charlotte Coben, the series delves into themes of class, love, and loss through the dynamic friendship of Elliot (portrayed by Bilal Hasna) and Jess (portrayed by Vivian Oparah). United by the shared grief over the loss of Peter, Elliot's first love interest and Jess's brother, the duo navigates a journey filled with unexpected twists and comedic encounters. Set against the backdrop of thrilling escapades, Dead Hot offers a unique blend of comedy and suspense, captivating audiences with its engaging storyline and vibrant characters.",
+      "duration": "PT01M30S",
       "uploadDate": "2024-01-01T13:13:13+00:00"
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": 9.3,
+      "ratingValue": 5.4,
       "bestRating": "10",
       "worstRating": "0",
       "ratingCount": "1"
     },
     "genre": [
-      "Adventure ",
+      "Crime ",
       "Drama ",
-      "History."
+      "Thriller."
     ],
-    "synopsis": "Shogun, the highly anticipated American historical drama limited series, made its debut with a captivating premiere on February 27, 2024, simultaneously airing on Hulu and FX. Adapted from the renowned 1975 novel by James Clavell, the series promises an immersive journey into feudal Japan's rich tapestry, offering viewers a glimpse into a world of intrigue, power struggles, and cultural clashes. Set in the year 1600, against the backdrop of feudal Japan, Shogun follows the remarkable journey of John Blackthorne, portrayed by the talented Cosmo Jarvis. Shipwrecked off the coast of Japan, Blackthorne finds himself thrust into a perilous world he never imagined, where survival depends on mastering the intricate customs and traditions of a foreign land.Captured by the enigmatic Lord Toranaga, portrayed by the esteemed Hiroyuki Sanada, Blackthorne is drawn into the complex web of political intrigue and power dynamics that define Japan's tumultuous landscape. As he navigates the treacherous waters of the shogun's court in Edo, now Tokyo, Blackthorne must confront his own preconceptions and prejudices while forging unexpected alliances and facing formidable adversaries. Shogun Season 1 promises to be an epic saga, spanning 10 riveting episodes, each unveiling new layers of complexity and intrigue. From breathtaking visuals to meticulously crafted storytelling, the series transports viewers to a bygone era, immersing them in the sights, sounds, and customs of feudal Japan.",
+    "synopsis": "Dead Hot, a 2024 British comedy thriller television series, emerges as a captivating exploration of friendship and identity on Amazon Prime Video. Created by Charlotte Coben, the series delves into themes of class, love, and loss through the dynamic friendship of Elliot (portrayed by Bilal Hasna) and Jess (portrayed by Vivian Oparah). United by the shared grief over the loss of Peter, Elliot's first love interest and Jess's brother, the duo navigates a journey filled with unexpected twists and comedic encounters. Set against the backdrop of thrilling escapades, Dead Hot offers a unique blend of comedy and suspense, captivating audiences with its engaging storyline and vibrant characters.",
     "starring": [
-      "Hiroyuki Sanada",
-      "Cosmo Jarvis",
-      "Anna Sawai",
-      "Tadanobu Asano",
-      "Yûki Kedôin"
+      "Bilal Hasna",
+      "Vivian Oparah",
+      "Olisa Odele",
+      "Marcus Hodson",
+      "Penelope Wilton"
     ],
-    "imdbRating": "9.3",
+    "imdbRating": "5.4",
     "imdbLink": " https://www.imdb.com/title/tt29964473/",
     "avgTime": "  45 Min.",
-    "directorname": "Frederick E.O. Toye.",
-    "actor1": "Hiroyuki Sanada.",
-    "actor2": "Cosmo Jarvis.",
-    "actor3": "Anna Sawai.",
-    "actor4": " Tadanobu Asano.",
-    "actor5": " Yûki Kedôin.",
-    "directorimg": "https://images.mubicdn.net/images/cast_member/571463/cache-483849-1572484114/image-w856.jpg",
-    "actor1img": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/70116_v9_bc.jpg",
-    "actor2img": " https://media.themoviedb.org/t/p/w500/2jyOlRFRVEkc4MswaSqL2Xj4Lk4.jpg",
-    "actor3img": " https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/561815_v9_aa.jpg",
-    "actor4img": "https://media.themoviedb.org/t/p/w500/wDw1z9Pk9dEzopzlZQ4X8wTbj1t.jpg",
-    "actor5img": " https://m.media-amazon.com/images/M/MV5BMzUyYjAxNTQtZmY2OS00NGI1LTlmZmYtOGFjYWRmOWFkZWM1XkEyXkFqcGdeQXVyMTM0Njk1Njgx._V1_.jpg",
-    "director": "Frederick E.O. Toye.",
-    "country": "United States.",
-    "startDate": " Febuary 27, 2024",
-    "contentRating": " United States: TV-14.",
-    "Originalnetwork": "Hulu FX.",
+    "directorname": "Charlotte Coben.",
+    "actor1": "Bilal Hasna.",
+    "actor2": "Vivian Oparah.",
+    "actor3": "Olisa Odele.",
+    "actor4": " Marcus Hodson.",
+    "actor5": " Penelope Wilton.",
+    "directorimg": "https://m.media-amazon.com/images/M/MV5BYjc1ZTZhOWItMzE4OS00ZjVhLTk4NzQtNmRiOTZhYjY4NjUwXkEyXkFqcGdeQXVyMTA2MjIyODc0._V1_.jpg",
+    "actor1img": "https://m.media-amazon.com/images/M/MV5BNjliNmYzZjYtMjUxYi00NTA2LWJlN2ItZDlmMzFjMjc2NjYyXkEyXkFqcGdeQXVyMTA4ODY5NDMw._V1_.jpg",
+    "actor2img": " https://m.media-amazon.com/images/M/MV5BYmRkZDE5YzgtMDQ0MC00YzI4LTliNzEtZjJhMWVhNTA5YzBmXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg",
+    "actor3img": " https://m.media-amazon.com/images/M/MV5BZDZkMDhjZTItMzFjOS00MjZhLThiYmQtMWM2NWU2MjI2ZWFmXkEyXkFqcGdeQXVyMTE5MjMzMDU0._V1_.jpg",
+    "actor4img": "https://m.media-amazon.com/images/M/MV5BZTZhYTYwZDItODkzYi00ZTdhLWIyOTItZTMyMjViMGViNTllXkEyXkFqcGdeQXVyMjQwMDg0Ng@@._V1_.jpg",
+    "actor5img": " https://m.media-amazon.com/images/M/MV5BMzEwMjk3MDkwN15BMl5BanBnXkFtZTcwNjU5OTczNw@@._V1_.jpg",
+    "director": "Charlotte Coben.",
+    "country": "United Kingdom.",
+    "startDate": " March 01, 2024",
+    "contentRating": " United States: TV-MA.",
+    "Originalnetwork": "Amazon Prime Video.",
     "language": " English.",
     "time": " 0H45M00S."
   },
-    {
+  {
     "id": "INDEX108",
     "group": "movies",
     "badge": " 2024 [ Hindi ] ",
