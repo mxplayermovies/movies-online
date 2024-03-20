@@ -124,14 +124,70 @@
   {
     "id": "INDEX109",
     "group": "tvshow",
-    "badge": " 2024 [ English ] ",
-    "badgegroup": " Tv Show",
+    "badge": " 2024 [ English ]",
+    "badgegroup": " Tv Show ",
     "title": "Dead Hot Season 01 (2024)",
     "name": " Dead Hot Season 01 (2024)",
     "poster": "dead_hot_s01_2024.webp",
     "backimage": "https://m.media-amazon.com/images/M/MV5BMjdjYTc2MTUtNWZiYi00MjEyLWFkZjgtMzRlZTcxM2I3NTA0XkEyXkFqcGdeQXVyMTU5MzcxNjQ5._V1_.jpg",
     "image": "/wp-content/uploads/2023/06/dead_hot_s01_2024.webp",
     "movie.watch": "../tvshow/dead-hot-s01-2024/",
+    "numberOfEpisodes": 8,
+    "partOfSeries": {
+      "@type": "TVSeries",
+      "name": "Dead Hot 01",
+      "url": "https://watchmoviesonline.vercel.app/tvshow/dead-hot-s01-2024"
+    },
+    "episodes": [
+      {
+        "@type": "TVEpisode",
+        "episodeNumber": 1,
+        "name": "Sanctuary",
+        "description": "A deadly evacuation mission signals a shift in Master Chief's war with the Covenant. On Reach, a new regime takes the reins at FLEETCOM. John senses a looming threat close to home."
+      },
+      {
+        "@type": "TVEpisode",
+        "episodeNumber": 2,
+        "name": "Sword",
+        "description": "John pushes Silver Team to its limit as he searches for missing Spartans; Kai worries about John's stability. Kwan finds the Rubble is a far more dangerous place in Soren's absence. Halsey seeks the identity of her captor."
+      },
+      {
+        "@type": "TVEpisode",
+        "episodeNumber": 3,
+        "name": "Visegrad",
+        "description": "John and Silver Team embark on an unsanctioned mission. Laera, Kwan and Kessler must escape Soren's mutinous crew. Ackerson receives troubling intelligence from Cortana. The threat of an attack forces Ackerson to make an irrevocable decision."
+      },
+      {
+        "@type": "TVEpisode",
+        "episodeNumber": 4,
+        "name": "Reach",
+        "description": "Currently no description available. Sorry about that."
+      },
+      {
+        "@type": "TVEpisode",
+        "episodeNumber": 5,
+        "name": "Aleria",
+        "description": "Currently no description available. Sorry about that."
+      },
+      {
+        "@type": "TVEpisode",
+        "episodeNumber": 6,
+        "name": "Onyx",
+        "description": "Currently no description available. Sorry about that."
+      },
+      {
+        "@type": "TVEpisode",
+        "episodeNumber": 7,
+        "name": "Thermopylae",
+        "description": "Currently no description available. Sorry about that."
+      },
+      {
+        "@type": "TVEpisode",
+        "episodeNumber": 8,
+        "name": "Halo",
+        "description": "Currently no description available. Sorry about that."
+      }
+    ],
     "videoId": "rUmgsjBJZPo",
     "video": "x8tp2xe",
     "movie.keywords": "dead hot season 1, watch dead hot season 1 online, dead hot season 1 2024, dead hot season 1 streaming, dead hot season 1 online, watch dead hot season 1, stream dead hot season 1, download dead hot season 1 2024",
@@ -229,7 +285,7 @@
     "language": " English.",
     "time": " 0H45M00S."
   },
-  {
+    {
     "id": "INDEX108",
     "group": "movies",
     "badge": " 2024 [ Hindi ] ",
