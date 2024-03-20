@@ -80,7 +80,7 @@ const dead_hot_season_01_2024 = ({ movie }) => {
   }
 
   useEffect(() => {
-    fetchMovieData('INDEX68')
+    fetchMovieData('INDEX109')
       .then(data => {
         // Do something with the fetched movie data
       })
@@ -96,7 +96,7 @@ const dead_hot_season_01_2024 = ({ movie }) => {
       try {
         const response = await fetch('/movies.json')
         const data = await response.json()
-        const movie = data.find(movie => movie.id === 'INDEX68')
+        const movie = data.find(movie => movie.id === 'INDEX109')
         setMovieData(movie)
       } catch (error) {
         console.error('Error fetching movie data:', error)
@@ -129,7 +129,7 @@ const dead_hot_season_01_2024 = ({ movie }) => {
       })
   }
   // const onYouTubeIframeAPIReady = () => {
-  //   var movieId = 'INDEX68'
+  //   var movieId = 'INDEX109'
   //   fetchMovieJsonLD(movieId)
   //     .then(function (movie) {
   //       var videoId = movie.videoId
@@ -909,7 +909,7 @@ const dead_hot_season_01_2024 = ({ movie }) => {
             </div>
           )}
         </div>
-        <DailyMotionBackground movieId="INDEX68" />
+        <DailyMotionBackground movieId="INDEX109" />
         <h1
           className='flex flex-col text-center py-5 font-bold text-3xl items-center justify-center'
           style={{ color: '#40D7BC', textShadow: '5px 5px 2px #000' }}
@@ -3081,7 +3081,7 @@ const dead_hot_season_01_2024 = ({ movie }) => {
 export async function getServerSideProps () {
   const res = await fetch('https://watchmoviesonline.vercel.app/movies.json')
   const data = await res.json()
-  const selectedMovie = data.find(movie => movie.id === 'INDEX68')
+  const selectedMovie = data.find(movie => movie.id === 'INDEX109')
   return {
     props: {
       movie: selectedMovie
