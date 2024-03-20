@@ -8,7 +8,7 @@ import ShareButtons from '@components/ShareButtons'
 import Rating from '@components/Rating'
 import TrendingMovies from '@components/TrendingMovies'
 import YouTubeBackground from '@components/YouTubeBackground'
-import BackImage from '@components/BackImage'
+import DailyMotionBackground from '@components/DailyMotionBackground'
 import Max from '@components/Max'
 import Script from 'next/script'
 
@@ -19,6 +19,11 @@ const dead_hot_season_01_2024 = ({ movie }) => {
   const [showPopup1, setShowPopup1] = useState(false)
   const [showPopup2, setShowPopup2] = useState(false)
   const [showPopup3, setShowPopup3] = useState(false)
+  const [showPopup4, setShowPopup4] = useState(false)
+  const [showPopup5, setShowPopup5] = useState(false)
+  const [showPopup6, setShowPopup6] = useState(false)
+  const [showPopup7, setShowPopup7] = useState(false)
+  const [showPopup8, setShowPopup8] = useState(false)
   const [showPopupTrailer, setShowPopupTrailer] = useState(false)
 
   const togglePopup1 = () => {
@@ -31,6 +36,26 @@ const dead_hot_season_01_2024 = ({ movie }) => {
 
   const togglePopup3 = () => {
     setShowPopup3(!showPopup3)
+  }
+
+  const togglePopup4 = () => {
+    setShowPopup4(!showPopup4)
+  }
+
+  const togglePopup5 = () => {
+    setShowPopup5(!showPopup5)
+  }
+
+  const togglePopup6 = () => {
+    setShowPopup6(!showPopup6)
+  }
+
+  const togglePopup7 = () => {
+    setShowPopup7(!showPopup7)
+  }
+
+  const togglePopup8 = () => {
+    setShowPopup8(!showPopup8)
   }
 
   const togglePopupTrailer = () => {
@@ -119,7 +144,6 @@ const dead_hot_season_01_2024 = ({ movie }) => {
   //   player = new YT.Player('player', {
   //     width: '100%',
   //     height: '315',
-
   //     videoId: videoId,
   //     playerVars: {
   //       autoplay: 1,
@@ -130,7 +154,6 @@ const dead_hot_season_01_2024 = ({ movie }) => {
   //       showinfo: 0,
   //       rel: 0,
   //       loop: 1,
-
   //       mode: 'transparent',
   //       playsinline: 1
   //     },
@@ -162,78 +185,71 @@ const dead_hot_season_01_2024 = ({ movie }) => {
   // const destroyPlayer = () => {
   //   // Implement destroy player logic here if needed
   // }
+
   const togglePopup = () => {
     setShowPopup(!showPopup)
   }
 
-  const audioIframeRef = useRef(null)
-  const predefinedEqualizationValue = 70
-  const predefinedNoiseReductionValue = 40
-  const audioSourceQuality = 'high'
-  const enableNoiseCancellation = true
+  const audioIframeRef = useRef(null);
+  const predefinedEqualizationValue = 70;
+  const predefinedNoiseReductionValue = 40;
+  const audioSourceQuality = "high";
+  const enableNoiseCancellation = true;
 
   useEffect(() => {
     const autoAdjustSoundEnhancements = () => {
-      const iframeWindow = audioIframeRef.current.contentWindow
+      const iframeWindow = audioIframeRef.current.contentWindow;
 
       if (iframeWindow && iframeWindow.postMessage) {
-        iframeWindow.postMessage(
-          {
-            command: 'autoAdjustSoundEnhancements',
-            equalizationValue: predefinedEqualizationValue,
-            noiseReductionValue: predefinedNoiseReductionValue,
-            audioSourceQuality: audioSourceQuality
-          },
-          '*'
-        )
+        iframeWindow.postMessage({
+          command: 'autoAdjustSoundEnhancements',
+          equalizationValue: predefinedEqualizationValue,
+          noiseReductionValue: predefinedNoiseReductionValue,
+          audioSourceQuality: audioSourceQuality
+        }, '*');
       }
-    }
+    };
 
     const loadAudioProcessing = () => {
-      autoAdjustSoundEnhancements()
+      autoAdjustSoundEnhancements();
 
-      const iframeAudioElement =
-        audioIframeRef.current.contentDocument.getElementById('audioPlayer')
+      const iframeAudioElement = audioIframeRef.current.contentDocument.getElementById('audioPlayer');
 
-      const iframeAudioContext = new (window.AudioContext ||
-        window.webkitAudioContext)()
-      const sourceNode =
-        iframeAudioContext.createMediaElementSource(iframeAudioElement)
+      const iframeAudioContext = new (window.AudioContext || window.webkitAudioContext)();
+      const sourceNode = iframeAudioContext.createMediaElementSource(iframeAudioElement);
 
       // Noise cancellation processing
       if (enableNoiseCancellation) {
-        const noiseCancellationNode = iframeAudioContext.createBiquadFilter()
-        noiseCancellationNode.type = 'highpass' // Using high-pass filter for noise cancellation
-        noiseCancellationNode.frequency.value = 2000 // Adjust the cutoff frequency as needed (example: 2000 Hz)
-        sourceNode.connect(noiseCancellationNode)
-        noiseCancellationNode.connect(iframeAudioContext.destination)
+        const noiseCancellationNode = iframeAudioContext.createBiquadFilter();
+        noiseCancellationNode.type = 'highpass'; // Using high-pass filter for noise cancellation
+        noiseCancellationNode.frequency.value = 2000; // Adjust the cutoff frequency as needed (example: 2000 Hz)
+        sourceNode.connect(noiseCancellationNode);
+        noiseCancellationNode.connect(iframeAudioContext.destination);
       }
 
       // Load and apply the impulse response (Mills Greek Theater)
-      fetch(
-        '../wp-content/themes/website/assets/274600-Future-Wave-Rise-01.wav'
-      ) // Update with the actual file path
+      fetch('../wp-content/themes/website/assets/274600-Future-Wave-Rise-01.wav') // Update with the actual file path
         .then(response => response.arrayBuffer())
         .then(buffer => iframeAudioContext.decodeAudioData(buffer))
         .then(audioBuffer => {
-          const convolverNode = iframeAudioContext.createConvolver()
-          convolverNode.buffer = audioBuffer
-          sourceNode.connect(convolverNode)
-          convolverNode.connect(iframeAudioContext.destination)
+          const convolverNode = iframeAudioContext.createConvolver();
+          convolverNode.buffer = audioBuffer;
+          sourceNode.connect(convolverNode);
+          convolverNode.connect(iframeAudioContext.destination);
         })
-        .catch(error => console.error('Error loading impulse response:', error))
-    }
+        .catch(error => console.error('Error loading impulse response:', error));
+    };
 
     if (audioIframeRef.current) {
-      audioIframeRef.current.addEventListener('load', loadAudioProcessing)
+      audioIframeRef.current.addEventListener('load', loadAudioProcessing);
     }
 
     return () => {
       if (audioIframeRef.current) {
-        audioIframeRef.current.removeEventListener('load', loadAudioProcessing)
+        audioIframeRef.current.removeEventListener('load', loadAudioProcessing);
       }
-    }
-  }, [movie, enableNoiseCancellation])
+    };
+  }, [movie, enableNoiseCancellation]);
 
   const loadVideo = (videoPage, contentType, server) => {
     const videoIframe = document.getElementById('videoIframe')
@@ -296,162 +312,180 @@ const dead_hot_season_01_2024 = ({ movie }) => {
   }
 
   const rankMathSchema = JSON.stringify({
-    '@context': 'https://schema.org',
-    '@graph': [
+    "@context": "https://schema.org",
+    "@graph": [
       {
-        '@type': ['Person', 'Organization'],
-        '@id': 'https://gravatar.com/drtrailer2022/#person',
-        name: 'Dr Trailer'
+        "@type": ["Person", "Organization"],
+        "@id": "https://gravatar.com/drtrailer2022/#person",
+        "name": "Dr Trailer"
       },
       {
-        '@type': 'WebSite',
-        '@id': 'https://watchmoviesonline.vercel.app/#website',
-        url: 'https://watchmoviesonline.vercel.app/',
-        name: 'Watch Movies Online™',
-        publisher: {
-          '@id': 'https://gravatar.com/drtrailer2022/#person'
+        "@type": "WebSite",
+        "@id": "https://watchmoviesonline.vercel.app/#website",
+        "url": "https://watchmoviesonline.vercel.app/",
+        "name": "Watch Movies Online™",
+        "publisher": {
+          "@id": "https://gravatar.com/drtrailer2022/#person"
         },
-        inLanguage: 'en-US'
+        "inLanguage": "en-US"
       },
       {
-        '@type': 'WebPage',
-        '@id': `/${movie['movie.watch']}#webpage`,
-        url: `/${movie['movie.watch']}`,
-        name: `${movie.name} | Watch Movies Online™`,
-        datePublished: '2024-01-13T13:00:00+00:00',
-        dateModified: '2024-01-13T13:13:00+00:00',
-        isPartOf: {
-          '@id': 'https://watchmoviesonline.vercel.app/#website'
+        "@type": "WebPage",
+        "@id": `/${movie["movie.watch"]}#webpage`,
+        "url": `/${movie["movie.watch"]}`,
+        "name": `${movie.name} | Watch Movies Online™`,
+        "datePublished": "2024-01-13T13:00:00+00:00",
+        "dateModified": "2024-01-13T13:13:00+00:00",
+        "isPartOf": {
+          "@id": "https://watchmoviesonline.vercel.app/#website"
         },
-        inLanguage: 'en-US'
+        "inLanguage": "en-US"
       },
       {
-        '@type': 'Person',
-        '@id': 'https://watchmoviesonline.vercel.app/author/watchmoviesonline/',
-        name: 'Dr Trailer',
-        url: 'https://watchmoviesonline.vercel.app/author/watchmoviesonline/',
-        image: {
-          '@type': 'ImageObject',
-          '@id': 'https://gravatar.com/drtrailer2022',
-          url: 'https://gravatar.com/drtrailer2022',
-          caption: 'Dr Trailer',
-          inLanguage: 'en-US'
+        "@type": "Person",
+        "@id": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/",
+        "name": "Dr Trailer",
+        "url": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/",
+        "image": {
+          "@type": "ImageObject",
+          "@id": "https://gravatar.com/drtrailer2022",
+          "url": "https://gravatar.com/drtrailer2022",
+          "caption": "Dr Trailer",
+          "inLanguage": "en-US"
         },
-        sameAs: ['https://watchmoviesonline.vercel.app/']
+        "sameAs": [
+          "https://watchmoviesonline.vercel.app/"
+        ]
       },
       {
-        '@type': 'Article',
-        '@id': `/${movie['movie.watch']}#article`,
-        headline: `Watch ${movie.name} | Watch Movies Online™`,
-        datePublished: '2024-01-13T13:00:00+00:00',
-        dateModified: '2024-01-13T13:13:00+00:00',
-        articleSection: 'Movie',
-        author: {
-          '@id':
-            'https://watchmoviesonline.vercel.app/author/watchmoviesonline/'
+        "@type": "Article",
+        "@id": `/${movie["movie.watch"]}#article`,
+        "headline": `Watch ${movie.name} | Watch Movies Online™`,
+        "datePublished": "2024-01-13T13:00:00+00:00",
+        "dateModified": "2024-01-13T13:13:00+00:00",
+        "articleSection": "Movie",
+        "author": {
+          "@id": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/"
         },
-        publisher: {
-          '@id': 'https://gravatar.com/drtrailer2022/#person'
+        "publisher": {
+          "@id": "https://gravatar.com/drtrailer2022/#person"
         },
-        description: `Watch Movies Online | ${movie.name} for free. Where you can find movies of your interest in full HD quality updated on a daily basis. Watch Now or Download Now to Watch Later!`,
-        image: movie.image,
-        name: `Watch ${movie.name} | Watch Movies Online™`,
-        isPartOf: {
-          '@id': `/${movie['movie.watch']}#webpage`
+        "description": `Watch Movies Online | ${movie.name} for free. Where you can find movies of your interest in full HD quality updated on a daily basis. Watch Now or Download Now to Watch Later!`,
+        "image": movie.image,
+        "name": `Watch ${movie.name} | Watch Movies Online™`,
+        "isPartOf": {
+          "@id": `/${movie["movie.watch"]}#webpage`
         },
-        inLanguage: 'en-US',
-        mainEntityOfPage: {
-          '@id': `/${movie['movie.watch']}#webpage`
+        "inLanguage": "en-US",
+        "mainEntityOfPage": {
+          "@id": `/${movie["movie.watch"]}#webpage`
         }
       },
       {
-        '@type': 'BlogPosting',
-        '@id': `/${movie['movie.watch']}#blogPost`,
-        headline: `Watch ${movie.name} | Watch Movies Online™`,
-        datePublished: '2024-01-13T13:00:00+00:00',
-        dateModified: '2024-01-13T13:13:00+00:00',
-        articleSection: 'Movie',
-        author: {
-          '@id':
-            'https://watchmoviesonline.vercel.app/author/watchmoviesonline/'
+        "@type": "BlogPosting",
+        "@id": `/${movie["movie.watch"]}#blogPost`,
+        "headline": `Watch ${movie.name} | Watch Movies Online™`,
+        "datePublished": "2024-01-13T13:00:00+00:00",
+        "dateModified": "2024-01-13T13:13:00+00:00",
+        "articleSection": "Movie",
+        "author": {
+          "@id": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/"
         },
-        publisher: {
-          '@id': 'https://gravatar.com/drtrailer2022/#person'
+        "publisher": {
+          "@id": "https://gravatar.com/drtrailer2022/#person"
         },
-        description: `Watch Movies Online | ${movie.name} for free. Where you can find movies of your interest in full HD quality updated on a daily basis. Watch Now or Download Now to Watch Later!`,
-        image: movie.image,
-        name: `Watch ${movie.name} | Watch Movies Online™`,
-        '@id': `/${movie['movie.watch']}#richSnippet`,
-        isPartOf: {
-          '@id': `/${movie['movie.watch']}#webpage`
+        "description": `Watch Movies Online | ${movie.name} for free. Where you can find movies of your interest in full HD quality updated on a daily basis. Watch Now or Download Now to Watch Later!`,
+        "image": movie.image,
+        "name": `Watch ${movie.name} | Watch Movies Online™`,
+        "@id": `/${movie["movie.watch"]}#richSnippet`,
+        "isPartOf": {
+          "@id": `/${movie["movie.watch"]}#webpage`
         },
-        inLanguage: 'en-US',
-        mainEntityOfPage: {
-          '@id': `/${movie['movie.watch']}#webpage`
+        "inLanguage": "en-US",
+        "mainEntityOfPage": {
+          "@id": `/${movie["movie.watch"]}#webpage`
         }
       }
     ]
-  })
+  });
+  
 
   const ldJsonData = JSON.stringify({
-    '@context': 'https://schema.org',
-    '@type': 'Movie',
-    '@id': `${movie['movie.url']}`,
-    name: movie.name,
-    url: `/${movie['movie.watch']}`,
-    description: movie.synopsis,
-    image: movie.poster,
-    genre: movie.genre,
-    datePublished: movie.yearRelease,
-    director: {
-      '@type': 'Person',
-      name: movie.director
+    "@context": "https://schema.org",
+    "@type": "TVSeries",
+    "@id": `${movie["movie.url"]}`,
+    "name": movie.title,
+    "image": `/wp-content/uploads/2023/06/${movie.poster}`,
+    "url": `/${movie["movie.watch"]}`,
+    "description": movie.synopsis,
+    "datePublished": movie.startDate,
+    "contentRating": movie.contentRating,
+    "inLanguage": movie.language,
+    "genre": movie.genre,
+    "director": {
+      "@type": "Person",
+      "name": movie.director
     },
-    actor: movie.starring.map(actor => ({
-      '@type': 'Person',
-      name: actor
+    "actor": movie.starring.map((actor) => ({
+      "@type": "Person",
+      "name": actor
     })),
-    potentialAction: {
-      '@type': 'WatchAction',
-      target: [
-        {
-          '@type': 'EntryPoint',
-          name: movie.name, // Removed unnecessary conditional
-          urlTemplate: `${movie['movie.url']}` // Updated to use movie.watch
-        }
-      ]
-    },
-    locationCreated: {
-      '@type': 'Place',
-      name: movie.country
-    },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: movie.aggregateRating.ratingValue,
-      bestRating: movie.aggregateRating.bestRating,
-      worstRating: movie.aggregateRating.worstRating,
-      ratingCount: movie.aggregateRating.ratingCount
-    },
-    author: {
-      '@type': 'Person', // Updated to remove unnecessary array
-      name: 'DrTrailer',
-      url: 'https://gravatar.com/drtrailer2022'
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'Watch Movies Online™',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://watchmoviesonline.vercel.app/og_image.jpg'
+    "potentialAction": {
+      "@type": "WatchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "name": movie.title,
+        "urlTemplate": `${movie["movie.url"]}`
       }
     },
-    additionalProperty: {
-      '@type': 'PropertyValue',
-      name: 'Action Platform',
-      value: ['Desktop Web Platform', 'iOS Platform', 'Android Platform']
-    }
-  })
+    "locationCreated": {
+      "@type": "Place",
+      "name": movie.country
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": movie.aggregateRating.ratingValue,
+      "bestRating": movie.aggregateRating.bestRating,
+      "worstRating": movie.aggregateRating.worstRating,
+      "ratingCount": movie.aggregateRating.ratingCount
+    },
+    "author": {
+      "@type": "Person",
+      "@id": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/",
+      "name": "Dr Trailer",
+      "url": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "https://gravatar.com/drtrailer2022",
+        "url": "https://gravatar.com/drtrailer2022",
+        "caption": "Dr Trailer",
+        "inLanguage": "en-US"
+      }
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Watch Movies Online™",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://watchmoviesonline.vercel.app/og_image.jpg"
+      }
+    },
+    "additionalProperty": {
+      "@type": "PropertyValue",
+      "name": "Action Platform",
+      "value": ["Desktop Web Platform", "iOS Platform", "Android Platform"]
+    },
+     "numberOfEpisodes": movie.numberOfEpisodes,
+    "name": `${movie.name}`,
+    "episode": movie.episodes.map((episode) => ({
+      "@type": "TVEpisode",
+      "episodeNumber": episode.episodeNumber,
+      "name": episode.name,
+      "description": episode.description
+    }))
+  });
 
+ 
   const trailerSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'VideoObject',
@@ -461,8 +495,8 @@ const dead_hot_season_01_2024 = ({ movie }) => {
     thumbnailUrl: movie.trailer.thumbnail.contentUrl,
     duration: movie.trailer.duration,
     embedUrl: movie.trailer.embedUrl
-  })
-
+  });
+  
   return (
     <div>
       <Head>
@@ -471,6 +505,7 @@ const dead_hot_season_01_2024 = ({ movie }) => {
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
         />
         <title> Watch {movie && movie.name} | Watch Movies Online™</title>
+
         <link rel='canonical' href={movie && movie.url} />
         <meta name='robots' content='index, follow' />
         <meta name='googlebot' content='index,follow' />
@@ -497,6 +532,7 @@ const dead_hot_season_01_2024 = ({ movie }) => {
         <meta property='og:type' content='article' />
         <meta name='mobile-web-app-capable' content='yes' />
         <meta property='article:section' content='Movie' />
+
         <meta name='author' content='admin' />
         <meta
           property='article:modified_time'
@@ -508,6 +544,7 @@ const dead_hot_season_01_2024 = ({ movie }) => {
             movie && movie.poster
           }`}
         />
+
         <meta property='og:image:width' content='303' />
         <meta property='og:image:height' content='430' />
         <meta property='og:image:type' content='image/webp' />
@@ -527,17 +564,17 @@ const dead_hot_season_01_2024 = ({ movie }) => {
           content='dmv6sg06w9r5eji88'
         />
         {/* Add the script tag for the YouTube IFrame Player API */}
-        {/* <script src='https://www.youtube.com/iframe_api' /> */}
+       {/* <script src='https://www.youtube.com/iframe_api' /> */}
         {/* Include Bootstrap and jQuery scripts */}
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: ldJsonData }}
         />
-        <script
+            <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: rankMathSchema }}
         />
-        <script
+         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: trailerSchema }}
         />
@@ -566,7 +603,6 @@ const dead_hot_season_01_2024 = ({ movie }) => {
           }}
         />
       </Head>
-
       <Script src='../../propler/ads.js' defer />
       <div
         style={{
@@ -578,8 +614,10 @@ const dead_hot_season_01_2024 = ({ movie }) => {
           padding: '20px',
           fontFamily: 'Poppins, sans-serif',
           fontWeight: 500,
-          textAlign: 'center'
+           textAlign: 'center',
           // background: '#4B5563'
+
+          
         }}
       >
         <div style={{ maxWidth: '800px', width: '100%', marginBottom: '20px' }}>
@@ -871,12 +909,12 @@ const dead_hot_season_01_2024 = ({ movie }) => {
             </div>
           )}
         </div>
-        {/* <BackImage movieId='INDEX109' />  */}
+        <DailyMotionBackground movieId="INDEX109" />
         <h1
           className='flex flex-col text-center py-5 font-bold text-3xl items-center justify-center'
           style={{ color: '#40D7BC', textShadow: '5px 5px 2px #000' }}
         >
-          Watch Online Movie {movie && movie.title}{' '}
+          Watch Online Tv Show {movie && movie.title}{' '}
         </h1>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <span
@@ -989,326 +1027,1305 @@ const dead_hot_season_01_2024 = ({ movie }) => {
                 Server 3
               </Tab>
             </TabList>
+
             <TabPanel>
-              <div
-                style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  justifyContent: 'center'
-                }}
-              >
-                {Array.from({ length: 10 }, (_, episodeNumber) => {
-                  const episodeKey = `episode${episodeNumber + 1}sa1ser1`
-                  const episodeUrl = movieData[episodeKey]
-                  if (!episodeUrl) return null
-                  return (
-                    <div
-                      className='mb-5 mr-3'
-                      key={`episode${episodeNumber + 1}`}
-                    >
-                      <button
-                        className='episode-button relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'
-                        onClick={togglePopup1}
-                      >
-                        <span
-                          style={{
-                            color: '#15f4ee',
-                            fontSize: '24px',
-                            textShadow: '3px 5px 5px #000'
-                          }}
-                        >
-                          {' '}
-                          <i
-                            className='fa fa-play-circle'
-                            aria-hidden='true'
-                          ></i>{' '}
-                          Watch Now
-                        </span>
+              <div className='container mt-0'>
+                <button
+                  className='episode-button relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'
+                  onClick={togglePopup1}
+                >
+                  <span
+                    style={{
+                      color: '#15f4ee',
+                      fontSize: '20px',
+                      textShadow: '3px 5px 5px #000'
+                    }}
+                  >
+                    {' '}
+                    <i
+                      className='fa fa-play-circle'
+                      aria-hidden='true'
+                    ></i>{' '}
+                    Episode 1{' '}
+                  </span>
+                </button>
+
+                {showPopup1 && (
+                  <div className='popup-overlay'>
+                    <div className='popup'>
+                      <button className='close-button' onClick={togglePopup1}>
+                        <h2 className='relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-5 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-red-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110  cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'>
+                          Close
+                        </h2>
                       </button>
-                      {showPopup1 && (
-                        <div className='popup-overlay'>
-                          <div className='popup'>
-                            <button
-                              className='close-button'
-                              onClick={togglePopup1}
-                            >
-                              <h2 className='relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-5 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-red-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110  cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'>
-                                Close
-                              </h2>
-                            </button>
-                            <h2
-                              className='text-2xl font-bold'
-                              style={{
-                                color: '#40D7BC',
-                                textShadow: '3px 5px 5px #000'
-                              }}
-                            >
-                              Watch Online Movie {movie && movie.name}
-                            </h2>
-                            <div className={Styles['iframe-container']}>
-                              <iframe
-                                className='rounded-3xl mr-8 flex border-1 border-blue-600 bg-gray-600 p-2'
-                                webkitallowFullScreen
-                                mozallowFullScreen
-                                allowFullScreen
-                                ref={audioIframeRef}
-                                id='audioIframe'
-                                src={episodeUrl}
-                                style={{
-                                  filter:
-                                    'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
-                                }}
-                              />
-                            </div>
-                            <p
-                              style={{
-                                color: '#40D7BC',
-                                display: 'flex',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                textShadow: '3px 5px 5px #000',
-                                fontSize: '15px',
-                                fontWeight: 'bold'
-                              }}
-                            >
-                              *Note: Use Setting in Player to improve the
-                              Quality of video to HD Quality 1080p.
-                            </p>
-                          </div>
-                        </div>
-                      )}
+                      <h2
+                        className='text-2xl font-bold'
+                        style={{
+                          color: '#40D7BC',
+                          textShadow: '3px 5px 5px #000'
+                        }}
+                      >
+                        Watch Online Tv Show {movie && movie.name}
+                      </h2>
+                      <div className={Styles['iframe-container']}>
+                        <iframe
+                          className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
+                          webkitallowFullScreen
+                          mozallowFullScreen
+                          allowFullScreen
+                          ref={audioIframeRef}
+                                id="audioIframe"
+                          src={movie && movie.episode1sa1ser1}
+                          style={{
+                            filter:
+                              'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+                          }}
+                        />
+                      </div>
+                      <p
+                        style={{
+                          color: '#40D7BC',
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          textShadow: '3px 5px 5px #000',
+                          fontSize: '15px',
+                          fontWeight: 'bold'
+                        }}
+                      >
+                        *Note: Use Setting in Player to improve the Quality of
+                        video to HD Quality 1080p.
+                      </p>
                     </div>
-                  )
-                })}
+                  </div>
+                )}
+
+                <button
+                  className='episode-button relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'
+                  onClick={togglePopup2}
+                >
+                  <span
+                    style={{
+                      color: '#15f4ee',
+                      fontSize: '20px',
+                      textShadow: '3px 5px 5px #000'
+                    }}
+                  >
+                    {' '}
+                    <i
+                      className='fa fa-play-circle'
+                      aria-hidden='true'
+                    ></i>{' '}
+                    Episode 2{' '}
+                  </span>
+                </button>
+
+                {showPopup2 && (
+                  <div className='popup-overlay'>
+                    <div className='popup'>
+                      <button className='close-button' onClick={togglePopup2}>
+                        <h2 className='relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-5 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-red-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110  cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'>
+                          Close
+                        </h2>
+                      </button>
+                      <h2
+                        className='text-2xl font-bold'
+                        style={{
+                          color: '#40D7BC',
+                          textShadow: '3px 5px 5px #000'
+                        }}
+                      >
+                        Watch Online Tv Show {movie && movie.name}
+                      </h2>
+                      <div className={Styles['iframe-container']}>
+                        <iframe
+                          className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
+                          webkitallowFullScreen
+                          mozallowFullScreen
+                          allowFullScreen
+                          ref={audioIframeRef}
+                                id="audioIframe"
+                          src={movie && movie.episode2sa1ser1}
+                          style={{
+                            filter:
+                              'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+                          }}
+                        />
+                      </div>
+                      <p
+                        style={{
+                          color: '#40D7BC',
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          textShadow: '3px 5px 5px #000',
+                          fontSize: '15px',
+                          fontWeight: 'bold'
+                        }}
+                      >
+                        *Note: Use Setting in Player to improve the Quality of
+                        video to HD Quality 1080p.
+                      </p>
+                    </div>
+                  </div>
+                )}
+                <button
+                  className='episode-button relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'
+                  onClick={togglePopup3}
+                >
+                  <span
+                    style={{
+                      color: '#15f4ee',
+                      fontSize: '20px',
+                      textShadow: '3px 5px 5px #000'
+                    }}
+                  >
+                    {' '}
+                    <i
+                      className='fa fa-play-circle'
+                      aria-hidden='true'
+                    ></i>{' '}
+                    Episode 3{' '}
+                  </span>
+                </button>
+
+                {showPopup3 && (
+                  <div className='popup-overlay'>
+                    <div className='popup'>
+                      <button className='close-button' onClick={togglePopup3}>
+                        <h2 className='relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-5 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-red-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110  cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'>
+                          Close
+                        </h2>
+                      </button>
+                      <h2
+                        className='text-2xl font-bold'
+                        style={{
+                          color: '#40D7BC',
+                          textShadow: '3px 5px 5px #000'
+                        }}
+                      >
+                        Watch Online Tv Show {movie && movie.name}
+                      </h2>
+                      <div className={Styles['iframe-container']}>
+                        <iframe
+                          className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
+                          webkitallowFullScreen
+                          mozallowFullScreen
+                          allowFullScreen
+                          ref={audioIframeRef}
+                                id="audioIframe"
+                          src={movie && movie.episode3sa1ser1}
+                          style={{
+                            filter:
+                              'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+                          }}
+                        />
+                      </div>
+                      <p
+                        style={{
+                          color: '#40D7BC',
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          textShadow: '3px 5px 5px #000',
+                          fontSize: '15px',
+                          fontWeight: 'bold'
+                        }}
+                      >
+                        *Note: Use Setting in Player to improve the Quality of
+                        video to HD Quality 1080p.
+                      </p>
+                    </div>
+                  </div>
+                )}
+                <button
+                  className='episode-button relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'
+                  onClick={togglePopup4}
+                >
+                  <span
+                    style={{
+                      color: '#15f4ee',
+                      fontSize: '20px',
+                      textShadow: '3px 5px 5px #000'
+                    }}
+                  >
+                    {' '}
+                    <i
+                      className='fa fa-play-circle'
+                      aria-hidden='true'
+                    ></i>{' '}
+                    Episode 4{' '}
+                  </span>
+                </button>
+
+                {showPopup4 && (
+                  <div className='popup-overlay'>
+                    <div className='popup'>
+                      <button className='close-button' onClick={togglePopup4}>
+                        <h2 className='relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-5 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-red-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110  cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'>
+                          Close
+                        </h2>
+                      </button>
+                      <h2
+                        className='text-2xl font-bold'
+                        style={{
+                          color: '#40D7BC',
+                          textShadow: '3px 5px 5px #000'
+                        }}
+                      >
+                        Watch Online Tv Show {movie && movie.name}
+                      </h2>
+                      <div className={Styles['iframe-container']}>
+                        <iframe
+                          className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
+                          webkitallowFullScreen
+                          mozallowFullScreen
+                          allowFullScreen
+                          ref={audioIframeRef}
+                                id="audioIframe"
+                          src={movie && movie.episode4sa1ser1}
+                          style={{
+                            filter:
+                              'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+                          }}
+                        />
+                      </div>
+                      <p
+                        style={{
+                          color: '#40D7BC',
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          textShadow: '3px 5px 5px #000',
+                          fontSize: '15px',
+                          fontWeight: 'bold'
+                        }}
+                      >
+                        *Note: Use Setting in Player to improve the Quality of
+                        video to HD Quality 1080p.
+                      </p>
+                    </div>
+                  </div>
+                )}
+                <button
+                  className='episode-button relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'
+                  onClick={togglePopup5}
+                >
+                  <span
+                    style={{
+                      color: '#15f4ee',
+                      fontSize: '20px',
+                      textShadow: '3px 5px 5px #000'
+                    }}
+                  >
+                    {' '}
+                    <i
+                      className='fa fa-play-circle'
+                      aria-hidden='true'
+                    ></i>{' '}
+                    Episode 5{' '}
+                  </span>
+                </button>
+
+                {showPopup5 && (
+                  <div className='popup-overlay'>
+                    <div className='popup'>
+                      <button className='close-button' onClick={togglePopup5}>
+                        <h2 className='relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-5 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-red-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110  cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'>
+                          Close
+                        </h2>
+                      </button>
+                      <h2
+                        className='text-2xl font-bold'
+                        style={{
+                          color: '#40D7BC',
+                          textShadow: '3px 5px 5px #000'
+                        }}
+                      >
+                        Watch Online Tv Show {movie && movie.name}
+                      </h2>
+                      <div className={Styles['iframe-container']}>
+                        <iframe
+                          className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
+                          webkitallowFullScreen
+                          mozallowFullScreen
+                          allowFullScreen
+                          ref={audioIframeRef}
+                                id="audioIframe"
+                          src={movie && movie.episode5sa1ser1}
+                          style={{
+                            filter:
+                              'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+                          }}
+                        />
+                      </div>
+                      <p
+                        style={{
+                          color: '#40D7BC',
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          textShadow: '3px 5px 5px #000',
+                          fontSize: '15px',
+                          fontWeight: 'bold'
+                        }}
+                      >
+                        *Note: Use Setting in Player to improve the Quality of
+                        video to HD Quality 1080p.
+                      </p>
+                    </div>
+                  </div>
+                )}
+                <button
+                  className='episode-button relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'
+                  onClick={togglePopup6}
+                >
+                  <span
+                    style={{
+                      color: '#15f4ee',
+                      fontSize: '20px',
+                      textShadow: '3px 5px 5px #000'
+                    }}
+                  >
+                    {' '}
+                    <i
+                      className='fa fa-play-circle'
+                      aria-hidden='true'
+                    ></i>{' '}
+                    Episode 6{' '}
+                  </span>
+                </button>
+
+                {showPopup6 && (
+                  <div className='popup-overlay'>
+                    <div className='popup'>
+                      <button className='close-button' onClick={togglePopup6}>
+                        <h2 className='relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-5 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-red-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110  cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'>
+                          Close
+                        </h2>
+                      </button>
+                      <h2
+                        className='text-2xl font-bold'
+                        style={{
+                          color: '#40D7BC',
+                          textShadow: '3px 5px 5px #000'
+                        }}
+                      >
+                        Watch Online Tv Show {movie && movie.name}
+                      </h2>
+                      <div className={Styles['iframe-container']}>
+                        <iframe
+                          className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
+                          webkitallowFullScreen
+                          mozallowFullScreen
+                          allowFullScreen
+                          ref={audioIframeRef}
+                                id="audioIframe"
+                          src={movie && movie.episode6sa1ser1}
+                          style={{
+                            filter:
+                              'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+                          }}
+                        />
+                      </div>
+                      <p
+                        style={{
+                          color: '#40D7BC',
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          textShadow: '3px 5px 5px #000',
+                          fontSize: '15px',
+                          fontWeight: 'bold'
+                        }}
+                      >
+                        *Note: Use Setting in Player to improve the Quality of
+                        video to HD Quality 1080p.
+                      </p>
+                    </div>
+                  </div>
+                )}
+                                
               </div>
             </TabPanel>
-
             <TabPanel>
-              <div
-                style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  justifyContent: 'center'
-                }}
-              >
-                {Array.from({ length: 10 }, (_, episodeNumber) => {
-                  const episodeKey = `episode${episodeNumber + 1}sa1ser2`
-                  const episodeUrl = movieData[episodeKey]
-                  if (!episodeUrl) return null
-                  return (
-                    <div
-                      className='mb-5 mr-3'
-                      key={`episode${episodeNumber + 1}`}
-                    >
-                      <button
-                        className='episode-button relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'
-                        onClick={togglePopup2}
-                      >
-                        <span
-                          style={{
-                            color: '#0efa06',
-                            fontSize: '24px',
-                            textShadow: '3px 5px 5px #000'
-                          }}
-                        >
-                          {' '}
-                          <i
-                            className='fa fa-play-circle'
-                            aria-hidden='true'
-                          ></i>{' '}
-                          Watch Now
-                        </span>
-                      </button>
+              <div className='container mt-0'>
+                <button
+                  className='episode-button relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'
+                  onClick={togglePopup1}
+                >
+                  <span
+                    style={{
+                      color: '#0efa06',
+                      fontSize: '20px',
+                      textShadow: '3px 5px 5px #000'
+                    }}
+                  >
+                    {' '}
+                    <i
+                      className='fa fa-play-circle'
+                      aria-hidden='true'
+                    ></i>{' '}
+                    Episode 1{' '}
+                  </span>
+                </button>
 
-                      {showPopup2 && (
-                        <div className='popup-overlay'>
-                          <div className='popup'>
-                            <button
-                              className='close-button'
-                              onClick={togglePopup2}
-                            >
-                              <h2 className='relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-5 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-red-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110  cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'>
-                                Close
-                              </h2>
-                            </button>
-                            <h2
-                              className='text-2xl font-bold'
-                              style={{
-                                color: '#40D7BC',
-                                textShadow: '3px 5px 5px #000'
-                              }}
-                            >
-                              Watch Online Movie {movie && movie.name}
-                            </h2>
-                            <div className={Styles['iframe-container']}>
-                              <iframe
-                                className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
-                                webkitallowFullScreen
-                                mozallowFullScreen
-                                allowFullScreen
-                                ref={audioIframeRef}
-                                id='audioIframe'
-                                src={episodeUrl}
-                                style={{
-                                  filter:
-                                    'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
-                                }}
-                              />
-                            </div>
-                            <p
-                              style={{
-                                color: '#40D7BC',
-                                display: 'flex',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                textShadow: '3px 5px 5px #000',
-                                fontSize: '15px',
-                                fontWeight: 'bold'
-                              }}
-                            >
-                              *Note: Use Setting in Player to improve the
-                              Quality of video to HD Quality 1080p.
-                            </p>
-                          </div>
-                        </div>
-                      )}
+                {showPopup1 && (
+                  <div className='popup-overlay'>
+                    <div className='popup'>
+                      <button className='close-button' onClick={togglePopup1}>
+                        <h2 className='relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-5 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-red-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110  cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'>
+                          Close
+                        </h2>
+                      </button>
+                      <h2
+                        className='text-2xl font-bold'
+                        style={{
+                          color: '#40D7BC',
+                          textShadow: '3px 5px 5px #000'
+                        }}
+                      >
+                        Watch Online Tv Show {movie && movie.name}
+                      </h2>
+                      <div className={Styles['iframe-container']}>
+                        <iframe
+                          className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
+                          webkitallowFullScreen
+                          mozallowFullScreen
+                          allowFullScreen
+                          ref={audioIframeRef}
+                                id="audioIframe"
+                          src={movie && movie.episode1sa1ser2}
+                          style={{
+                            filter:
+                              'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+                          }}
+                        />
+                      </div>
+                      <p
+                        style={{
+                          color: '#40D7BC',
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          textShadow: '3px 5px 5px #000',
+                          fontSize: '15px',
+                          fontWeight: 'bold'
+                        }}
+                      >
+                        *Note: Use Setting in Player to improve the Quality of
+                        video to HD Quality 1080p.
+                      </p>
                     </div>
-                  )
-                })}
+                  </div>
+                )}
+
+                <button
+                  className='episode-button relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'
+                  onClick={togglePopup2}
+                >
+                  <span
+                    style={{
+                      color: '#0efa06',
+                      fontSize: '20px',
+                      textShadow: '3px 5px 5px #000'
+                    }}
+                  >
+                    {' '}
+                    <i
+                      className='fa fa-play-circle'
+                      aria-hidden='true'
+                    ></i>{' '}
+                    Episode 2{' '}
+                  </span>
+                </button>
+
+                {showPopup2 && (
+                  <div className='popup-overlay'>
+                    <div className='popup'>
+                      <button className='close-button' onClick={togglePopup2}>
+                        <h2 className='relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-5 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-red-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110  cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'>
+                          Close
+                        </h2>
+                      </button>
+                      <h2
+                        className='text-2xl font-bold'
+                        style={{
+                          color: '#40D7BC',
+                          textShadow: '3px 5px 5px #000'
+                        }}
+                      >
+                        Watch Online Tv Show {movie && movie.name}
+                      </h2>
+                      <div className={Styles['iframe-container']}>
+                        <iframe
+                          className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
+                          webkitallowFullScreen
+                          mozallowFullScreen
+                          allowFullScreen
+                          ref={audioIframeRef}
+                                id="audioIframe"
+                          src={movie && movie.episode2sa1ser2}
+                          style={{
+                            filter:
+                              'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+                          }}
+                        />
+                      </div>
+                      <p
+                        style={{
+                          color: '#40D7BC',
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          textShadow: '3px 5px 5px #000',
+                          fontSize: '15px',
+                          fontWeight: 'bold'
+                        }}
+                      >
+                        *Note: Use Setting in Player to improve the Quality of
+                        video to HD Quality 1080p.
+                      </p>
+                    </div>
+                  </div>
+                )}
+                <button
+                  className='episode-button relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'
+                  onClick={togglePopup3}
+                >
+                  <span
+                    style={{
+                      color: '#0efa06',
+                      fontSize: '20px',
+                      textShadow: '3px 5px 5px #000'
+                    }}
+                  >
+                    {' '}
+                    <i
+                      className='fa fa-play-circle'
+                      aria-hidden='true'
+                    ></i>{' '}
+                    Episode 3{' '}
+                  </span>
+                </button>
+
+                {showPopup3 && (
+                  <div className='popup-overlay'>
+                    <div className='popup'>
+                      <button className='close-button' onClick={togglePopup3}>
+                        <h2 className='relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-5 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-red-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110  cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'>
+                          Close
+                        </h2>
+                      </button>
+                      <h2
+                        className='text-2xl font-bold'
+                        style={{
+                          color: '#40D7BC',
+                          textShadow: '3px 5px 5px #000'
+                        }}
+                      >
+                        Watch Online Tv Show {movie && movie.name}
+                      </h2>
+                      <div className={Styles['iframe-container']}>
+                        <iframe
+                          className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
+                          webkitallowFullScreen
+                          mozallowFullScreen
+                          allowFullScreen
+                          ref={audioIframeRef}
+                                id="audioIframe"
+                          src={movie && movie.episode3sa1ser2}
+                          style={{
+                            filter:
+                              'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+                          }}
+                        />
+                      </div>
+                      <p
+                        style={{
+                          color: '#40D7BC',
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          textShadow: '3px 5px 5px #000',
+                          fontSize: '15px',
+                          fontWeight: 'bold'
+                        }}
+                      >
+                        *Note: Use Setting in Player to improve the Quality of
+                        video to HD Quality 1080p.
+                      </p>
+                    </div>
+                  </div>
+                )}
+                <button
+                  className='episode-button relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'
+                  onClick={togglePopup4}
+                >
+                  <span
+                    style={{
+                      color: '#0efa06',
+                      fontSize: '20px',
+                      textShadow: '3px 5px 5px #000'
+                    }}
+                  >
+                    {' '}
+                    <i
+                      className='fa fa-play-circle'
+                      aria-hidden='true'
+                    ></i>{' '}
+                    Episode 4{' '}
+                  </span>
+                </button>
+
+                {showPopup4 && (
+                  <div className='popup-overlay'>
+                    <div className='popup'>
+                      <button className='close-button' onClick={togglePopup4}>
+                        <h2 className='relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-5 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-red-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110  cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'>
+                          Close
+                        </h2>
+                      </button>
+                      <h2
+                        className='text-2xl font-bold'
+                        style={{
+                          color: '#40D7BC',
+                          textShadow: '3px 5px 5px #000'
+                        }}
+                      >
+                        Watch Online Tv Show {movie && movie.name}
+                      </h2>
+                      <div className={Styles['iframe-container']}>
+                        <iframe
+                          className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
+                          webkitallowFullScreen
+                          mozallowFullScreen
+                          allowFullScreen
+                          ref={audioIframeRef}
+                                id="audioIframe"
+                          src={movie && movie.episode4sa1ser2}
+                          style={{
+                            filter:
+                              'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+                          }}
+                        />
+                      </div>
+                      <p
+                        style={{
+                          color: '#40D7BC',
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          textShadow: '3px 5px 5px #000',
+                          fontSize: '15px',
+                          fontWeight: 'bold'
+                        }}
+                      >
+                        *Note: Use Setting in Player to improve the Quality of
+                        video to HD Quality 1080p.
+                      </p>
+                    </div>
+                  </div>
+                )}
+                <button
+                  className='episode-button relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'
+                  onClick={togglePopup5}
+                >
+                  <span
+                    style={{
+                      color: '#0efa06',
+                      fontSize: '20px',
+                      textShadow: '3px 5px 5px #000'
+                    }}
+                  >
+                    {' '}
+                    <i
+                      className='fa fa-play-circle'
+                      aria-hidden='true'
+                    ></i>{' '}
+                    Episode 5{' '}
+                  </span>
+                </button>
+
+                {showPopup5 && (
+                  <div className='popup-overlay'>
+                    <div className='popup'>
+                      <button className='close-button' onClick={togglePopup5}>
+                        <h2 className='relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-5 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-red-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110  cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'>
+                          Close
+                        </h2>
+                      </button>
+                      <h2
+                        className='text-2xl font-bold'
+                        style={{
+                          color: '#40D7BC',
+                          textShadow: '3px 5px 5px #000'
+                        }}
+                      >
+                        Watch Online Tv Show {movie && movie.name}
+                      </h2>
+                      <div className={Styles['iframe-container']}>
+                        <iframe
+                          className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
+                          webkitallowFullScreen
+                          mozallowFullScreen
+                          allowFullScreen
+                          ref={audioIframeRef}
+                                id="audioIframe"
+                          src={movie && movie.episode5sa1ser2}
+                          style={{
+                            filter:
+                              'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+                          }}
+                        />
+                      </div>
+                      <p
+                        style={{
+                          color: '#40D7BC',
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          textShadow: '3px 5px 5px #000',
+                          fontSize: '15px',
+                          fontWeight: 'bold'
+                        }}
+                      >
+                        *Note: Use Setting in Player to improve the Quality of
+                        video to HD Quality 1080p.
+                      </p>
+                    </div>
+                  </div>
+                )}
+                <button
+                  className='episode-button relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'
+                  onClick={togglePopup6}
+                >
+                  <span
+                    style={{
+                      color: '#0efa06',
+                      fontSize: '20px',
+                      textShadow: '3px 5px 5px #000'
+                    }}
+                  >
+                    {' '}
+                    <i
+                      className='fa fa-play-circle'
+                      aria-hidden='true'
+                    ></i>{' '}
+                    Episode 6{' '}
+                  </span>
+                </button>
+
+                {showPopup6 && (
+                  <div className='popup-overlay'>
+                    <div className='popup'>
+                      <button className='close-button' onClick={togglePopup6}>
+                        <h2 className='relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-5 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-red-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110  cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'>
+                          Close
+                        </h2>
+                      </button>
+                      <h2
+                        className='text-2xl font-bold'
+                        style={{
+                          color: '#40D7BC',
+                          textShadow: '3px 5px 5px #000'
+                        }}
+                      >
+                        Watch Online Tv Show {movie && movie.name}
+                      </h2>
+                      <div className={Styles['iframe-container']}>
+                        <iframe
+                          className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
+                          webkitallowFullScreen
+                          mozallowFullScreen
+                          allowFullScreen
+                          ref={audioIframeRef}
+                                id="audioIframe"
+                          src={movie && movie.episode6sa1ser2}
+                          style={{
+                            filter:
+                              'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+                          }}
+                        />
+                      </div>
+                      <p
+                        style={{
+                          color: '#40D7BC',
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          textShadow: '3px 5px 5px #000',
+                          fontSize: '15px',
+                          fontWeight: 'bold'
+                        }}
+                      >
+                        *Note: Use Setting in Player to improve the Quality of
+                        video to HD Quality 1080p.
+                      </p>
+                    </div>
+                  </div>
+                )}
+                               
               </div>
             </TabPanel>
-
             <TabPanel>
-              <div
-                style={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  justifyContent: 'center'
-                }}
-              >
-                {Array.from({ length: 10 }, (_, episodeNumber) => {
-                  const episodeKey = `episode${episodeNumber + 1}sa1ser3`
-                  const episodeUrl = movieData[episodeKey]
-                  if (!episodeUrl) return null
-                  return (
-                    <div
-                      className='mb-5 mr-3'
-                      key={`episode${episodeNumber + 1}`}
-                    >
-                      <button
-                        className='episode-button relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'
-                        onClick={togglePopup3}
-                      >
-                        <span
-                          style={{
-                            color: '#f80303',
-                            fontSize: '24px',
-                            textShadow: '3px 5px 5px #000'
-                          }}
-                        >
-                          {' '}
-                          <i
-                            className='fa fa-play-circle'
-                            aria-hidden='true'
-                          ></i>{' '}
-                          Watch Now
-                        </span>
-                      </button>
+            <div className='container mt-0'>
+                <button
+                  className='episode-button relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'
+                  onClick={togglePopup1}
+                >
+                  <span
+                    style={{
+                      color: '#f80303',
+                      fontSize: '20px',
+                      textShadow: '3px 5px 5px #000'
+                    }}
+                  >
+                    {' '}
+                    <i
+                      className='fa fa-play-circle'
+                      aria-hidden='true'
+                    ></i>{' '}
+                    Episode 1{' '}
+                  </span>
+                </button>
 
-                      {showPopup3 && (
-                        <div className='popup-overlay'>
-                          <div className='popup'>
-                            <button
-                              className='close-button'
-                              onClick={togglePopup3}
-                            >
-                              <h2 className='relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-5 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-red-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110  cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'>
-                                Close
-                              </h2>
-                            </button>
-                            <h2
-                              className='text-2xl font-bold'
-                              style={{
-                                color: '#40D7BC',
-                                textShadow: '3px 5px 5px #000'
-                              }}
-                            >
-                              Watch Online Movie {movie && movie.name}
-                            </h2>
-                            <div className={Styles['iframe-container']}>
-                              <iframe
-                                className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
-                                webkitallowFullScreen
-                                mozallowFullScreen
-                                allowFullScreen
-                                ref={audioIframeRef}
-                                id='audioIframe'
-                                src={episodeUrl}
-                                style={{
-                                  filter:
-                                    'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
-                                }}
-                              />
-                            </div>
-                            <p
-                              style={{
-                                color: '#40D7BC',
-                                display: 'flex',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                textShadow: '3px 5px 5px #000',
-                                fontSize: '15px',
-                                fontWeight: 'bold'
-                              }}
-                            >
-                              *Note: Use Setting in Player to improve the
-                              Quality of video to HD Quality 1080p.
-                            </p>
-                          </div>
-                        </div>
-                      )}
+                {showPopup1 && (
+                  <div className='popup-overlay'>
+                    <div className='popup'>
+                      <button className='close-button' onClick={togglePopup1}>
+                        <h2 className='relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-5 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-red-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110  cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'>
+                          Close
+                        </h2>
+                      </button>
+                      <h2
+                        className='text-2xl font-bold'
+                        style={{
+                          color: '#40D7BC',
+                          textShadow: '3px 5px 5px #000'
+                        }}
+                      >
+                        Watch Online Tv Show {movie && movie.name}
+                      </h2>
+                      <div className={Styles['iframe-container']}>
+                        <iframe
+                          className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
+                          webkitallowFullScreen
+                          mozallowFullScreen
+                          allowFullScreen
+                          ref={audioIframeRef}
+                                id="audioIframe"
+                          src={movie && movie.episode1sa1ser1}
+                          style={{
+                            filter:
+                              'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+                          }}
+                        />
+                      </div>
+                      <p
+                        style={{
+                          color: '#40D7BC',
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          textShadow: '3px 5px 5px #000',
+                          fontSize: '15px',
+                          fontWeight: 'bold'
+                        }}
+                      >
+                        *Note: Use Setting in Player to improve the Quality of
+                        video to HD Quality 1080p.
+                      </p>
                     </div>
-                  )
-                })}
+                  </div>
+                )}
+
+                <button
+                  className='episode-button relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'
+                  onClick={togglePopup2}
+                >
+                  <span
+                    style={{
+                      color: '#f80303',
+                      fontSize: '20px',
+                      textShadow: '3px 5px 5px #000'
+                    }}
+                  >
+                    {' '}
+                    <i
+                      className='fa fa-play-circle'
+                      aria-hidden='true'
+                    ></i>{' '}
+                    Episode 2{' '}
+                  </span>
+                </button>
+
+                {showPopup2 && (
+                  <div className='popup-overlay'>
+                    <div className='popup'>
+                      <button className='close-button' onClick={togglePopup2}>
+                        <h2 className='relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-5 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-red-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110  cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'>
+                          Close
+                        </h2>
+                      </button>
+                      <h2
+                        className='text-2xl font-bold'
+                        style={{
+                          color: '#40D7BC',
+                          textShadow: '3px 5px 5px #000'
+                        }}
+                      >
+                        Watch Online Tv Show {movie && movie.name}
+                      </h2>
+                      <div className={Styles['iframe-container']}>
+                        <iframe
+                          className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
+                          webkitallowFullScreen
+                          mozallowFullScreen
+                          allowFullScreen
+                          ref={audioIframeRef}
+                                id="audioIframe"
+                          src={movie && movie.episode2sa1ser3}
+                          style={{
+                            filter:
+                              'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+                          }}
+                        />
+                      </div>
+                      <p
+                        style={{
+                          color: '#40D7BC',
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          textShadow: '3px 5px 5px #000',
+                          fontSize: '15px',
+                          fontWeight: 'bold'
+                        }}
+                      >
+                        *Note: Use Setting in Player to improve the Quality of
+                        video to HD Quality 1080p.
+                      </p>
+                    </div>
+                  </div>
+                )}
+                <button
+                  className='episode-button relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'
+                  onClick={togglePopup3}
+                >
+                  <span
+                    style={{
+                      color: '#f80303',
+                      fontSize: '20px',
+                      textShadow: '3px 5px 5px #000'
+                    }}
+                  >
+                    {' '}
+                    <i
+                      className='fa fa-play-circle'
+                      aria-hidden='true'
+                    ></i>{' '}
+                    Episode 3{' '}
+                  </span>
+                </button>
+
+                {showPopup3 && (
+                  <div className='popup-overlay'>
+                    <div className='popup'>
+                      <button className='close-button' onClick={togglePopup3}>
+                        <h2 className='relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-5 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-red-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110  cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'>
+                          Close
+                        </h2>
+                      </button>
+                      <h2
+                        className='text-2xl font-bold'
+                        style={{
+                          color: '#40D7BC',
+                          textShadow: '3px 5px 5px #000'
+                        }}
+                      >
+                        Watch Online Tv Show {movie && movie.name}
+                      </h2>
+                      <div className={Styles['iframe-container']}>
+                        <iframe
+                          className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
+                          webkitallowFullScreen
+                          mozallowFullScreen
+                          allowFullScreen
+                          ref={audioIframeRef}
+                                id="audioIframe"
+                          src={movie && movie.episode3sa1ser3}
+                          style={{
+                            filter:
+                              'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+                          }}
+                        />
+                      </div>
+                      <p
+                        style={{
+                          color: '#40D7BC',
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          textShadow: '3px 5px 5px #000',
+                          fontSize: '15px',
+                          fontWeight: 'bold'
+                        }}
+                      >
+                        *Note: Use Setting in Player to improve the Quality of
+                        video to HD Quality 1080p.
+                      </p>
+                    </div>
+                  </div>
+                )}
+                <button
+                  className='episode-button relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'
+                  onClick={togglePopup4}
+                >
+                  <span
+                    style={{
+                      color: '#f80303',
+                      fontSize: '20px',
+                      textShadow: '3px 5px 5px #000'
+                    }}
+                  >
+                    {' '}
+                    <i
+                      className='fa fa-play-circle'
+                      aria-hidden='true'
+                    ></i>{' '}
+                    Episode 4{' '}
+                  </span>
+                </button>
+
+                {showPopup4 && (
+                  <div className='popup-overlay'>
+                    <div className='popup'>
+                      <button className='close-button' onClick={togglePopup4}>
+                        <h2 className='relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-5 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-red-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110  cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'>
+                          Close
+                        </h2>
+                      </button>
+                      <h2
+                        className='text-2xl font-bold'
+                        style={{
+                          color: '#40D7BC',
+                          textShadow: '3px 5px 5px #000'
+                        }}
+                      >
+                        Watch Online Tv Show {movie && movie.name}
+                      </h2>
+                      <div className={Styles['iframe-container']}>
+                        <iframe
+                          className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
+                          webkitallowFullScreen
+                          mozallowFullScreen
+                          allowFullScreen
+                          ref={audioIframeRef}
+                                id="audioIframe"
+                          src={movie && movie.episode4sa1ser3}
+                          style={{
+                            filter:
+                              'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+                          }}
+                        />
+                      </div>
+                      <p
+                        style={{
+                          color: '#40D7BC',
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          textShadow: '3px 5px 5px #000',
+                          fontSize: '15px',
+                          fontWeight: 'bold'
+                        }}
+                      >
+                        *Note: Use Setting in Player to improve the Quality of
+                        video to HD Quality 1080p.
+                      </p>
+                    </div>
+                  </div>
+                )}
+                <button
+                  className='episode-button relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'
+                  onClick={togglePopup5}
+                >
+                  <span
+                    style={{
+                      color: '#f80303',
+                      fontSize: '20px',
+                      textShadow: '3px 5px 5px #000'
+                    }}
+                  >
+                    {' '}
+                    <i
+                      className='fa fa-play-circle'
+                      aria-hidden='true'
+                    ></i>{' '}
+                    Episode 5{' '}
+                  </span>
+                </button>
+
+                {showPopup5 && (
+                  <div className='popup-overlay'>
+                    <div className='popup'>
+                      <button className='close-button' onClick={togglePopup5}>
+                        <h2 className='relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-5 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-red-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110  cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'>
+                          Close
+                        </h2>
+                      </button>
+                      <h2
+                        className='text-2xl font-bold'
+                        style={{
+                          color: '#40D7BC',
+                          textShadow: '3px 5px 5px #000'
+                        }}
+                      >
+                        Watch Online Tv Show {movie && movie.name}
+                      </h2>
+                      <div className={Styles['iframe-container']}>
+                        <iframe
+                          className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
+                          webkitallowFullScreen
+                          mozallowFullScreen
+                          allowFullScreen
+                          ref={audioIframeRef}
+                                id="audioIframe"
+                          src={movie && movie.episode5sa1ser5}
+                          style={{
+                            filter:
+                              'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+                          }}
+                        />
+                      </div>
+                      <p
+                        style={{
+                          color: '#40D7BC',
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          textShadow: '3px 5px 5px #000',
+                          fontSize: '15px',
+                          fontWeight: 'bold'
+                        }}
+                      >
+                        *Note: Use Setting in Player to improve the Quality of
+                        video to HD Quality 1080p.
+                      </p>
+                    </div>
+                  </div>
+                )}
+                <button
+                  className='episode-button relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'
+                  onClick={togglePopup6}
+                >
+                  <span
+                    style={{
+                      color: '#f80303',
+                      fontSize: '20px',
+                      textShadow: '3px 5px 5px #000'
+                    }}
+                  >
+                    {' '}
+                    <i
+                      className='fa fa-play-circle'
+                      aria-hidden='true'
+                    ></i>{' '}
+                    Episode 6{' '}
+                  </span>
+                </button>
+
+                {showPopup6 && (
+                  <div className='popup-overlay'>
+                    <div className='popup'>
+                      <button className='close-button' onClick={togglePopup6}>
+                        <h2 className='relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-5 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-red-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110  cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'>
+                          Close
+                        </h2>
+                      </button>
+                      <h2
+                        className='text-2xl font-bold'
+                        style={{
+                          color: '#40D7BC',
+                          textShadow: '3px 5px 5px #000'
+                        }}
+                      >
+                        Watch Online Tv Show {movie && movie.name}
+                      </h2>
+                      <div className={Styles['iframe-container']}>
+                        <iframe
+                          className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
+                          webkitallowFullScreen
+                          mozallowFullScreen
+                          allowFullScreen
+                          ref={audioIframeRef}
+                                id="audioIframe"
+                          src={movie && movie.episode6sa1ser3}
+                          style={{
+                            filter:
+                              'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+                          }}
+                        />
+                      </div>
+                      <p
+                        style={{
+                          color: '#40D7BC',
+                          display: 'flex',
+                          justifyContent: 'center',
+                          alignItems: 'center',
+                          textShadow: '3px 5px 5px #000',
+                          fontSize: '15px',
+                          fontWeight: 'bold'
+                        }}
+                      >
+                        *Note: Use Setting in Player to improve the Quality of
+                        video to HD Quality 1080p.
+                      </p>
+                    </div>
+                  </div>
+                )}
+            
+               
               </div>
             </TabPanel>
           </Tabs>
         </div>
 
         <style jsx>{`
-          .popup-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999; /* Set a high z-index value */
-          }
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Set a high z-index value */
+  }
 
-          .popup {
-            width: 800px;
-            background-color: gray;
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            animation: slide-down 0.5s ease;
-            position: relative; /* Ensure the z-index works */
-            z-index: 10000; /* Set a higher z-index value */
-          }
+  .popup {
+    width: 800px;
+    background-color: gray;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    animation: slide-down 0.5s ease;
+    position: relative; /* Ensure the z-index works */
+    z-index: 10000; /* Set a higher z-index value */
+  }
 
-          @keyframes slide-down {
-            from {
-              transform: translateY(-100%);
-            }
-            to {
-              transform: translateY(0);
-            }
-          }
-        `}</style>
+  @keyframes slide-down {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+`}</style>
 
         <hr className='my-5' />
         <div className='container mt-5'>
@@ -1377,7 +2394,7 @@ const dead_hot_season_01_2024 = ({ movie }) => {
                                 <span
                                   style={{
                                     color: '#15f4ee',
-                                    fontSize: '24px',
+                                    fontSize: '20px',
                                     textShadow: '3px 5px 5px #000'
                                   }}
                                 >
@@ -1385,7 +2402,7 @@ const dead_hot_season_01_2024 = ({ movie }) => {
                                     className='fa fa-download'
                                     aria-hidden='true'
                                   ></i>{' '}
-                                  Download Now
+                                  Episode {episodeNumber + 1}
                                 </span>
                               </button>
                             </a>
@@ -1396,6 +2413,7 @@ const dead_hot_season_01_2024 = ({ movie }) => {
                   </div>
                 </TabPanel>
 
+                {/* Server 02 content */}
                 <TabPanel>
                   <div className='row mx-auto' style={{ marginTop: '5px' }}>
                     <div
@@ -1409,7 +2427,7 @@ const dead_hot_season_01_2024 = ({ movie }) => {
                     >
                       {Array.from({ length: 10 }, (_, episodeNumber) => {
                         const downloadKey = `download${episodeNumber + 1}s1ser2`
-                        const downloadLink = movieData && movieData[downloadKey] // Check if movieData exists
+                        const downloadLink = movieData[downloadKey]
                         if (!downloadLink) return null
                         return (
                           <div
@@ -1425,17 +2443,15 @@ const dead_hot_season_01_2024 = ({ movie }) => {
                                 <span
                                   style={{
                                     color: '#0efa06',
-                                    fontSize: '24px',
+                                    fontSize: '20px',
                                     textShadow: '3px 5px 5px #000'
                                   }}
                                 >
                                   <i
                                     className='fa fa-download'
                                     aria-hidden='true'
-                                  >
-                                    {' '}
-                                  </i>{' '}
-                                  Download Now
+                                  ></i>{' '}
+                                  Episode {episodeNumber + 1}
                                 </span>
                               </button>
                             </a>
@@ -1445,6 +2461,7 @@ const dead_hot_season_01_2024 = ({ movie }) => {
                     </div>
                   </div>
                 </TabPanel>
+
                 {/* Server 03 content */}
                 <TabPanel>
                   <div className='row mx-auto' style={{ marginTop: '5px' }}>
@@ -1459,7 +2476,7 @@ const dead_hot_season_01_2024 = ({ movie }) => {
                     >
                       {Array.from({ length: 10 }, (_, episodeNumber) => {
                         const downloadKey = `download${episodeNumber + 1}s1ser3`
-                        const downloadLink = movieData && movieData[downloadKey]
+                        const downloadLink = movieData[downloadKey]
                         if (!downloadLink) return null
                         return (
                           <div
@@ -1475,11 +2492,12 @@ const dead_hot_season_01_2024 = ({ movie }) => {
                                 <span
                                   style={{
                                     color: '#f80303',
-                                    fontSize: '24px',
+                                    fontSize: '20px',
                                     textShadow: '3px 5px 5px #000'
                                   }}
                                 >
-                                  Download Now{' '}
+                                  {' '}
+                                  Episode {episodeNumber + 1}{' '}
                                   <i
                                     className='fa fa-magnet'
                                     aria-hidden='true'
@@ -1524,7 +2542,7 @@ const dead_hot_season_01_2024 = ({ movie }) => {
               >
                 Official Trailer {movie && movie.name}
               </h2>
-              {/* <div
+           {/* <div
                 id='player'
                 style={{
                   filter:
@@ -1532,39 +2550,36 @@ const dead_hot_season_01_2024 = ({ movie }) => {
                 }}
               ></div> */}
               <div
-                style={{
-                  position: 'relative',
-                  paddingBottom: '56.25%',
-                  height: 0,
-                  overflow: 'hidden'
-                }}
-              >
-                <iframe
                   style={{
-                    width: '100%',
-                    height: '100%',
-                    position: 'absolute',
-                    left: '0px',
-                    top: '0px',
-                    overflow: 'hidden',
-                    filter:
-                      'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+                    position: "relative",
+                    paddingBottom: "56.25%",
+                    height: 0,
+                    overflow: "hidden",
                   }}
-                  className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
-                  frameborder='0'
-                  type='text/html'
-                  ref={audioIframeRef}
-                  id='audioIframe'
-                  src={`https://geo.dailymotion.com/player/xjrxe.html?video=${
-                    movie && movie.video
-                  }&Autoquality=1080p`}
-                  width='100%'
-                  height='100%'
-                  allowfullscreen
-                  title='Dailymotion Video Player'
-                  allow='autoplay'
-                ></iframe>
-              </div>
+                >
+                  <iframe
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      position: "absolute",
+                      left: "0px",
+                      top: "0px",
+                      overflow: "hidden",
+                      filter: 'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)' 
+                    }}
+                    className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
+                    frameborder="0"
+                    type="text/html"
+                    ref={audioIframeRef}
+                                id="audioIframe"
+                    src={`https://geo.dailymotion.com/player/xjrxe.html?video=${movie && movie.video}&Autoquality=1080p`}
+                    width="100%"
+                    height="100%"
+                    allowfullscreen
+                    title="Dailymotion Video Player"
+                    allow="autoplay"
+                  ></iframe>
+                </div>
               <p
                 style={{
                   color: '#40D7BC',
@@ -1583,39 +2598,39 @@ const dead_hot_season_01_2024 = ({ movie }) => {
           </div>
         )}
         <style jsx>{`
-          .popup-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999; /* Set a high z-index value */
-          }
+  .popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Set a high z-index value */
+  }
 
-          .popup {
-            width: 800px;
-            background-color: gray;
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            animation: slide-down 0.5s ease;
-            position: relative; /* Ensure the z-index works */
-            z-index: 10000; /* Set a higher z-index value */
-          }
+  .popup {
+    width: 800px;
+    background-color: gray;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    animation: slide-down 0.5s ease;
+    position: relative; /* Ensure the z-index works */
+    z-index: 10000; /* Set a higher z-index value */
+  }
 
-          @keyframes slide-down {
-            from {
-              transform: translateY(-100%);
-            }
-            to {
-              transform: translateY(0);
-            }
-          }
-        `}</style>
+  @keyframes slide-down {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+`}</style>
 
         <div class='container1'>
           <ShareButtons
@@ -1656,7 +2671,6 @@ export async function getServerSideProps () {
   const res = await fetch('https://watchmoviesonline.vercel.app/movies.json')
   const data = await res.json()
   const selectedMovie = data.find(movie => movie.id === 'INDEX109')
-
   return {
     props: {
       movie: selectedMovie
@@ -1664,4 +2678,4 @@ export async function getServerSideProps () {
   }
 }
 
-export default dead_hot_season_01_2024
+export default dead_hot_season_01_2024;
