@@ -53,6 +53,11 @@ const ShareButtons = ({ movieId }) => {
           </EmailShareButton>
         </div>
       )}
+      {movieData && (
+        <div>
+          <img src={movieData.backimage} alt={movieData.title} />
+        </div>
+      )}
     </>
   );
 };
