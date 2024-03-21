@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   FacebookShareButton,
   LinkedinShareButton,
@@ -12,8 +12,25 @@ import {
   EmailIcon,
 } from 'react-share';
 
-const ShareButtons = ({ movie }) => {
-  if (!movie) {
+const ShareButtons = ({ movieId }) => {
+  const [movieData, setMovieData] = useState(null);
+
+  useEffect(() => {
+    const fetchMovieData = async () => {
+      try {
+        const response = await fetch('/movies.json');
+        const data = await response.json();
+        const movie = data.find(movie => movie.id === movieId);
+        setMovieData(movie);
+      } catch (error) {
+        console.error('Error fetching movie data:', error);
+      }
+    };
+
+    fetchMovieData();
+  }, [movieId]);
+
+  if (!movieData) {
     return (
       <div
         style={{
@@ -39,30 +56,30 @@ const ShareButtons = ({ movie }) => {
           mode='normal'
         ></lottie-player>
       </div>
-    );
+    )
   }
 
-  const { url, title, backimage } = movie;
+  const { url, title, backimage } = movieData;
 
   return (
-    <div className="bg-transparent flex gap-2 justify-center p-2">
-      <FacebookShareButton url={url} quote={title} hashtag="#drtrailer" image={backimage}>
+    <div className="bg-black shadow container flex gap-2 justify-center p-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <FacebookShareButton url={url} quote={title} hashtag="#drtrailer">
         <FacebookIcon size={48} round />
       </FacebookShareButton>
 
-      <TwitterShareButton url={url} title={title} image={backimage}>
+      <TwitterShareButton url={url} title={title}>
         <TwitterIcon size={48} round />
       </TwitterShareButton>
 
-      <LinkedinShareButton url={url} title={title} image={backimage}>
+      <LinkedinShareButton url={url} title={title}>
         <LinkedinIcon size={48} round />
       </LinkedinShareButton>
 
-      <WhatsappShareButton url={url} title={title} image={backimage}>
+      <WhatsappShareButton url={url} title={title}>
         <WhatsappIcon size={48} round />
       </WhatsappShareButton>
 
-      <EmailShareButton url={url} subject={title} body="Check this out!" image={backimage}>
+      <EmailShareButton url={url} subject={title} body="Check this out!">
         <EmailIcon size={48} round />
       </EmailShareButton>
     </div>
