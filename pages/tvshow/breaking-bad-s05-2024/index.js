@@ -744,13 +744,12 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
             }}
           />
 
-{movieData && (
-  <ShareButtons
-    url={movieData.movie.url}
-    title={movieData.title}
-    image={movieData.image}
-  />
-)}
+          <ShareButtons
+            url={movieData.movie.url}
+            title={movieData.title}
+            image={movieData.image}
+            style={{ marginBottom: '20px' }}
+          />
 
           <h2
             style={{
@@ -4809,14 +4808,11 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
         `}</style>
 
         <div class='container1'>
-        {movieData && (
-  <ShareButtons
-    url={movieData.movie.url}
-    title={movieData.title}
-    image={movieData.image}
-  />
-)}
-
+          <ShareButtons
+            url='https://watchmoviesonline.vercel.app'
+            title='The Best Movies Platform HD Movies'
+            image='https://watchmoviesonline.vercel.app/og_image.jpg'
+          />
         </div>
         <h2
           className='mb-10 animate-pulse'
@@ -4835,14 +4831,11 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
         <TrendingMovies />
         <Max />
         <div class='container1'>
-        {movieData && (
-  <ShareButtons
-    url={movieData.movie.url}
-    title={movieData.title}
-    image={movieData.image}
-  />
-)}
-
+          <ShareButtons
+            url='https://watchmoviesonline.vercel.app'
+            title='The Best Movies Platform HD Movies'
+            image='https://watchmoviesonline.vercel.app/og_image.jpg'
+          />
         </div>
       </div>
     </div>
