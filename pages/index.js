@@ -352,7 +352,12 @@ export default function Home({ movie }) {
             </div>
           </div>
         </div>
-      
+        <ShareButtons
+            url='https://watchmoviesonline.vercel.app'
+            title='The Best Movies Platform HD Movies'
+            image='https://watchmoviesonline.vercel.app/og_image.jpg'
+            style={{ marginBottom: '20px' }}
+          />
         <h1 className="flex flex-col text-center py-5 font-bold text-3xl items-center justify-center" style={{ color: "#40D7BC", textShadow: "5px 5px 2px #000" }}>Watch Movies Online™ - The Best Movies Platform HD Movies {movie && movie.title} </h1>
         
           <div className="container mt-0 "  >
