@@ -13,6 +13,35 @@ import {
 } from 'react-share';
 
 const ShareButtons = ({ movie }) => {
+  if (!movieData) {
+    return (
+      <div
+        style={{
+          marginTop: '200px',
+          justifyContent: 'center',
+          alignItems: 'center',
+          minHeight: '100vh',
+          padding: '30px',
+          width: '300px',
+          height: '300px',
+          margin: 'auto'
+        }}
+      >
+        <script src='https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js'></script>
+        <lottie-player
+          src='https://lottie.host/e464e1f9-5f31-40e4-aa92-4ac938922fa2/cWvdLv7onO.json'
+          background='#fff'
+          speed='1'
+          style={{ width: '100%', height: '100%' }}
+          loop
+          autoplay
+          direction='1'
+          mode='normal'
+        ></lottie-player>
+      </div>
+    )
+  }
+
   const { url, title, backimage } = movie;
 
   return (
