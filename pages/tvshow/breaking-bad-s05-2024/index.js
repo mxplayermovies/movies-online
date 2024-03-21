@@ -744,12 +744,13 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
             }}
           />
 
-          <ShareButtons
-            url={movieData.movie.url}
-            title={movieData.title}
-            image={movieData.image}
-            style={{ marginBottom: '20px' }}
-          />
+{movieData && (
+  <ShareButtons
+    url={movieData.movie.url}
+    title={movieData.title}
+    image={movieData.image}
+  />
+)}
 
           <h2
             style={{
@@ -4808,12 +4809,13 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
         `}</style>
 
         <div class='container1'>
-        <ShareButtons
-  url={movieData.movie.url}
-  title={movieData.title}
-  image={movieData.image}
-  style={{ marginBottom: '20px' }}
-/>
+        {movieData && (
+  <ShareButtons
+    url={movieData.movie.url}
+    title={movieData.title}
+    image={movieData.image}
+  />
+)}
 
         </div>
         <h2
@@ -4833,12 +4835,13 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
         <TrendingMovies />
         <Max />
         <div class='container1'>
-        <ShareButtons
-  url={movieData.movie.url}
-  title={movieData.title}
-  image={movieData.image}
-  style={{ marginBottom: '20px' }}
-/>
+        {movieData && (
+  <ShareButtons
+    url={movieData.movie.url}
+    title={movieData.title}
+    image={movieData.image}
+  />
+)}
 
         </div>
       </div>
