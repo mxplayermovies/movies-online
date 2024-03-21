@@ -639,12 +639,13 @@ const halo_season_02_2024 = ({ movie }) => {
             }}
           />
 
-          <ShareButtons
-            url='https://watchmoviesonline.vercel.app'
-            title='The Best Movies Platform HD Movies'
-            image='https://watchmoviesonline.vercel.app/og_image.jpg'
-            style={{ marginBottom: '20px' }}
-          />
+<ShareButtons
+  url={movieData.movie.url}
+  title={movieData.title}
+  image={movieData.image}
+  style={{ marginBottom: '20px' }}
+/>
+
           <h2
             style={{
               fontFamily: 'Poppins, sans-serif',
@@ -3044,11 +3045,13 @@ const halo_season_02_2024 = ({ movie }) => {
 `}</style>
 
         <div class='container1'>
-          <ShareButtons
-            url='https://watchmoviesonline.vercel.app'
-            title='The Best Movies Platform HD Movies'
-            image='https://watchmoviesonline.vercel.app/og_image.jpg'
-          />
+        <ShareButtons
+  url={movieData.movie.url}
+  title={movieData.title}
+  image={movieData.image}
+  style={{ marginBottom: '20px' }}
+/>
+
         </div>
         <h2
           className='mb-10 animate-pulse'
@@ -3067,11 +3070,13 @@ const halo_season_02_2024 = ({ movie }) => {
         <TrendingMovies />
         <Max />
         <div class='container1'>
-          <ShareButtons
-            url='https://watchmoviesonline.vercel.app'
-            title='The Best Movies Platform HD Movies'
-            image='https://watchmoviesonline.vercel.app/og_image.jpg'
-          />
+        <ShareButtons
+  url={movieData.movie.url}
+  title={movieData.title}
+  image={movieData.image}
+  style={{ marginBottom: '20px' }}
+/>
+
         </div>
       </div>
     </div>
