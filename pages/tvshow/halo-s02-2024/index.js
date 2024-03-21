@@ -639,13 +639,7 @@ const halo_season_02_2024 = ({ movie }) => {
             }}
           />
 
-{movieData && (
-  <ShareButtons
-    url={movieData.movie.url}
-    title={movieData.title}
-    image={movieData.image}
-  />
-)}
+<ShareButtons url={url} title={title} image={backimage} />
 
           <h2
             style={{
@@ -3046,13 +3040,7 @@ const halo_season_02_2024 = ({ movie }) => {
 `}</style>
 
         <div class='container1'>
-        {movieData && (
-  <ShareButtons
-    url={movieData.movie.url}
-    title={movieData.title}
-    image={movieData.image}
-  />
-)}
+        <ShareButtons url={url} title={title} image={backimage} />
 
         </div>
         <h2
@@ -3072,14 +3060,8 @@ const halo_season_02_2024 = ({ movie }) => {
         <TrendingMovies />
         <Max />
         <div class='container1'>
-        {movieData && (
-  <ShareButtons
-    url={movieData.movie.url}
-    title={movieData.title}
-    image={movieData.image}
-  />
-)}
-
+        {/* <ShareButtons movie={movie} /> */}
+        <ShareButtons url={url} title={title} image={backimage} />
         </div>
       </div>
     </div>
