@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 const ShareButtons = ({ movieId }) => {
   const [movieData, setMovieData] = useState(null);
 
