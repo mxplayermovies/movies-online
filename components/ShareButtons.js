@@ -59,27 +59,27 @@ const ShareButtons = ({ movieId }) => {
     )
   }
 
-  const { url, title, backimage } = movieData;
+  const { movie.url, title, backimage } = movieData;
 
   return (
-    <div className="bg-black shadow container flex gap-2 justify-center p-2" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-      <FacebookShareButton url={url} quote={title} hashtag="#drtrailer">
+    <div className="bg-transparent flex gap-2 justify-center p-2">
+      <FacebookShareButton url={movie.url} quote={title} hashtag="#drtrailer">
         <FacebookIcon size={48} round />
       </FacebookShareButton>
 
-      <TwitterShareButton url={url} title={title}>
+      <TwitterShareButton url={movie.url} title={title}>
         <TwitterIcon size={48} round />
       </TwitterShareButton>
 
-      <LinkedinShareButton url={url} title={title}>
+      <LinkedinShareButton url={movie.url} title={title}>
         <LinkedinIcon size={48} round />
       </LinkedinShareButton>
 
-      <WhatsappShareButton url={url} title={title}>
+      <WhatsappShareButton url={movie.url} title={title}>
         <WhatsappIcon size={48} round />
       </WhatsappShareButton>
 
-      <EmailShareButton url={url} subject={title} body="Check this out!">
+      <EmailShareButton url={movie.url} subject={title} body="Check this out!">
         <EmailIcon size={48} round />
       </EmailShareButton>
     </div>
