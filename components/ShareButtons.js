@@ -1,4 +1,16 @@
 import { useState, useEffect } from "react";
+import {
+  FacebookShareButton,
+  LinkedinShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+  EmailShareButton,
+  FacebookIcon,
+  LinkedinIcon,
+  TwitterIcon,
+  WhatsappIcon,
+  EmailIcon,
+} from 'react-share';
 
 const ShareButtons = ({ movieId }) => {
   const [movieData, setMovieData] = useState(null);
@@ -6,7 +18,7 @@ const ShareButtons = ({ movieId }) => {
   useEffect(() => {
     const fetchMovieDetails = async () => {
       try {
-        const response = await fetch(`/movies.json`);
+        const response = await fetch('/movies.json');
         const data = await response.json();
         const movie = data.find(movie => movie.id === movieId);
         setMovieData(movie);
