@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   FacebookShareButton,
   LinkedinShareButton,
@@ -18,7 +18,7 @@ const ShareButtons = ({ movieId }) => {
   useEffect(() => {
     const fetchMovieDetails = async () => {
       try {
-        const response = await fetch('/movies.json');
+        const response = await fetch(`/movies.json`);
         const data = await response.json();
         const movie = data.find(movie => movie.id === movieId);
         setMovieData(movie);
@@ -30,35 +30,25 @@ const ShareButtons = ({ movieId }) => {
     fetchMovieDetails();
   }, [movieId]);
 
-  useEffect(() => {
-    const handleContextMenu = e => {
-      e.preventDefault();
-    };
-    document.addEventListener('contextmenu', handleContextMenu);
-    return () => {
-      document.removeEventListener('contextmenu', handleContextMenu);
-    };
-  }, []);
-
   const shareQuote = movieData ? `The Best Movies Platform HD Movies - ${movieData.title}` : '';
 
   return (
     <>
       {movieData && (
         <div className="bg-transparent flex gap-2 justify-center p-2">
-          <FacebookShareButton url={movieData.movie.url} quote={shareQuote} hashtag="#drtrailer">
+          <FacebookShareButton url={movieData.url} quote={shareQuote} hashtag="#drtrailer">
             <FacebookIcon size={48} round />
           </FacebookShareButton>
-          <TwitterShareButton url={movieData.movie.url} title={shareQuote}>
+          <TwitterShareButton url={movieData.url} title={shareQuote}>
             <TwitterIcon size={48} round />
           </TwitterShareButton>
-          <LinkedinShareButton url={movieData.movie.url} title={shareQuote}>
+          <LinkedinShareButton url={movieData.url} title={shareQuote}>
             <LinkedinIcon size={48} round />
           </LinkedinShareButton>
-          <WhatsappShareButton url={movieData.movie.url} title={shareQuote}>
+          <WhatsappShareButton url={movieData.url} title={shareQuote}>
             <WhatsappIcon size={48} round />
           </WhatsappShareButton>
-          <EmailShareButton url={movieData.movie.url} subject={shareQuote} body="Check this out!">
+          <EmailShareButton url={movieData.url} subject={shareQuote} body="Check this out!">
             <EmailIcon size={48} round />
           </EmailShareButton>
         </div>
