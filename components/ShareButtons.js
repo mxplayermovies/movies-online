@@ -12,7 +12,7 @@ import {
   EmailIcon,
 } from 'react-share';
 
-const ShareButtons = ({ movie }) => {
+const ShareButtons = ({ movieData }) => {
   if (!movieData) {
     return (
       <div
