@@ -32,29 +32,27 @@ const ShareButtons = ({ movieId }) => {
 
   const shareQuote = movieData ? `Watch Movies Online™ - ${movieData.title}` : '';
   const shareUrl = movieData ? movieData.url : '';
-  const title = movieData ? movieData.title : '';
   const imageUrl = movieData ? movieData.backimage : '';
 
   return (
     <>
       <div className="bg-transparent flex gap-2 justify-center p-2">
-        <FacebookShareButton url={shareUrl} quote={shareQuote} hashtag="#drtrailer">
+        <FacebookShareButton url={shareUrl} quote={shareQuote} hashtag="#drtrailer" image={imageUrl}>
           <FacebookIcon size={48} round />
         </FacebookShareButton>
-        <TwitterShareButton url={shareUrl} title={shareQuote}>
+        <TwitterShareButton url={shareUrl} title={shareQuote} image={imageUrl}>
           <TwitterIcon size={48} round />
         </TwitterShareButton>
-        <LinkedinShareButton url={shareUrl} title={shareQuote}>
+        <LinkedinShareButton url={shareUrl} title={shareQuote} image={imageUrl}>
           <LinkedinIcon size={48} round />
         </LinkedinShareButton>
-        <WhatsappShareButton url={shareUrl} title={shareQuote}>
+        <WhatsappShareButton url={shareUrl} title={shareQuote} image={imageUrl}>
           <WhatsappIcon size={48} round />
         </WhatsappShareButton>
-        <EmailShareButton url={shareUrl} subject={title} body="Check this out!">
+        <EmailShareButton url={shareUrl} subject={shareQuote} body="Check this out!" image={imageUrl}>
           <EmailIcon size={48} round />
         </EmailShareButton>
       </div>
-      {imageUrl && <img src={imageUrl} alt={title} />}
     </>
   );
 };
