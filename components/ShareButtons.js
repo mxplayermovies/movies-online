@@ -12,8 +12,8 @@ import {
   EmailIcon,
 } from 'react-share';
 
-const ShareButtons = ({ movieData }) => {
-  if (!movieData) {
+const ShareButtons = ({ movie }) => {
+  if (!movie) {
     return (
       <div
         style={{
@@ -39,7 +39,7 @@ const ShareButtons = ({ movieData }) => {
           mode='normal'
         ></lottie-player>
       </div>
-    )
+    );
   }
 
   const { url, title, backimage } = movie;
