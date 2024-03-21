@@ -1,17 +1,3 @@
-import React, { useState, useEffect } from 'react';
-import {
-  FacebookShareButton,
-  LinkedinShareButton,
-  TwitterShareButton,
-  WhatsappShareButton,
-  EmailShareButton,
-  FacebookIcon,
-  LinkedinIcon,
-  TwitterIcon,
-  WhatsappIcon,
-  EmailIcon,
-} from 'react-share';
-
 const ShareButtons = ({ movieId }) => {
   const [movieData, setMovieData] = useState(null);
 
@@ -31,7 +17,7 @@ const ShareButtons = ({ movieId }) => {
   }, [movieId]);
 
   const shareQuote = movieData ? `Watch Movies Online™ - ${movieData.title}` : '';
-  const shareUrl = movieData ? movieData.url : '';
+  const shareUrl = movieData ? movieData.movie.url : ''; // Adjusted to fetch from movie.url
   const imageUrl = movieData ? movieData.backimage : '';
 
   return (
