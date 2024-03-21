@@ -643,7 +643,12 @@ const halo_season_02_2024 = ({ movie }) => {
             }}
           />
 
-          <ShareButtons />
+          <ShareButtons
+            url={movie['movie.url']}
+            title={`Watch ${movie.name} | Watch Movies Online™`}
+            image={movie.backimage}
+            style={{ marginBottom: '20px' }}
+          />
           <h2
             style={{
               fontFamily: 'Poppins, sans-serif',
@@ -3046,7 +3051,12 @@ const halo_season_02_2024 = ({ movie }) => {
         `}</style>
 
         <div class='container1'>
-          <ShareButtons  />
+        <ShareButtons
+            url={movie['movie.url']}
+            title={`Watch ${movie.name} | Watch Movies Online™`}
+            image={movie.backimage}
+            style={{ marginBottom: '20px' }}
+          />
         </div>
         <h2
           className='mb-10 animate-pulse'
@@ -3065,7 +3075,12 @@ const halo_season_02_2024 = ({ movie }) => {
         <TrendingMovies />
         <Max />
         <div class='container1'>
-          <ShareButtons  />
+          <ShareButtons
+            url={movie['movie.url']}
+            title={`Watch ${movie.name} | Watch Movies Online™`}
+            image={movie.backimage}
+            style={{ marginBottom: '20px' }}
+          />
         </div>
       </div>
     </div>
