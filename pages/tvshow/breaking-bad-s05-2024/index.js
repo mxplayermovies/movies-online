@@ -122,16 +122,6 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
       })
   }, [])
 
-  useEffect(() => {
-    import('bootstrap/dist/js/bootstrap.bundle.min.js')
-      .then(() => {
-        // Bootstrap JavaScript has been loaded
-        // Initialize any Bootstrap components here
-      })
-      .catch((error) => {
-        console.error('Error loading Bootstrap JavaScript:', error);
-      });
-  }, []);
   
   // let player
 
@@ -656,11 +646,7 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
           property='article:modified_time'
           content='2024-01-01T13:13:13+00:00'
         />
-        <meta
-          property='og:image'
-          content={movie && movie.thumbnailUrl ? movie.thumbnailUrl : ''}
-        />
-
+      <meta property="og:image" content="https://i.postimg.cc/9f9DHRL2/Breaking-Bad-2013.webp" />
         <meta property='og:image:width' content='303' />
         <meta property='og:image:height' content='430' />
         <meta property='og:image:type' content='image/webp' />
