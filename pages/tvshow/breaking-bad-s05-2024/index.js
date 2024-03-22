@@ -645,7 +645,8 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
           property='article:modified_time'
           content='2024-01-01T13:13:13+00:00'
         />
-      <meta property='og:image' content={movie && movie.thumbnailUrl ? movie.thumbnailUrl : ''} />
+      <meta property='og:image'   content={movie.trailer.thumbnail.contentUrl}
+          />
 
 
         <meta property='og:image:width' content='303' />
