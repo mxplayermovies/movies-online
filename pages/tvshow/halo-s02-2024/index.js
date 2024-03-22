@@ -546,9 +546,7 @@ const halo_season_02_2024 = ({ movie }) => {
         />
       <meta
           property='og:image'
-          content={`https://watchmoviesonline.vercel.app/wp-content/uploads/2023/06/${
-            movie && movie.poster
-          }`}
+          content={ movie && movie.thumbnailUrl}
         />
 
         <meta property='og:image:width' content='303' />
