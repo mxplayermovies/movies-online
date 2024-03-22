@@ -12,31 +12,31 @@ import {
 } from 'react-share';
 
 
-const ShareButtons = ({ title, movieUrl, backimage }) => {
+const ShareButtons = ({ url, title, image }) => {
 
   
   return (
     <>
-      <div className="bg-transparent flex gap-2 justify-center p-2">
-        <FacebookShareButton url={movieUrl} quote={title} hashtag="#drtrailer">
-          <FacebookIcon size={48} round  />
-        </FacebookShareButton>
+     <div className="bg-black shadow container  flex gap-2 justify-center p-2  " style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
+      <FacebookShareButton url={url} quote={title} hashtag="#drtrailer">
+        <FacebookIcon size={48} round  />
+      </FacebookShareButton>
 
-        <TwitterShareButton url={movieUrl} title={title}>
-          <TwitterIcon size={48} round  />
-        </TwitterShareButton>
+      <TwitterShareButton url={url} title={title}>
+        <TwitterIcon size={48} round  />
+      </TwitterShareButton>
 
-        <LinkedinShareButton url={movieUrl}>
-          <LinkedinIcon size={48} round  />
-        </LinkedinShareButton>
+      <LinkedinShareButton url={url}>
+        <LinkedinIcon size={48} round  />
+      </LinkedinShareButton>
 
-        <WhatsappShareButton url={movieUrl} title={title}>
-          <WhatsappIcon size={48} round  />
-        </WhatsappShareButton>
+      <WhatsappShareButton url={url} title={title}>
+        <WhatsappIcon size={48} round  />
+      </WhatsappShareButton>
 
-        <EmailShareButton url={movieUrl} subject={title} body="Check this out!">
-          <EmailIcon size={48} round  />
-        </EmailShareButton>
+      <EmailShareButton url={url} subject={title} body="Check this out!">
+        <EmailIcon size={48} round  />
+      </EmailShareButton>
       </div>
     </>
   );
