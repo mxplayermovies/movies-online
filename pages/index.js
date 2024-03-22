@@ -6,6 +6,7 @@ import { useState, useRef, useEffect } from "react";
 import Script from 'next/script';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const scrollSearch = myKey => {
