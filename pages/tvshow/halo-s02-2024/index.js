@@ -544,11 +544,7 @@ const halo_season_02_2024 = ({ movie }) => {
           property='article:modified_time'
           content='2024-01-01T13:13:13+00:00'
         />
-      <meta
-          property='og:image'
-          content={movie.trailer.thumbnail.contentUrl}
-         
-        />
+     <meta property="og:image" content="https://beebom.com/wp-content/uploads/2023/12/Halo-Season-2.jpg" />
 
         <meta property='og:image:width' content='303' />
         <meta property='og:image:height' content='430' />
