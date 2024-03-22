@@ -17,7 +17,7 @@ const ShareButtons = ({ url, title, image }) => {
   
   return (
     <>
-     <div className="bg-black shadow container  flex gap-2 justify-center p-2  " style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
+    <div className="bg-transparent flex gap-2 justify-center p-2">
       <FacebookShareButton url={url} quote={title} hashtag="#drtrailer">
         <FacebookIcon size={48} round  />
       </FacebookShareButton>
