@@ -745,10 +745,16 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
           />
 
           <ShareButtons
-            url={movieData.movie.url}
-            title={movieData.title}
-            image={movieData.image}
-            style={{ marginBottom: '20px' }}
+            url={movie['movie.url']}
+            title={`${
+              movie && movie.name
+            } | The Best Movies Platform HD Movies`}
+            image={movie['movie.image']}
+            style={{
+              marginBottom: '20px',
+              filter:
+                'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+            }}
           />
 
           <h2
@@ -4809,9 +4815,16 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
 
         <div class='container1'>
           <ShareButtons
-            url='https://watchmoviesonline.vercel.app'
-            title='The Best Movies Platform HD Movies'
-            image='https://watchmoviesonline.vercel.app/og_image.jpg'
+            url={movie['movie.url']}
+            title={`${
+              movie && movie.name
+            } | The Best Movies Platform HD Movies`}
+            image={movie['movie.image']}
+            style={{
+              marginBottom: '20px',
+              filter:
+                'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+            }}
           />
         </div>
         <h2
@@ -4832,9 +4845,16 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
         <Max />
         <div class='container1'>
           <ShareButtons
-            url='https://watchmoviesonline.vercel.app'
-            title='The Best Movies Platform HD Movies'
-            image='https://watchmoviesonline.vercel.app/og_image.jpg'
+            url={movie['movie.url']}
+            title={`${
+              movie && movie.name
+            } | The Best Movies Platform HD Movies`}
+            image={movie['movie.image']}
+            style={{
+              marginBottom: '20px',
+              filter:
+                'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+            }}
           />
         </div>
       </div>
