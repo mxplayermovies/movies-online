@@ -6,7 +6,7 @@ class MyDocument extends Document {
       <Html>
         <Head>
           {/* Add the script tag for the YouTube IFrame Player API */}
-          <script src="https://www.youtube.com/iframe_api" />
+       
           {/* Include Bootstrap and Tailwind CSS */}
          
         </Head>
