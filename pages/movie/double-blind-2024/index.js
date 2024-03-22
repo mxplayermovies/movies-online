@@ -495,14 +495,9 @@ const double_blind_2024 = ({ movie }) => {
           property='article:modified_time'
           content='2024-01-01T13:13:13+00:00'
         />
-        <meta
-          property='og:image'
-          content={`https://watchmoviesonline.vercel.app/wp-content/uploads/2023/06/${
-            movie && movie.poster
-          }`}
-        />
-        <meta property='og:image:width' content='303' />
-        <meta property='og:image:height' content='430' />
+       <meta property='og:image' content="https://i.postimg.cc/Vv9PFR75/Double-Blind-2024.jpg" />
+        <meta property='og:image:width' content='1280' />
+        <meta property='og:image:height' content='720' />
         <meta property='og:image:type' content='image/webp' />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:label1' content='Est. reading time' />

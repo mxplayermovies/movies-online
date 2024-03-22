@@ -29,7 +29,7 @@ const Dmca = () => {
 	<meta property="og:description" content="Watch Movies, TV-Series & Sports Live Online Free " />
 	<meta property="og:url" content="https://watchmoviesonline.vercel.app/" />
 	<meta property="og:image:type" content="image/jpeg" />
-	<meta property="og:image" content="https://watchmoviesonline.vercel.app/og_image.jpg" />
+	<meta property='og:image' content="https://watchmoviesonline.vercel.app/og_image.jpg" />
 	<meta property="og:image:secure_url" content="https://watchmoviesonline.vercel.app/og_image.jpg" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:title" content="Watch Movies Online™ " />

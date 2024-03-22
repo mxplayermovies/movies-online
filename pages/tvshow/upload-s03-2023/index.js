@@ -190,66 +190,74 @@ const upload_season_03_2023 = ({ movie }) => {
     setShowPopup(!showPopup)
   }
 
-  const audioIframeRef = useRef(null);
-  const predefinedEqualizationValue = 70;
-  const predefinedNoiseReductionValue = 40;
-  const audioSourceQuality = "high";
-  const enableNoiseCancellation = true;
+  const audioIframeRef = useRef(null)
+  const predefinedEqualizationValue = 70
+  const predefinedNoiseReductionValue = 40
+  const audioSourceQuality = 'high'
+  const enableNoiseCancellation = true
 
   useEffect(() => {
     const autoAdjustSoundEnhancements = () => {
-      const iframeWindow = audioIframeRef.current.contentWindow;
+      const iframeWindow = audioIframeRef.current.contentWindow
 
       if (iframeWindow && iframeWindow.postMessage) {
-        iframeWindow.postMessage({
-          command: 'autoAdjustSoundEnhancements',
-          equalizationValue: predefinedEqualizationValue,
-          noiseReductionValue: predefinedNoiseReductionValue,
-          audioSourceQuality: audioSourceQuality
-        }, '*');
+        iframeWindow.postMessage(
+          {
+            command: 'autoAdjustSoundEnhancements',
+            equalizationValue: predefinedEqualizationValue,
+            noiseReductionValue: predefinedNoiseReductionValue,
+            audioSourceQuality: audioSourceQuality
+          },
+          '*'
+        )
       }
-    };
+    }
 
     const loadAudioProcessing = () => {
-      autoAdjustSoundEnhancements();
+      autoAdjustSoundEnhancements()
 
-      const iframeAudioElement = audioIframeRef.current.contentDocument.getElementById('audioPlayer');
+      const iframeAudioElement =
+        audioIframeRef.current.contentDocument.getElementById('audioPlayer')
 
-      const iframeAudioContext = new (window.AudioContext || window.webkitAudioContext)();
-      const sourceNode = iframeAudioContext.createMediaElementSource(iframeAudioElement);
+      const iframeAudioContext = new (window.AudioContext ||
+        window.webkitAudioContext)()
+      const sourceNode =
+        iframeAudioContext.createMediaElementSource(iframeAudioElement)
 
       // Noise cancellation processing
       if (enableNoiseCancellation) {
-        const noiseCancellationNode = iframeAudioContext.createBiquadFilter();
-        noiseCancellationNode.type = 'highpass'; // Using high-pass filter for noise cancellation
-        noiseCancellationNode.frequency.value = 2000; // Adjust the cutoff frequency as needed (example: 2000 Hz)
-        sourceNode.connect(noiseCancellationNode);
-        noiseCancellationNode.connect(iframeAudioContext.destination);
+        const noiseCancellationNode = iframeAudioContext.createBiquadFilter()
+        noiseCancellationNode.type = 'highpass' // Using high-pass filter for noise cancellation
+        noiseCancellationNode.frequency.value = 2000 // Adjust the cutoff frequency as needed (example: 2000 Hz)
+        sourceNode.connect(noiseCancellationNode)
+        noiseCancellationNode.connect(iframeAudioContext.destination)
       }
 
       // Load and apply the impulse response (Mills Greek Theater)
-      fetch('../wp-content/themes/website/assets/274600-Future-Wave-Rise-01.wav') // Update with the actual file path
+      fetch(
+        '../wp-content/themes/website/assets/274600-Future-Wave-Rise-01.wav'
+      ) // Update with the actual file path
         .then(response => response.arrayBuffer())
         .then(buffer => iframeAudioContext.decodeAudioData(buffer))
         .then(audioBuffer => {
-          const convolverNode = iframeAudioContext.createConvolver();
-          convolverNode.buffer = audioBuffer;
-          sourceNode.connect(convolverNode);
-          convolverNode.connect(iframeAudioContext.destination);
+          const convolverNode = iframeAudioContext.createConvolver()
+          convolverNode.buffer = audioBuffer
+          sourceNode.connect(convolverNode)
+          convolverNode.connect(iframeAudioContext.destination)
         })
-        .catch(error => console.error('Error loading impulse response:', error));
-    };
+        .catch(error => console.error('Error loading impulse response:', error))
+    }
 
     if (audioIframeRef.current) {
-      audioIframeRef.current.addEventListener('load', loadAudioProcessing);
+      audioIframeRef.current.addEventListener('load', loadAudioProcessing)
     }
 
     return () => {
       if (audioIframeRef.current) {
-        audioIframeRef.current.removeEventListener('load', loadAudioProcessing);
+        audioIframeRef.current.removeEventListener('load', loadAudioProcessing)
       }
-    };
-  }, [movie, enableNoiseCancellation]);
+    }
+  }, [movie, enableNoiseCancellation])
 
   const loadVideo = (videoPage, contentType, server) => {
     const videoIframe = document.getElementById('videoIframe')
@@ -312,103 +320,102 @@ const upload_season_03_2023 = ({ movie }) => {
   }
 
   const rankMathSchema = JSON.stringify({
-    "@context": "https://schema.org",
-    "@graph": [
+    '@context': 'https://schema.org',
+    '@graph': [
       {
-        "@type": ["Person", "Organization"],
-        "@id": "https://gravatar.com/drtrailer2022/#person",
-        "name": "Dr Trailer"
+        '@type': ['Person', 'Organization'],
+        '@id': 'https://gravatar.com/drtrailer2022/#person',
+        name: 'Dr Trailer'
       },
       {
-        "@type": "WebSite",
-        "@id": "https://watchmoviesonline.vercel.app/#website",
-        "url": "https://watchmoviesonline.vercel.app/",
-        "name": "Watch Movies Online™",
-        "publisher": {
-          "@id": "https://gravatar.com/drtrailer2022/#person"
+        '@type': 'WebSite',
+        '@id': 'https://watchmoviesonline.vercel.app/#website',
+        url: 'https://watchmoviesonline.vercel.app/',
+        name: 'Watch Movies Online™',
+        publisher: {
+          '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
-        "inLanguage": "en-US"
+        inLanguage: 'en-US'
       },
       {
-        "@type": "WebPage",
-        "@id": `/${movie["movie.watch"]}#webpage`,
-        "url": `/${movie["movie.watch"]}`,
-        "name": `${movie.name} | Watch Movies Online™`,
-        "datePublished": "2024-01-13T13:00:00+00:00",
-        "dateModified": "2024-01-13T13:13:00+00:00",
-        "isPartOf": {
-          "@id": "https://watchmoviesonline.vercel.app/#website"
+        '@type': 'WebPage',
+        '@id': `/${movie['movie.watch']}#webpage`,
+        url: `/${movie['movie.watch']}`,
+        name: `${movie.name} | Watch Movies Online™`,
+        datePublished: '2024-01-13T13:00:00+00:00',
+        dateModified: '2024-01-13T13:13:00+00:00',
+        isPartOf: {
+          '@id': 'https://watchmoviesonline.vercel.app/#website'
         },
-        "inLanguage": "en-US"
+        inLanguage: 'en-US'
       },
       {
-        "@type": "Person",
-        "@id": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/",
-        "name": "Dr Trailer",
-        "url": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/",
-        "image": {
-          "@type": "ImageObject",
-          "@id": "https://gravatar.com/drtrailer2022",
-          "url": "https://gravatar.com/drtrailer2022",
-          "caption": "Dr Trailer",
-          "inLanguage": "en-US"
+        '@type': 'Person',
+        '@id': 'https://watchmoviesonline.vercel.app/author/watchmoviesonline/',
+        name: 'Dr Trailer',
+        url: 'https://watchmoviesonline.vercel.app/author/watchmoviesonline/',
+        image: {
+          '@type': 'ImageObject',
+          '@id': 'https://gravatar.com/drtrailer2022',
+          url: 'https://gravatar.com/drtrailer2022',
+          caption: 'Dr Trailer',
+          inLanguage: 'en-US'
         },
-        "sameAs": [
-          "https://watchmoviesonline.vercel.app/"
-        ]
+        sameAs: ['https://watchmoviesonline.vercel.app/']
       },
       {
-        "@type": "Article",
-        "@id": `/${movie["movie.watch"]}#article`,
-        "headline": `Watch ${movie.name} | Watch Movies Online™`,
-        "datePublished": "2024-01-13T13:00:00+00:00",
-        "dateModified": "2024-01-13T13:13:00+00:00",
-        "articleSection": "Movie",
-        "author": {
-          "@id": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/"
+        '@type': 'Article',
+        '@id': `/${movie['movie.watch']}#article`,
+        headline: `Watch ${movie.name} | Watch Movies Online™`,
+        datePublished: '2024-01-13T13:00:00+00:00',
+        dateModified: '2024-01-13T13:13:00+00:00',
+        articleSection: 'Movie',
+        author: {
+          '@id':
+            'https://watchmoviesonline.vercel.app/author/watchmoviesonline/'
         },
-        "publisher": {
-          "@id": "https://gravatar.com/drtrailer2022/#person"
+        publisher: {
+          '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
-        "description": `Watch Movies Online | ${movie.name} for free. Where you can find movies of your interest in full HD quality updated on a daily basis. Watch Now or Download Now to Watch Later!`,
-        "image": movie.image,
-        "name": `Watch ${movie.name} | Watch Movies Online™`,
-        "isPartOf": {
-          "@id": `/${movie["movie.watch"]}#webpage`
+        description: `Watch Movies Online | ${movie.name} for free. Where you can find movies of your interest in full HD quality updated on a daily basis. Watch Now or Download Now to Watch Later!`,
+        image: movie.image,
+        name: `Watch ${movie.name} | Watch Movies Online™`,
+        isPartOf: {
+          '@id': `/${movie['movie.watch']}#webpage`
         },
-        "inLanguage": "en-US",
-        "mainEntityOfPage": {
-          "@id": `/${movie["movie.watch"]}#webpage`
+        inLanguage: 'en-US',
+        mainEntityOfPage: {
+          '@id': `/${movie['movie.watch']}#webpage`
         }
       },
       {
-        "@type": "BlogPosting",
-        "@id": `/${movie["movie.watch"]}#blogPost`,
-        "headline": `Watch ${movie.name} | Watch Movies Online™`,
-        "datePublished": "2024-01-13T13:00:00+00:00",
-        "dateModified": "2024-01-13T13:13:00+00:00",
-        "articleSection": "Movie",
-        "author": {
-          "@id": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/"
+        '@type': 'BlogPosting',
+        '@id': `/${movie['movie.watch']}#blogPost`,
+        headline: `Watch ${movie.name} | Watch Movies Online™`,
+        datePublished: '2024-01-13T13:00:00+00:00',
+        dateModified: '2024-01-13T13:13:00+00:00',
+        articleSection: 'Movie',
+        author: {
+          '@id':
+            'https://watchmoviesonline.vercel.app/author/watchmoviesonline/'
         },
-        "publisher": {
-          "@id": "https://gravatar.com/drtrailer2022/#person"
+        publisher: {
+          '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
-        "description": `Watch Movies Online | ${movie.name} for free. Where you can find movies of your interest in full HD quality updated on a daily basis. Watch Now or Download Now to Watch Later!`,
-        "image": movie.image,
-        "name": `Watch ${movie.name} | Watch Movies Online™`,
-        "@id": `/${movie["movie.watch"]}#richSnippet`,
-        "isPartOf": {
-          "@id": `/${movie["movie.watch"]}#webpage`
+        description: `Watch Movies Online | ${movie.name} for free. Where you can find movies of your interest in full HD quality updated on a daily basis. Watch Now or Download Now to Watch Later!`,
+        image: movie.image,
+        name: `Watch ${movie.name} | Watch Movies Online™`,
+        '@id': `/${movie['movie.watch']}#richSnippet`,
+        isPartOf: {
+          '@id': `/${movie['movie.watch']}#webpage`
         },
-        "inLanguage": "en-US",
-        "mainEntityOfPage": {
-          "@id": `/${movie["movie.watch"]}#webpage`
+        inLanguage: 'en-US',
+        mainEntityOfPage: {
+          '@id': `/${movie['movie.watch']}#webpage`
         }
       }
     ]
-  });
-  
+  })
 
   // const ldJsonData = JSON.stringify({
   //   "@context": "https://schema.org",
@@ -477,83 +484,82 @@ const upload_season_03_2023 = ({ movie }) => {
   //     "value": ["Desktop Web Platform", "iOS Platform", "Android Platform"]
   //   },
   // });
-  
+
   const ldJsonData = JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "TVSeries",
-    "@id": `${movie["movie.url"]}`,
-    "name": movie.title,
-    "image": `/wp-content/uploads/2023/06/${movie.poster}`,
-    "url": `/${movie["movie.watch"]}`,
-    "description": movie.synopsis,
-    "datePublished": movie.startDate,
-    "contentRating": movie.contentRating,
-    "inLanguage": movie.language,
-    "genre": movie.genre,
-    "director": {
-      "@type": "Person",
-      "name": movie.director
+    '@context': 'https://schema.org',
+    '@type': 'TVSeries',
+    '@id': `${movie['movie.url']}`,
+    name: movie.title,
+    image: `/wp-content/uploads/2023/06/${movie.poster}`,
+    url: `/${movie['movie.watch']}`,
+    description: movie.synopsis,
+    datePublished: movie.startDate,
+    contentRating: movie.contentRating,
+    inLanguage: movie.language,
+    genre: movie.genre,
+    director: {
+      '@type': 'Person',
+      name: movie.director
     },
-    "actor": movie.starring.map((actor) => ({
-      "@type": "Person",
-      "name": actor
+    actor: movie.starring.map(actor => ({
+      '@type': 'Person',
+      name: actor
     })),
-    "potentialAction": {
-      "@type": "WatchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "name": movie.title,
-        "urlTemplate": `${movie["movie.url"]}`
+    potentialAction: {
+      '@type': 'WatchAction',
+      target: {
+        '@type': 'EntryPoint',
+        name: movie.title,
+        urlTemplate: `${movie['movie.url']}`
       }
     },
-    "locationCreated": {
-      "@type": "Place",
-      "name": movie.country
+    locationCreated: {
+      '@type': 'Place',
+      name: movie.country
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": movie.aggregateRating.ratingValue,
-      "bestRating": movie.aggregateRating.bestRating,
-      "worstRating": movie.aggregateRating.worstRating,
-      "ratingCount": movie.aggregateRating.ratingCount
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: movie.aggregateRating.ratingValue,
+      bestRating: movie.aggregateRating.bestRating,
+      worstRating: movie.aggregateRating.worstRating,
+      ratingCount: movie.aggregateRating.ratingCount
     },
-    "author": {
-      "@type": "Person",
-      "@id": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/",
-      "name": "Dr Trailer",
-      "url": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/",
-      "image": {
-        "@type": "ImageObject",
-        "@id": "https://gravatar.com/drtrailer2022",
-        "url": "https://gravatar.com/drtrailer2022",
-        "caption": "Dr Trailer",
-        "inLanguage": "en-US"
+    author: {
+      '@type': 'Person',
+      '@id': 'https://watchmoviesonline.vercel.app/author/watchmoviesonline/',
+      name: 'Dr Trailer',
+      url: 'https://watchmoviesonline.vercel.app/author/watchmoviesonline/',
+      image: {
+        '@type': 'ImageObject',
+        '@id': 'https://gravatar.com/drtrailer2022',
+        url: 'https://gravatar.com/drtrailer2022',
+        caption: 'Dr Trailer',
+        inLanguage: 'en-US'
       }
     },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Watch Movies Online™",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://watchmoviesonline.vercel.app/og_image.jpg"
+    publisher: {
+      '@type': 'Organization',
+      name: 'Watch Movies Online™',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://watchmoviesonline.vercel.app/og_image.jpg'
       }
     },
-    "additionalProperty": {
-      "@type": "PropertyValue",
-      "name": "Action Platform",
-      "value": ["Desktop Web Platform", "iOS Platform", "Android Platform"]
+    additionalProperty: {
+      '@type': 'PropertyValue',
+      name: 'Action Platform',
+      value: ['Desktop Web Platform', 'iOS Platform', 'Android Platform']
     },
-     "numberOfEpisodes": movie.numberOfEpisodes,
-    "name": `${movie.name}`,
-    "episode": movie.episodes.map((episode) => ({
-      "@type": "TVEpisode",
-      "episodeNumber": episode.episodeNumber,
-      "name": episode.name,
-      "description": episode.description
+    numberOfEpisodes: movie.numberOfEpisodes,
+    name: `${movie.name}`,
+    episode: movie.episodes.map(episode => ({
+      '@type': 'TVEpisode',
+      episodeNumber: episode.episodeNumber,
+      name: episode.name,
+      description: episode.description
     }))
-  });
-     
-  
+  })
+
   const trailerSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'VideoObject',
@@ -563,13 +569,13 @@ const upload_season_03_2023 = ({ movie }) => {
     thumbnailUrl: movie.trailer.thumbnail.contentUrl,
     duration: movie.trailer.duration,
     embedUrl: movie.trailer.embedUrl
-  });
+  })
 
   return (
     <div>
       <Head>
         <meta
-            name='robots'
+          name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
         />
         <title> Watch {movie && movie.name} | Watch Movies Online™</title>
@@ -608,13 +614,11 @@ const upload_season_03_2023 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content={`https://watchmoviesonline.vercel.app/wp-content/uploads/2023/06/${
-            movie && movie.poster
-          }`}
+          content='https://i.postimg.cc/sDZh3ZMx/upload_2023.jpg'
         />
 
-        <meta property='og:image:width' content='303' />
-        <meta property='og:image:height' content='430' />
+        <meta property='og:image:width' content='1280' />
+        <meta property='og:image:height' content='720' />
         <meta property='og:image:type' content='image/webp' />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:label1' content='Est. reading time' />
@@ -632,17 +636,17 @@ const upload_season_03_2023 = ({ movie }) => {
           content='dmv6sg06w9r5eji88'
         />
         {/* Add the script tag for the YouTube IFrame Player API */}
-       {/* <script src='https://www.youtube.com/iframe_api' /> */}
+        {/* <script src='https://www.youtube.com/iframe_api' /> */}
         {/* Include Bootstrap and jQuery scripts */}
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: ldJsonData }}
         />
-            <script
+        <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: rankMathSchema }}
         />
-         <script
+        <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: trailerSchema }}
         />
@@ -682,10 +686,8 @@ const upload_season_03_2023 = ({ movie }) => {
           padding: '20px',
           fontFamily: 'Poppins, sans-serif',
           fontWeight: 500,
-           textAlign: 'center',
+          textAlign: 'center'
           // background: '#4B5563'
-
-          
         }}
       >
         <div style={{ maxWidth: '800px', width: '100%', marginBottom: '20px' }}>
@@ -977,7 +979,7 @@ const upload_season_03_2023 = ({ movie }) => {
             </div>
           )}
         </div>
-        <DailyMotionBackground movieId="INDEX08" />
+        <DailyMotionBackground movieId='INDEX08' />
         <h1
           className='flex flex-col text-center py-5 font-bold text-3xl items-center justify-center'
           style={{ color: '#40D7BC', textShadow: '5px 5px 2px #000' }}
@@ -1142,7 +1144,7 @@ const upload_season_03_2023 = ({ movie }) => {
                           mozallowFullScreen
                           allowFullScreen
                           ref={audioIframeRef}
-                                id="audioIframe"
+                          id='audioIframe'
                           src={movie && movie.episode1sa1ser1}
                           style={{
                             filter:
@@ -1212,7 +1214,7 @@ const upload_season_03_2023 = ({ movie }) => {
                           mozallowFullScreen
                           allowFullScreen
                           ref={audioIframeRef}
-                                id="audioIframe"
+                          id='audioIframe'
                           src={movie && movie.episode2sa1ser1}
                           style={{
                             filter:
@@ -1281,7 +1283,7 @@ const upload_season_03_2023 = ({ movie }) => {
                           mozallowFullScreen
                           allowFullScreen
                           ref={audioIframeRef}
-                                id="audioIframe"
+                          id='audioIframe'
                           src={movie && movie.episode3sa1ser1}
                           style={{
                             filter:
@@ -1350,7 +1352,7 @@ const upload_season_03_2023 = ({ movie }) => {
                           mozallowFullScreen
                           allowFullScreen
                           ref={audioIframeRef}
-                                id="audioIframe"
+                          id='audioIframe'
                           src={movie && movie.episode4sa1ser1}
                           style={{
                             filter:
@@ -1419,7 +1421,7 @@ const upload_season_03_2023 = ({ movie }) => {
                           mozallowFullScreen
                           allowFullScreen
                           ref={audioIframeRef}
-                                id="audioIframe"
+                          id='audioIframe'
                           src={movie && movie.episode5sa1ser1}
                           style={{
                             filter:
@@ -1488,7 +1490,7 @@ const upload_season_03_2023 = ({ movie }) => {
                           mozallowFullScreen
                           allowFullScreen
                           ref={audioIframeRef}
-                                id="audioIframe"
+                          id='audioIframe'
                           src={movie && movie.episode6sa1ser1}
                           style={{
                             filter:
@@ -1557,7 +1559,7 @@ const upload_season_03_2023 = ({ movie }) => {
                           mozallowFullScreen
                           allowFullScreen
                           ref={audioIframeRef}
-                                id="audioIframe"
+                          id='audioIframe'
                           src={movie && movie.episode7sa1ser1}
                           style={{
                             filter:
@@ -1626,7 +1628,7 @@ const upload_season_03_2023 = ({ movie }) => {
                           mozallowFullScreen
                           allowFullScreen
                           ref={audioIframeRef}
-                                id="audioIframe"
+                          id='audioIframe'
                           src={movie && movie.episode8sa1ser1}
                           style={{
                             filter:
@@ -1699,7 +1701,7 @@ const upload_season_03_2023 = ({ movie }) => {
                           mozallowFullScreen
                           allowFullScreen
                           ref={audioIframeRef}
-                                id="audioIframe"
+                          id='audioIframe'
                           src={movie && movie.episode1sa1ser2}
                           style={{
                             filter:
@@ -1769,7 +1771,7 @@ const upload_season_03_2023 = ({ movie }) => {
                           mozallowFullScreen
                           allowFullScreen
                           ref={audioIframeRef}
-                                id="audioIframe"
+                          id='audioIframe'
                           src={movie && movie.episode2sa1ser2}
                           style={{
                             filter:
@@ -1838,7 +1840,7 @@ const upload_season_03_2023 = ({ movie }) => {
                           mozallowFullScreen
                           allowFullScreen
                           ref={audioIframeRef}
-                                id="audioIframe"
+                          id='audioIframe'
                           src={movie && movie.episode3sa1ser2}
                           style={{
                             filter:
@@ -1907,7 +1909,7 @@ const upload_season_03_2023 = ({ movie }) => {
                           mozallowFullScreen
                           allowFullScreen
                           ref={audioIframeRef}
-                                id="audioIframe"
+                          id='audioIframe'
                           src={movie && movie.episode4sa1ser2}
                           style={{
                             filter:
@@ -1976,7 +1978,7 @@ const upload_season_03_2023 = ({ movie }) => {
                           mozallowFullScreen
                           allowFullScreen
                           ref={audioIframeRef}
-                                id="audioIframe"
+                          id='audioIframe'
                           src={movie && movie.episode5sa1ser2}
                           style={{
                             filter:
@@ -2045,7 +2047,7 @@ const upload_season_03_2023 = ({ movie }) => {
                           mozallowFullScreen
                           allowFullScreen
                           ref={audioIframeRef}
-                                id="audioIframe"
+                          id='audioIframe'
                           src={movie && movie.episode6sa1ser2}
                           style={{
                             filter:
@@ -2114,7 +2116,7 @@ const upload_season_03_2023 = ({ movie }) => {
                           mozallowFullScreen
                           allowFullScreen
                           ref={audioIframeRef}
-                                id="audioIframe"
+                          id='audioIframe'
                           src={movie && movie.episode7sa1ser2}
                           style={{
                             filter:
@@ -2183,7 +2185,7 @@ const upload_season_03_2023 = ({ movie }) => {
                           mozallowFullScreen
                           allowFullScreen
                           ref={audioIframeRef}
-                                id="audioIframe"
+                          id='audioIframe'
                           src={movie && movie.episode8sa1ser2}
                           style={{
                             filter:
@@ -2211,7 +2213,7 @@ const upload_season_03_2023 = ({ movie }) => {
               </div>
             </TabPanel>
             <TabPanel>
-            <div className='container mt-0'>
+              <div className='container mt-0'>
                 <button
                   className='episode-button relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'
                   onClick={togglePopup1}
@@ -2256,7 +2258,7 @@ const upload_season_03_2023 = ({ movie }) => {
                           mozallowFullScreen
                           allowFullScreen
                           ref={audioIframeRef}
-                                id="audioIframe"
+                          id='audioIframe'
                           src={movie && movie.episode1sa1ser1}
                           style={{
                             filter:
@@ -2326,7 +2328,7 @@ const upload_season_03_2023 = ({ movie }) => {
                           mozallowFullScreen
                           allowFullScreen
                           ref={audioIframeRef}
-                                id="audioIframe"
+                          id='audioIframe'
                           src={movie && movie.episode2sa1ser3}
                           style={{
                             filter:
@@ -2395,7 +2397,7 @@ const upload_season_03_2023 = ({ movie }) => {
                           mozallowFullScreen
                           allowFullScreen
                           ref={audioIframeRef}
-                                id="audioIframe"
+                          id='audioIframe'
                           src={movie && movie.episode3sa1ser3}
                           style={{
                             filter:
@@ -2464,7 +2466,7 @@ const upload_season_03_2023 = ({ movie }) => {
                           mozallowFullScreen
                           allowFullScreen
                           ref={audioIframeRef}
-                                id="audioIframe"
+                          id='audioIframe'
                           src={movie && movie.episode4sa1ser3}
                           style={{
                             filter:
@@ -2533,7 +2535,7 @@ const upload_season_03_2023 = ({ movie }) => {
                           mozallowFullScreen
                           allowFullScreen
                           ref={audioIframeRef}
-                                id="audioIframe"
+                          id='audioIframe'
                           src={movie && movie.episode5sa1ser3}
                           style={{
                             filter:
@@ -2602,7 +2604,7 @@ const upload_season_03_2023 = ({ movie }) => {
                           mozallowFullScreen
                           allowFullScreen
                           ref={audioIframeRef}
-                                id="audioIframe"
+                          id='audioIframe'
                           src={movie && movie.episode6sa1ser3}
                           style={{
                             filter:
@@ -2671,7 +2673,7 @@ const upload_season_03_2023 = ({ movie }) => {
                           mozallowFullScreen
                           allowFullScreen
                           ref={audioIframeRef}
-                                id="audioIframe"
+                          id='audioIframe'
                           src={movie && movie.episode7sa1ser3}
                           style={{
                             filter:
@@ -2740,7 +2742,7 @@ const upload_season_03_2023 = ({ movie }) => {
                           mozallowFullScreen
                           allowFullScreen
                           ref={audioIframeRef}
-                                id="audioIframe"
+                          id='audioIframe'
                           src={movie && movie.episode8sa1ser3}
                           style={{
                             filter:
@@ -2771,39 +2773,39 @@ const upload_season_03_2023 = ({ movie }) => {
         </div>
 
         <style jsx>{`
-  .popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999; /* Set a high z-index value */
-  }
+          .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Set a high z-index value */
+          }
 
-  .popup {
-    width: 800px;
-    background-color: gray;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    animation: slide-down 0.5s ease;
-    position: relative; /* Ensure the z-index works */
-    z-index: 10000; /* Set a higher z-index value */
-  }
+          .popup {
+            width: 800px;
+            background-color: gray;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            animation: slide-down 0.5s ease;
+            position: relative; /* Ensure the z-index works */
+            z-index: 10000; /* Set a higher z-index value */
+          }
 
-  @keyframes slide-down {
-    from {
-      transform: translateY(-100%);
-    }
-    to {
-      transform: translateY(0);
-    }
-  }
-`}</style>
+          @keyframes slide-down {
+            from {
+              transform: translateY(-100%);
+            }
+            to {
+              transform: translateY(0);
+            }
+          }
+        `}</style>
 
         <hr className='my-5' />
         <div className='container mt-5'>
@@ -3020,7 +3022,7 @@ const upload_season_03_2023 = ({ movie }) => {
               >
                 Official Trailer {movie && movie.name}
               </h2>
-                  {/* <div
+              {/* <div
                 id='player'
                 style={{
                   filter:
@@ -3028,36 +3030,39 @@ const upload_season_03_2023 = ({ movie }) => {
                 }}
               ></div> */}
               <div
+                style={{
+                  position: 'relative',
+                  paddingBottom: '56.25%',
+                  height: 0,
+                  overflow: 'hidden',
+                  filter:
+                    'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+                }}
+              >
+                <iframe
                   style={{
-                    position: "relative",
-                    paddingBottom: "56.25%",
-                    height: 0,
-                    overflow: "hidden",
-                    filter: 'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)' 
+                    width: '100%',
+                    height: '100%',
+                    position: 'absolute',
+                    left: '0px',
+                    top: '0px',
+                    overflow: 'hidden'
                   }}
-                >
-                  <iframe
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      position: "absolute",
-                      left: "0px",
-                      top: "0px",
-                      overflow: "hidden",
-                    }}
-                    className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
-                    frameborder="0"
-                    type="text/html"
-                    ref={audioIframeRef}
-                                id="audioIframe"
-                    src={`https://geo.dailymotion.com/player/xjrxe.html?video=${movie && movie.video}&Autoquality=1080p`}
-                    width="100%"
-                    height="100%"
-                    allowfullscreen
-                    title="Dailymotion Video Player"
-                    allow="autoplay"
-                  ></iframe>
-                </div>
+                  className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
+                  frameborder='0'
+                  type='text/html'
+                  ref={audioIframeRef}
+                  id='audioIframe'
+                  src={`https://geo.dailymotion.com/player/xjrxe.html?video=${
+                    movie && movie.video
+                  }&Autoquality=1080p`}
+                  width='100%'
+                  height='100%'
+                  allowfullscreen
+                  title='Dailymotion Video Player'
+                  allow='autoplay'
+                ></iframe>
+              </div>
               <p
                 style={{
                   color: '#40D7BC',
@@ -3076,39 +3081,39 @@ const upload_season_03_2023 = ({ movie }) => {
           </div>
         )}
         <style jsx>{`
-  .popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999; /* Set a high z-index value */
-  }
+          .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Set a high z-index value */
+          }
 
-  .popup {
-    width: 800px;
-    background-color: gray;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    animation: slide-down 0.5s ease;
-    position: relative; /* Ensure the z-index works */
-    z-index: 10000; /* Set a higher z-index value */
-  }
+          .popup {
+            width: 800px;
+            background-color: gray;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            animation: slide-down 0.5s ease;
+            position: relative; /* Ensure the z-index works */
+            z-index: 10000; /* Set a higher z-index value */
+          }
 
-  @keyframes slide-down {
-    from {
-      transform: translateY(-100%);
-    }
-    to {
-      transform: translateY(0);
-    }
-  }
-`}</style>
+          @keyframes slide-down {
+            from {
+              transform: translateY(-100%);
+            }
+            to {
+              transform: translateY(0);
+            }
+          }
+        `}</style>
 
         <div class='container1'>
           <ShareButtons
@@ -3156,4 +3161,4 @@ export async function getServerSideProps () {
   }
 }
 
-export default upload_season_03_2023;
+export default upload_season_03_2023

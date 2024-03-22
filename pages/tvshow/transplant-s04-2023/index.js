@@ -427,80 +427,79 @@ const transplant_season_04_2023 = ({ movie }) => {
   })
 
   const ldJsonData = JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "TVSeries",
-    "@id": `${movie["movie.url"]}`,
-    "name": movie.title,
-    "image": `/wp-content/uploads/2023/06/${movie.poster}`,
-    "url": `/${movie["movie.watch"]}`,
-    "description": movie.synopsis,
-    "datePublished": movie.startDate,
-    "contentRating": movie.contentRating,
-    "inLanguage": movie.language,
-    "genre": movie.genre,
-    "director": {
-      "@type": "Person",
-      "name": movie.director
+    '@context': 'https://schema.org',
+    '@type': 'TVSeries',
+    '@id': `${movie['movie.url']}`,
+    name: movie.title,
+    image: `/wp-content/uploads/2023/06/${movie.poster}`,
+    url: `/${movie['movie.watch']}`,
+    description: movie.synopsis,
+    datePublished: movie.startDate,
+    contentRating: movie.contentRating,
+    inLanguage: movie.language,
+    genre: movie.genre,
+    director: {
+      '@type': 'Person',
+      name: movie.director
     },
-    "actor": movie.starring.map((actor) => ({
-      "@type": "Person",
-      "name": actor
+    actor: movie.starring.map(actor => ({
+      '@type': 'Person',
+      name: actor
     })),
-    "potentialAction": {
-      "@type": "WatchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "name": movie.title,
-        "urlTemplate": `${movie["movie.url"]}`
+    potentialAction: {
+      '@type': 'WatchAction',
+      target: {
+        '@type': 'EntryPoint',
+        name: movie.title,
+        urlTemplate: `${movie['movie.url']}`
       }
     },
-    "locationCreated": {
-      "@type": "Place",
-      "name": movie.country
+    locationCreated: {
+      '@type': 'Place',
+      name: movie.country
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": movie.aggregateRating.ratingValue,
-      "bestRating": movie.aggregateRating.bestRating,
-      "worstRating": movie.aggregateRating.worstRating,
-      "ratingCount": movie.aggregateRating.ratingCount
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: movie.aggregateRating.ratingValue,
+      bestRating: movie.aggregateRating.bestRating,
+      worstRating: movie.aggregateRating.worstRating,
+      ratingCount: movie.aggregateRating.ratingCount
     },
-    "author": {
-      "@type": "Person",
-      "@id": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/",
-      "name": "Dr Trailer",
-      "url": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/",
-      "image": {
-        "@type": "ImageObject",
-        "@id": "https://gravatar.com/drtrailer2022",
-        "url": "https://gravatar.com/drtrailer2022",
-        "caption": "Dr Trailer",
-        "inLanguage": "en-US"
+    author: {
+      '@type': 'Person',
+      '@id': 'https://watchmoviesonline.vercel.app/author/watchmoviesonline/',
+      name: 'Dr Trailer',
+      url: 'https://watchmoviesonline.vercel.app/author/watchmoviesonline/',
+      image: {
+        '@type': 'ImageObject',
+        '@id': 'https://gravatar.com/drtrailer2022',
+        url: 'https://gravatar.com/drtrailer2022',
+        caption: 'Dr Trailer',
+        inLanguage: 'en-US'
       }
     },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Watch Movies Online™",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://watchmoviesonline.vercel.app/og_image.jpg"
+    publisher: {
+      '@type': 'Organization',
+      name: 'Watch Movies Online™',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://watchmoviesonline.vercel.app/og_image.jpg'
       }
     },
-    "additionalProperty": {
-      "@type": "PropertyValue",
-      "name": "Action Platform",
-      "value": ["Desktop Web Platform", "iOS Platform", "Android Platform"]
+    additionalProperty: {
+      '@type': 'PropertyValue',
+      name: 'Action Platform',
+      value: ['Desktop Web Platform', 'iOS Platform', 'Android Platform']
     },
-     "numberOfEpisodes": movie.numberOfEpisodes,
-    "name": `${movie.name}`,
-    "episode": movie.episodes.map((episode) => ({
-      "@type": "TVEpisode",
-      "episodeNumber": episode.episodeNumber,
-      "name": episode.name,
-      "description": episode.description
+    numberOfEpisodes: movie.numberOfEpisodes,
+    name: `${movie.name}`,
+    episode: movie.episodes.map(episode => ({
+      '@type': 'TVEpisode',
+      episodeNumber: episode.episodeNumber,
+      name: episode.name,
+      description: episode.description
     }))
-  });
-
+  })
 
   const trailerSchema = JSON.stringify({
     '@context': 'https://schema.org',
@@ -511,9 +510,8 @@ const transplant_season_04_2023 = ({ movie }) => {
     thumbnailUrl: movie.trailer.thumbnail.contentUrl,
     duration: movie.trailer.duration,
     embedUrl: movie.trailer.embedUrl
-  });
-  
-  
+  })
+
   return (
     <div>
       <Head>
@@ -557,13 +555,10 @@ const transplant_season_04_2023 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content={`https://watchmoviesonline.vercel.app/wp-content/uploads/2023/06/${
-            movie && movie.poster
-          }`}
+          content='https://i.postimg.cc/63jvprV2/Transplant_S04.jpg'
         />
-
-        <meta property='og:image:width' content='303' />
-        <meta property='og:image:height' content='430' />
+        <meta property='og:image:width' content='1280' />
+        <meta property='og:image:height' content='720' />
         <meta property='og:image:type' content='image/webp' />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:label1' content='Est. reading time' />
@@ -595,7 +590,7 @@ const transplant_season_04_2023 = ({ movie }) => {
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: trailerSchema }}
         />
-     
+
         <link
           rel='stylesheet'
           href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'
@@ -632,10 +627,8 @@ const transplant_season_04_2023 = ({ movie }) => {
           padding: '20px',
           fontFamily: 'Poppins, sans-serif',
           fontWeight: 500,
-           textAlign: 'center',
+          textAlign: 'center'
           // background: '#4B5563'
-
-          
         }}
       >
         <div style={{ maxWidth: '800px', width: '100%', marginBottom: '20px' }}>
@@ -927,7 +920,7 @@ const transplant_season_04_2023 = ({ movie }) => {
             </div>
           )}
         </div>
-        <DailyMotionBackground movieId="INDEX30" />
+        <DailyMotionBackground movieId='INDEX30' />
         <h1
           className='flex flex-col text-center py-5 font-bold text-3xl items-center justify-center'
           style={{ color: '#40D7BC', textShadow: '5px 5px 2px #000' }}
@@ -3391,58 +3384,57 @@ const transplant_season_04_2023 = ({ movie }) => {
                     'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
                 }}
               ></div> */}
-           <div
+              <div
+                style={{
+                  position: 'relative',
+                  paddingBottom: '56.25%',
+                  height: 0,
+                  overflow: 'hidden'
+                }}
+              >
+                <iframe
                   style={{
-                    position: 'relative',
-                    paddingBottom: '56.25%',
-                    height: 0,
-                    overflow: 'hidden'
+                    width: '100%',
+                    height: '100%',
+                    position: 'absolute',
+                    left: '0px',
+                    top: '0px',
+                    overflow: 'hidden',
+                    filter:
+                      'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
                   }}
-                >
-                  <iframe
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      position: 'absolute',
-                      left: '0px',
-                      top: '0px',
-                      overflow: 'hidden',
-                      filter:
-                        'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
-                    }}
-                    className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
-                    frameborder='0'
-                    type='text/html'
-                    ref={audioIframeRef}
-                    id='audioIframe'
-                    src={`https://geo.dailymotion.com/player/xjrxe.html?video=${
-                      movie && movie.video
-                    }`}
-                    width='100%'
-                    height='100%'
-                    allowfullscreen
-                    title='Dailymotion Video Player'
-                    allow='autoplay'
-                  ></iframe>
-                </div>
-
-                <p
-                  style={{
-                    color: '#40D7BC',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    textShadow: '3px 5px 5px #000',
-                    fontSize: '15px',
-                    fontWeight: 'bold'
-                  }}
-                >
-                  *Note: Use Setting in Player to improve the Quality of video
-                  to HD Quality 1080p.
-                </p>
+                  className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
+                  frameborder='0'
+                  type='text/html'
+                  ref={audioIframeRef}
+                  id='audioIframe'
+                  src={`https://geo.dailymotion.com/player/xjrxe.html?video=${
+                    movie && movie.video
+                  }`}
+                  width='100%'
+                  height='100%'
+                  allowfullscreen
+                  title='Dailymotion Video Player'
+                  allow='autoplay'
+                ></iframe>
               </div>
+
+              <p
+                style={{
+                  color: '#40D7BC',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  textShadow: '3px 5px 5px #000',
+                  fontSize: '15px',
+                  fontWeight: 'bold'
+                }}
+              >
+                *Note: Use Setting in Player to improve the Quality of video to
+                HD Quality 1080p.
+              </p>
             </div>
-          
+          </div>
         )}
         <style jsx>{`
           .popup-overlay {

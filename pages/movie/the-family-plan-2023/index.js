@@ -515,12 +515,10 @@ const the_family_plan_2023 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content={`https://watchmoviesonline.vercel.app/wp-content/uploads/2023/06/${
-            movie && movie.poster
-          }`}
+          content='https://i.postimg.cc/Rhhw7sCL/The_Family_Plan_2023.jpg'
         />
-        <meta property='og:image:width' content='303' />
-        <meta property='og:image:height' content='430' />
+        <meta property='og:image:width' content='1280' />
+        <meta property='og:image:height' content='720' />
         <meta property='og:image:type' content='image/webp' />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:label1' content='Est. reading time' />
@@ -589,10 +587,8 @@ const the_family_plan_2023 = ({ movie }) => {
           padding: '20px',
           fontFamily: 'Poppins, sans-serif',
           fontWeight: 500,
-           textAlign: 'center',
+          textAlign: 'center'
           // background: '#4B5563'
-
-          
         }}
       >
         <div style={{ maxWidth: '800px', width: '100%', marginBottom: '20px' }}>
@@ -884,7 +880,7 @@ const the_family_plan_2023 = ({ movie }) => {
             </div>
           )}
         </div>
-        <DailyMotionBackground movieId="INDEX11" />
+        <DailyMotionBackground movieId='INDEX11' />
         <h1
           className='flex flex-col text-center py-5 font-bold text-3xl items-center justify-center'
           style={{ color: '#40D7BC', textShadow: '5px 5px 2px #000' }}
@@ -1678,4 +1674,4 @@ export async function getServerSideProps () {
   }
 }
 
-export default the_family_plan_2023;
+export default the_family_plan_2023

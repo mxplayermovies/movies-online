@@ -21,7 +21,6 @@ const shaitan_2024 = ({ movie }) => {
   const [showPopup3, setShowPopup3] = useState(false)
   const [showPopupTrailer, setShowPopupTrailer] = useState(false)
 
-
   const togglePopup1 = () => {
     setShowPopup1(!showPopup1)
   }
@@ -516,12 +515,10 @@ const shaitan_2024 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content={`https://watchmoviesonline.vercel.app/wp-content/uploads/2023/06/${
-            movie && movie.poster
-          }`}
+          content='https://i.postimg.cc/YC96T1PP/Shaitan-2024.webp'
         />
-        <meta property='og:image:width' content='303' />
-        <meta property='og:image:height' content='430' />
+        <meta property='og:image:width' content='1280' />
+        <meta property='og:image:height' content='720' />
         <meta property='og:image:type' content='image/webp' />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:label1' content='Est. reading time' />
@@ -590,14 +587,10 @@ const shaitan_2024 = ({ movie }) => {
           padding: '20px',
           fontFamily: 'Poppins, sans-serif',
           fontWeight: 500,
-           textAlign: 'center',
+          textAlign: 'center'
           // background: '#4B5563'
-
-         
         }}
       >
-   
-   
         <div style={{ maxWidth: '800px', width: '100%', marginBottom: '20px' }}>
           <img
             src={movieData.image}
@@ -788,7 +781,7 @@ const shaitan_2024 = ({ movie }) => {
           </p>
         </div>
         <Rating />
-       
+
         <div className={HomeStyles.movieDetails}>
           {movieData && (
             <div>
@@ -888,7 +881,7 @@ const shaitan_2024 = ({ movie }) => {
           )}
         </div>
         {/* <YouTubeBackground movieId="INDEX108" /> */}
-        <DailyMotionBackground movieId="INDEX108" />
+        <DailyMotionBackground movieId='INDEX108' />
         <h1
           className='flex flex-col text-center py-5 font-bold text-3xl items-center justify-center'
           style={{ color: '#40D7BC', textShadow: '5px 5px 2px #000' }}
@@ -1666,8 +1659,7 @@ const shaitan_2024 = ({ movie }) => {
           />
         </div>
       </div>
-      </div>
-     
+    </div>
   )
 }
 
@@ -1683,4 +1675,4 @@ export async function getServerSideProps () {
   }
 }
 
-export default shaitan_2024;
+export default shaitan_2024

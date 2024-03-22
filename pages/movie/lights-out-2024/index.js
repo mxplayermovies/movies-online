@@ -166,66 +166,74 @@ const light_out_2024 = ({ movie }) => {
     setShowPopup(!showPopup)
   }
 
-  const audioIframeRef = useRef(null);
-  const predefinedEqualizationValue = 70;
-  const predefinedNoiseReductionValue = 40;
-  const audioSourceQuality = "high";
-  const enableNoiseCancellation = true;
+  const audioIframeRef = useRef(null)
+  const predefinedEqualizationValue = 70
+  const predefinedNoiseReductionValue = 40
+  const audioSourceQuality = 'high'
+  const enableNoiseCancellation = true
 
   useEffect(() => {
     const autoAdjustSoundEnhancements = () => {
-      const iframeWindow = audioIframeRef.current.contentWindow;
+      const iframeWindow = audioIframeRef.current.contentWindow
 
       if (iframeWindow && iframeWindow.postMessage) {
-        iframeWindow.postMessage({
-          command: 'autoAdjustSoundEnhancements',
-          equalizationValue: predefinedEqualizationValue,
-          noiseReductionValue: predefinedNoiseReductionValue,
-          audioSourceQuality: audioSourceQuality
-        }, '*');
+        iframeWindow.postMessage(
+          {
+            command: 'autoAdjustSoundEnhancements',
+            equalizationValue: predefinedEqualizationValue,
+            noiseReductionValue: predefinedNoiseReductionValue,
+            audioSourceQuality: audioSourceQuality
+          },
+          '*'
+        )
       }
-    };
+    }
 
     const loadAudioProcessing = () => {
-      autoAdjustSoundEnhancements();
+      autoAdjustSoundEnhancements()
 
-      const iframeAudioElement = audioIframeRef.current.contentDocument.getElementById('audioPlayer');
+      const iframeAudioElement =
+        audioIframeRef.current.contentDocument.getElementById('audioPlayer')
 
-      const iframeAudioContext = new (window.AudioContext || window.webkitAudioContext)();
-      const sourceNode = iframeAudioContext.createMediaElementSource(iframeAudioElement);
+      const iframeAudioContext = new (window.AudioContext ||
+        window.webkitAudioContext)()
+      const sourceNode =
+        iframeAudioContext.createMediaElementSource(iframeAudioElement)
 
       // Noise cancellation processing
       if (enableNoiseCancellation) {
-        const noiseCancellationNode = iframeAudioContext.createBiquadFilter();
-        noiseCancellationNode.type = 'highpass'; // Using high-pass filter for noise cancellation
-        noiseCancellationNode.frequency.value = 2000; // Adjust the cutoff frequency as needed (example: 2000 Hz)
-        sourceNode.connect(noiseCancellationNode);
-        noiseCancellationNode.connect(iframeAudioContext.destination);
+        const noiseCancellationNode = iframeAudioContext.createBiquadFilter()
+        noiseCancellationNode.type = 'highpass' // Using high-pass filter for noise cancellation
+        noiseCancellationNode.frequency.value = 2000 // Adjust the cutoff frequency as needed (example: 2000 Hz)
+        sourceNode.connect(noiseCancellationNode)
+        noiseCancellationNode.connect(iframeAudioContext.destination)
       }
 
       // Load and apply the impulse response (Mills Greek Theater)
-      fetch('../wp-content/themes/website/assets/274600-Future-Wave-Rise-01.wav') // Update with the actual file path
+      fetch(
+        '../wp-content/themes/website/assets/274600-Future-Wave-Rise-01.wav'
+      ) // Update with the actual file path
         .then(response => response.arrayBuffer())
         .then(buffer => iframeAudioContext.decodeAudioData(buffer))
         .then(audioBuffer => {
-          const convolverNode = iframeAudioContext.createConvolver();
-          convolverNode.buffer = audioBuffer;
-          sourceNode.connect(convolverNode);
-          convolverNode.connect(iframeAudioContext.destination);
+          const convolverNode = iframeAudioContext.createConvolver()
+          convolverNode.buffer = audioBuffer
+          sourceNode.connect(convolverNode)
+          convolverNode.connect(iframeAudioContext.destination)
         })
-        .catch(error => console.error('Error loading impulse response:', error));
-    };
+        .catch(error => console.error('Error loading impulse response:', error))
+    }
 
     if (audioIframeRef.current) {
-      audioIframeRef.current.addEventListener('load', loadAudioProcessing);
+      audioIframeRef.current.addEventListener('load', loadAudioProcessing)
     }
 
     return () => {
       if (audioIframeRef.current) {
-        audioIframeRef.current.removeEventListener('load', loadAudioProcessing);
+        audioIframeRef.current.removeEventListener('load', loadAudioProcessing)
       }
-    };
-  }, [movie, enableNoiseCancellation]);
+    }
+  }, [movie, enableNoiseCancellation])
 
   const loadVideo = (videoPage, contentType, server) => {
     const videoIframe = document.getElementById('videoIframe')
@@ -288,110 +296,109 @@ const light_out_2024 = ({ movie }) => {
   }
 
   const rankMathSchema = JSON.stringify({
-    "@context": "https://schema.org",
-    "@graph": [
+    '@context': 'https://schema.org',
+    '@graph': [
       {
-        "@type": ["Person", "Organization"],
-        "@id": "https://gravatar.com/drtrailer2022/#person",
-        "name": "Dr Trailer"
+        '@type': ['Person', 'Organization'],
+        '@id': 'https://gravatar.com/drtrailer2022/#person',
+        name: 'Dr Trailer'
       },
       {
-        "@type": "WebSite",
-        "@id": "https://watchmoviesonline.vercel.app/#website",
-        "url": "https://watchmoviesonline.vercel.app/",
-        "name": "Watch Movies Online™",
-        "publisher": {
-          "@id": "https://gravatar.com/drtrailer2022/#person"
+        '@type': 'WebSite',
+        '@id': 'https://watchmoviesonline.vercel.app/#website',
+        url: 'https://watchmoviesonline.vercel.app/',
+        name: 'Watch Movies Online™',
+        publisher: {
+          '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
-        "inLanguage": "en-US"
+        inLanguage: 'en-US'
       },
       {
-        "@type": "WebPage",
-        "@id": `/${movie["movie.watch"]}#webpage`,
-        "url": `/${movie["movie.watch"]}`,
-        "name": `${movie.name} | Watch Movies Online™`,
-        "datePublished": "2024-01-13T13:00:00+00:00",
-        "dateModified": "2024-01-13T13:13:00+00:00",
-        "isPartOf": {
-          "@id": "https://watchmoviesonline.vercel.app/#website"
+        '@type': 'WebPage',
+        '@id': `/${movie['movie.watch']}#webpage`,
+        url: `/${movie['movie.watch']}`,
+        name: `${movie.name} | Watch Movies Online™`,
+        datePublished: '2024-01-13T13:00:00+00:00',
+        dateModified: '2024-01-13T13:13:00+00:00',
+        isPartOf: {
+          '@id': 'https://watchmoviesonline.vercel.app/#website'
         },
-        "inLanguage": "en-US"
+        inLanguage: 'en-US'
       },
       {
-        "@type": "Person",
-        "@id": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/",
-        "name": "Dr Trailer",
-        "url": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/",
-        "image": {
-          "@type": "ImageObject",
-          "@id": "https://gravatar.com/drtrailer2022",
-          "url": "https://gravatar.com/drtrailer2022",
-          "caption": "Dr Trailer",
-          "inLanguage": "en-US"
+        '@type': 'Person',
+        '@id': 'https://watchmoviesonline.vercel.app/author/watchmoviesonline/',
+        name: 'Dr Trailer',
+        url: 'https://watchmoviesonline.vercel.app/author/watchmoviesonline/',
+        image: {
+          '@type': 'ImageObject',
+          '@id': 'https://gravatar.com/drtrailer2022',
+          url: 'https://gravatar.com/drtrailer2022',
+          caption: 'Dr Trailer',
+          inLanguage: 'en-US'
         },
-        "sameAs": [
-          "https://watchmoviesonline.vercel.app/"
-        ]
+        sameAs: ['https://watchmoviesonline.vercel.app/']
       },
       {
-        "@type": "Article",
-        "@id": `/${movie["movie.watch"]}#article`,
-        "headline": `Watch ${movie.name} | Watch Movies Online™`,
-        "datePublished": "2024-01-13T13:00:00+00:00",
-        "dateModified": "2024-01-13T13:13:00+00:00",
-        "articleSection": "Movie",
-        "author": {
-          "@id": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/"
+        '@type': 'Article',
+        '@id': `/${movie['movie.watch']}#article`,
+        headline: `Watch ${movie.name} | Watch Movies Online™`,
+        datePublished: '2024-01-13T13:00:00+00:00',
+        dateModified: '2024-01-13T13:13:00+00:00',
+        articleSection: 'Movie',
+        author: {
+          '@id':
+            'https://watchmoviesonline.vercel.app/author/watchmoviesonline/'
         },
-        "publisher": {
-          "@id": "https://gravatar.com/drtrailer2022/#person"
+        publisher: {
+          '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
-        "description": `Watch Movies Online | ${movie.name} for free. Where you can find movies of your interest in full HD quality updated on a daily basis. Watch Now or Download Now to Watch Later!`,
-        "image": movie.image,
-        "name": `Watch ${movie.name} | Watch Movies Online™`,
-        "isPartOf": {
-          "@id": `/${movie["movie.watch"]}#webpage`
+        description: `Watch Movies Online | ${movie.name} for free. Where you can find movies of your interest in full HD quality updated on a daily basis. Watch Now or Download Now to Watch Later!`,
+        image: movie.image,
+        name: `Watch ${movie.name} | Watch Movies Online™`,
+        isPartOf: {
+          '@id': `/${movie['movie.watch']}#webpage`
         },
-        "inLanguage": "en-US",
-        "mainEntityOfPage": {
-          "@id": `/${movie["movie.watch"]}#webpage`
+        inLanguage: 'en-US',
+        mainEntityOfPage: {
+          '@id': `/${movie['movie.watch']}#webpage`
         }
       },
       {
-        "@type": "BlogPosting",
-        "@id": `/${movie["movie.watch"]}#blogPost`,
-        "headline": `Watch ${movie.name} | Watch Movies Online™`,
-        "datePublished": "2024-01-13T13:00:00+00:00",
-        "dateModified": "2024-01-13T13:13:00+00:00",
-        "articleSection": "Movie",
-        "author": {
-          "@id": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/"
+        '@type': 'BlogPosting',
+        '@id': `/${movie['movie.watch']}#blogPost`,
+        headline: `Watch ${movie.name} | Watch Movies Online™`,
+        datePublished: '2024-01-13T13:00:00+00:00',
+        dateModified: '2024-01-13T13:13:00+00:00',
+        articleSection: 'Movie',
+        author: {
+          '@id':
+            'https://watchmoviesonline.vercel.app/author/watchmoviesonline/'
         },
-        "publisher": {
-          "@id": "https://gravatar.com/drtrailer2022/#person"
+        publisher: {
+          '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
-        "description": `Watch Movies Online | ${movie.name} for free. Where you can find movies of your interest in full HD quality updated on a daily basis. Watch Now or Download Now to Watch Later!`,
-        "image": movie.image,
-        "name": `Watch ${movie.name} | Watch Movies Online™`,
-        "@id": `/${movie["movie.watch"]}#richSnippet`,
-        "isPartOf": {
-          "@id": `/${movie["movie.watch"]}#webpage`
+        description: `Watch Movies Online | ${movie.name} for free. Where you can find movies of your interest in full HD quality updated on a daily basis. Watch Now or Download Now to Watch Later!`,
+        image: movie.image,
+        name: `Watch ${movie.name} | Watch Movies Online™`,
+        '@id': `/${movie['movie.watch']}#richSnippet`,
+        isPartOf: {
+          '@id': `/${movie['movie.watch']}#webpage`
         },
-        "inLanguage": "en-US",
-        "mainEntityOfPage": {
-          "@id": `/${movie["movie.watch"]}#webpage`
+        inLanguage: 'en-US',
+        mainEntityOfPage: {
+          '@id': `/${movie['movie.watch']}#webpage`
         }
       }
     ]
-  });
-  
+  })
 
   const ldJsonData = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Movie',
-"@id": `${movie["movie.url"]}`,
+    '@id': `${movie['movie.url']}`,
     name: movie.name,
-    "url": `/${movie["movie.watch"]}`,
+    url: `/${movie['movie.watch']}`,
     description: movie.synopsis,
     image: movie.poster,
     genre: movie.genre,
@@ -410,7 +417,7 @@ const light_out_2024 = ({ movie }) => {
         {
           '@type': 'EntryPoint',
           name: movie.name, // Removed unnecessary conditional
-          urlTemplate: `${movie["movie.url"]}` // Updated to use movie.watch
+          urlTemplate: `${movie['movie.url']}` // Updated to use movie.watch
         }
       ]
     },
@@ -443,7 +450,7 @@ const light_out_2024 = ({ movie }) => {
       name: 'Action Platform',
       value: ['Desktop Web Platform', 'iOS Platform', 'Android Platform']
     }
-  });
+  })
 
   const trailerSchema = JSON.stringify({
     '@context': 'https://schema.org',
@@ -454,8 +461,7 @@ const light_out_2024 = ({ movie }) => {
     thumbnailUrl: movie.trailer.thumbnail.contentUrl,
     duration: movie.trailer.duration,
     embedUrl: movie.trailer.embedUrl
-  });
-
+  })
 
   return (
     <div>
@@ -498,12 +504,10 @@ const light_out_2024 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content={`https://watchmoviesonline.vercel.app/wp-content/uploads/2023/06/${
-            movie && movie.poster
-          }`}
+          content='https://i.postimg.cc/sXpLF25N/Lights-Out-2024.jpg'
         />
-        <meta property='og:image:width' content='303' />
-        <meta property='og:image:height' content='430' />
+        <meta property='og:image:width' content='1280' />
+        <meta property='og:image:height' content='720' />
         <meta property='og:image:type' content='image/webp' />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:label1' content='Est. reading time' />
@@ -521,17 +525,17 @@ const light_out_2024 = ({ movie }) => {
           content='dmv6sg06w9r5eji88'
         />
         {/* Add the script tag for the YouTube IFrame Player API */}
-       {/* <script src='https://www.youtube.com/iframe_api' /> */}
+        {/* <script src='https://www.youtube.com/iframe_api' /> */}
         {/* Include Bootstrap and jQuery scripts */}
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: ldJsonData }}
         />
-            <script
+        <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: rankMathSchema }}
         />
-         <script
+        <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: trailerSchema }}
         />
@@ -572,10 +576,8 @@ const light_out_2024 = ({ movie }) => {
           padding: '20px',
           fontFamily: 'Poppins, sans-serif',
           fontWeight: 500,
-           textAlign: 'center',
+          textAlign: 'center'
           // background: '#4B5563'
-
-          
         }}
       >
         <div style={{ maxWidth: '800px', width: '100%', marginBottom: '20px' }}>
@@ -867,7 +869,7 @@ const light_out_2024 = ({ movie }) => {
             </div>
           )}
         </div>
-        <DailyMotionBackground movieId="INDEX88" />
+        <DailyMotionBackground movieId='INDEX88' />
         <h1
           className='flex flex-col text-center py-5 font-bold text-3xl items-center justify-center'
           style={{ color: '#40D7BC', textShadow: '5px 5px 2px #000' }}
@@ -1048,7 +1050,7 @@ const light_out_2024 = ({ movie }) => {
                                 mozallowFullScreen
                                 allowFullScreen
                                 ref={audioIframeRef}
-                                id="audioIframe"
+                                id='audioIframe'
                                 src={episodeUrl}
                                 style={{
                                   filter:
@@ -1143,7 +1145,7 @@ const light_out_2024 = ({ movie }) => {
                                 mozallowFullScreen
                                 allowFullScreen
                                 ref={audioIframeRef}
-                                id="audioIframe"
+                                id='audioIframe'
                                 src={episodeUrl}
                                 style={{
                                   filter:
@@ -1238,7 +1240,7 @@ const light_out_2024 = ({ movie }) => {
                                 mozallowFullScreen
                                 allowFullScreen
                                 ref={audioIframeRef}
-                                id="audioIframe"
+                                id='audioIframe'
                                 src={episodeUrl}
                                 style={{
                                   filter:
@@ -1272,40 +1274,39 @@ const light_out_2024 = ({ movie }) => {
         </div>
 
         <style jsx>{`
-  .popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999; /* Set a high z-index value */
-  }
+          .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Set a high z-index value */
+          }
 
-  .popup {
-    width: 800px;
-    background-color: gray;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    animation: slide-down 0.5s ease;
-    position: relative; /* Ensure the z-index works */
-    z-index: 10000; /* Set a higher z-index value */
-  }
+          .popup {
+            width: 800px;
+            background-color: gray;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            animation: slide-down 0.5s ease;
+            position: relative; /* Ensure the z-index works */
+            z-index: 10000; /* Set a higher z-index value */
+          }
 
-  @keyframes slide-down {
-    from {
-      transform: translateY(-100%);
-    }
-    to {
-      transform: translateY(0);
-    }
-  }
-`}</style>
-
+          @keyframes slide-down {
+            from {
+              transform: translateY(-100%);
+            }
+            to {
+              transform: translateY(0);
+            }
+          }
+        `}</style>
 
         <hr className='my-5' />
         <div className='container mt-5'>
@@ -1521,7 +1522,7 @@ const light_out_2024 = ({ movie }) => {
               >
                 Official Trailer {movie && movie.name}
               </h2>
-             {/* <div
+              {/* <div
                 id='player'
                 style={{
                   filter:
@@ -1529,87 +1530,90 @@ const light_out_2024 = ({ movie }) => {
                 }}
               ></div> */}
               <div
+                style={{
+                  position: 'relative',
+                  paddingBottom: '56.25%',
+                  height: 0,
+                  overflow: 'hidden'
+                }}
+              >
+                <iframe
                   style={{
-                    position: "relative",
-                    paddingBottom: "56.25%",
-                    height: 0,
-                    overflow: "hidden",
+                    width: '100%',
+                    height: '100%',
+                    position: 'absolute',
+                    left: '0px',
+                    top: '0px',
+                    overflow: 'hidden',
+                    filter:
+                      'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
                   }}
-                >
-                  <iframe
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      position: "absolute",
-                      left: "0px",
-                      top: "0px",
-                      overflow: "hidden",
-                      filter: 'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)' 
-                    }}
-                    className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
-                    frameborder="0"
-                    type="text/html"
-                    ref={audioIframeRef}
-                                id="audioIframe"
-                    src={`https://geo.dailymotion.com/player/xjrxe.html?video=${movie && movie.video}&Autoquality=1080p`}
-                    width="100%"
-                    height="100%"
-                    allowfullscreen
-                    title="Dailymotion Video Player"
-                    allow="autoplay"
-                  ></iframe>
-                </div>
-               <p
-                              style={{
-                                color: '#40D7BC',
-                                display: 'flex',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                textShadow: '3px 5px 5px #000',
-                                fontSize: '15px',
-                                fontWeight: 'bold'
-                              }}
-                            >
-                              *Note: Use Setting in Player to improve the
-                              Quality of video to HD Quality 1080p.
-                            </p>
+                  className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
+                  frameborder='0'
+                  type='text/html'
+                  ref={audioIframeRef}
+                  id='audioIframe'
+                  src={`https://geo.dailymotion.com/player/xjrxe.html?video=${
+                    movie && movie.video
+                  }&Autoquality=1080p`}
+                  width='100%'
+                  height='100%'
+                  allowfullscreen
+                  title='Dailymotion Video Player'
+                  allow='autoplay'
+                ></iframe>
+              </div>
+              <p
+                style={{
+                  color: '#40D7BC',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  textShadow: '3px 5px 5px #000',
+                  fontSize: '15px',
+                  fontWeight: 'bold'
+                }}
+              >
+                *Note: Use Setting in Player to improve the Quality of video to
+                HD Quality 1080p.
+              </p>
             </div>
           </div>
         )}
-       <style jsx>{`
-  .popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999; /* Set a high z-index value */
-  }
+        <style jsx>{`
+          .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Set a high z-index value */
+          }
 
-  .popup {
-    width: 800px;
-    background-color: gray;
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    animation: slide-down 0.5s ease;
-    position: relative; /* Ensure the z-index works */
-    z-index: 10000; /* Set a higher z-index value */
-  }
+          .popup {
+            width: 800px;
+            background-color: gray;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            animation: slide-down 0.5s ease;
+            position: relative; /* Ensure the z-index works */
+            z-index: 10000; /* Set a higher z-index value */
+          }
 
-  @keyframes slide-down {
-    from {
-      transform: translateY(-100%);
-    }
-    to {
-      transform: translateY(0);
-    }
-  }
-`}</style>
+          @keyframes slide-down {
+            from {
+              transform: translateY(-100%);
+            }
+            to {
+              transform: translateY(0);
+            }
+          }
+        `}</style>
 
         <div class='container1'>
           <ShareButtons
@@ -1658,4 +1662,4 @@ export async function getServerSideProps () {
   }
 }
 
-export default light_out_2024;
+export default light_out_2024
