@@ -645,8 +645,10 @@ const halo_season_02_2024 = ({ movie }) => {
 
           <ShareButtons
             url={movie['movie.url']}
-            title={`${movie && movie.name} | The Best Movies Platform HD Movies`}
-            image={movie && movie.backimage}
+            title={`${
+              movie && movie.name
+            } | The Best Movies Platform HD Movies`}
+            image={movie['movie.image']}
             style={{
               marginBottom: '20px',
               filter:
@@ -3057,8 +3059,10 @@ const halo_season_02_2024 = ({ movie }) => {
         <div class='container1'>
           <ShareButtons
             url={movie['movie.url']}
-            title={`${movie && movie.name} | The Best Movies Platform HD Movies`}
-            image={movie && movie.backimage}
+            title={`${
+              movie && movie.name
+            } | The Best Movies Platform HD Movies`}
+            image={movie['movie.image']}
             style={{
               marginBottom: '20px',
               filter:
@@ -3085,8 +3089,10 @@ const halo_season_02_2024 = ({ movie }) => {
         <div class='container1'>
           <ShareButtons
             url={movie['movie.url']}
-            title={`${ movie && movie.name } | The Best Movies Platform HD Movies`}
-            image={movie && movie.backimage}
+            title={`${
+              movie && movie.name
+            } | The Best Movies Platform HD Movies`}
+            image={movie['movie.image']}
             style={{
               marginBottom: '20px',
               filter:
