@@ -644,7 +644,7 @@ const halo_season_02_2024 = ({ movie }) => {
           />
 
           <ShareButtons
-            url={movie['movie.url']}
+            url={`/${movie['movie.watch']}`}
             title={`${
               movie && movie.name
             } | The Best Movies Platform HD Movies`}
@@ -655,6 +655,7 @@ const halo_season_02_2024 = ({ movie }) => {
                 'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
             }}
           />
+
           <h2
             style={{
               fontFamily: 'Poppins, sans-serif',
@@ -3058,7 +3059,7 @@ const halo_season_02_2024 = ({ movie }) => {
 
         <div class='container1'>
           <ShareButtons
-            url={movie['movie.url']}
+            url={`/${movie['movie.watch']}`}
             title={`${
               movie && movie.name
             } | The Best Movies Platform HD Movies`}
@@ -3088,7 +3089,7 @@ const halo_season_02_2024 = ({ movie }) => {
         <Max />
         <div class='container1'>
           <ShareButtons
-            url={movie['movie.url']}
+            url={`/${movie['movie.watch']}`}
             title={`${
               movie && movie.name
             } | The Best Movies Platform HD Movies`}
