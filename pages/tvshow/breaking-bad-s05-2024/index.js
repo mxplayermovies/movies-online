@@ -647,9 +647,7 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content={`https://watchmoviesonline.vercel.app/wp-content/uploads/2023/06/${
-            movie && movie.poster
-          }`}
+          content={`/wp-content/uploads/2023/06/${movie && movie.poster}`}
         />
 
         <meta property='og:image:width' content='303' />
