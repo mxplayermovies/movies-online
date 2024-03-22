@@ -777,6 +777,7 @@
     "image": "/wp-content/uploads/2023/06/Breaking_Bad_2013.webp",
     "backimage": "https://m.media-amazon.com/images/M/MV5BYmQ4YWMxYjUtNjZmYi00MDQ1LWFjMjMtNjA5ZDdiYjdiODU5XkEyXkFqcGdeQXVyMTMzNDExODE5._V1_FMjpg_UX1000_.jpg",
     "movie.watch": "../tvshow/breaking-bad-s05-2024/",
+    "thumbnailUrl": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p9181462_b_h10_ab.jpg",
     "numberOfEpisodes": 16,
     "partOfSeries": {
       "@type": "TVSeries",
