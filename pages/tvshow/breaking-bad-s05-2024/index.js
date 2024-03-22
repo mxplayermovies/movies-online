@@ -647,7 +647,7 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content={`${movie && movie.image}`}
+          content={`/wp-content/uploads/2023/06/${movie.poster}`}
         />
 
         <meta property='og:image:width' content='303' />
