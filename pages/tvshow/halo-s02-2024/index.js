@@ -89,16 +89,6 @@ const halo_season_02_2024 = ({ movie }) => {
       })
   }, [])
 
-  useEffect(() => {
-    import('bootstrap/dist/js/bootstrap.bundle.min.js')
-      .then(() => {
-        // Bootstrap JavaScript has been loaded
-        // Initialize any Bootstrap components here
-      })
-      .catch((error) => {
-        console.error('Error loading Bootstrap JavaScript:', error);
-      });
-  }, []);
   
   // let player
 

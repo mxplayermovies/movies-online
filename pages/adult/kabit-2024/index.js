@@ -65,6 +65,7 @@ const kabit_2024 = ({ movie }) => {
       })
   }, [])
 
+  
   // let player
 
   useEffect(() => {
