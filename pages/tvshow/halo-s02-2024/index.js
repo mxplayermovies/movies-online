@@ -644,9 +644,10 @@ const halo_season_02_2024 = ({ movie }) => {
           />
 
           <ShareButtons
-            title={movie.title}
-            url={movie.movieUrl}
-            image={movie.backimage}
+            url={movie['movie.url']}
+            title={`Watch ${movie['movie.name']} | Watch Movies Online™`}
+            image={movie['movie.backimage']}
+            style={{ marginBottom: '20px' }}
           />
           <h2
             style={{
@@ -3050,10 +3051,11 @@ const halo_season_02_2024 = ({ movie }) => {
         `}</style>
 
         <div class='container1'>
-        <ShareButtons
-            title={movie.title}
-            url={movie.movieUrl}
-            image={movie.backimage}
+          <ShareButtons
+            url={movie['movie.url']}
+            title={`Watch ${movie['movie.name']} | Watch Movies Online™`}
+            image={movie['movie.backimage']}
+            style={{ marginBottom: '20px' }}
           />
         </div>
         <h2
@@ -3073,10 +3075,11 @@ const halo_season_02_2024 = ({ movie }) => {
         <TrendingMovies />
         <Max />
         <div class='container1'>
-        <ShareButtons
-            title={movie.title}
-            url={movie.movieUrl}
-            image={movie.backimage}
+          <ShareButtons
+            url={movie['movie.url']}
+            title={`Watch ${movie['movie.name']} | Watch Movies Online™`}
+            image={movie['movie.backimage']}
+            style={{ marginBottom: '20px' }}
           />
         </div>
       </div>
