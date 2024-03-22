@@ -645,9 +645,12 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
           property='article:modified_time'
           content='2024-01-01T13:13:13+00:00'
         />
-       {/* <meta property='og:image' content={`${movie && trailer && trailer.thumbnailUrl ? trailer.thumbnailUrl : ''}`} /> */}
-       <meta property='og:image' content={trailer && trailer.thumbnailUrl ? trailer.thumbnailUrl : ''} />
-
+        <meta
+          property='og:image'
+          content={`https://watchmoviesonline.vercel.app/wp-content/uploads/2023/06/${
+            movie && movie.poster
+          }`}
+        />
 
         <meta property='og:image:width' content='303' />
         <meta property='og:image:height' content='430' />
@@ -741,18 +744,16 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
             }}
           />
 
-          <ShareButtons
-            url={`/${movie['movie.watch']}`}
-            title={`${
-              movie && movie.name
-            } | The Best Movies Platform HD Movies`}
-            image={movie['movie.image']}
-            style={{
-              marginBottom: '20px',
-              filter:
-                'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
-            }}
-          />
+<ShareButtons
+  url={`/${movie['movie.watch']}`}
+  title={`${movie && movie.name} | The Best Movies Platform HD Movies`}
+  image={movie['movie.image']}
+  style={{
+    marginBottom: '20px',
+    filter: 'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+  }}
+/>
+
 
           <h2
             style={{
@@ -4811,18 +4812,16 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
         `}</style>
 
         <div class='container1'>
-          <ShareButtons
-            url={`/${movie['movie.watch']}`}
-            title={`${
-              movie && movie.name
-            } | The Best Movies Platform HD Movies`}
-            image={movie['movie.image']}
-            style={{
-              marginBottom: '20px',
-              filter:
-                'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
-            }}
-          />
+        <ShareButtons
+  url={`/${movie['movie.watch']}`}
+  title={`${movie && movie.name} | The Best Movies Platform HD Movies`}
+  image={movie['movie.image']}
+  style={{
+    marginBottom: '20px',
+    filter: 'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+  }}
+/>
+
         </div>
         <h2
           className='mb-10 animate-pulse'
@@ -4841,18 +4840,16 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
         <TrendingMovies />
         <Max />
         <div class='container1'>
-          <ShareButtons
-            url={`/${movie['movie.watch']}`}
-            title={`${
-              movie && movie.name
-            } | The Best Movies Platform HD Movies`}
-            image={movie['movie.image']}
-            style={{
-              marginBottom: '20px',
-              filter:
-                'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
-            }}
-          />
+        <ShareButtons
+  url={`/${movie['movie.watch']}`}
+  title={`${movie && movie.name} | The Best Movies Platform HD Movies`}
+  image={movie['movie.image']}
+  style={{
+    marginBottom: '20px',
+    filter: 'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+  }}
+/>
+
         </div>
       </div>
     </div>
