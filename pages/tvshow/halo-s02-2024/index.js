@@ -546,7 +546,7 @@ const halo_season_02_2024 = ({ movie }) => {
         />
       <meta
           property='og:image'
-          content={ movie && movie.thumbnailUrl}
+          content={movie.thumbnailUrl}
         />
 
         <meta property='og:image:width' content='303' />
