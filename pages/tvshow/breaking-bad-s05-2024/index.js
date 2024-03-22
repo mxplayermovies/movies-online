@@ -646,10 +646,7 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
           property='article:modified_time'
           content='2024-01-01T13:13:13+00:00'
         />
-        <meta
-          property='og:image'
-          content={movie && movie.thumbnailUrl ? movie.thumbnailUrl : ''}
-        />
+        <meta property="og:image" content="https://i.postimg.cc/ydVVdvmV/p9181462-b-h10-ab.jpg" />
 
         <meta property='og:image:width' content='303' />
         <meta property='og:image:height' content='430' />
