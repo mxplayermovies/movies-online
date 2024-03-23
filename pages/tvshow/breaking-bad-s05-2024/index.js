@@ -364,7 +364,7 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
         '@type': 'WebSite',
         '@id': 'https://watchonlinemovies.vercel.app/#website',
         url: 'https://watchonlinemovies.vercel.app/',
-        name: 'Watch Movies Online???',
+        name: 'Watch Movies Online™',
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
@@ -374,7 +374,7 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
         '@type': 'WebPage',
         '@id': `/${movie['movie.watch']}#webpage`,
         url: `/${movie['movie.watch']}`,
-        name: `${movie.name} | Watch Movies Online???`,
+        name: `${movie.name} | Watch Movies Online™`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
         isPartOf: {
@@ -399,7 +399,7 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
       {
         '@type': 'Article',
         '@id': `/${movie['movie.watch']}#article`,
-        headline: `Watch ${movie.name} | Watch Movies Online???`,
+        headline: `Watch ${movie.name} | Watch Movies Online™`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
         articleSection: 'Movie',
@@ -412,7 +412,7 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
         },
         description: `Watch Movies Online | ${movie.name} for free. Where you can find movies of your interest in full HD quality updated on a daily basis. Watch Now or Download Now to Watch Later!`,
         image: movie.image,
-        name: `Watch ${movie.name} | Watch Movies Online???`,
+        name: `Watch ${movie.name} | Watch Movies Online™`,
         isPartOf: {
           '@id': `/${movie['movie.watch']}#webpage`
         },
@@ -424,7 +424,7 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
       {
         '@type': 'BlogPosting',
         '@id': `/${movie['movie.watch']}#blogPost`,
-        headline: `Watch ${movie.name} | Watch Movies Online???`,
+        headline: `Watch ${movie.name} | Watch Movies Online™`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
         articleSection: 'Movie',
@@ -437,7 +437,7 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
         },
         description: `Watch Movies Online | ${movie.name} for free. Where you can find movies of your interest in full HD quality updated on a daily basis. Watch Now or Download Now to Watch Later!`,
         image: movie.image,
-        name: `Watch ${movie.name} | Watch Movies Online???`,
+        name: `Watch ${movie.name} | Watch Movies Online™`,
         '@id': `/${movie['movie.watch']}#richSnippet`,
         isPartOf: {
           '@id': `/${movie['movie.watch']}#webpage`
@@ -505,7 +505,7 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
   //   },
   //   "publisher": {
   //     "@type": "Organization",
-  //     "name": "Watch Movies Online???",
+  //     "name": "Watch Movies Online™",
   //     "logo": {
   //       "@type": "ImageObject",
   //       "url": "https://watchonlinemovies.vercel.app/og_image.jpg"
@@ -572,7 +572,7 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Watch Movies Online???',
+      name: 'Watch Movies Online™',
       logo: {
         '@type': 'ImageObject',
         url: 'https://watchonlinemovies.vercel.app/og_image.jpg'
@@ -596,7 +596,7 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
   const trailerSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'VideoObject',
-    name: `${movie.name} | Watch Movies Online???`,
+    name: `${movie.name} | Watch Movies Online™`,
     description: movie.trailer.description,
     uploadDate: movie.trailer.uploadDate,
     thumbnailUrl: movie.trailer.thumbnail.contentUrl,
@@ -611,7 +611,7 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
           name='robots'
           content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
         />
-        <title> Watch {movie && movie.name} | Watch Movies Online???</title>
+        <title> Watch {movie && movie.name} | Watch Movies Online™</title>
 
         <link rel='canonical' href={movie && movie.url} />
         <meta name='robots' content='index, follow' />
@@ -621,7 +621,7 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
         <meta property='og:type' content='website' />
         <meta
           property='og:title'
-          content={`${movie && movie.name} - Watch Movies Online???`}
+          content={`${movie && movie.name} - Watch Movies Online™`}
         />
         <meta
           property='og:description'
@@ -631,7 +631,7 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
         />
         <meta
           name='description'
-          content='Watch Movies Online??? is a movie streaming site. Where you can find movies of your interest in full HD quality updated on daily basis. Watch Now or Download Now to Watch Later!'
+          content='Watch Movies Online™ is a movie streaming site. Where you can find movies of your interest in full HD quality updated on daily basis. Watch Now or Download Now to Watch Later!'
         />
         <meta property='og:url' content={`${movie && movie.url}`} />
         <meta name='keywords' content={`${movie && movie.keywords}`} />
@@ -647,7 +647,7 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='https://i.postimg.cc/ydVVdvmV/p9181462-b-h10-ab.jpg'
+          content='/wp-content/uploads/2023/06/Breaking_Bad_2013.webp'
         />
 
         <meta property='og:image:width' content='1280' />
