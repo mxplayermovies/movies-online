@@ -70,7 +70,7 @@ const Dmca = () => {
       </p>
 
       <p className="font-bold text-blue-500 mb-6">
-      Written notice should be sent here: drtrailer@gmail.com
+      Written notice should be sent here: drtrailer2022@gmail.com
       </p>
       <p className="text-gray-500">
       Please also note that under applicable law, 17 U.S.C. 512 (f), any person who knowingly materially misrepresents that material or activity is infringing may be subject to liability.

@@ -62,7 +62,7 @@ const Tearms = () => {
       <p className="font-bold mb-2">Hosting and Legal Issues</p>
       <p className="text-gray-500 mb-6">
       Watch Movies Online is not hosting or uploading any copyrighted content or media of any kind, we only store links to third-party websites that carry their own legal responsibility for their content. If you want to remove content from these websites, please contact these media hosts directly.
-      Watch Movies Online is working according to DMCA, so if you need to remove any content from the website, you can contact us @ <a className="font-bold text-blue-500 mb-6" href="mailto:drtrailer@gmail.com">drtrailer2022@gmail.com</a>.
+      Watch Movies Online is working according to DMCA, so if you need to remove any content from the website, you can contact us @ <a className="font-bold text-blue-500 mb-6" href="mailto:drtrailer2022@gmail.com">drtrailer2022@gmail.com</a>.
       </p>
       <p className="font-bold mb-2">
       Responsibilities.

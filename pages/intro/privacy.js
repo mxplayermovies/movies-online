@@ -75,7 +75,7 @@ const Privacy = () => {
 
      
       <p className="text-gray-500">
-      We do not make warranties that this site will operate error free. If you see an error, please contact the <a className="font-bold text-blue-500 mb-6" href="mailto:drtrailer@gmail.com ">webmaster</a>. By entering this site you agree to hold the owners, employees, advertisers of Watch Movies Online free from any and all liability.This site (Watch Movies Online) do not offer any membership.If you have any questions please feel free to <a className="font-bold text-blue-500 mb-6" href="mailto:drtrailer@gmail.com">contact us</a>.
+      We do not make warranties that this site will operate error free. If you see an error, please contact the <a className="font-bold text-blue-500 mb-6" href="mailto:drtrailer2022@gmail.com ">webmaster</a>. By entering this site you agree to hold the owners, employees, advertisers of Watch Movies Online free from any and all liability.This site (Watch Movies Online) do not offer any membership.If you have any questions please feel free to <a className="font-bold text-blue-500 mb-6" href="mailto:drtrailer2022@gmail.com">contact us</a>.
       </p>
     </div>
 
