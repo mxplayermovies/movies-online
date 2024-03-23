@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://watchonlinemovies.vercel.app/
+Host: https://watchmoviesonline.vercel.app/
 
 # Sitemaps
-Sitemap: https://watchonlinemovies.vercel.app/sitemap.xml
+Sitemap: https://watchmoviesonline.vercel.app/sitemap.xml
