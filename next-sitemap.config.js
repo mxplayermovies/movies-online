@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-    siteUrl: 'https://watchmoviesonline.vercel.app/',
+    siteUrl: 'https://watchonlinemovies.vercel.app/',
     changefreq: 'daily',
     priority: 0.90,
     generateRobotsTxt: true,
