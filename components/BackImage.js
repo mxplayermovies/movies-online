@@ -174,7 +174,8 @@ const BackImage = ({ movieId }) => {
           <div className="popup">
             <div
               className="content-container"
-              style={{ backgroundImage: `url(${movieData.backimage})` }}
+              style={{ backgroundImage: `url(${movieData.backimage})`,  filter:
+              'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'}}
             >
               <h2 style={{ fontWeight: 'bold', textShadow: '5px 5px 2px #000',  }}>Coming Soon</h2>
               <div className="timing" ref={timingRef} style={{ fontWeight: 'bold', textShadow: '5px 5px 2px #000' }}>
