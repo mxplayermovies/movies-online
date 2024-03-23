@@ -214,7 +214,7 @@ const BackImage = ({ movieId }) => {
               >
                  We Are currently Working on it.
               </p>
-              <p
+              {/* <p
                 style={{
                   color: '#fff',
                   fontSize: '18px',
@@ -223,7 +223,7 @@ const BackImage = ({ movieId }) => {
                 }}
               >
                 Please Check After Some Time
-              </p>
+              </p> */}
               <div className='button-container'>
                 <a
                   href='../'
