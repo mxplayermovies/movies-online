@@ -873,7 +873,7 @@
     "name": " The Indrani Mukerjea Story Season 01 (2024)",
     "poster": "The_Indrani_Mukerjea_Story_2024.webp",
     "image": "/wp-content/uploads/2023/06/The_Indrani_Mukerjea_Story_2024.webp",
-    "backimage": "/wp-content/uploads/2023/06/The_Indrani_Mukerjea_Story_2024.webp",
+    "backimage": "",
     "movie.watch": "../tvshow/the-indrani-mukerjea-story-s01-2024/",
     "thumbnailUrl": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p9181462_b_h10_ab.jpg",
     "numberOfEpisodes": 4,
@@ -1166,7 +1166,7 @@
     "name": " Sunflower Season 02 (2024)",
     "poster": "Sunflower_S02_2024.webp",
     "image": "/wp-content/uploads/2023/06/Sunflower_S02_2024.webp",
-    "backimage": "",
+    "backimage": "/wp-content/uploads/2023/06/Sunflower_S02_2024.webp",
     "movie.watch": "../tvshow/sunflower-s02-2024/",
     "numberOfEpisodes": 8,
     "partOfSeries": {
@@ -1342,7 +1342,7 @@
     "name": " Turning Point: The Bomb And The Cold War Season 01 (2024)",
     "poster": "Turning_Point_The_Bomb_And_The_Cold_War.webp",
     "image": "/wp-content/uploads/2023/06/Turning_Point_The_Bomb_And_The_Cold_War.webp",
-    "backimage": "",
+    "backimage": "/wp-content/uploads/2023/06/Turning_Point_The_Bomb_And_The_Cold_War.webp",
     "movie.watch": "../tvshow/turning-point-the-bomb-and-the-cold-war-s01-2024/",
     "numberOfEpisodes": 16,
     "partOfSeries": {
