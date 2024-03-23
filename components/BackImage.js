@@ -16,7 +16,6 @@
 //         console.error('Error fetching movie data:', error)
 //       }
 //     }
-  
 
 //     fetchMovieDetails()
 //   }, [movieId])
@@ -100,96 +99,128 @@
 //         </div>
 //       )}
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react'
 
 const BackImage = ({ movieId }) => {
-  const [movieData, setMovieData] = useState(null);
-  const [showPopup, setShowPopup] = useState(true);
-  const [endTime, setEndTime] = useState(null);
-  const [countdownExpired, setCountdownExpired] = useState(false);
-  const timingRef = useRef(null);
+  const [movieData, setMovieData] = useState(null)
+  const [showPopup, setShowPopup] = useState(true)
+  const [endTime, setEndTime] = useState(null)
+  const [countdownExpired, setCountdownExpired] = useState(false)
+  const timingRef = useRef(null)
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
       try {
-        const response = await fetch(`/movies.json`);
-        const data = await response.json();
-        const movie = data.find(movie => movie.id === movieId);
-        setMovieData(movie);
+        const response = await fetch(`/movies.json`)
+        const data = await response.json()
+        const movie = data.find(movie => movie.id === movieId)
+        setMovieData(movie)
       } catch (error) {
-        console.error('Error fetching movie data:', error);
+        console.error('Error fetching movie data:', error)
       }
-    };
-
-    fetchMovieDetails();
-  }, [movieId]);
-
-  useEffect(() => {
-    if (!movieData) return;
-
-    const storedStartTime = localStorage.getItem('startTime');
-    let startTime;
-    if (storedStartTime) {
-      startTime = parseInt(storedStartTime);
-    } else {
-      startTime = new Date().getTime();
-      localStorage.setItem('startTime', startTime);
     }
 
-    const endTime = startTime + (24 * 60 * 60 * 1000); // 24 hours
-    setEndTime(endTime);
-  }, [movieData]);
+    fetchMovieDetails()
+  }, [movieId])
 
   useEffect(() => {
-    if (!endTime) return;
+    if (!movieData) return
+
+    const storedStartTime = localStorage.getItem('startTime')
+    let startTime
+    if (storedStartTime) {
+      startTime = parseInt(storedStartTime)
+    } else {
+      startTime = new Date().getTime()
+      localStorage.setItem('startTime', startTime)
+    }
+
+    const endTime = startTime + 24 * 60 * 60 * 1000 // 24 hours
+    setEndTime(endTime)
+  }, [movieData])
+
+  useEffect(() => {
+    if (!endTime) return
 
     const timer = setInterval(() => {
-      const now = new Date().getTime();
-      const x = endTime - now;
+      const now = new Date().getTime()
+      const x = endTime - now
 
       if (x > 0) {
-        const hours = Math.floor((x % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const mins = Math.floor((x % (1000 * 60 * 60)) / (1000 * 60));
-        const secs = Math.floor((x % (1000 * 60)) / 1000);
-        const time = `${hours}h : ${mins}m : ${secs}s`;
-        timingRef.current.innerHTML = time;
+        const hours = Math.floor((x % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+        const mins = Math.floor((x % (1000 * 60 * 60)) / (1000 * 60))
+        const secs = Math.floor((x % (1000 * 60)) / 1000)
+        const time = `${hours}h : ${mins}m : ${secs}s`
+        timingRef.current.innerHTML = time
       } else {
-        timingRef.current.innerHTML = 'Countdown expired';
-        setCountdownExpired(true);
-        clearInterval(timer);
+        timingRef.current.innerHTML = 'Countdown expired'
+        setCountdownExpired(true)
+        clearInterval(timer)
       }
-    }, 1000);
+    }, 1000)
 
-    return () => clearInterval(timer);
-  }, [endTime]);
+    return () => clearInterval(timer)
+  }, [endTime])
 
   const handleClose = () => {
-    setShowPopup(false);
-  };
+    setShowPopup(false)
+  }
 
   return (
     <div>
       {showPopup && movieData && !countdownExpired && (
-        <div className="popup-overlay">
-          <div className="popup">
+        <div className='popup-overlay'>
+          <div className='popup'>
             <div
-              className="content-container"
-              style={{ backgroundImage: `url(${movieData.backimage})`,  filter:
-              'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'}}
+              className='content-container'
+              style={{
+                backgroundImage: `url(${movieData.backimage})`,
+                backgroundSize: 'cover',
+                backgroundRepeat: 'no-repeat',
+                filter:
+                  'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+              }}
             >
-              <h2 style={{ fontWeight: 'bold', textShadow: '5px 5px 2px #000',  }}>Coming Soon</h2>
-              <div className="timing" ref={timingRef} style={{ fontWeight: 'bold', textShadow: '5px 5px 2px #000' }}>
+              <h2
+                style={{ fontWeight: 'bold', textShadow: '5px 5px 2px #000' }}
+              >
+                Coming Soon
+              </h2>
+              <div
+                className='timing'
+                ref={timingRef}
+                style={{ fontWeight: 'bold', textShadow: '5px 5px 2px #000' }}
+              >
                 24h : 00m : 00s
               </div>
-           
-              <p style={{ color: '#fff', fontSize: '20px', fontWeight: 'bold', textShadow: '5px 5px 2px #000' }}>
-              {movieData.title} - We Are currently Working on it. 
+
+              <p
+                style={{
+                  color: '#fff',
+                  fontSize: '20px',
+                  fontWeight: 'bold',
+                  textShadow: '5px 5px 2px #000'
+                }}
+              >
+                {movieData.title} - We Are currently Working on it.
               </p>
-              <p style={{ color: '#fff', fontSize: '18px', fontWeight: 'bold', textShadow: '5px 5px 2px #000' }}>
-              Please Check After Some Time
+              <p
+                style={{
+                  color: '#fff',
+                  fontSize: '18px',
+                  fontWeight: 'bold',
+                  textShadow: '5px 5px 2px #000'
+                }}
+              >
+                Please Check After Some Time
               </p>
-              <div className="button-container">
-                <a href="../" className="close-button" onClick={handleClose} style={{ fontWeight: 'bold', textShadow: '5px 5px 2px #fff' }}>
+              <div className='button-container'>
+                <a
+                  href='../'
+                  className='close-button'
+                  onClick={handleClose}
+                  style={{ fontWeight: 'bold', textShadow: '5px 5px 2px #fff' }}
+                >
                   Close
                 </a>
               </div>
