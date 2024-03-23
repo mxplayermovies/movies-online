@@ -176,7 +176,7 @@ const BackImage = ({ movieId }) => {
               className="content-container"
               style={{ backgroundImage: `url(${movieData.backimage})` }}
             >
-              <h2 style={{ fontWeight: 'bold', textShadow: '5px 5px 2px #000' }}>Coming Soon</h2>
+              <h2 style={{ fontWeight: 'bold', textShadow: '5px 5px 2px #000', marginTop:'100px' }}>Coming Soon</h2>
               <div className="timing" ref={timingRef} style={{ fontWeight: 'bold', textShadow: '5px 5px 2px #000' }}>
                 24h : 00m : 00s
               </div>
