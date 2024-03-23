@@ -2,7 +2,7 @@
 module.exports = {
     siteUrl: 'https://watchmoviesonline.vercel.app/',
     changefreq: 'daily',
-    priority: 0.90,
+    priority: 1.00,
     generateRobotsTxt: true,
     sitemapSize: 7000,
   }

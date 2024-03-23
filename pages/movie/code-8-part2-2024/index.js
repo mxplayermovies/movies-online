@@ -559,7 +559,7 @@ const code_8_part2_2024 = ({ movie }) => {
               fjs.parentNode.appendChild(js);
             }(window, document, 'script', 'webpushr-jssdk'));
 
-            webpushr('setup', { 'key': 'BPAY4eP3ztVpPCXE9qfVajNsvYu1uH5najgQ_XROuxAfuf_2oBsIlKWsRr4KiJTHxndjoaXkUrNhVc-Ivel3jKM' });
+            webpushr('setup', { 'key': 'BL07T4YZ8_9ukuifWRP19b-ozeNg2GW5SYUNj6u89Pf8iGGzdQnFdyWHfqhjLPOguiPilZsk6EPc8wLitTq-Mu0' });
           `
           }}
         />
