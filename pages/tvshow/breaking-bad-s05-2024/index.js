@@ -647,11 +647,11 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='/wp-content/uploads/2023/06/Breaking_Bad_2013.webp'
+          content='https://watchonlinemovies.vercel.app/wp-content/uploads/2023/06/Breaking_Bad_2013.webp'
         />
 
-        <meta property='og:image:width' content='1280' />
-        <meta property='og:image:height' content='720' />
+        <meta property='og:image:width' content='303' />
+        <meta property='og:image:height' content='430' />
         <meta property='og:image:type' content='image/webp' />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:label1' content='Est. reading time' />
