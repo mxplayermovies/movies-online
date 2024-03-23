@@ -129,9 +129,9 @@ export default function Home ({ movie }) {
     '@graph': [
       {
         '@type': 'Person',
-        '@id': 'https://watchmoviesonline.vercel.app/author/watchmoviesonline/',
+        '@id': 'https://watchonlinemovies.vercel.app/author/watchmoviesonline/',
         name: 'Dr Trailer',
-        url: 'https://watchmoviesonline.vercel.app/author/watchmoviesonline/',
+        url: 'https://watchonlinemovies.vercel.app/author/watchmoviesonline/',
         image: {
           '@type': 'ImageObject',
           '@id': 'https://gravatar.com/drtrailer2022',
@@ -142,39 +142,39 @@ export default function Home ({ movie }) {
       },
       {
         '@type': 'Organization',
-        '@id': 'https://watchmoviesonline.vercel.app/#organization',
+        '@id': 'https://watchonlinemovies.vercel.app/#organization',
         name: 'Watch Movies Online™',
-        url: 'https://watchmoviesonline.vercel.app'
+        url: 'https://watchonlinemovies.vercel.app'
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://watchmoviesonline.vercel.app/#website',
-        url: 'https://watchmoviesonline.vercel.app',
+        '@id': 'https://watchonlinemovies.vercel.app/#website',
+        url: 'https://watchonlinemovies.vercel.app',
         name: 'Watch Movies Online™',
         publisher: {
           '@type': 'Organization',
-          '@id': 'https://watchmoviesonline.vercel.app/#organization'
+          '@id': 'https://watchonlinemovies.vercel.app/#organization'
         },
         potentialAction: {
           '@type': 'SearchAction',
           target:
-            'https://watchmoviesonline.vercel.app/?s={search_term_string}',
+            'https://watchonlinemovies.vercel.app/?s={search_term_string}',
           'query-input': 'required name=search_term_string'
         }
       },
       {
         '@type': 'WebPage',
-        '@id': 'https://watchmoviesonline.vercel.app/#webpage',
-        url: 'https://watchmoviesonline.vercel.app/',
+        '@id': 'https://watchonlinemovies.vercel.app/#webpage',
+        url: 'https://watchonlinemovies.vercel.app/',
         name: 'Movie',
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
         about: {
           '@type': 'Person',
           '@id':
-            'https://watchmoviesonline.vercel.app/author/watchmoviesonline/',
+            'https://watchonlinemovies.vercel.app/author/watchmoviesonline/',
           name: 'Dr Trailer',
-          url: 'https://watchmoviesonline.vercel.app/author/watchmoviesonline/',
+          url: 'https://watchonlinemovies.vercel.app/author/watchmoviesonline/',
           image: {
             '@type': 'ImageObject',
             '@id': 'https://gravatar.com/drtrailer2022',
@@ -184,23 +184,23 @@ export default function Home ({ movie }) {
           }
         },
         isPartOf: {
-          '@id': 'https://watchmoviesonline.vercel.app/#website'
+          '@id': 'https://watchonlinemovies.vercel.app/#website'
         },
         inLanguage: 'en-US',
         mainEntity: [
           {
             '@type': 'Article',
-            '@id': 'https://watchmoviesonline.vercel.app/',
-            url: 'https://watchmoviesonline.vercel.app/',
+            '@id': 'https://watchonlinemovies.vercel.app/',
+            url: 'https://watchonlinemovies.vercel.app/',
             headline: 'Movie',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
             author: {
               '@type': 'Person',
               '@id':
-                'https://watchmoviesonline.vercel.app/author/watchmoviesonline/',
+                'https://watchonlinemovies.vercel.app/author/watchmoviesonline/',
               name: 'Dr Trailer',
-              url: 'https://watchmoviesonline.vercel.app/author/watchmoviesonline/',
+              url: 'https://watchonlinemovies.vercel.app/author/watchmoviesonline/',
               image: {
                 '@type': 'ImageObject',
                 '@id': 'https://gravatar.com/drtrailer2022',
@@ -211,24 +211,24 @@ export default function Home ({ movie }) {
             },
             publisher: {
               '@type': 'Organization',
-              '@id': 'https://watchmoviesonline.vercel.app/#organization',
+              '@id': 'https://watchonlinemovies.vercel.app/#organization',
               name: 'Watch Movies Online™',
-              url: 'https://watchmoviesonline.vercel.app'
+              url: 'https://watchonlinemovies.vercel.app'
             }
           },
           {
             '@type': 'Article',
-            '@id': 'https://watchmoviesonline.vercel.app/',
-            url: 'https://watchmoviesonline.vercel.app/',
+            '@id': 'https://watchonlinemovies.vercel.app/',
+            url: 'https://watchonlinemovies.vercel.app/',
             headline: 'Tvshow',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
             author: {
               '@type': 'Person',
               '@id':
-                'https://watchmoviesonline.vercel.app/author/watchmoviesonline/',
+                'https://watchonlinemovies.vercel.app/author/watchmoviesonline/',
               name: 'Dr Trailer',
-              url: 'https://watchmoviesonline.vercel.app/author/watchmoviesonline/',
+              url: 'https://watchonlinemovies.vercel.app/author/watchmoviesonline/',
               image: {
                 '@type': 'ImageObject',
                 '@id': 'https://gravatar.com/drtrailer2022',
@@ -239,24 +239,24 @@ export default function Home ({ movie }) {
             },
             publisher: {
               '@type': 'Organization',
-              '@id': 'https://watchmoviesonline.vercel.app/#organization',
+              '@id': 'https://watchonlinemovies.vercel.app/#organization',
               name: 'Watch Movies Online™',
-              url: 'https://watchmoviesonline.vercel.app'
+              url: 'https://watchonlinemovies.vercel.app'
             }
           },
           {
             '@type': 'Article',
-            '@id': 'https://watchmoviesonline.vercel.app/',
-            url: 'https://watchmoviesonline.vercel.app/',
+            '@id': 'https://watchonlinemovies.vercel.app/',
+            url: 'https://watchonlinemovies.vercel.app/',
             headline: 'Adult',
             datePublished: '2024-01-13T13:00:00+00:00',
             dateModified: '2024-01-13T13:13:00+00:00',
             author: {
               '@type': 'Person',
               '@id':
-                'https://watchmoviesonline.vercel.app/author/watchmoviesonline/',
+                'https://watchonlinemovies.vercel.app/author/watchmoviesonline/',
               name: 'Dr Trailer',
-              url: 'https://watchmoviesonline.vercel.app/author/watchmoviesonline/',
+              url: 'https://watchonlinemovies.vercel.app/author/watchmoviesonline/',
               image: {
                 '@type': 'ImageObject',
                 '@id': 'https://gravatar.com/drtrailer2022',
@@ -267,9 +267,9 @@ export default function Home ({ movie }) {
             },
             publisher: {
               '@type': 'Organization',
-              '@id': 'https://watchmoviesonline.vercel.app/#organization',
+              '@id': 'https://watchonlinemovies.vercel.app/#organization',
               name: 'Watch Movies Online™',
-              url: 'https://watchmoviesonline.vercel.app'
+              url: 'https://watchonlinemovies.vercel.app'
             }
           }
         ]
@@ -304,7 +304,7 @@ export default function Home ({ movie }) {
             rel='sitemap'
             type='application/xml'
             title='Sitemap'
-            href='https://watchmoviesonline.vercel.app/sitemap.xml'
+            href='https://watchonlinemovies.vercel.app/sitemap.xml'
           />
           <meta
             name='viewport'
@@ -347,7 +347,7 @@ export default function Home ({ movie }) {
             name='description'
             content='Watch free movies and TV shows online in HD on any device. We offer streaming movies in genres like Action, Horror, Sci-Fi, Crime and Comedy. Watch now !!!'
           />
-          <link rel='canonical' href='https://watchmoviesonline.vercel.app/' />
+          <link rel='canonical' href='https://watchonlinemovies.vercel.app/' />
           <meta property='og:locale' content='en_US' />
           <meta property='og:type' content='website' />
           <meta
@@ -360,7 +360,7 @@ export default function Home ({ movie }) {
           />
           <meta
             property='og:url'
-            content='https://watchmoviesonline.vercel.app/'
+            content='https://watchonlinemovies.vercel.app/'
           />
           <meta
             property='og:site_name'
@@ -368,7 +368,7 @@ export default function Home ({ movie }) {
           />
           <meta
             property='og:image'
-            content='https://watchmoviesonline.vercel.app/og_image.jpg'
+            content='https://watchonlinemovies.vercel.app/og_image.jpg'
             style={{ borderRadius: '10%' }}
           />
           <meta property='og:image:width' content='1280' />
@@ -383,7 +383,7 @@ export default function Home ({ movie }) {
             rel='sitemap'
             type='application/xml'
             title='Sitemap'
-            href='https://watchmoviesonline.vercel.app/sitemap.xml'
+            href='https://watchonlinemovies.vercel.app/sitemap.xml'
           />
           <meta name='twitter:card' content='summary_large_image' />
           <meta
@@ -422,7 +422,7 @@ export default function Home ({ movie }) {
                   <div className='hm-logo'>
                     <a
                       title=''
-                      href='https://watchmoviesonline.vercel.app'
+                      href='https://watchonlinemovies.vercel.app'
                       id='logo-home'
                     ></a>
                   </div>
@@ -446,7 +446,7 @@ export default function Home ({ movie }) {
                   </div>
                   <div className='hm-button'>
                     <a
-                      href='https://watchmoviesonline.vercel.app/'
+                      href='https://watchonlinemovies.vercel.app/'
                       className='btn btn-lg btn-successful'
                       style={{
                         color: '#40D7BC',
@@ -462,9 +462,9 @@ export default function Home ({ movie }) {
             </div>
           </div>
           <ShareButtons
-            url='https://watchmoviesonline.vercel.app'
+            url='https://watchonlinemovies.vercel.app'
             title='The Best Movies Platform HD Movies'
-            image='https://watchmoviesonline.vercel.app/og_image.jpg'
+            image='https://watchonlinemovies.vercel.app/og_image.jpg'
             style={{ marginBottom: '20px' }}
           />
           <h1

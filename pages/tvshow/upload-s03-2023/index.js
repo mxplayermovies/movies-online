@@ -329,8 +329,8 @@ const upload_season_03_2023 = ({ movie }) => {
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://watchmoviesonline.vercel.app/#website',
-        url: 'https://watchmoviesonline.vercel.app/',
+        '@id': 'https://watchonlinemovies.vercel.app/#website',
+        url: 'https://watchonlinemovies.vercel.app/',
         name: 'Watch Movies Online™',
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
@@ -345,15 +345,15 @@ const upload_season_03_2023 = ({ movie }) => {
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
         isPartOf: {
-          '@id': 'https://watchmoviesonline.vercel.app/#website'
+          '@id': 'https://watchonlinemovies.vercel.app/#website'
         },
         inLanguage: 'en-US'
       },
       {
         '@type': 'Person',
-        '@id': 'https://watchmoviesonline.vercel.app/author/watchmoviesonline/',
+        '@id': 'https://watchonlinemovies.vercel.app/author/watchmoviesonline/',
         name: 'Dr Trailer',
-        url: 'https://watchmoviesonline.vercel.app/author/watchmoviesonline/',
+        url: 'https://watchonlinemovies.vercel.app/author/watchmoviesonline/',
         image: {
           '@type': 'ImageObject',
           '@id': 'https://gravatar.com/drtrailer2022',
@@ -361,7 +361,7 @@ const upload_season_03_2023 = ({ movie }) => {
           caption: 'Dr Trailer',
           inLanguage: 'en-US'
         },
-        sameAs: ['https://watchmoviesonline.vercel.app/']
+        sameAs: ['https://watchonlinemovies.vercel.app/']
       },
       {
         '@type': 'Article',
@@ -372,7 +372,7 @@ const upload_season_03_2023 = ({ movie }) => {
         articleSection: 'Movie',
         author: {
           '@id':
-            'https://watchmoviesonline.vercel.app/author/watchmoviesonline/'
+            'https://watchonlinemovies.vercel.app/author/watchmoviesonline/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
@@ -397,7 +397,7 @@ const upload_season_03_2023 = ({ movie }) => {
         articleSection: 'Movie',
         author: {
           '@id':
-            'https://watchmoviesonline.vercel.app/author/watchmoviesonline/'
+            'https://watchonlinemovies.vercel.app/author/watchmoviesonline/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
@@ -459,9 +459,9 @@ const upload_season_03_2023 = ({ movie }) => {
   //   },
   //   "author": {
   //     "@type": "Person",
-  //     "@id": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/",
+  //     "@id": "https://watchonlinemovies.vercel.app/author/watchmoviesonline/",
   //     "name": "Dr Trailer",
-  //     "url": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/",
+  //     "url": "https://watchonlinemovies.vercel.app/author/watchmoviesonline/",
   //     "image": {
   //       "@type": "ImageObject",
   //       "@id": "https://gravatar.com/drtrailer2022",
@@ -475,7 +475,7 @@ const upload_season_03_2023 = ({ movie }) => {
   //     "name": "Watch Movies Online™",
   //     "logo": {
   //       "@type": "ImageObject",
-  //       "url": "https://watchmoviesonline.vercel.app/og_image.jpg"
+  //       "url": "https://watchonlinemovies.vercel.app/og_image.jpg"
   //     }
   //   },
   //   "additionalProperty": {
@@ -526,9 +526,9 @@ const upload_season_03_2023 = ({ movie }) => {
     },
     author: {
       '@type': 'Person',
-      '@id': 'https://watchmoviesonline.vercel.app/author/watchmoviesonline/',
+      '@id': 'https://watchonlinemovies.vercel.app/author/watchmoviesonline/',
       name: 'Dr Trailer',
-      url: 'https://watchmoviesonline.vercel.app/author/watchmoviesonline/',
+      url: 'https://watchonlinemovies.vercel.app/author/watchmoviesonline/',
       image: {
         '@type': 'ImageObject',
         '@id': 'https://gravatar.com/drtrailer2022',
@@ -542,7 +542,7 @@ const upload_season_03_2023 = ({ movie }) => {
       name: 'Watch Movies Online™',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://watchmoviesonline.vercel.app/og_image.jpg'
+        url: 'https://watchonlinemovies.vercel.app/og_image.jpg'
       }
     },
     additionalProperty: {
@@ -710,9 +710,9 @@ const upload_season_03_2023 = ({ movie }) => {
           />
 
           <ShareButtons
-            url='https://watchmoviesonline.vercel.app'
+            url='https://watchonlinemovies.vercel.app'
             title='The Best Movies Platform HD Movies'
-            image='https://watchmoviesonline.vercel.app/og_image.jpg'
+            image='https://watchonlinemovies.vercel.app/og_image.jpg'
             style={{ marginBottom: '20px' }}
           />
           <h2
@@ -3117,9 +3117,9 @@ const upload_season_03_2023 = ({ movie }) => {
 
         <div class='container1'>
           <ShareButtons
-            url='https://watchmoviesonline.vercel.app'
+            url='https://watchonlinemovies.vercel.app'
             title='The Best Movies Platform HD Movies'
-            image='https://watchmoviesonline.vercel.app/og_image.jpg'
+            image='https://watchonlinemovies.vercel.app/og_image.jpg'
           />
         </div>
         <h2
@@ -3140,9 +3140,9 @@ const upload_season_03_2023 = ({ movie }) => {
         <Max />
         <div class='container1'>
           <ShareButtons
-            url='https://watchmoviesonline.vercel.app'
+            url='https://watchonlinemovies.vercel.app'
             title='The Best Movies Platform HD Movies'
-            image='https://watchmoviesonline.vercel.app/og_image.jpg'
+            image='https://watchonlinemovies.vercel.app/og_image.jpg'
           />
         </div>
       </div>
@@ -3151,7 +3151,7 @@ const upload_season_03_2023 = ({ movie }) => {
 }
 
 export async function getServerSideProps () {
-  const res = await fetch('https://watchmoviesonline.vercel.app/movies.json')
+  const res = await fetch('https://watchonlinemovies.vercel.app/movies.json')
   const data = await res.json()
   const selectedMovie = data.find(movie => movie.id === 'INDEX08')
   return {

@@ -11,9 +11,9 @@ export default function WatchMoviesOnline ({ movie }) {
         let searchTermLower = searchTerm.toLowerCase();
         let searchURL;
         if (searchTermLower.includes('tv show')) {
-            searchURL = `https://www.google.com/search?q=site:https://watchmoviesonline.vercel.app/tvshow/${encodeURIComponent(searchTermLower)}-2024`;
+            searchURL = `https://www.google.com/search?q=site:https://watchonlinemovies.vercel.app/tvshow/${encodeURIComponent(searchTermLower)}-2024`;
         } else {
-            searchURL = `https://www.google.com/search?q=site:https://watchmoviesonline.vercel.app/movie/${encodeURIComponent(searchTermLower)}-2024`;
+            searchURL = `https://www.google.com/search?q=site:https://watchonlinemovies.vercel.app/movie/${encodeURIComponent(searchTermLower)}-2024`;
         }
         router.push(searchURL);
     };
@@ -38,8 +38,8 @@ export default function WatchMoviesOnline ({ movie }) {
                                 },
                                 {
                                     "@type": "WebSite",
-                                    "@id": "https://watchmoviesonline.vercel.app/#website",
-                                    "url": "https://watchmoviesonline.vercel.app",
+                                    "@id": "https://watchonlinemovies.vercel.app/#website",
+                                    "url": "https://watchonlinemovies.vercel.app",
                                     "name": "Watch Movies Online™",
                                     "publisher": {
                                         "@id": "https://gravatar.com/drtrailer2022/#person"
@@ -48,22 +48,22 @@ export default function WatchMoviesOnline ({ movie }) {
                                 },
                                 {
                                     "@type": "ProfilePage",
-                                    "@id": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/#webpage",
-                                    "url": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/",
+                                    "@id": "https://watchonlinemovies.vercel.app/author/watchmoviesonline/#webpage",
+                                    "url": "https://watchonlinemovies.vercel.app/author/watchmoviesonline/",
                                     "name": "Dr Trailer",
                                     "isPartOf": {
-                                        "@id": "https://watchmoviesonline.vercel.app/#website"
+                                        "@id": "https://watchonlinemovies.vercel.app/#website"
                                     },
                                     "inLanguage": "en-US",
                                     "mainEntityOfPage": {
-                                        "@id": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/#webpage"
+                                        "@id": "https://watchonlinemovies.vercel.app/author/watchmoviesonline/#webpage"
                                     }
                                 },
                                 {
                                     "@type": "Person",
-                                    "@id": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/",
+                                    "@id": "https://watchonlinemovies.vercel.app/author/watchmoviesonline/",
                                     "name": "Dr Trailer",
-                                    "url": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/",
+                                    "url": "https://watchonlinemovies.vercel.app/author/watchmoviesonline/",
                                     "image": {
                                         "@type": "ImageObject",
                                         "@id": "https://gravatar.com/drtrailer2022",
@@ -75,7 +75,7 @@ export default function WatchMoviesOnline ({ movie }) {
                                         "http://watchmoviesonline.vercel.app"
                                     ],
                                     "mainEntityOfPage": {
-                                        "@id": "https://watchmoviesonline.vercel.app/author/watchmoviesonline/#webpage"
+                                        "@id": "https://watchonlinemovies.vercel.app/author/watchmoviesonline/#webpage"
                                     }
                                 }
                             ]
@@ -87,7 +87,7 @@ export default function WatchMoviesOnline ({ movie }) {
             <h1 className="flex flex-col text-center py-5 font-bold text-3xl items-center justify-center" style={{ color: "#40D7BC", textShadow: "5px 5px 2px #000" }}>Watch Movies Online™ - The Best Movies Platform HD Movies {movie && movie.title} </h1>
                 <div className="container" style={{justifyContent: 'center', alignItems: 'center', height: '10vh', marginTop: '100px', }}>
                     <div className="home-main">
-                        <div className="hm-logo"><a title="" href="https://watchmoviesonline.vercel.app" id="logo-home"></a></div>
+                        <div className="hm-logo"><a title="" href="https://watchonlinemovies.vercel.app" id="logo-home"></a></div>
                         <div className="addthis_inline_share_toolbox mb10"></div>
                         <div id="hm-search">
                             <div id="search-homepage" className="search-content">
@@ -104,7 +104,7 @@ export default function WatchMoviesOnline ({ movie }) {
                                 <div id="search-homepage-results"></div>
                             </div>
                         </div>
-                        <div className="hm-button"><a href="https://watchmoviesonline.vercel.app/" className="btn btn-lg btn-successful" style={{ color: '#40D7BC', fontSize: '24px', textShadow: '3px 5px 5px #000' }}>Watch Movies Online™</a></div>
+                        <div className="hm-button"><a href="https://watchonlinemovies.vercel.app/" className="btn btn-lg btn-successful" style={{ color: '#40D7BC', fontSize: '24px', textShadow: '3px 5px 5px #000' }}>Watch Movies Online™</a></div>
                     </div>
                 </div>
             </div>
