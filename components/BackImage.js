@@ -176,13 +176,16 @@ const BackImage = ({ movieId }) => {
               className="content-container"
               style={{ backgroundImage: `url(${movieData.backimage})` }}
             >
-              <h2 style={{ fontWeight: 'bold', textShadow: '5px 5px 2px #000', marginTop:'100px' }}>Coming Soon</h2>
+              <h2 style={{ fontWeight: 'bold', textShadow: '5px 5px 2px #000', marginTop:'200px' }}>Coming Soon</h2>
               <div className="timing" ref={timingRef} style={{ fontWeight: 'bold', textShadow: '5px 5px 2px #000' }}>
                 24h : 00m : 00s
               </div>
            
               <p style={{ color: '#fff', fontSize: '25px', fontWeight: 'bold', textShadow: '5px 5px 2px #000' }}>
-              {movieData.title}  We Are currently Working on the Movie or Tv Show. Please Check After Some Time
+              {movieData.title}  We Are currently Working on the Movie or Tv Show. 
+              </p>
+              <p style={{ color: '#fff', fontSize: '25px', fontWeight: 'bold', textShadow: '5px 5px 2px #000' }}>
+              {movieData.title}   Please Check After Some Time
               </p>
               <div className="button-container">
                 <a href="../" className="close-button" onClick={handleClose} style={{ fontWeight: 'bold', textShadow: '5px 5px 2px #fff' }}>
