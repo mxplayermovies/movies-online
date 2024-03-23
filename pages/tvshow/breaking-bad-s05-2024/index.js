@@ -745,7 +745,7 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
 <ShareButtons
             url='https://watchonlinemovies.vercel.app/tvshow/breaking-bad-s05-2024'
             title='Breaking Bad Season 05 (2013)'
-            image='https://i.postimg.cc/XN5jJKkR/Breaking-Bad-05.jpg'
+            image='https://watchonlinemovies.vercel.app/wp-content/uploads/2023/06/Breaking_Bad_2013.webp'
           />
           <h2
             style={{
@@ -4807,7 +4807,7 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
         <ShareButtons
             url='https://watchonlinemovies.vercel.app/tvshow/breaking-bad-s05-2024'
             title='Breaking Bad Season 05 (2013)'
-            image='https://i.postimg.cc/XN5jJKkR/Breaking-Bad-05.jpg'
+            image='https://watchonlinemovies.vercel.app/wp-content/uploads/2023/06/Breaking_Bad_2013.webp'
           />
         </div>
         <h2
@@ -4830,7 +4830,7 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
         <ShareButtons
             url='https://watchonlinemovies.vercel.app/tvshow/breaking-bad-s05-2024'
             title='Breaking Bad Season 05 (2013)'
-            image='https://i.postimg.cc/XN5jJKkR/Breaking-Bad-05.jpg'
+            image='https://watchonlinemovies.vercel.app/wp-content/uploads/2023/06/Breaking_Bad_2013.webp'
           />
         </div>
       </div>
