@@ -8,11 +8,12 @@ import ShareButtons from '@components/ShareButtons'
 import Rating from '@components/Rating'
 import TrendingMovies from '@components/TrendingMovies'
 import YouTubeBackground from '@components/YouTubeBackground'
+import BackImage from '@components/BackImage'
 import DailyMotionBackground from '@components/DailyMotionBackground'
 import Max from '@components/Max'
 import Script from 'next/script'
 
-const drive_away_dolls_2024 = ({ movie }) => {
+const murder_mubarak_2024 = ({ movie }) => {
   const [movieData, setMovieData] = useState(null)
   const [showPopup, setShowPopup] = useState(false)
   const [messageShown, setMessageShown] = useState(false) // Define messageShown state
@@ -55,7 +56,7 @@ const drive_away_dolls_2024 = ({ movie }) => {
   }
 
   useEffect(() => {
-    fetchMovieData('INDEX103')
+    fetchMovieData('INDEX115')
       .then(data => {
         // Do something with the fetched movie data
       })
@@ -71,7 +72,7 @@ const drive_away_dolls_2024 = ({ movie }) => {
       try {
         const response = await fetch('/movies.json')
         const data = await response.json()
-        const movie = data.find(movie => movie.id === 'INDEX103')
+        const movie = data.find(movie => movie.id === 'INDEX115')
         setMovieData(movie)
       } catch (error) {
         console.error('Error fetching movie data:', error)
@@ -104,7 +105,7 @@ const drive_away_dolls_2024 = ({ movie }) => {
   //     })
   // }
   // const onYouTubeIframeAPIReady = () => {
-  //   var movieId = 'INDEX103'
+  //   var movieId = 'INDEX115'
   //   fetchMovieJsonLD(movieId)
   //     .then(function (movie) {
   //       var videoId = movie.videoId
@@ -880,8 +881,9 @@ const drive_away_dolls_2024 = ({ movie }) => {
             </div>
           )}
         </div>
-        {/* <YouTubeBackground movieId="INDEX103" /> */}
-        <DailyMotionBackground movieId='INDEX103' />
+        {/* <YouTubeBackground movieId="INDEX115" /> */}
+        <DailyMotionBackground movieId='INDEX115' />
+        <BackImage movieId='INDEX115' />
         <h1
           className='flex flex-col text-center py-5 font-bold text-3xl items-center justify-center'
           style={{ color: '#40D7BC', textShadow: '5px 5px 2px #000' }}
@@ -1666,7 +1668,7 @@ const drive_away_dolls_2024 = ({ movie }) => {
 export async function getServerSideProps () {
   const res = await fetch('https://watchonlinemovies.vercel.app/movies.json')
   const data = await res.json()
-  const selectedMovie = data.find(movie => movie.id === 'INDEX103')
+  const selectedMovie = data.find(movie => movie.id === 'INDEX115')
 
   return {
     props: {
@@ -1675,4 +1677,4 @@ export async function getServerSideProps () {
   }
 }
 
-export default drive_away_dolls_2024;
+export default murder_mubarak_2024;
