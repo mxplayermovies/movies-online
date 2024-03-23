@@ -215,67 +215,12 @@ export default function Home ({ movie }) {
               name: 'Watch Movies Online™',
               url: 'https://watchonlinemovies.vercel.app'
             }
-          },
-          {
-            '@type': 'Article',
-            '@id': 'https://watchonlinemovies.vercel.app/',
-            url: 'https://watchonlinemovies.vercel.app/',
-            headline: 'Tvshow',
-            datePublished: '2024-01-13T13:00:00+00:00',
-            dateModified: '2024-01-13T13:13:00+00:00',
-            author: {
-              '@type': 'Person',
-              '@id':
-                'https://watchonlinemovies.vercel.app/author/watchmoviesonline/',
-              name: 'Dr Trailer',
-              url: 'https://watchonlinemovies.vercel.app/author/watchmoviesonline/',
-              image: {
-                '@type': 'ImageObject',
-                '@id': 'https://gravatar.com/drtrailer2022',
-                url: 'https://gravatar.com/drtrailer2022',
-                caption: 'Dr Trailer',
-                inLanguage: 'en-US'
-              }
-            },
-            publisher: {
-              '@type': 'Organization',
-              '@id': 'https://watchonlinemovies.vercel.app/#organization',
-              name: 'Watch Movies Online™',
-              url: 'https://watchonlinemovies.vercel.app'
-            }
-          },
-          {
-            '@type': 'Article',
-            '@id': 'https://watchonlinemovies.vercel.app/',
-            url: 'https://watchonlinemovies.vercel.app/',
-            headline: 'Adult',
-            datePublished: '2024-01-13T13:00:00+00:00',
-            dateModified: '2024-01-13T13:13:00+00:00',
-            author: {
-              '@type': 'Person',
-              '@id':
-                'https://watchonlinemovies.vercel.app/author/watchmoviesonline/',
-              name: 'Dr Trailer',
-              url: 'https://watchonlinemovies.vercel.app/author/watchmoviesonline/',
-              image: {
-                '@type': 'ImageObject',
-                '@id': 'https://gravatar.com/drtrailer2022',
-                url: 'https://gravatar.com/drtrailer2022',
-                caption: 'Dr Trailer',
-                inLanguage: 'en-US'
-              }
-            },
-            publisher: {
-              '@type': 'Organization',
-              '@id': 'https://watchonlinemovies.vercel.app/#organization',
-              name: 'Watch Movies Online™',
-              url: 'https://watchonlinemovies.vercel.app'
-            }
           }
         ]
       }
     ]
-  })
+  });
+
 
   return (
     <div className={`w-full bg-gray-600 shadow`}>
