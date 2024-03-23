@@ -217,10 +217,11 @@ export default function Home ({ movie }) {
             }
           }
         ]
+        // "sameAs": ["https://www.your-social-media-profile1.com", "https://www.your-social-media-profile2.com"]
       }
     ]
   });
-
+  
 
   return (
     <div className={`w-full bg-gray-600 shadow`}>
