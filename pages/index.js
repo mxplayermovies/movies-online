@@ -586,7 +586,7 @@ export default function Home ({ movie }) {
                                 top: '10px',
                                 right: '10px',
                                 backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                                fontWeight:'bold',
+                                fontWeight:'500',
                                 color: '#fff',
                                 padding: '5px',
                                 borderRadius: '5px'
@@ -652,7 +652,7 @@ export default function Home ({ movie }) {
                                 top: '10px',
                                 right: '10px',
                                 backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                                fontWeight:'bold',
+                                fontWeight:'500',
                                 color: '#fff',
                                 padding: '5px',
                                 borderRadius: '5px'
@@ -718,7 +718,7 @@ export default function Home ({ movie }) {
                                 top: '10px',
                                 right: '10px',
                                 backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                                fontWeight:'bold',
+                                fontWeight:'500',
                                 color: '#fff',
                                 padding: '5px',
                                 borderRadius: '5px'
