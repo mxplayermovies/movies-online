@@ -13,7 +13,7 @@ import DailyMotionBackground from '@components/DailyMotionBackground'
 import Max from '@components/Max'
 import Script from 'next/script'
 
-const turning_point_the_bomb_and_the_cold_war_season_01_2024 = ({ movie }) => {
+const the_indrani_mukerjea_story_season_01_2024 = ({ movie }) => {
   const [movieData, setMovieData] = useState(null)
   const [showPopup, setShowPopup] = useState(false)
   const [messageShown, setMessageShown] = useState(false) // Define messageShown state
@@ -114,7 +114,7 @@ const turning_point_the_bomb_and_the_cold_war_season_01_2024 = ({ movie }) => {
   }
 
   useEffect(() => {
-    fetchMovieData('INDEX111')
+    fetchMovieData('INDEX114')
       .then(data => {
         // Do something with the fetched movie data
       })
@@ -131,7 +131,7 @@ const turning_point_the_bomb_and_the_cold_war_season_01_2024 = ({ movie }) => {
       try {
         const response = await fetch('/movies.json')
         const data = await response.json()
-        const movie = data.find(movie => movie.id === 'INDEX111')
+        const movie = data.find(movie => movie.id === 'INDEX114')
         setMovieData(movie)
       } catch (error) {
         console.error('Error fetching movie data:', error)
@@ -164,7 +164,7 @@ const turning_point_the_bomb_and_the_cold_war_season_01_2024 = ({ movie }) => {
       })
   }
   // const onYouTubeIframeAPIReady = () => {
-  //   var movieId = 'INDEX111'
+  //   var movieId = 'INDEX114'
   //   fetchMovieJsonLD(movieId)
   //     .then(function (movie) {
   //       var videoId = movie.videoId
@@ -1018,8 +1018,8 @@ const turning_point_the_bomb_and_the_cold_war_season_01_2024 = ({ movie }) => {
             </div>
           )}
         </div>
-        <DailyMotionBackground movieId='INDEX111' />
-        <BackImage movieId='INDEX111' />
+        <DailyMotionBackground movieId='INDEX114' />
+        <BackImage movieId='INDEX114' />
         <h1
           className='flex flex-col text-center py-5 font-bold text-3xl items-center justify-center'
           style={{ color: '#40D7BC', textShadow: '5px 5px 2px #000' }}
@@ -4863,7 +4863,7 @@ const turning_point_the_bomb_and_the_cold_war_season_01_2024 = ({ movie }) => {
 export async function getServerSideProps () {
   const res = await fetch('https://watchonlinemovies.vercel.app/movies.json')
   const data = await res.json()
-  const selectedMovie = data.find(movie => movie.id === 'INDEX111')
+  const selectedMovie = data.find(movie => movie.id === 'INDEX114')
   return {
     props: {
       movie: selectedMovie
@@ -4871,4 +4871,4 @@ export async function getServerSideProps () {
   }
 }
 
-export default turning_point_the_bomb_and_the_cold_war_season_01_2024;
+export default the_indrani_mukerjea_story_season_01_2024;
