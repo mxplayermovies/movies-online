@@ -741,7 +741,7 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
           />
 
           <ShareButtons
-            url={`/${movie['movie.watch']}`}
+            url={`/${movie['movie.url']}`}
             title={`${
               movie && movie.name
             } | The Best Movies Platform HD Movies`}
@@ -4811,7 +4811,7 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
 
         <div class='container1'>
           <ShareButtons
-            url={`/${movie['movie.watch']}`}
+            url={`/${movie['movie.url']}`}
             title={`${
               movie && movie.name
             } | The Best Movies Platform HD Movies`}
@@ -4841,7 +4841,7 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
         <Max />
         <div class='container1'>
           <ShareButtons
-            url={`/${movie['movie.watch']}`}
+            url={`/${movie['movie.url']}`}
             title={`${
               movie && movie.name
             } | The Best Movies Platform HD Movies`}
