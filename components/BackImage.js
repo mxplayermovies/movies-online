@@ -202,7 +202,17 @@ const BackImage = ({ movieId }) => {
                   textShadow: '5px 5px 2px #000'
                 }}
               >
-                {movieData.title} - We Are currently Working on it.
+                {movieData.title}
+              </p>
+              <p
+                style={{
+                  color: '#fff',
+                  fontSize: '20px',
+                  fontWeight: 'bold',
+                  textShadow: '5px 5px 2px #000'
+                }}
+              >
+                 We Are currently Working on it.
               </p>
               <p
                 style={{
