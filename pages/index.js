@@ -298,7 +298,7 @@ export default function Home ({ movie }) {
         <Head>
           <title>
             {' '}
-            Watch Online Free - The Best Movies & Tv Shows Platform HD{' '}
+            Watch Online Movies & Tv Shows - The Best Entertainment Platform HD{' '}
           </title>
           <link
             rel='sitemap'
@@ -352,7 +352,7 @@ export default function Home ({ movie }) {
           <meta property='og:type' content='website' />
           <meta
             property='og:title'
-            content='Watch Online Free - The Best Movies & Tv Shows Platform HD'
+            content='Watch Online Movies & Tv Shows - The Best Entertainment Platform HD'
           />
           <meta
             property='og:description'
@@ -364,7 +364,7 @@ export default function Home ({ movie }) {
           />
           <meta
             property='og:site_name'
-            content='Watch Online Free - The Best Movies & Tv Shows Platform HD'
+            content='Watch Online Movies & Tv Shows - The Best Entertainment Platform HD'
           />
           <meta
             property='og:image'
