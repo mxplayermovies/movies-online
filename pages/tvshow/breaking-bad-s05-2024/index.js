@@ -742,8 +742,11 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
             }}
           />
 
-          <ShareButtons url={movie.url} />
-
+<ShareButtons
+            url='https://watchonlinemovies.vercel.app/tvshow/breaking-bad-s05-2024'
+            title='Breaking Bad Season 05 (2013)'
+            image='https://i.postimg.cc/XN5jJKkR/Breaking-Bad-05.jpg'
+          />
           <h2
             style={{
               fontFamily: 'Poppins, sans-serif',
@@ -4801,7 +4804,11 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
         `}</style>
 
         <div class='container1'>
-          <ShareButtons url={movie.url} />
+        <ShareButtons
+            url='https://watchonlinemovies.vercel.app/tvshow/breaking-bad-s05-2024'
+            title='Breaking Bad Season 05 (2013)'
+            image='https://i.postimg.cc/XN5jJKkR/Breaking-Bad-05.jpg'
+          />
         </div>
         <h2
           className='mb-10 animate-pulse'
@@ -4820,7 +4827,11 @@ const breaking_bad_season_05_2013 = ({ movie }) => {
         <TrendingMovies />
         <Max />
         <div class='container1'>
-          <ShareButtons url={movie.url} />
+        <ShareButtons
+            url='https://watchonlinemovies.vercel.app/tvshow/breaking-bad-s05-2024'
+            title='Breaking Bad Season 05 (2013)'
+            image='https://i.postimg.cc/XN5jJKkR/Breaking-Bad-05.jpg'
+          />
         </div>
       </div>
     </div>
