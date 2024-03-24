@@ -515,7 +515,7 @@ const air_force_one_down_2024 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='https://res.cloudinary.com/dyx3mjea6/image/upload/c_scale,w_1280,h_720,q_auto,f_auto,e_improve/e_sharpen:10/v1711265109/Air_Force_One_Down_2024_qvs3a1.jpg'
+          content='https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265109/Air_Force_One_Down_2024_qvs3a1.jpg'
         />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />

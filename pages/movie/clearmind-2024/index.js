@@ -495,7 +495,7 @@ const clearmind_2024 = ({ movie }) => {
           property='article:modified_time'
           content='2024-01-01T13:13:13+00:00'
         />
-        <meta property='og:image' content="https://i.postimg.cc/wjwHPw9m/Clear-Mind-2024.jpg" />
+        <meta property='og:image' content="https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265111/ClearMind_2024_j1gafu.jpg" />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />
         <meta property='og:image:type' content='image/webp' />

@@ -504,7 +504,7 @@ const no_way_up_2024 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='https://i.postimg.cc/K8wpRTNW/No-Way-Up-2024.jpg'
+          content='https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265120/No_Way_Up_2024_wdvjwg.jpg'
         />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />

@@ -504,7 +504,7 @@ const trunk_locked_in_2023 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='https://i.postimg.cc/3Nz0g3c3/Trunk_Locked_In_2023.jpg'
+          content='https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265146/Trunk_Locked_In_2023_wesxve.jpg'
         />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />

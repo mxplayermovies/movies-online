@@ -504,7 +504,7 @@ const pensati_sexy_2024 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='https://i.postimg.cc/Wz5XjqzX/Pensati_Sexy_2024.jpg'
+          content='https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265121/Pensati_Sexy_2024_qnflc2.jpg'
         />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />

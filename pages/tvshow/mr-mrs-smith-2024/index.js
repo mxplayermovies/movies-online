@@ -546,7 +546,7 @@ const mr_mrs_smith_season_03_2024 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='https://i.postimg.cc/wj7bq2hJ/Mr-Mrs-Smith-2024.jpg'
+          content='https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265120/Mr_Mrs_Smith_2024_njfrco.jpg'
         />
 
         <meta property='og:image:width' content='1280' />

@@ -545,7 +545,7 @@ const Tracker_S01_2024 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='https://i.postimg.cc/RVjwtLkw/Tracker_2024.jpg'
+          content='https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265146/Tracker_2024_wgq1rs.jpg'
         />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />

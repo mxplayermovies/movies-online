@@ -504,7 +504,7 @@ const five_blind_dates_2024 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='https://i.postimg.cc/hGJFYgCk/Five-Blind-Dates-2024.jpg'
+          content='https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265115/Five_Blind_Dates_2024_cqcfj6.jpg'
         />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />

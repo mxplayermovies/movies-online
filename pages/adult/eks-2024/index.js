@@ -499,9 +499,7 @@ const eks_2024 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content={`https://watchonlinemovies.vercel.app/wp-content/uploads/2023/06/${
-            movie && movie.poster
-          }`}
+          content="https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265114/Eks_2024_igj6hn.jpg"
         />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />

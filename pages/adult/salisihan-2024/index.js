@@ -505,7 +505,7 @@ const salisihan_2024 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='https://i.postimg.cc/5013CSFs/Salisihan_2024.png'
+          content='https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265123/Salisihan_2024_blsmle.png'
         />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />

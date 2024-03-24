@@ -495,7 +495,7 @@ const badi_heroine_banti_hai_2024 = ({ movie }) => {
           property='article:modified_time'
           content='2024-01-01T13:13:13+00:00'
         />
-        <meta property='og:image' content="https://res.cloudinary.com/dyx3mjea6/image/upload/c_scale,w_1280,h_720,q_auto,f_auto,e_improve/e_sharpen:10/v1711265109/Badi_Heroine_Banti_Hai_2024_w31h4c.jpg" />
+        <meta property='og:image' content="https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265109/Badi_Heroine_Banti_Hai_2024_w31h4c.jpg" />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />
         <meta property='og:image:type' content='image/webp' />

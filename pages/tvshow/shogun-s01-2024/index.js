@@ -555,7 +555,7 @@ const upload_season_03_2023 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='https://i.postimg.cc/j23QBV31/Shogun_2024.jpg'
+          content='https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265124/Shogun_2024_rizxdl.jpg'
         />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />

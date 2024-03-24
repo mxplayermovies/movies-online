@@ -504,7 +504,7 @@ const i_s_s_2024 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='https://i.postimg.cc/6qfFZQ3v/I-S-S-2024.jpg'
+          content='https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265116/I_S_S_2024_tdzmcn.jpg'
         />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />

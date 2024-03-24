@@ -504,7 +504,7 @@ const bleeding_love_2024 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='https://i.postimg.cc/W3Bs8tTY/Bleeding-Love-2024.jpg'
+          content='https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265109/Bleeding_Love_2024_s5ta5j.jpg'
         />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />

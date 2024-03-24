@@ -504,7 +504,7 @@ const fighter_2024 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='https://i.postimg.cc/mgpfVhS3/Fighter-2024.jpg'
+          content='https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265114/Fighter_2024_vsdkms.jpg'
         />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />

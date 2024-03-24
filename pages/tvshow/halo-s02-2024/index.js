@@ -545,7 +545,7 @@ const halo_season_02_2024 = ({ movie }) => {
           property='article:modified_time'
           content='2024-01-01T13:13:13+00:00'
         />
-      <meta property='og:image' content="https://i.postimg.cc/yN5px9vr/Halo-Season-2.webp" />
+      <meta property='og:image' content="https://res.cloudinary.com/dyx3mjea6/image/upload/v1711272931/Halo-Season-2_nvss5q.webp" />
 
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />

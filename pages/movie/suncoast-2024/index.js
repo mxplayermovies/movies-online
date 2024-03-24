@@ -504,7 +504,7 @@ const suncoast_2024 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='https://i.postimg.cc/hPh0TjfR/Suncoast_2024.jpg'
+          content='https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265125/Suncoast_2024_myr7kp.jpg'
         />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />
