@@ -491,7 +491,7 @@ const anyone_but_you_2024 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='https://i.postimg.cc/rpYVdQbk/Anyone-But-You-2023.jpg'
+          content='https://res.cloudinary.com/dyx3mjea6/image/upload/c_scale,w_1280,h_720,q_auto,f_auto,e_improve/e_sharpen:10/v1711265109/Anyone_But_You_2023_uz4one.jpg'
         />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />
