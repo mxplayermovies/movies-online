@@ -489,7 +489,7 @@ const the_shift_2023 = ({ movie }) => {
         />
         <meta
           name='description'
-          content='Watch Movies Online™ is a movie streaming site. Where you can find movies of your interest in full HD quality updated on daily basis. Watch Now or Download Now to Watch Later!'
+          content='Watch Movies Online™ We offer streaming movies in genres like Action, Horror, Sci-Fi, Crime and Comedy. Watch now !!!'
         />
         <meta property='og:url' content={`${movie && movie.url}`} />
         <meta name='keywords' content={`${movie && movie.keywords}`} />
