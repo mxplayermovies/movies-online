@@ -485,7 +485,7 @@ const i_s_s_2024 = ({ movie }) => {
           property='og:description'
           content={`${
             movie && movie.name
-          } | The Best Movies Platform HD Movies`}
+          } | Top Movie & TV Show Platform HD`}
         />
         <meta
           name='description'

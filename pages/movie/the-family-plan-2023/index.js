@@ -496,7 +496,7 @@ const the_family_plan_2023 = ({ movie }) => {
           property='og:description'
           content={`${
             movie && movie.name
-          } | The Best Movies Platform HD Movies`}
+          } | Top Movie & TV Show Platform HD`}
         />
         <meta
           name='description'

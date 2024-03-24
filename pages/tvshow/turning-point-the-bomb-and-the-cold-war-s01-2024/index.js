@@ -629,7 +629,7 @@ const turning_point_the_bomb_and_the_cold_war_season_01_2024 = ({ movie }) => {
           property='og:description'
           content={`${
             movie && movie.name
-          } | The Best Movies Platform HD Movies`}
+          } | Top Movie & TV Show Platform HD`}
         />
         <meta
           name='description'
@@ -745,7 +745,7 @@ const turning_point_the_bomb_and_the_cold_war_season_01_2024 = ({ movie }) => {
             url={`/${movie['movie.watch']}`}
             title={`${
               movie && movie.name
-            } | The Best Movies Platform HD Movies`}
+            } | Top Movie & TV Show Platform HD`}
             image={movie['movie.image']}
             style={{
               marginBottom: '20px',
@@ -4816,7 +4816,7 @@ const turning_point_the_bomb_and_the_cold_war_season_01_2024 = ({ movie }) => {
             url={`/${movie['movie.watch']}`}
             title={`${
               movie && movie.name
-            } | The Best Movies Platform HD Movies`}
+            } | Top Movie & TV Show Platform HD`}
             image={movie['movie.image']}
             style={{
               marginBottom: '20px',
@@ -4846,7 +4846,7 @@ const turning_point_the_bomb_and_the_cold_war_season_01_2024 = ({ movie }) => {
             url={`/${movie['movie.watch']}`}
             title={`${
               movie && movie.name
-            } | The Best Movies Platform HD Movies`}
+            } | Top Movie & TV Show Platform HD`}
             image={movie['movie.image']}
             style={{
               marginBottom: '20px',
