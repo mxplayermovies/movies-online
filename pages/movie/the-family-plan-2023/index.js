@@ -515,7 +515,7 @@ const the_family_plan_2023 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='https://i.postimg.cc/Rhhw7sCL/The_Family_Plan_2023.jpg'
+          content='https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265126/The_Family_Plan_2023_tkzr6e.jpg'
         />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />

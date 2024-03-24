@@ -504,7 +504,7 @@ const tiger_3_2023 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='https://i.postimg.cc/W3bZVWZc/Tiger3.jpg'
+          content='https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265143/Tiger3_js19si.jpg'
         />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />

@@ -504,7 +504,7 @@ const dunki_2023 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='https://i.postimg.cc/3J7TxsRG/Dunki-2023.jpg'
+          content='https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265114/Dunki_2023_dtooyu.jpg'
         />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />

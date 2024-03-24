@@ -513,7 +513,7 @@ const fullcircle = ({ movie }) => {
           property='article:modified_time'
           content='2024-01-01T13:13:13+00:00'
         />
-       <meta property='og:image' content="https://i.postimg.cc/9fv35SKr/For-All-Mankind-S04.jpg" />
+       <meta property='og:image' content="https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265115/For_All_Mankind_S04_wmjayo.jpg" />
 
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />

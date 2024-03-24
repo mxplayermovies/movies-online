@@ -614,7 +614,7 @@ const upload_season_03_2023 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='https://i.postimg.cc/sDZh3ZMx/upload_2023.jpg'
+          content='https://res.cloudinary.com/dyx3mjea6/image/upload/c_scale,w_1280,h_720,q_auto,f_auto,e_improve/e_sharpen:10/v1711265109/upload_2023_eik6y6.jpg'
         />
 
         <meta property='og:image:width' content='1280' />

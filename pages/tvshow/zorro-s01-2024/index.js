@@ -555,7 +555,7 @@ const zorro_season_01_2024 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='https://i.postimg.cc/XYSyq758/zorro_2024.jpg'
+          content='https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265147/zorro_2024_wrpw57.jpg'
         />
 
         <meta property='og:image:width' content='1280' />

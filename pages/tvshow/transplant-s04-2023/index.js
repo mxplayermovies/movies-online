@@ -555,7 +555,7 @@ const transplant_season_04_2023 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='https://i.postimg.cc/63jvprV2/Transplant_S04.jpg'
+          content='https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265146/Transplant_S04_os3hcy.jpg'
         />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />
