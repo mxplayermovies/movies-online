@@ -504,7 +504,7 @@ const code_8_part2_2024 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='https://i.postimg.cc/zX1JRLdV/Code8-Part-II-2024.jpg'
+          content='https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265112/Code8_PartII_2024_zkkum1.jpg'
         />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />

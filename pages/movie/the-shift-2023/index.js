@@ -504,7 +504,7 @@ const the_shift_2023 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='https://i.postimg.cc/c1kRxST9/The_Shift_2023.jpg'
+          content='https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265127/The_Shift_2023_ypldwt.jpg'
         />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />

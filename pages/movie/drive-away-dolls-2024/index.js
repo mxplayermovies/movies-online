@@ -515,7 +515,7 @@ const drive_away_dolls_2024 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='https://i.postimg.cc/mZ74RLbR/Drive-Away-Dolls-2024.jpg'
+          content='https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265113/Drive_Away_Dolls_2024_l0buwl.jpg'
         />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />

@@ -515,7 +515,7 @@ const the_thundermans_return_2024 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='https://i.postimg.cc/SxCCfz43/The_Thundermans_Return_2024.jpg'
+          content='https://res.cloudinary.com/dyx3mjea6/image/upload/v1711277974/maxresdefault_qiw3bx.jpg'
         />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />

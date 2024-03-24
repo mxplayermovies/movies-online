@@ -504,7 +504,7 @@ const the_woods_are_real_2024 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='https://i.postimg.cc/q7GK9VzG/The_Woods_Are_Real_2024.jpg'
+          content='https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265128/The_Woods_Are_Real_2024_wcnsni.jpg'
         />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />

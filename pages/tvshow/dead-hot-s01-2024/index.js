@@ -546,7 +546,7 @@ const dead_hot_season_01_2024 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='https://i.postimg.cc/SRbp85fw/dead-shot.jpg'
+          content='https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265112/dead_shot_nd7oti.jpg'
         />
 
         <meta property='og:image:width' content='1280' />

@@ -515,7 +515,7 @@ const shaitan_2024 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='https://i.postimg.cc/YC96T1PP/Shaitan-2024.webp'
+          content='https://res.cloudinary.com/dyx3mjea6/image/upload/v1711278430/Shaitan_2024_isg6si.webp'
         />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />

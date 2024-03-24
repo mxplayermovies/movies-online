@@ -504,7 +504,7 @@ const red_right_hand_2024 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='https://i.postimg.cc/4yfBrQfY/Red_Right_Hand_2024.jpg'
+          content='https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265122/Red_Right_Hand_2024_q0uq9o.jpg'
         />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />

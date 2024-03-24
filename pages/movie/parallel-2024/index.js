@@ -504,7 +504,7 @@ const parallel_2024 = ({ movie }) => {
         />
         <meta
           property='og:image'
-          content='https://i.postimg.cc/26F0cKDp/Parallel_2024.jpg'
+          content='https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265121/Parallel_2024_nfhxac.jpg'
         />
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />
