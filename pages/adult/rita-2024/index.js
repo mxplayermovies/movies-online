@@ -8,7 +8,7 @@ const Index = () => {
   return (
     <div>
    
-      <BackImage  />
+      <BackImage movieId='INDEX125' />
       {/* <AdultSkipAds movieId='INDEX125' /> */}
       {/* <MovieDetails movieId='INDEX125' /> */}
       {/* <DailyMotionBackground movieId='INDEX125' /> */}

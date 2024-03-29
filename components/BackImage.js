@@ -362,4 +362,4 @@ const BackImage = ({ movieId }) => {
     </div>
   )
 }
-export default BackImage
+export default BackImage;
