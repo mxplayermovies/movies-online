@@ -98,6 +98,7 @@
 //           </div>
 //         </div>
 //       )}
+
 import React, { useState, useEffect, useRef } from 'react';
 
 const BackImage = ({ movieId }) => {
@@ -150,9 +151,6 @@ const BackImage = ({ movieId }) => {
         const secs = Math.floor((x % (1000 * 60)) / 1000);
         const time = `${hours}h : ${mins}m : ${secs}s`;
         timingRef.current.innerHTML = time;
-      } else {
-        timingRef.current.innerHTML = 'Countdown expired';
-        clearInterval(timer);
       }
     }, 1000);
 
