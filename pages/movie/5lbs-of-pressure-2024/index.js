@@ -11,7 +11,7 @@ import YouTubeBackground from '@components/YouTubeBackground'
 import DailyMotionBackground from '@components/DailyMotionBackground'
 import Max from '@components/Max'
 import Script from 'next/script'
-import { NextSeo } from 'next-seo';
+import { NextSeo } from 'next-seo'
 
 const five_lbs_of_pressure_2024 = ({ movie }) => {
   const [movieData, setMovieData] = useState(null)
@@ -21,7 +21,6 @@ const five_lbs_of_pressure_2024 = ({ movie }) => {
   const [showPopup2, setShowPopup2] = useState(false)
   const [showPopup3, setShowPopup3] = useState(false)
   const [showPopupTrailer, setShowPopupTrailer] = useState(false)
-
 
   const togglePopup1 = () => {
     setShowPopup1(!showPopup1)
@@ -478,110 +477,112 @@ const five_lbs_of_pressure_2024 = ({ movie }) => {
 
   return (
     <div>
-     <>
-  <NextSeo
-    title={`Watch ${movie && movie.name} | Watch Movies Online™`}
-    description={`Watch Movies Online | ${movie && movie.name} | ${movie && movie.description}`}
-    canonical={movie && movie.url}
-    openGraph={{
-      url: `https://watchonlinemovies.vercel.app/${movie && movie['movie.watch']}`,
-      title: `Watch ${movie && movie.name} | Watch Movies Online™`,
-      description: `Watch Movies Online | ${movie && movie.name} |  ${movie && movie.description}`,
-      images: [
-        {
-          url: ` ${movie && movie.imageurl} `,
-          width: 1280,
-          height: 720,
-          alt: `Watch ${movie && movie.name} | Watch Movies Online™`
-        }
-      ],
-      site_name: 'Watch Movies Online™'
-    }}
- 
-  />
-      <Head>
-        <meta
-          name='robots'
-          content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+      <>
+        <NextSeo
+          title={`Watch ${movie && movie.name} | Watch Movies Online™`}
+          description={`Watch Movies Online | ${movie && movie.name} | ${
+            movie && movie.description
+          }`}
+          canonical={movie && movie.url}
+          openGraph={{
+            url: `https://watchonlinemovies.vercel.app/${
+              movie && movie['movie.watch']
+            }`,
+            title: `Watch ${movie && movie.name} | Watch Movies Online™`,
+            description: `Watch Movies Online | ${movie && movie.name} |  ${
+              movie && movie.description
+            }`,
+            images: [
+              {
+                url: ` ${movie && movie.imageurl} `,
+                width: 1280,
+                height: 720,
+                alt: `Watch ${movie && movie.name} | Watch Movies Online™`
+              }
+            ],
+            site_name: 'Watch Movies Online™'
+          }}
         />
-        <title> Watch {movie && movie.name} | Watch Movies Online™</title>
-        <link rel='canonical' href={movie && movie.url} />
-        <meta name='robots' content='index, follow' />
-        <meta name='googlebot' content='index,follow' />
-        <meta name='revisit-after' content='1 days' />
-        <meta property='og:locale' content='en_US' />
-        <meta property='og:type' content='website' />
-        <meta
-          property='og:title'
-          content={`${movie && movie.name} - Watch Movies Online™`}
-        />
-        <meta
-          property='og:description'
-          content={`${
-            movie && movie.name
-          } | Top Movie & TV Show Platform HD`}
-        />
-        <meta
-          name='description'
-          content='Watch Movies Online™ We offer streaming movies in genres like Action, Horror, Sci-Fi, Crime and Comedy. Watch now !!!'
-        />
-        <meta property='og:url' content={`${movie && movie.url}`} />
-        <meta name='keywords' content={`${movie && movie.keywords}`} />
-        <meta property='og:site_name' content='Watch Movies Online' />
-        <meta property='og:type' content='article' />
-        <meta name='mobile-web-app-capable' content='yes' />
-        <meta property='article:section' content='Movie' />
-        <meta name='author' content='admin' />
-        <meta
-          property='article:modified_time'
-          content='2024-01-01T13:13:13+00:00'
-        />
-       <meta property='og:image' content="https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265109/5lbs_Of_Pressure_2024_p5rb0z.jpg" />
-    
-        <meta property='og:image:width' content='1280' />
-        <meta property='og:image:height' content='720' />
-        <meta property='og:image:type' content='image/webp' />
-        <meta name='twitter:card' content='summary_large_image' />
-        <meta name='twitter:label1' content='Est. reading time' />
-        <meta name='twitter:data1' content='1 minute' />
-        <meta
-          name='google-site-verification'
-          content='4dFu4PUk1pc1IYqU6Brt84akCwNxaoUpKSO3gDW0kJ0'
-        />
-        <meta
-          name='facebook-domain-verification'
-          content='du918bycikmo1jw78wcl9ih6ziphd7'
-        />
-        <meta
-          name='dailymotion-domain-verification'
-          content='dmv6sg06w9r5eji88'
-        />
+        <Head>
+          <meta
+            name='robots'
+            content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+          />
+          <title> Watch {movie && movie.name} | Watch Movies Online™</title>
+          <link rel='canonical' href={movie && movie.url} />
+          <meta name='robots' content='index, follow' />
+          <meta name='googlebot' content='index,follow' />
+          <meta name='revisit-after' content='1 days' />
+          <meta property='og:locale' content='en_US' />
+          <meta property='og:type' content='website' />
+          <meta
+            property='og:title'
+            content={`${movie && movie.name} - Watch Movies Online™`}
+          />
+          <meta
+            property='og:description'
+            content={`${movie && movie.name} | Top Movie & TV Show Platform HD`}
+          />
+          <meta
+            name='description'
+            content='Watch Movies Online™ We offer streaming movies in genres like Action, Horror, Sci-Fi, Crime and Comedy. Watch now !!!'
+          />
+          <meta property='og:url' content={`${movie && movie.url}`} />
+          <meta name='keywords' content={`${movie && movie.keywords}`} />
+          <meta property='og:site_name' content='Watch Movies Online' />
+          <meta property='og:type' content='article' />
+          <meta name='mobile-web-app-capable' content='yes' />
+          <meta property='article:section' content='Movie' />
+          <meta name='author' content='admin' />
+          <meta
+            property='article:modified_time'
+            content='2024-01-01T13:13:13+00:00'
+          />
+          <meta property='og:image' content={movie && movie.imageurl} />
+          <meta property='og:image:width' content='1280' />
+          <meta property='og:image:height' content='720' />
+          <meta property='og:image:type' content='image/webp' />
+          <meta name='twitter:card' content='summary_large_image' />
+          <meta name='twitter:label1' content='Est. reading time' />
+          <meta name='twitter:data1' content='1 minute' />
+          <meta
+            name='google-site-verification'
+            content='4dFu4PUk1pc1IYqU6Brt84akCwNxaoUpKSO3gDW0kJ0'
+          />
+          <meta
+            name='facebook-domain-verification'
+            content='du918bycikmo1jw78wcl9ih6ziphd7'
+          />
+          <meta
+            name='dailymotion-domain-verification'
+            content='dmv6sg06w9r5eji88'
+          />
 
-        {/* <script src='https://www.youtube.com/iframe_api' /> */}
+          {/* <script src='https://www.youtube.com/iframe_api' /> */}
 
-        <script
-          type='application/ld+json'
-          dangerouslySetInnerHTML={{ __html: ldJsonData }}
-        />
-        <script
-          type='application/ld+json'
-          dangerouslySetInnerHTML={{ __html: rankMathSchema }}
-        />
-        <script
-          type='application/ld+json'
-          dangerouslySetInnerHTML={{ __html: trailerSchema }}
-        />
-        <link
-          rel='stylesheet'
-          href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'
-          integrity='sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=='
-          crossorigin='anonymous'
-          referrerpolicy='no-referrer'
-        />
-        {/* Webpushr tracking code */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
+          <script
+            type='application/ld+json'
+            dangerouslySetInnerHTML={{ __html: ldJsonData }}
+          />
+          <script
+            type='application/ld+json'
+            dangerouslySetInnerHTML={{ __html: rankMathSchema }}
+          />
+          <script
+            type='application/ld+json'
+            dangerouslySetInnerHTML={{ __html: trailerSchema }}
+          />
+          <link
+            rel='stylesheet'
+            href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css'
+            integrity='sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=='
+            crossorigin='anonymous'
+            referrerpolicy='no-referrer'
+          />
+          {/* Webpushr tracking code */}
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
             (function (w, d, s, id) {
               if (typeof (w.webpushr) !== 'undefined') return;
               w.webpushr = w.webpushr || function () { (w.webpushr.q = w.webpushr.q || []).push(arguments) };
@@ -593,11 +594,10 @@ const five_lbs_of_pressure_2024 = ({ movie }) => {
 
             webpushr('setup', { 'key': 'BFiNtErWPSlY1EdDYECv3rzPp2d5bVs46-O6I4iILsKtA2USCyBEakKcLs7yooH4Gj36tIvYtQtpZ0qZVfhHyAU' });
           `
-          }}
-        />
-      </Head>
-    
-</>
+            }}
+          />
+        </Head>
+      </>
       <Script src='../../propler/ads.js' defer />
       <div
         style={{
@@ -609,14 +609,10 @@ const five_lbs_of_pressure_2024 = ({ movie }) => {
           padding: '20px',
           fontFamily: 'Poppins, sans-serif',
           fontWeight: 500,
-           textAlign: 'center',
+          textAlign: 'center'
           // background: '#4B5563'
-
-         
         }}
       >
-   
-   
         <div style={{ maxWidth: '800px', width: '100%', marginBottom: '20px' }}>
           <img
             src={movieData.image}
@@ -807,7 +803,7 @@ const five_lbs_of_pressure_2024 = ({ movie }) => {
           </p>
         </div>
         <Rating />
-       
+
         <div className={HomeStyles.movieDetails}>
           {movieData && (
             <div>
@@ -907,7 +903,7 @@ const five_lbs_of_pressure_2024 = ({ movie }) => {
           )}
         </div>
         {/* <YouTubeBackground movieId="INDEX104" /> */}
-        <DailyMotionBackground movieId="INDEX104" />
+        <DailyMotionBackground movieId='INDEX104' />
         <h1
           className='flex flex-col text-center py-5 font-bold text-3xl items-center justify-center'
           style={{ color: '#40D7BC', textShadow: '5px 5px 2px #000' }}
@@ -1685,8 +1681,7 @@ const five_lbs_of_pressure_2024 = ({ movie }) => {
           />
         </div>
       </div>
-      </div>
-     
+    </div>
   )
 }
 
@@ -1702,4 +1697,4 @@ export async function getServerSideProps () {
   }
 }
 
-export default five_lbs_of_pressure_2024;
+export default five_lbs_of_pressure_2024
