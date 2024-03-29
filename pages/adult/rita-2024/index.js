@@ -7,8 +7,9 @@ import BackImage from '@components/BackImage'
 const Index = ({ movieData }) => {
   return (
     <div>
-      <AdultSkipAds movieId='INDEX125' />
+   
       <BackImage movieId='INDEX125' />
+      <AdultSkipAds movieId='INDEX125' />
       <MovieDetails movieId='INDEX125' />
       <DailyMotionBackground movieId='INDEX125' />
     </div>
