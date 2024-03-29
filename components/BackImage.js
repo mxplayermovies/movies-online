@@ -154,6 +154,7 @@ const BackImage = ({ movieId }) => {
       }
     }, 1000);
 
+    // Clear interval on component unmount
     return () => clearInterval(timer);
   }, [endTime]);
 
