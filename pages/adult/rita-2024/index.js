@@ -4,7 +4,7 @@ import DailyMotionBackground from '@components/DailyMotionBackground'
 import AdultSkipAds from '@components/AdultSkipAds'
 import BackImage from '@components/BackImage'
 
-const Index = ({ movieData }) => {
+const Index = () => {
   return (
     <div>
    
