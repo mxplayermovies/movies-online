@@ -1,21 +1,15 @@
-import React, { useState } from 'react';
-import MovieDetails from '@components/MovieDetails';
-import DailyMotionBackground from '@components/DailyMotionBackground';
 
-const Index = ({ movieData }) => {
-  const [isOpen, setIsOpen] = useState(false); // Define isOpen state variable
+import React from 'react'
+import MovieDetails from '@components/MovieDetails'
+import DailyMotionBackground from '@components/DailyMotionBackground'
 
-  const toggleAccordion = () => {
-    setIsOpen(!isOpen); // Toggle isOpen state
-  };
-
+const index = () => {
   return (
     <div>
-      <MovieDetails movieId='INDEX104' />
-      <DailyMotionBackground movieId='INDEX104' />
-    
+     <MovieDetails movieId="INDEX104" />;
+     <DailyMotionBackground movieId='INDEX104' />
     </div>
-  );
-};
+  )
+}
 
-export default Index;
+export default index
