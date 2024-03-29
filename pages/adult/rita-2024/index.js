@@ -8,9 +8,9 @@ import AdultSkipAds from '@components/AdultSkipAds'
 const index = () => {
   return (
     <div>
-      <MovieDetails movieId='INDEX67' />
-      <AdultSkipAds movieId='INDEX67' />
-      <DailyMotionBackground movieId='INDEX67' />
+      <MovieDetails movieId='INDEX125' />
+      <AdultSkipAds movieId='INDEX125' />
+      <DailyMotionBackground movieId='INDEX125' />
     
     </div>
   );
