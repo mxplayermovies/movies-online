@@ -98,136 +98,104 @@
 //           </div>
 //         </div>
 //       )}
-
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef } from 'react';
 
 const BackImage = ({ movieId }) => {
-  const [movieData, setMovieData] = useState(null)
-  const [showPopup, setShowPopup] = useState(true)
-  const [endTime, setEndTime] = useState(null)
-  const [countdownExpired, setCountdownExpired] = useState(false)
-  const timingRef = useRef(null)
+  const [movieData, setMovieData] = useState(null);
+  const [showPopup, setShowPopup] = useState(true);
+  const [endTime, setEndTime] = useState(null);
+  const timingRef = useRef(null);
 
   useEffect(() => {
     const fetchMovieDetails = async () => {
       try {
-        const response = await fetch(`/movies.json`)
-        const data = await response.json()
-        const movie = data.find(movie => movie.id === movieId)
-        setMovieData(movie)
+        const response = await fetch(`/movies.json`);
+        const data = await response.json();
+        const movie = data.find((movie) => movie.id === movieId);
+        setMovieData(movie);
       } catch (error) {
-        console.error('Error fetching movie data:', error)
+        console.error('Error fetching movie data:', error);
       }
-    }
+    };
 
-    fetchMovieDetails()
-  }, [movieId])
+    fetchMovieDetails();
+  }, [movieId]);
 
   useEffect(() => {
-    if (!movieData) return
+    if (!movieData) return;
 
-    const storedStartTime = localStorage.getItem('startTime')
-    let startTime
+    const storedStartTime = localStorage.getItem('startTime');
+    let startTime;
     if (storedStartTime) {
-      startTime = parseInt(storedStartTime)
+      startTime = parseInt(storedStartTime);
     } else {
-      startTime = new Date().getTime()
-      localStorage.setItem('startTime', startTime)
+      startTime = new Date().getTime();
+      localStorage.setItem('startTime', startTime);
     }
 
-    const endTime = startTime + 24 * 60 * 60 * 1000 // 24 hours
-    setEndTime(endTime)
-  }, [movieData])
+    const endTime = startTime + 24 * 60 * 60 * 1000; // 24 hours
+    setEndTime(endTime);
+  }, [movieData]);
 
   useEffect(() => {
-    if (!endTime) return
+    if (!endTime) return;
 
     const timer = setInterval(() => {
-      const now = new Date().getTime()
-      const x = endTime - now
+      const now = new Date().getTime();
+      const x = endTime - now;
 
       if (x > 0) {
-        const hours = Math.floor((x % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
-        const mins = Math.floor((x % (1000 * 60 * 60)) / (1000 * 60))
-        const secs = Math.floor((x % (1000 * 60)) / 1000)
-        const time = `${hours}h : ${mins}m : ${secs}s`
-        timingRef.current.innerHTML = time
+        const hours = Math.floor((x % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const mins = Math.floor((x % (1000 * 60 * 60)) / (1000 * 60));
+        const secs = Math.floor((x % (1000 * 60)) / 1000);
+        const time = `${hours}h : ${mins}m : ${secs}s`;
+        timingRef.current.innerHTML = time;
       } else {
-        timingRef.current.innerHTML = 'Countdown expired'
-        setCountdownExpired(true)
-        clearInterval(timer)
+        timingRef.current.innerHTML = 'Countdown expired';
+        clearInterval(timer);
       }
-    }, 1000)
+    }, 1000);
 
-    return () => clearInterval(timer)
-  }, [endTime])
+    return () => clearInterval(timer);
+  }, [endTime]);
 
   const handleClose = () => {
-    setShowPopup(false)
-  }
+    setShowPopup(false);
+  };
 
   return (
     <div>
-      {showPopup && movieData && !countdownExpired && (
-        <div className='popup-overlay'>
-          <div className='popup'>
+      {showPopup && movieData && (
+        <div className="popup-overlay">
+          <div className="popup">
             <div
-              className='content-container'
+              className="content-container"
               style={{
                 backgroundImage: `url(${movieData.backimage})`,
                 backgroundSize: 'cover',
                 backgroundRepeat: 'no-repeat',
                 filter:
-                  'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+                  'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)',
               }}
             >
-              <h2
-                style={{ fontWeight: 'bold', textShadow: '5px 5px 2px #000' }}
-              >
-                Coming Soon
-              </h2>
+              <h2 style={{ fontWeight: 'bold', textShadow: '5px 5px 2px #000' }}>Coming Soon</h2>
               <div
-                className='timing'
+                className="timing"
                 ref={timingRef}
                 style={{ fontWeight: 'bold', textShadow: '5px 5px 2px #000' }}
               >
                 24h : 00m : 00s
               </div>
-
-              <p
-                style={{
-                  color: '#fff',
-                  fontSize: '20px',
-                  fontWeight: 'bold',
-                  textShadow: '5px 5px 2px #000'
-                }}
-              >
+              <p style={{ color: '#fff', fontSize: '20px', fontWeight: 'bold', textShadow: '5px 5px 2px #000' }}>
                 {movieData.title}
               </p>
-              <p
-                style={{
-                  color: '#fff',
-                  fontSize: '20px',
-                  fontWeight: 'bold',
-                  textShadow: '5px 5px 2px #000'
-                }}
-              >
+              <p style={{ color: '#fff', fontSize: '20px', fontWeight: 'bold', textShadow: '5px 5px 2px #000' }}>
                 We Are currently Working on it.
               </p>
-              {/* <p
-                style={{
-                  color: '#fff',
-                  fontSize: '18px',
-                  fontWeight: 'bold',
-                  textShadow: '5px 5px 2px #000'
-                }}
-              >
-                Please Check After Some Time
-              </p> */}
-              <div className='button-container '>
+              <div className="button-container ">
                 <a
-                  href='../'
-                  className='close-button relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-5 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-red-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110  cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'
+                  href="../"
+                  className="close-button relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-5 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-red-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110  cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0"
                   onClick={handleClose}
                   // style={{ fontWeight: 'bold', textShadow: '5px 5px 2px #fff' }}
                 >
@@ -249,7 +217,7 @@ const BackImage = ({ movieId }) => {
           display: flex;
           justify-content: center;
           align-items: center;
-          z-index: 9999; /* Set a high z-index value */
+          z-index: 9999;
         }
 
         .popup {
@@ -259,8 +227,8 @@ const BackImage = ({ movieId }) => {
           border-radius: 10px;
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
           animation: slide-down 0.5s ease;
-          position: relative; /* Ensure the z-index works */
-          z-index: 10000; /* Set a higher z-index value */
+          position: relative;
+          z-index: 10000;
         }
 
         @keyframes slide-down {
@@ -283,7 +251,7 @@ const BackImage = ({ movieId }) => {
         .timing {
           font-size: 40px;
           font-weight: bold;
-          color: white; /* Set text color to white */
+          color: white;
         }
 
         .content-container h2 {
@@ -291,7 +259,7 @@ const BackImage = ({ movieId }) => {
           font-weight: 900;
           margin: 10px;
           font-family: 'Poppins, sans-serif';
-          color: white; /* Set text color to white */
+          color: white;
         }
 
         .content-container p {
@@ -302,7 +270,7 @@ const BackImage = ({ movieId }) => {
           font-weight: bold;
           line-height: 1.9;
           padding: 15px 0;
-          color: white; /* Set text color to white */
+          color: white;
         }
 
         .content-container a {
@@ -360,6 +328,7 @@ const BackImage = ({ movieId }) => {
         }
       `}</style>
     </div>
-  )
-}
+  );
+};
+
 export default BackImage;
