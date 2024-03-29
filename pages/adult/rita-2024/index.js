@@ -9,7 +9,7 @@ const Index = ({ movieData }) => {
     <div>
    
       <BackImage movieId='INDEX125' />
-      <AdultSkipAds movieId='INDEX125' />
+      {/* <AdultSkipAds movieId='INDEX125' /> */}
       <MovieDetails movieId='INDEX125' />
       <DailyMotionBackground movieId='INDEX125' />
     </div>
