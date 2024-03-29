@@ -11,7 +11,7 @@ import YouTubeBackground from '@components/YouTubeBackground'
 import DailyMotionBackground from '@components/DailyMotionBackground'
 import Max from '@components/Max'
 import Script from 'next/script'
-import { NextSeo } from 'next-seo'
+
 
 const five_lbs_of_pressure_2024 = ({ movie }) => {
   const [movieData, setMovieData] = useState(null)
@@ -477,32 +477,7 @@ const five_lbs_of_pressure_2024 = ({ movie }) => {
 
   return (
     <div>
-      <>
-        <NextSeo
-          title={`Watch ${movie && movie.name} | Watch Movies Online™`}
-          description={`Watch Movies Online | ${movie && movie.name} | ${
-            movie && movie.description
-          }`}
-          canonical={movie && movie.url}
-          openGraph={{
-            url: `https://watchonlinemovies.vercel.app/${
-              movie && movie['movie.watch']
-            }`,
-            title: `Watch ${movie && movie.name} | Watch Movies Online™`,
-            description: `Watch Movies Online | ${movie && movie.name} |  ${
-              movie && movie.description
-            }`,
-            images: [
-              {
-                url: ` ${movie && movie.imageurl} `,
-                width: 1280,
-                height: 720,
-                alt: `Watch ${movie && movie.name} | Watch Movies Online™`
-              }
-            ],
-            site_name: 'Watch Movies Online™'
-          }}
-        />
+      
         <Head>
           <meta
             name='robots'
@@ -597,7 +572,7 @@ const five_lbs_of_pressure_2024 = ({ movie }) => {
             }}
           />
         </Head>
-      </>
+  
       <Script src='../../propler/ads.js' defer />
       <div
         style={{
@@ -1684,6 +1659,8 @@ const five_lbs_of_pressure_2024 = ({ movie }) => {
     </div>
   )
 }
+
+
 
 export async function getServerSideProps () {
   const res = await fetch('https://watchonlinemovies.vercel.app/movies.json')
