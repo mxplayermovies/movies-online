@@ -1,22 +1,16 @@
-
-
 import React from 'react'
-import MovieDetails from '@components/MovieDetails';
-import DailyMotionBackground from '@components/DailyMotionBackground';
+import MovieDetails from '@components/MovieDetails'
+import DailyMotionBackground from '@components/DailyMotionBackground'
 import AdultSkipAds from '@components/AdultSkipAds'
 
 const Index = ({ movieData }) => {
- 
-
-
   return (
     <div>
-      <MovieDetails movieId='INDEX78' />
       <AdultSkipAds movieId='INDEX78' />
+      <MovieDetails movieId='INDEX78' />
       <DailyMotionBackground movieId='INDEX78' />
-    
     </div>
-  );
-};
+  )
+}
 
-export default Index;
+export default Index
