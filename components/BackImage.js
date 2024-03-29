@@ -104,7 +104,6 @@ import React, { useState, useEffect, useRef } from 'react';
 const BackImage = ({ movieId }) => {
   const [movieData, setMovieData] = useState(null);
   const [showPopup, setShowPopup] = useState(true);
-  const [endTime, setEndTime] = useState(null);
   const timingRef = useRef(null);
 
   useEffect(() => {
@@ -125,21 +124,8 @@ const BackImage = ({ movieId }) => {
   useEffect(() => {
     if (!movieData) return;
 
-    const storedStartTime = localStorage.getItem('startTime');
-    let startTime;
-    if (storedStartTime) {
-      startTime = parseInt(storedStartTime);
-    } else {
-      startTime = new Date().getTime();
-      localStorage.setItem('startTime', startTime);
-    }
-
+    const startTime = new Date().getTime();
     const endTime = startTime + 24 * 60 * 60 * 1000; // 24 hours
-    setEndTime(endTime);
-  }, [movieData]);
-
-  useEffect(() => {
-    if (!endTime) return;
 
     const timer = setInterval(() => {
       const now = new Date().getTime();
@@ -156,7 +142,7 @@ const BackImage = ({ movieId }) => {
 
     // Clear interval on component unmount
     return () => clearInterval(timer);
-  }, [endTime]);
+  }, [movieData]);
 
   const handleClose = () => {
     setShowPopup(false);
