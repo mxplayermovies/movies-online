@@ -53,6 +53,7 @@ const Max = ({}) => {
     infinite: true,
     speed: 500,
     slidesToShow: 1,
+    
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000
@@ -94,7 +95,7 @@ const Max = ({}) => {
             </div>
             <div
               className='text-center mt-2 text-2xl'
-              style={{ color: '#40D7BC', textShadow: '2px 5px 5px #000000' }}
+              style={{ color: '#40D7BC', textShadow: '2px 5px 5px #000000'  }}
             >
               {image.text}
             </div>

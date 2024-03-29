@@ -242,7 +242,8 @@ export default function Home ({ movie }) {
       />
 
       <div className={styles.container}>
-      
+    
+  
         <Head>
           <title>
             {' '}
@@ -352,6 +353,7 @@ export default function Home ({ movie }) {
             dangerouslySetInnerHTML={{ __html: rankMathSchema }}
           />
         </Head>
+       
 
         <main className={styles.main}>
           <div className='py-8'>
