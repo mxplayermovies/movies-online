@@ -6,6 +6,7 @@ import { useState, useRef, useEffect } from 'react'
 import Script from 'next/script'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
+import { NextSeo } from 'next-seo';
 
 const scrollSearch = myKey => {
   window.scrollTo(0, 0)
@@ -241,6 +242,28 @@ export default function Home ({ movie }) {
       />
 
       <div className={styles.container}>
+      <>
+      <NextSeo
+        title="Watch Movies Online™ - Top Movie & TV Show Platform HD"
+        description="Watch free movies and TV shows online in HD on any device. We offer streaming movies in genres like Action, Horror, Sci-Fi, Crime and Comedy. Watch now !!!"
+        canonical="https://watchonlinemovies.vercel.app/"
+        openGraph={{
+          url: "https://watchonlinemovies.vercel.app/",
+          title: "Watch Movies Online™ - Top Movie & TV Show Platform HD",
+          description: "Watch free movies and TV shows online in HD on any device. We offer streaming movies in genres like Action, Horror, Sci-Fi, Crime and Comedy. Watch now !!!",
+          images: [
+            {
+              url: "https://watchonlinemovies.vercel.app/og_image.jpg",
+              width: 1280,
+              height: 720,
+              alt: "Watch Movies Online™ - Top Movie & TV Show Platform HD"
+            }
+          ],
+          site_name: "Watch Movies Online™ - Top Movie & TV Show Platform HD"
+        }}
+   
+      />
+  
         <Head>
           <title>
             {' '}
@@ -350,7 +373,8 @@ export default function Home ({ movie }) {
             dangerouslySetInnerHTML={{ __html: rankMathSchema }}
           />
         </Head>
-
+       
+    </>
         <main className={styles.main}>
           <div className='py-8'>
             <div id='main'>
