@@ -247,7 +247,7 @@ export default function Home ({ movie }) {
         <Head>
           <title>
             {' '}
-            Watch Movies Online™ - Top Movie & TV Show Platform HD{' '}
+            Watch Movies Online™ - Free Download Movies HD Platform {' '}
           </title>
           <link
             rel='sitemap'
@@ -301,7 +301,7 @@ export default function Home ({ movie }) {
           <meta property='og:type' content='website' />
           <meta
             property='og:title'
-            content='Watch Movies Online™ - Top Movie & TV Show Platform HD'
+            content='Watch Movies Online™ - Free Download Movies HD Platform'
           />
           <meta
             property='og:description'
@@ -313,7 +313,7 @@ export default function Home ({ movie }) {
           />
           <meta
             property='og:site_name'
-            content='Watch Movies Online™ - Top Movie & TV Show Platform HD'
+            content='Watch Movies Online™ - Free Download Movies HD Platform'
           />
           <meta
             property='og:image'
@@ -323,7 +323,8 @@ export default function Home ({ movie }) {
           <meta property='og:image:width' content='1280' />
           <meta property='og:image:height' content='720' />
           <meta property='og:image:type' content='image/webp' />
-          <meta name='application-name' content='Watch Movies Online™ - Top Movie & TV Show Platform HD' />
+          <meta name='application-name' content='Watch Movies Online™ - Free Download Movies HD Platform' />
+          <meta property="article:publisher" content="https://www.facebook.com/watchonlinemovies.vercel.app" />
           <meta
             property='article:modified_time'
             content='2024-01-01T13:13:13+00:00'
