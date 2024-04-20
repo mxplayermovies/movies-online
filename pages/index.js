@@ -234,8 +234,24 @@ const HomePage = () => {
           />
         </Head>
 
-
+      
         <main className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <h1
+            className='flex flex-col text-center py-5 font-bold text-3xl items-center justify-center'
+            style={{ color: '#40D7BC',  textShadow: '5px 5px 2px #000' }}
+          >
+            Watch Movies Online™ - The Best Movies Platform HD Movies.  </h1>
+         <p className='flex flex-col text-center py-5 font-bold text-xl items-center justify-center'
+            style={{ color: '#40D7BC',  textShadow: '5px 5px 2px #000' }}
+          > 
+"Watch Movies Online™ - The Best Movies Platform HD Movies" is a platform that provides access to a wide range of high-definition movies for streaming online. With this platform, users can enjoy a diverse selection of movies spanning various genres, including action, drama, comedy, thriller, romance, and more.
+
+The platform aims to offer a seamless and enjoyable movie-watching experience, allowing users to browse through a vast collection of films and watch them instantly without the need for downloading. Additionally, it may provide features such as personalized recommendations, user ratings, and reviews to help users discover new movies tailored to their preferences.
+
+Overall, "Watch Movies Online™ - The Best Movies Platform HD Movies" strives to be a go-to destination for movie enthusiasts looking for convenient and high-quality streaming options for their entertainment needs.
+
+</p>
+         
           <div className="py-8">
             <ShareButtons
               url='https://watchonlinemovies.vercel.app'
@@ -244,29 +260,43 @@ const HomePage = () => {
               style={{ marginBottom: '20px' }}
             />
           </div>
-
+        
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
             {/* Display images in a grid */}
+           
             {movies.map((movie) => (
               <div key={movie.id} className="flex flex-col justify-between">
                 <a href={`/movie/${movie.id}`}>
+                  
                   <div className="relative">
                     <img
                       src={movie.image}
                       alt={movie.title}
-                      className="w-full h-auto rounded-md filter contrast-110 saturate-120 brightness-130 hue-rotate-0"
+                      className="w-full "
                       loading='lazy'
+                      style={{
+                        maxWidth: '100%',
+                        margin: 'auto',
+                        marginBottom: '20px',
+                        borderRadius: '25px',
+                        boxShadow: '0 0 10px 0 #fff',
+                        filter:
+                          'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
+                      }}
                     />
+
                      <div
                             style={{
                               position: 'absolute',
                               top: '10px',
                               right: '10px',
-                              backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                              backgroundColor: 'rgba(0, 0, 0, 0.4)',
                               fontWeight: 'bold',
                               color: '#fff',
-                              padding: '5px',
-                              borderRadius: '5px'
+                              padding: '2px',
+                              borderRadius: '5px',
+                              // fontSize: '12px',
+                              textShadow: '3px 3px 3px #000'
                             }}
                           >
                             {movie.badge}
@@ -277,18 +307,19 @@ const HomePage = () => {
                                 bottom: '10px',
                                 left: '50%',
                                 transform: 'translateX(-50%)',
-                                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                                backgroundColor: 'rgba(0, 0, 0, 0.4)',
                                 fontWeight: 'bold',
                                 color: '#fff',
                                 padding: '5px',
                                 borderRadius: '5px',
-                                fontSize: '16px',
-                                textShadow: '3px 3px 3px #40D7BC'
+                                // fontSize: '12px',
+                                textShadow: '3px 3px 3px #000'
                               }}
                             >
                               {movie.genre}
                             </div>
                   </div>
+                  
                 </a>
                 {/* <h2 className="text-center text-xl mt-2">{movie.title}</h2> */}
               </div>

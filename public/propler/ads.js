@@ -6,10 +6,9 @@
         var adScript = document.createElement('script');
         adScript.async = true;
         adScript.setAttribute('data-cfasync', 'false');
-        adScript.src = '//thubanoa.com/1?z=7198556';
+        adScript.src = '//thubanoa.com/1?z=7371658';
         document.body.appendChild(adScript);
       }
 
       // Set a timeout to load the ad code after 5 seconds
       setTimeout(loadAdCode, 50000); // 5000 milliseconds = 5 seconds
-

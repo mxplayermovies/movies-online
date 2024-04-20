@@ -1,5 +1,5 @@
-import { useRouter } from 'next/router';
-import moviesData from '../../../public/movies.json';
+import { useRouter } from 'next/router'
+import moviesData from '../../../public/movies.json'
 import { useEffect, useState, useRef } from 'react'
 import Styles from '@styles/video-player.module.css'
 import Head from 'next/head'
@@ -15,8 +15,8 @@ import Max from '@components/Max'
 import Script from 'next/script'
 
 const MovieDetail = ({ movie }) => {
-  const router = useRouter();
-  const { id } = router.query;
+  const router = useRouter()
+  const { id } = router.query
 
   const [showPopup, setShowPopup] = useState(false)
   const [messageShown, setMessageShown] = useState(false) // Define messageShown state
@@ -45,13 +45,13 @@ const MovieDetail = ({ movie }) => {
     setShowPopupTrailer(!showPopupTrailer)
   }
 
-  const [adultMovies, setAdultMovies] = useState([]);
+  const [adultMovies, setAdultMovies] = useState([])
 
   useEffect(() => {
     // Filter adult movies from the moviesData
-    const filteredMovies = moviesData.filter((movie) => movie.group === "adult");
-    setAdultMovies(filteredMovies);
-  }, []);
+    const filteredMovies = moviesData.filter(movie => movie.group === 'adult')
+    setAdultMovies(filteredMovies)
+  }, [])
 
   const audioIframeRef = useRef(null)
   const predefinedEqualizationValue = 70
@@ -340,9 +340,7 @@ const MovieDetail = ({ movie }) => {
         />
         <meta
           property='og:description'
-          content={`${
-            movie && movie.name
-          } | Top Movie & TV Show Platform HD`}
+          content={`${movie && movie.name} | Top Movie & TV Show Platform HD`}
         />
         <meta
           name='description'
@@ -359,8 +357,8 @@ const MovieDetail = ({ movie }) => {
           property='article:modified_time'
           content='2024-01-01T13:13:13+00:00'
         />
-       <meta property='og:image' content="https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265109/5lbs_Of_Pressure_2024_p5rb0z.jpg" />
-    
+        <meta property='og:image' content={`${movie && movie.image}`}  />
+
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />
         <meta property='og:image:type' content='image/webp' />
@@ -419,302 +417,328 @@ const MovieDetail = ({ movie }) => {
           }}
         />
       </Head>
-    <Script src='../../propler/ads2.js' defer />
-    
-    <div className={`w-full bg-gray-600 shadow`}
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        minHeight: '100vh',
-        padding: '20px',
-        fontFamily: 'Poppins, sans-serif',
-        fontWeight: 500,
-        textAlign: 'center',
-      }}
-    >
-      <div style={{ maxWidth: '800px', width: '100%', marginBottom: '20px' }}>
-        <img
-          src={movie.image}
-          alt={movie.title}
-          style={{
-            maxWidth: '100%',
-            margin: 'auto',
-            marginBottom: '20px',
-            borderRadius: '50px',
-            boxShadow: '0 0 10px 0 #fff',
-            filter:
-              'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
-          }}
-        />
+      <Script src='../../propler/ads.js' defer />
 
+      <div
+        className={`w-full bg-gray-600 shadow`}
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          minHeight: '100vh',
+          padding: '20px',
+          fontFamily: 'Poppins, sans-serif',
+          fontWeight: 500,
+          textAlign: 'center'
+        }}
+      >
         <h2
-          style={{
-            fontFamily: 'Poppins, sans-serif',
-            fontSize: '34px',
-            fontWeight: 'bold',
-            marginBottom: '10px',
-            color: '#40D7BC',
-            textShadow: '2px 5px 5px #000000'
-          }}
+          className='flex flex-col text-center py-5 font-bold text-3xl items-center justify-center'
+          style={{ color: '#40D7BC', textShadow: '5px 5px 2px #000' }}
         >
-          {movie.title}
+          Watch Movies Online™ - The Best Movies Platform HD Movies.{' '}
         </h2>
+        <p
+          className='flex flex-col text-center py-5 font-bold text-xl items-center justify-center'
+          style={{ color: '#40D7BC', textShadow: '5px 5px 2px #000' }}
+        >
+          "Watch Movies Online™ - The Best Movies Platform HD Movies" is a
+          platform that provides access to a wide range of high-definition
+          movies for streaming online. With this platform, users can enjoy a
+          diverse selection of movies spanning various genres, including action,
+          drama, comedy, thriller, romance, and more. The platform aims to offer
+          a seamless and enjoyable movie-watching experience, allowing users to
+          browse through a vast collection of films and watch them instantly
+          without the need for downloading. Additionally, it may provide
+          features such as personalized recommendations, user ratings, and
+          reviews to help users discover new movies tailored to their
+          preferences. Overall, "Watch Movies Online™ - The Best Movies Platform
+          HD Movies" strives to be a go-to destination for movie enthusiasts
+          looking for convenient and high-quality streaming options for their
+          entertainment needs.
+        </p>
+        <div style={{ maxWidth: '800px', width: '100%', marginBottom: '20px' }}>
+          <img
+            src={movie.image}
+            alt={movie.title}
+            style={{
+              maxWidth: '100%',
+              margin: 'auto',
+              marginBottom: '20px',
+              borderRadius: '50px',
+              boxShadow: '0 0 10px 0 #fff',
+              filter:
+                'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
+            }}
+          />
 
-        <p
-          style={{
-            marginTop: '20px',
-            marginBottom: '10px',
-            fontFamily: 'Poppins, sans-serif',
-            fontSize: '18px',
-            fontWeight: 'bold',
-            color: '#fff',
-            textShadow: '2px 5px 5px #000000'
-          }}
-        >
-          {' '}
-          Genre: {movie.genre.join(', ')}{' '}
-        </p>
-        <p
-          style={{
-            marginBottom: '10px',
-            fontFamily: 'Poppins, sans-serif',
-            fontSize: '18px',
-            fontWeight: 'bold',
-            color: '#fff',
-            textShadow: '2px 5px 5px #000000'
-          }}
-        >
-          Synopsis: {movie.synopsis}
-        </p>
-        <p
-          style={{
-            marginBottom: '10px',
-            fontFamily: 'Poppins, sans-serif',
-            fontSize: '25px',
-            fontWeight: 'bold',
-            color: '#fff',
-            textShadow: '2px 5px 5px #000000'
-          }}
-        >
-          Director: {movie.directorname}
-        </p>
+          <h2
+            style={{
+              fontFamily: 'Poppins, sans-serif',
+              fontSize: '34px',
+              fontWeight: 'bold',
+              marginBottom: '10px',
+              color: '#40D7BC',
+              textShadow: '2px 5px 5px #000000'
+            }}
+          >
+            {movie.title}
+          </h2>
 
-        <p
-          style={{
-            marginBottom: '10px',
-            fontFamily: 'Poppins, sans-serif',
-            fontSize: '18px',
-            fontWeight: 'bold',
-            color: '#fff',
-            textShadow: '2px 5px 5px #000000'
-          }}
-        >
-          <a href={movie.imdbLink}>IMDb Rating: {movie.imdbRating}</a>
-        </p>
+          <p
+            style={{
+              marginTop: '20px',
+              marginBottom: '10px',
+              fontFamily: 'Poppins, sans-serif',
+              fontSize: '18px',
+              fontWeight: 'bold',
+              color: '#fff',
+              textShadow: '2px 5px 5px #000000'
+            }}
+          >
+            {' '}
+            Genre: {movie.genre.join(', ')}{' '}
+          </p>
+          <p
+            style={{
+              marginBottom: '10px',
+              fontFamily: 'Poppins, sans-serif',
+              fontSize: '18px',
+              fontWeight: 'bold',
+              color: '#fff',
+              textShadow: '2px 5px 5px #000000'
+            }}
+          >
+            Synopsis: {movie.synopsis}
+          </p>
+          <p
+            style={{
+              marginBottom: '10px',
+              fontFamily: 'Poppins, sans-serif',
+              fontSize: '25px',
+              fontWeight: 'bold',
+              color: '#fff',
+              textShadow: '2px 5px 5px #000000'
+            }}
+          >
+            Director: {movie.directorname}
+          </p>
 
-        <p
-          style={{
-            marginBottom: '10px',
-            fontFamily: 'Poppins, sans-serif',
-            fontSize: '18px',
-            fontWeight: 'bold',
-            color: '#fff',
-            textShadow: '2px 5px 5px #000000'
-          }}
-        >
-          Average Time: {movie.avgTime}
-        </p>
+          <p
+            style={{
+              marginBottom: '10px',
+              fontFamily: 'Poppins, sans-serif',
+              fontSize: '18px',
+              fontWeight: 'bold',
+              color: '#fff',
+              textShadow: '2px 5px 5px #000000'
+            }}
+          >
+            <a href={movie.imdbLink}>IMDb Rating: {movie.imdbRating}</a>
+          </p>
 
-        <p
-          style={{
-            marginBottom: '10px',
-            fontFamily: 'Poppins, sans-serif',
-            fontSize: '18px',
-            fontWeight: 'bold',
-            color: '#fff',
-            textShadow: '2px 5px 5px #000000'
-          }}
-        >
-          Country: {movie.country}
-        </p>
-        <p
-          style={{
-            marginBottom: '10px',
-            fontFamily: 'Poppins, sans-serif',
-            fontSize: '18px',
-            fontWeight: 'bold',
-            color: '#fff',
-            textShadow: '2px 5px 5px #000000'
-          }}
-        >
-          Start Date: {movie.startDate}
-        </p>
-        <p
-          style={{
-            marginBottom: '10px',
-            fontFamily: 'Poppins, sans-serif',
-            fontSize: '18px',
-            fontWeight: 'bold',
-            color: '#fff',
-            textShadow: '2px 5px 5px #000000'
-          }}
-        >
-          Content Rating: {movie.contentRating}
-        </p>
-        <p
-          style={{
-            marginBottom: '10px',
-            fontFamily: 'Poppins, sans-serif',
-            fontSize: '18px',
-            fontWeight: 'bold',
-            color: '#fff',
-            textShadow: '2px 5px 5px #000000'
-          }}
-        >
-          Original Network: {movie.Originalnetwork}
-        </p>
-        <p
-          style={{
-            marginBottom: '10px',
-            fontFamily: 'Poppins, sans-serif',
-            fontSize: '18px',
-            fontWeight: 'bold',
-            color: '#fff',
-            textShadow: '2px 5px 5px #000000'
-          }}
-        >
-          Language: {movie.language}
-        </p>
-        <p
-          style={{
-            marginBottom: '10px',
-            fontFamily: 'Poppins, sans-serif',
-            fontSize: '18px',
-            fontWeight: 'bold',
-            color: '#fff',
-            textShadow: '2px 5px 5px #000000'
-          }}
-        >
-          Time: {movie.time}
-        </p>
-        <p
-          style={{
-            marginBottom: '10px',
-            fontFamily: 'Poppins, sans-serif',
-            fontSize: '20px',
-            fontWeight: 'bold',
-            color: '#fff',
-            textShadow: '2px 5px 5px #000000'
-          }}
-        >
-          Starring: {movie.starring.join(', ')}
-        </p>
-      </div>
-      <Rating />
-       
-       <div className={HomeStyles.movieDetails}>
-         {movie && (
-           <div>
-             <div className={`${HomeStyles.imageGrid} mt-5`}>
-               <img
-                 className={`${HomeStyles.image} img-fluid lazyload `}
-                 src={movie.directorimg}
-                 alt={movie.directorname}
-                 title={movie.directorname}
-                 style={{
-                   width: '200px',
-                   height: '200px',
-                   objectFit: 'cover',
-                   filter: 'contrast(1.2) saturate(1.2)',
-                   boxShadow: '0 0 10px 0 #C0C0C0' // Shadow effect with black color
-                 }}
-                 loading='lazy'
-                 layout='responsive'
-               />
-               <img
-                 className={`${HomeStyles.image} img-fluid lazyload`}
-                 src={movie.actor1img}
-                 alt={movie.actor1}
-                 title={movie.actor1}
-                 style={{
-                   width: '200px',
-                   height: '200px',
-                   objectFit: 'cover',
-                   boxShadow: '0 0 10px 0 #C0C0C0', // Shadow effect with black color
-                   filter: 'contrast(1.2) saturate(1.2)'
-                 }}
-                 loading='lazy'
-                 layout='responsive'
-               />
-               <img
-                 className={`${HomeStyles.image} img-fluid lazyload`}
-                 src={movie.actor2img}
-                 alt={movie.actor2}
-                 title={movie.actor2}
-                 style={{
-                   width: '200px',
-                   height: '200px',
-                   objectFit: 'cover',
-                   boxShadow: '0 0 10px 0 #C0C0C0', // Shadow effect with black color
-                   filter: 'contrast(1.2) saturate(1.2)'
-                 }}
-                 loading='lazy'
-                 layout='responsive'
-               />
-               <img
-                 className={`${HomeStyles.image} img-fluid lazyload`}
-                 src={movie.actor3img}
-                 alt={movie.actor3}
-                 title={movie.actor3}
-                 style={{
-                   width: '200px',
-                   height: '200px',
-                   objectFit: 'cover',
-                   boxShadow: '0 0 10px 0 #C0C0C0', // Shadow effect with black color
-                   filter: 'contrast(1.2) saturate(1.2)'
-                 }}
-                 loading='lazy'
-                 layout='responsive'
-               />
-               <img
-                 className={`${HomeStyles.image} img-fluid lazyload`}
-                 src={movie.actor4img}
-                 alt={movie.actor4}
-                 title={movie.actor4}
-                 style={{
-                   width: '200px',
-                   height: '200px',
-                   objectFit: 'cover',
-                   boxShadow: '0 0 10px 0 #C0C0C0', // Shadow effect with black color
-                   filter: 'contrast(1.2) saturate(1.2)'
-                 }}
-                 loading='lazy'
-                 layout='responsive'
-               />
-               <img
-                 className={`${HomeStyles.image} img-fluid lazyload`}
-                 src={movie.actor5img}
-                 alt={movie.actor5}
-                 title={movie.actor5}
-                 style={{
-                   width: '200px',
-                   height: '200px',
-                   objectFit: 'cover',
-                   boxShadow: '0 0 10px 0 #C0C0C0', // Shadow effect with black color
-                   filter: 'contrast(1.2) saturate(1.2)'
-                 }}
-                 loading='lazy'
-                 layout='responsive'
-               />
-             </div>
-           </div>
-         )}
-       </div>
-      {/* <DailyMotionBackground videoId={movie.video} /> */}
+          <p
+            style={{
+              marginBottom: '10px',
+              fontFamily: 'Poppins, sans-serif',
+              fontSize: '18px',
+              fontWeight: 'bold',
+              color: '#fff',
+              textShadow: '2px 5px 5px #000000'
+            }}
+          >
+            Average Time: {movie.avgTime}
+          </p>
 
-      <h1
+          <p
+            style={{
+              marginBottom: '10px',
+              fontFamily: 'Poppins, sans-serif',
+              fontSize: '18px',
+              fontWeight: 'bold',
+              color: '#fff',
+              textShadow: '2px 5px 5px #000000'
+            }}
+          >
+            Country: {movie.country}
+          </p>
+          <p
+            style={{
+              marginBottom: '10px',
+              fontFamily: 'Poppins, sans-serif',
+              fontSize: '18px',
+              fontWeight: 'bold',
+              color: '#fff',
+              textShadow: '2px 5px 5px #000000'
+            }}
+          >
+            Start Date: {movie.startDate}
+          </p>
+          <p
+            style={{
+              marginBottom: '10px',
+              fontFamily: 'Poppins, sans-serif',
+              fontSize: '18px',
+              fontWeight: 'bold',
+              color: '#fff',
+              textShadow: '2px 5px 5px #000000'
+            }}
+          >
+            Content Rating: {movie.contentRating}
+          </p>
+          <p
+            style={{
+              marginBottom: '10px',
+              fontFamily: 'Poppins, sans-serif',
+              fontSize: '18px',
+              fontWeight: 'bold',
+              color: '#fff',
+              textShadow: '2px 5px 5px #000000'
+            }}
+          >
+            Original Network: {movie.Originalnetwork}
+          </p>
+          <p
+            style={{
+              marginBottom: '10px',
+              fontFamily: 'Poppins, sans-serif',
+              fontSize: '18px',
+              fontWeight: 'bold',
+              color: '#fff',
+              textShadow: '2px 5px 5px #000000'
+            }}
+          >
+            Language: {movie.language}
+          </p>
+          <p
+            style={{
+              marginBottom: '10px',
+              fontFamily: 'Poppins, sans-serif',
+              fontSize: '18px',
+              fontWeight: 'bold',
+              color: '#fff',
+              textShadow: '2px 5px 5px #000000'
+            }}
+          >
+            Time: {movie.time}
+          </p>
+          <p
+            style={{
+              marginBottom: '10px',
+              fontFamily: 'Poppins, sans-serif',
+              fontSize: '20px',
+              fontWeight: 'bold',
+              color: '#fff',
+              textShadow: '2px 5px 5px #000000'
+            }}
+          >
+            Starring: {movie.starring.join(', ')}
+          </p>
+        </div>
+        <Rating />
+
+        <div className={HomeStyles.movieDetails}>
+          {movie && (
+            <div>
+              <div className={`${HomeStyles.imageGrid} mt-5`}>
+                <img
+                  className={`${HomeStyles.image} img-fluid lazyload `}
+                  src={movie.directorimg}
+                  alt={movie.directorname}
+                  title={movie.directorname}
+                  style={{
+                    width: '200px',
+                    height: '200px',
+                    objectFit: 'cover',
+                    filter: 'contrast(1.2) saturate(1.2)',
+                    boxShadow: '0 0 10px 0 #C0C0C0' // Shadow effect with black color
+                  }}
+                  loading='lazy'
+                  layout='responsive'
+                />
+                <img
+                  className={`${HomeStyles.image} img-fluid lazyload`}
+                  src={movie.actor1img}
+                  alt={movie.actor1}
+                  title={movie.actor1}
+                  style={{
+                    width: '200px',
+                    height: '200px',
+                    objectFit: 'cover',
+                    boxShadow: '0 0 10px 0 #C0C0C0', // Shadow effect with black color
+                    filter: 'contrast(1.2) saturate(1.2)'
+                  }}
+                  loading='lazy'
+                  layout='responsive'
+                />
+                <img
+                  className={`${HomeStyles.image} img-fluid lazyload`}
+                  src={movie.actor2img}
+                  alt={movie.actor2}
+                  title={movie.actor2}
+                  style={{
+                    width: '200px',
+                    height: '200px',
+                    objectFit: 'cover',
+                    boxShadow: '0 0 10px 0 #C0C0C0', // Shadow effect with black color
+                    filter: 'contrast(1.2) saturate(1.2)'
+                  }}
+                  loading='lazy'
+                  layout='responsive'
+                />
+                <img
+                  className={`${HomeStyles.image} img-fluid lazyload`}
+                  src={movie.actor3img}
+                  alt={movie.actor3}
+                  title={movie.actor3}
+                  style={{
+                    width: '200px',
+                    height: '200px',
+                    objectFit: 'cover',
+                    boxShadow: '0 0 10px 0 #C0C0C0', // Shadow effect with black color
+                    filter: 'contrast(1.2) saturate(1.2)'
+                  }}
+                  loading='lazy'
+                  layout='responsive'
+                />
+                <img
+                  className={`${HomeStyles.image} img-fluid lazyload`}
+                  src={movie.actor4img}
+                  alt={movie.actor4}
+                  title={movie.actor4}
+                  style={{
+                    width: '200px',
+                    height: '200px',
+                    objectFit: 'cover',
+                    boxShadow: '0 0 10px 0 #C0C0C0', // Shadow effect with black color
+                    filter: 'contrast(1.2) saturate(1.2)'
+                  }}
+                  loading='lazy'
+                  layout='responsive'
+                />
+                <img
+                  className={`${HomeStyles.image} img-fluid lazyload`}
+                  src={movie.actor5img}
+                  alt={movie.actor5}
+                  title={movie.actor5}
+                  style={{
+                    width: '200px',
+                    height: '200px',
+                    objectFit: 'cover',
+                    boxShadow: '0 0 10px 0 #C0C0C0', // Shadow effect with black color
+                    filter: 'contrast(1.2) saturate(1.2)'
+                  }}
+                  loading='lazy'
+                  layout='responsive'
+                />
+              </div>
+            </div>
+          )}
+        </div>
+        {/* <DailyMotionBackground videoId={movie.video} /> */}
+
+        <h1
           className='flex flex-col text-center py-5 font-bold text-3xl items-center justify-center'
           style={{ color: '#40D7BC', textShadow: '5px 5px 2px #000' }}
         >
@@ -796,7 +820,7 @@ const MovieDetail = ({ movie }) => {
           </span>{' '}
           Select Server Tab
         </h3>
-    
+
         <div className='container mt-0'>
           <Tabs>
             <TabList className={HomeStyles.tabList}>
@@ -1461,11 +1485,12 @@ const MovieDetail = ({ movie }) => {
         `}</style>
 
         <div class='container1'>
-          <ShareButtons
-            url='https://watchonlinemovies.vercel.app'
-            title='The Best Movies Platform HD Movies'
-            image='https://watchonlinemovies.vercel.app/og_image.jpg'
-          />
+        <ShareButtons
+  url='https://watchonlinemovies.vercel.app'
+  title='The Best Movies Platform HD Movies'
+  image={`${movie && movie.url}`}
+/>
+
         </div>
         <h2
           className='mb-10 animate-pulse'
@@ -1484,36 +1509,33 @@ const MovieDetail = ({ movie }) => {
         <TrendingMovies />
         <Max />
         <div class='container1'>
-          <ShareButtons
-            url='https://watchonlinemovies.vercel.app'
-            title='The Best Movies Platform HD Movies'
-            image='https://watchonlinemovies.vercel.app/og_image.jpg'
-          />
+        <ShareButtons
+  url='https://watchonlinemovies.vercel.app'
+  title='The Best Movies Platform HD Movies'
+  image={`${movie && movie.url}`}
+/>
         </div>
       </div>
-      </div>
-     
+    </div>
   )
 }
 
-
-export async function getStaticPaths() {
-  const paths = moviesData.map((movie) => ({
-    params: { id: movie.id }, // Assuming each movie object has an "id" field
-  }));
-  return { paths, fallback: false };
+export async function getStaticPaths () {
+  const paths = moviesData.map(movie => ({
+    params: { id: movie.id } // Assuming each movie object has an "id" field
+  }))
+  return { paths, fallback: false }
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps ({ params }) {
   // Fetch the movie data based on the provided id
-  const movie = moviesData.find((m) => m.id === params.id);
-  
+  const movie = moviesData.find(m => m.id === params.id)
+
   return {
     props: {
-      movie,
-    },
-  };
+      movie
+    }
+  }
 }
 
-
-export default MovieDetail;
+export default MovieDetail
