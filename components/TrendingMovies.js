@@ -80,7 +80,6 @@ const TrendingMovies = () => {
           background-color: rgba(0, 0, 0, 0.5);
           color: white;
           font-weight: bold;
-          font-size: 12px;
           padding: 2px;
           border-radius: 5px;
         }
@@ -96,8 +95,14 @@ const TrendingMovies = () => {
                   alt={movie.title}
                   className="rounded-md border"
                   style={{
-                    filter: 'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)',
-                  }}
+                        maxWidth: '100%',
+                        margin: 'auto',
+                        marginBottom: '20px',
+                        borderRadius: '25px',
+                        boxShadow: '0 0 10px 0 #fff',
+                        filter:
+                          'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
+                      }}
                 />
                 <div className="badge">{movie.badge}</div>
                 <div className="genre">{movie.genre}</div>

@@ -7,35 +7,35 @@ const Max = ({}) => {
     {
       src: '/wp-content/uploads/2023/06/dune_S2_2024.webp',
       alt: 'Dune Part2 2024',
-      link: '../movie/Dune-Part2-2024/',
+      link: '../movie/Dune-Part-2-2024/',
       boxShadow: '0 0 10px 0 #C0C0C0', // Shadow effect with black color
       text: 'Movie Dune Part 2 (2024)'
     },
     {
       src: '/wp-content/uploads/2023/06/Parallel_2024.webp',
       alt: 'Parallel 2024',
-      link: '../movie/parallel-2024/',
+      link: '../movie/Parallel-2024/',
       boxShadow: '0 0 10px 0 #C0C0C0', // Shadow effect with black color
       text: 'Movie Parallel (2024)'
     },
     {
       src: '/wp-content/uploads/2023/06/Stranger_in_the_Woods_2024.webp',
       alt: 'Stranger in the Woods 2024',
-      link: '../movie/stranger-in-the-woods-2024/',
+      link: '../movie/Stranger-In-The-Woods-2024/',
       boxShadow: '0 0 10px 0 #C0C0C0', // Shadow effect with black color
       text: 'Movie Stranger in the Woods (2024)'
     },
     {
       src: '/wp-content/uploads/2023/06/Red_Right_Hand_2024.webp',
       alt: 'Red Right Hand 2024',
-      link: '../movie/red-right-hand-2024/',
+      link: '../movie/Red-Right-Hand-2024/',
       boxShadow: '0 0 10px 0 #C0C0C0', // Shadow effect with black color
       text: 'Movie Red Right Hand (2024)'
     },
     {
       src: '/wp-content/uploads/2023/06/Halo_2024.webp',
       alt: 'Halo Season 2 ',
-      link: '../movie/halo-s02-2024/',
+      link: '../movie/Halo-Season-2-2024/',
       boxShadow: '0 0 10px 0 #C0C0C0', // Shadow effect with black color
       text: 'Tv Show Halo Season 2 (2024)'
     },
