@@ -419,7 +419,7 @@ const MovieDetail = ({ movie }) => {
           }}
         />
       </Head>
-    <Script src='../../propler/ads.js' defer />
+    <Script src='../../propler/ads2.js' defer />
     
     <div className={`w-full bg-gray-600 shadow`}
       style={{
