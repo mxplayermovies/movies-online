@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://uwatchfreeonline.vercel.app/
+
+# Sitemaps
+Sitemap: https://uwatchfreeonline.vercel.app/sitemap.xml
