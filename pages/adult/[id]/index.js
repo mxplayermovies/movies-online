@@ -747,7 +747,7 @@ Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to 
           className='flex flex-col text-center py-5 font-bold text-3xl items-center justify-center'
           style={{ color: '#40D7BC', textShadow: '5px 5px 2px #000' }}
         >
-          Watch Online adult {adult && adult.title}{' '}
+          Watch Online Adult {adult && adult.title}{' '}
         </h1>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <span
