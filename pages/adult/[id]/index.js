@@ -914,7 +914,7 @@ Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to 
                                 textShadow: '3px 5px 5px #000'
                               }}
                             >
-                              Watch Online adult {adult && adult.name}
+                              Watch Online Adult {adult && adult.name}
                             </h2>
                             <div className={Styles['iframe-container']}>
                               <iframe
@@ -1009,7 +1009,7 @@ Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to 
                                 textShadow: '3px 5px 5px #000'
                               }}
                             >
-                              Watch Online adult {adult && adult.name}
+                              Watch Online Adult {adult && adult.name}
                             </h2>
                             <div className={Styles['iframe-container']}>
                               <iframe
@@ -1104,7 +1104,7 @@ Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to 
                                 textShadow: '3px 5px 5px #000'
                               }}
                             >
-                              Watch Online adult {adult && adult.name}
+                              Watch Online Adult {adult && adult.name}
                             </h2>
                             <div className={Styles['iframe-container']}>
                               <iframe

@@ -890,7 +890,7 @@ Overall, "Uwatchfree Online™ - The Best tvshows Platform HD tvshows" strives t
                   textShadow: '3px 5px 5px #000'
                 }}
               >
-                Watch Online tvshow {tvshow && tvshow.name}
+                Watch Online Tvshow {tvshow && tvshow.name}
               </h2>
               <div className={Styles['iframe-container']}>
                 {/* Individual iframe for this link */}
@@ -984,7 +984,7 @@ Overall, "Uwatchfree Online™ - The Best tvshows Platform HD tvshows" strives t
                   textShadow: '3px 5px 5px #000'
                 }}
               >
-                Watch Online tvshow {tvshow && tvshow.name}
+                Watch Online Tvshow {tvshow && tvshow.name}
               </h2>
               <div className={Styles['iframe-container']}>
                 {/* Individual iframe for this link */}
@@ -1078,7 +1078,7 @@ Overall, "Uwatchfree Online™ - The Best tvshows Platform HD tvshows" strives t
                   textShadow: '3px 5px 5px #000'
                 }}
               >
-                Watch Online tvshow {tvshow && tvshow.name}
+                Watch Online Tvshow {tvshow && tvshow.name}
               </h2>
               <div className={Styles['iframe-container']}>
                 {/* Individual iframe for this link */}
