@@ -44,13 +44,6 @@ const tvshowDetail = ({ tvshow }) => {
     setShowPopupTrailer(!showPopupTrailer)
   }
 
-  const [adulttvshows, setAdulttvshows] = useState([])
-
-  useEffect(() => {
-    // Filter adult tvshows from the tvshowsData
-    const filteredtvshows = tvshowsData.filter(tvshow => tvshow.group === 'adult')
-    setAdulttvshows(filteredtvshows)
-  }, [])
 
   const audioIframeRef = useRef(null)
   const predefinedEqualizationValue = 70
@@ -161,8 +154,8 @@ const tvshowDetail = ({ tvshow }) => {
       },
       {
         '@type': 'WebSite',
-        '@id': 'https://watchonlinetvshows.vercel.app/#website',
-        url: 'https://watchonlinetvshows.vercel.app/',
+        '@id': 'https://uwatchfreeonline.vercel.app/#website',
+        url: 'https://uwatchfreeonline.vercel.app/',
         name: 'Uwatchfree Online™',
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
@@ -171,21 +164,21 @@ const tvshowDetail = ({ tvshow }) => {
       },
       {
         '@type': 'WebPage',
-        '@id': `/${tvshow['movie.watch']}#webpage`,
-        url: `/${tvshow['movie.watch']}`,
+        '@id': `/${tvshow['tvshow.watch']}#webpage`,
+        url: `/${tvshow['tvshow.watch']}`,
         name: `${tvshow.name} | Uwatchfree Online™`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
         isPartOf: {
-          '@id': 'https://watchonlinetvshows.vercel.app/#website'
+          '@id': 'https://uwatchfreeonline.vercel.app/#website'
         },
         inLanguage: 'en-US'
       },
       {
         '@type': 'Person',
-        '@id': 'https://watchonlinetvshows.vercel.app/author/watchtvshowsonline/',
+        '@id': 'https://uwatchfreeonline.vercel.app/author/watchtvshowsonline/',
         name: 'Dr Trailer',
-        url: 'https://watchonlinetvshows.vercel.app/author/watchtvshowsonline/',
+        url: 'https://uwatchfreeonline.vercel.app/author/watchtvshowsonline/',
         image: {
           '@type': 'ImageObject',
           '@id': 'https://gravatar.com/drtrailer2022',
@@ -193,18 +186,18 @@ const tvshowDetail = ({ tvshow }) => {
           caption: 'Dr Trailer',
           inLanguage: 'en-US'
         },
-        sameAs: ['https://watchonlinetvshows.vercel.app/']
+        sameAs: ['https://uwatchfreeonline.vercel.app/']
       },
       {
         '@type': 'Article',
-        '@id': `/${tvshow['movie.watch']}#article`,
+        '@id': `/${tvshow['tvshow.watch']}#article`,
         headline: `Watch ${tvshow.name} | Uwatchfree Online™`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
-        articleSection: 'Tvshow',
+        articleSection: 'tvshow',
         author: {
           '@id':
-            'https://watchonlinetvshows.vercel.app/author/watchtvshowsonline/'
+            'https://uwatchfreeonline.vercel.app/author/watchtvshowsonline/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
@@ -213,23 +206,23 @@ const tvshowDetail = ({ tvshow }) => {
         image: tvshow.image,
         name: `Watch ${tvshow.name} | Uwatchfree Online™`,
         isPartOf: {
-          '@id': `/${tvshow['movie.watch']}#webpage`
+          '@id': `/${tvshow['tvshow.watch']}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `/${tvshow['movie.watch']}#webpage`
+          '@id': `/${tvshow['tvshow.watch']}#webpage`
         }
       },
       {
         '@type': 'BlogPosting',
-        '@id': `/${tvshow['movie.watch']}#blogPost`,
+        '@id': `/${tvshow['tvshow.watch']}#blogPost`,
         headline: `Watch ${tvshow.name} | Uwatchfree Online™`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
-        articleSection: 'Tvshow',
+        articleSection: 'tvshow',
         author: {
           '@id':
-            'https://watchonlinetvshows.vercel.app/author/watchtvshowsonline/'
+            'https://uwatchfreeonline.vercel.app/author/watchtvshowsonline/'
         },
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
@@ -237,13 +230,13 @@ const tvshowDetail = ({ tvshow }) => {
         description: `Uwatchfree Online | ${tvshow.name} for free. Where you can find tvshows of your interest in full HD quality updated on a daily basis. Watch Now or Download Now to Watch Later!`,
         image: tvshow.image,
         name: `Watch ${tvshow.name} | Uwatchfree Online™`,
-        '@id': `/${tvshow['movie.watch']}#richSnippet`,
+        '@id': `/${tvshow['tvshow.watch']}#richSnippet`,
         isPartOf: {
-          '@id': `/${tvshow['movie.watch']}#webpage`
+          '@id': `/${tvshow['tvshow.watch']}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `/${tvshow['movie.watch']}#webpage`
+          '@id': `/${tvshow['tvshow.watch']}#webpage`
         }
       }
     ]
@@ -251,10 +244,10 @@ const tvshowDetail = ({ tvshow }) => {
 
   const ldJsonData = JSON.stringify({
     '@context': 'https://schema.org',
-    '@type': 'TVSeries',
-    '@id': `${tvshow['movie.url']}`,
+    '@type': 'tvshow',
+    '@id': `${tvshow['tvshow.url']}`,
     name: tvshow.name,
-    url: `/${tvshow['movie.watch']}`,
+    url: `/${tvshow['tvshow.watch']}`,
     description: tvshow.synopsis,
     image: tvshow.poster,
     genre: tvshow.genre,
@@ -273,7 +266,7 @@ const tvshowDetail = ({ tvshow }) => {
         {
           '@type': 'EntryPoint',
           name: tvshow.name, // Removed unnecessary conditional
-          urlTemplate: `${tvshow['movie.url']}` // Updated to use tvshow.watch
+          urlTemplate: `${tvshow['tvshow.url']}` // Updated to use tvshow.watch
         }
       ]
     },
@@ -298,7 +291,7 @@ const tvshowDetail = ({ tvshow }) => {
       name: 'Uwatchfree Online™',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://watchonlinetvshows.vercel.app/og_image.jpg'
+        url: 'https://uwatchfreeonline.vercel.app/og_image.jpg'
       }
     },
     additionalProperty: {
@@ -432,19 +425,19 @@ const tvshowDetail = ({ tvshow }) => {
           textAlign: 'center'
         }}
       >
-          <h2
+             <h2
             className='flex flex-col text-center py-5 font-bold text-3xl items-center justify-center'
             style={{ color: '#40D7BC',  textShadow: '5px 5px 2px #000' }}
           >
-            Uwatchfree Online™ - The Best Movies Platform HD Movies.  </h2>
+            Uwatchfree Online™ - The Best tvshows Platform HD tvshows.  </h2>
          <p className='flex flex-col text-center py-5 font-bold text-xl items-center justify-center'
             style={{ color: '#40D7BC',  textShadow: '5px 5px 2px #000' }}
           > 
-"Uwatchfree Online™ - The Best Movies Platform HD Movies" is a platform that provides access to a wide range of high-definition movies for streaming online. With this platform, users can enjoy a diverse selection of movies spanning various genres, including action, drama, comedy, thriller, romance, and more.
+"Uwatchfree Online™ - The Best tvshows Platform HD tvshows" is a platform that provides access to a wide range of high-definition tvshows for streaming online. With this platform, users can enjoy a diverse selection of tvshows spanning various genres, including action, drama, comedy, thriller, romance, and more.
 
-The platform aims to offer a seamless and enjoyable movie-watching experience, allowing users to browse through a vast collection of films and watch them instantly without the need for downloading. Additionally, it may provide features such as personalized recommendations, user ratings, and reviews to help users discover new movies tailored to their preferences.
+The platform aims to offer a seamless and enjoyable tvshow-watching experience, allowing users to browse through a vast collection of films and watch them instantly without the need for downloading. Additionally, it may provide features such as personalized recommendations, user ratings, and reviews to help users discover new tvshows tailored to their preferences.
 
-Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to be a go-to destination for movie enthusiasts looking for convenient and high-quality streaming options for their entertainment needs.
+Overall, "Uwatchfree Online™ - The Best tvshows Platform HD tvshows" strives to be a go-to destination for tvshow enthusiasts looking for convenient and high-quality streaming options for their entertainment needs.
 
 </p>
         <div style={{ maxWidth: '800px', width: '100%', marginBottom: '20px' }}>
@@ -845,77 +838,75 @@ Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to 
               </Tab>
             </TabList>
             <TabPanel>
-              <div
+          {/* Content for Tab 1 */}
+          <div
                 style={{
                   display: 'flex',
                   flexWrap: 'wrap',
                   justifyContent: 'center'
                 }}
               >
-                {Array.from({ length: 10 }, (_, episodeNumber) => {
-                  const episodeKey = `episode${episodeNumber + 1}sa1ser1`
-                  const episodeUrl = tvshow[episodeKey]
-                  if (!episodeUrl) return null
-                  return (
-                    <div
-                      className='mb-5 mr-3'
-                      key={`episode${episodeNumber + 1}`}
-                    >
-                      <button
-                        className='episode-button relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'
-                        onClick={togglePopup1}
-                      >
-                        <span
-                          style={{
-                            color: '#15f4ee',
-                            fontSize: '24px',
-                            textShadow: '3px 5px 5px #000'
-                          }}
-                        >
-                          {' '}
-                          <i
-                            className='fa fa-play-circle'
-                            aria-hidden='true'
-                          ></i>{' '}
-                          Watch Now
-                        </span>
-                      </button>
-                      {showPopup1 && (
-                        <div className='popup-overlay'>
-                          <div className='popup'>
-                            <button
-                              className='close-button'
-                              onClick={togglePopup1}
-                            >
-                              <h2 className='relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-5 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-red-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110  cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'>
-                                Close
-                              </h2>
-                            </button>
-                            <h2
-                              className='text-2xl font-bold'
-                              style={{
-                                color: '#40D7BC',
-                                textShadow: '3px 5px 5px #000'
-                              }}
-                            >
-                              Watch Online tvshow {tvshow && tvshow.name}
-                            </h2>
-                            <div className={Styles['iframe-container']}>
-                              <iframe
-                                className='rounded-3xl mr-8 flex border-1 border-blue-600 bg-gray-600 p-2'
-                                webkitallowFullScreen
-                                mozallowFullScreen
-                                allowFullScreen
-                                ref={audioIframeRef}
-                                id='audioIframe'
-                                src={episodeUrl}
-                                style={{
-                                  filter:
-                                    'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
-                                }}
-                              />
-                            </div>
-                            <p
+  {Array.from({ length: 16 }, (_, episodeNumber) => {
+    // Logic to generate episode URLs
+    const episodeKey = `episode${episodeNumber + 1}sa1ser1`;
+    const episodeUrl = tvshow[episodeKey];
+    if (!episodeUrl) return null;
+
+    // State and toggle function for each popup
+    const [showPopup1, setShowPopup1] = useState(false);
+    const togglePopup1 = () => {
+      setShowPopup1(!showPopup1);
+    };
+
+    return (
+      <div className='mb-5 mr-3' key={`episode${episodeNumber + 1}`}>
+        <button
+          className='episode-button relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'
+          onClick={togglePopup1} // Toggle function for this popup
+        >
+          <span
+            style={{
+              color: '#15f4ee',
+              fontSize: '24px',
+              textShadow: '3px 5px 5px #000'
+            }}
+          >
+            <i className='fa fa-play-circle' aria-hidden='true'></i> Watch Now
+          </span>
+        </button>
+        {showPopup1 && (
+          // Popup content for this link
+          <div className='popup-overlay'>
+            <div className='popup'>
+              <button className='close-button' onClick={togglePopup1}>
+                <h2 className='relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-5 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-red-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'>
+                  Close
+                </h2>
+              </button>
+              <h2
+                className='text-2xl font-bold'
+                style={{
+                  color: '#40D7BC',
+                  textShadow: '3px 5px 5px #000'
+                }}
+              >
+                Watch Online tvshow {tvshow && tvshow.name}
+              </h2>
+              <div className={Styles['iframe-container']}>
+                {/* Individual iframe for this link */}
+                <iframe
+                  className='rounded-3xl mr-8 flex border-1 border-blue-600 bg-gray-600 p-2'
+                  webkitallowFullScreen
+                  mozallowFullScreen
+                  allowFullScreen
+                  src={episodeUrl}
+                  style={{
+                    filter: 'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+                  }}
+                />
+                
+                          </div>
+                          <p
                               style={{
                                 color: '#40D7BC',
                                 display: 'flex',
@@ -931,86 +922,85 @@ Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to 
                             </p>
                           </div>
                         </div>
+                        
                       )}
                     </div>
-                  )
+                    
+                 );
                 })}
-              </div>
+                  </div>
             </TabPanel>
 
             <TabPanel>
-              <div
+          {/* Content for Tab 2 */}
+          <div
                 style={{
                   display: 'flex',
                   flexWrap: 'wrap',
                   justifyContent: 'center'
                 }}
               >
-                {Array.from({ length: 10 }, (_, episodeNumber) => {
-                  const episodeKey = `episode${episodeNumber + 1}sa1ser2`
-                  const episodeUrl = tvshow[episodeKey]
-                  if (!episodeUrl) return null
-                  return (
-                    <div
-                      className='mb-5 mr-3'
-                      key={`episode${episodeNumber + 1}`}
-                    >
-                      <button
-                        className='episode-button relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'
-                        onClick={togglePopup2}
-                      >
-                        <span
-                          style={{
-                            color: '#0efa06',
-                            fontSize: '24px',
-                            textShadow: '3px 5px 5px #000'
-                          }}
-                        >
-                          {' '}
-                          <i
-                            className='fa fa-play-circle'
-                            aria-hidden='true'
-                          ></i>{' '}
-                          Watch Now
-                        </span>
-                      </button>
+  {Array.from({ length: 16 }, (_, episodeNumber) => {
+    // Logic to generate episode URLs
+    const episodeKey = `episode${episodeNumber + 1}sa1ser2`;
+    const episodeUrl = tvshow[episodeKey];
+    if (!episodeUrl) return null;
 
-                      {showPopup2 && (
-                        <div className='popup-overlay'>
-                          <div className='popup'>
-                            <button
-                              className='close-button'
-                              onClick={togglePopup2}
-                            >
-                              <h2 className='relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-5 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-red-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110  cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'>
-                                Close
-                              </h2>
-                            </button>
-                            <h2
-                              className='text-2xl font-bold'
-                              style={{
-                                color: '#40D7BC',
-                                textShadow: '3px 5px 5px #000'
-                              }}
-                            >
-                              Watch Online tvshow {tvshow && tvshow.name}
-                            </h2>
-                            <div className={Styles['iframe-container']}>
-                              <iframe
-                                className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
-                                webkitallowFullScreen
-                                mozallowFullScreen
-                                allowFullScreen
-                                ref={audioIframeRef}
-                                id='audioIframe'
-                                src={episodeUrl}
-                                style={{
-                                  filter:
-                                    'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
-                                }}
-                              />
-                            </div>
-                            <p
+    // State and toggle function for each popup
+    const [showPopup2, setShowPopup2] = useState(false);
+    const togglePopup2 = () => {
+      setShowPopup2(!showPopup2);
+    };
+
+    return (
+      <div className='mb-5 mr-3' key={`episode${episodeNumber + 1}`}>
+        <button
+          className='episode-button relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'
+          onClick={togglePopup2} // Toggle function for this popup
+        >
+          <span
+            style={{
+              color: '#0efa06',
+              fontSize: '24px',
+              textShadow: '3px 5px 5px #000'
+            }}
+          >
+            <i className='fa fa-play-circle' aria-hidden='true'></i> Watch Now
+          </span>
+        </button>
+        {showPopup2 && (
+          // Popup content for this link
+          <div className='popup-overlay'>
+            <div className='popup'>
+              <button className='close-button' onClick={togglePopup2}>
+                <h2 className='relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-5 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-red-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'>
+                  Close
+                </h2>
+              </button>
+              <h2
+                className='text-2xl font-bold'
+                style={{
+                  color: '#40D7BC',
+                  textShadow: '3px 5px 5px #000'
+                }}
+              >
+                Watch Online tvshow {tvshow && tvshow.name}
+              </h2>
+              <div className={Styles['iframe-container']}>
+                {/* Individual iframe for this link */}
+                <iframe
+                  className='rounded-3xl mr-8 flex border-1 border-blue-600 bg-gray-600 p-2'
+                  webkitallowFullScreen
+                  mozallowFullScreen
+                  allowFullScreen
+                  src={episodeUrl}
+                  style={{
+                    filter: 'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+                  }}
+                />
+                
+                          </div>
+                          <p
                               style={{
                                 color: '#40D7BC',
                                 display: 'flex',
@@ -1026,86 +1016,85 @@ Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to 
                             </p>
                           </div>
                         </div>
+                        
                       )}
                     </div>
-                  )
+                    
+                 );
                 })}
-              </div>
+                  </div>
             </TabPanel>
 
             <TabPanel>
-              <div
+          {/* Content for Tab 2 */}
+          <div
                 style={{
                   display: 'flex',
                   flexWrap: 'wrap',
                   justifyContent: 'center'
                 }}
               >
-                {Array.from({ length: 10 }, (_, episodeNumber) => {
-                  const episodeKey = `episode${episodeNumber + 1}sa1ser3`
-                  const episodeUrl = tvshow[episodeKey]
-                  if (!episodeUrl) return null
-                  return (
-                    <div
-                      className='mb-5 mr-3'
-                      key={`episode${episodeNumber + 1}`}
-                    >
-                      <button
-                        className='episode-button relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'
-                        onClick={togglePopup3}
-                      >
-                        <span
-                          style={{
-                            color: '#f80303',
-                            fontSize: '24px',
-                            textShadow: '3px 5px 5px #000'
-                          }}
-                        >
-                          {' '}
-                          <i
-                            className='fa fa-play-circle'
-                            aria-hidden='true'
-                          ></i>{' '}
-                          Watch Now
-                        </span>
-                      </button>
+  {Array.from({ length: 16 }, (_, episodeNumber) => {
+    // Logic to generate episode URLs
+    const episodeKey = `episode${episodeNumber + 1}sa1ser3`;
+    const episodeUrl = tvshow[episodeKey];
+    if (!episodeUrl) return null;
 
-                      {showPopup3 && (
-                        <div className='popup-overlay'>
-                          <div className='popup'>
-                            <button
-                              className='close-button'
-                              onClick={togglePopup3}
-                            >
-                              <h2 className='relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-5 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-red-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110  cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'>
-                                Close
-                              </h2>
-                            </button>
-                            <h2
-                              className='text-2xl font-bold'
-                              style={{
-                                color: '#40D7BC',
-                                textShadow: '3px 5px 5px #000'
-                              }}
-                            >
-                              Watch Online tvshow {tvshow && tvshow.name}
-                            </h2>
-                            <div className={Styles['iframe-container']}>
-                              <iframe
-                                className='  rounded-3xl  mr-8 flex  border-1 border-blue-600 bg-gray-600 p-2 '
-                                webkitallowFullScreen
-                                mozallowFullScreen
-                                allowFullScreen
-                                ref={audioIframeRef}
-                                id='audioIframe'
-                                src={episodeUrl}
-                                style={{
-                                  filter:
-                                    'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
-                                }}
-                              />
-                            </div>
-                            <p
+    // State and toggle function for each popup
+    const [showPopup3, setShowPopup3] = useState(false);
+    const togglePopup3 = () => {
+      setShowPopup3(!showPopup3);
+    };
+
+    return (
+      <div className='mb-5 mr-3' key={`episode${episodeNumber + 1}`}>
+        <button
+          className='episode-button relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-2 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'
+          onClick={togglePopup3} // Toggle function for this popup
+        >
+          <span
+            style={{
+              color: '#f80303',
+              fontSize: '24px',
+              textShadow: '3px 5px 5px #000'
+            }}
+          >
+            <i className='fa fa-play-circle' aria-hidden='true'></i> Watch Now
+          </span>
+        </button>
+        {showPopup3 && (
+          // Popup content for this link
+          <div className='popup-overlay'>
+            <div className='popup'>
+              <button className='close-button' onClick={togglePopup3}>
+                <h2 className='relative inline-flex items-center rounded-3xl my-5 justify-center p-0.5 mb-5 mr-2 overflow-hidden text-xl font-bold text-gray-900 group bg-gradient-to-br from-red-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 scale-100 hover:scale-110 cursor-pointer px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 group-hover:bg-opacity-0'>
+                  Close
+                </h2>
+              </button>
+              <h2
+                className='text-2xl font-bold'
+                style={{
+                  color: '#40D7BC',
+                  textShadow: '3px 5px 5px #000'
+                }}
+              >
+                Watch Online tvshow {tvshow && tvshow.name}
+              </h2>
+              <div className={Styles['iframe-container']}>
+                {/* Individual iframe for this link */}
+                <iframe
+                  className='rounded-3xl mr-8 flex border-1 border-blue-600 bg-gray-600 p-2'
+                  webkitallowFullScreen
+                  mozallowFullScreen
+                  allowFullScreen
+                  src={episodeUrl}
+                  style={{
+                    filter: 'contrast(1.2) saturate(1.5) brightness(1.3) hue-rotate(0deg)'
+                  }}
+                />
+                
+                          </div>
+                          <p
                               style={{
                                 color: '#40D7BC',
                                 display: 'flex',
@@ -1121,12 +1110,15 @@ Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to 
                             </p>
                           </div>
                         </div>
+                        
                       )}
                     </div>
-                  )
+                    
+                 );
                 })}
-              </div>
+                  </div>
             </TabPanel>
+
           </Tabs>
         </div>
 
@@ -1475,7 +1467,7 @@ Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to 
 
         <div class='container1'>
         <ShareButtons
-  url='https://watchonlinetvshows.vercel.app'
+  url='https://uwatchfreeonline.vercel.app'
   title='The Best tvshows Platform HD tvshows'
   image={`${tvshow && tvshow.url}`}
 />
@@ -1499,7 +1491,7 @@ Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to 
         <Max />
         <div class='container1'>
         <ShareButtons
-  url='https://watchonlinetvshows.vercel.app'
+  url='https://uwatchfreeonline.vercel.app'
   title='The Best tvshows Platform HD tvshows'
   image={`${tvshow && tvshow.url}`}
 />
