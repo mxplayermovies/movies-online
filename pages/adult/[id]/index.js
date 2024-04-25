@@ -359,7 +359,7 @@ const adultDetail = ({ adult }) => {
         />
       <meta
             property='og:description'
-            content='Watch free news and TV shows online in HD on any device. We offer streaming news in genres like Action, Horror, Sci-Fi, Crime and Comedy. Watch now !!!'
+            content='Watch Movie and TV shows online in HD on any device. Watch now !!!'
           />
         <meta property='og:url' content={`${adult && adult.url}`} />
         <meta name='keywords' content={`${adult && adult.keywords}`} />

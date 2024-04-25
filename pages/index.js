@@ -178,7 +178,7 @@ const HomePage = () => {
           />
           <meta
             name='description'
-            content='Watch free news and TV shows online in HD on any device. We offer streaming news in genres like Action, Horror, Sci-Fi, Crime and Comedy. Watch now !!!'
+            content='Watch Movie and TV shows online in HD on any device. Watch now !!!'
           />
           <link rel='canonical' href='https://uwatchfreeonline.vercel.app/' />
           <meta property='og:locale' content='en_US' />
@@ -189,7 +189,7 @@ const HomePage = () => {
           />
           <meta
             property='og:description'
-            content='Watch free news and TV shows online in HD on any device. We offer streaming news in genres like Action, Horror, Sci-Fi, Crime and Comedy. Watch now !!!'
+            content='Watch Movie and TV shows online in HD on any device. Watch now !!!'
           />
           <meta property='og:url' content='https://uwatchfreeonline.vercel.app/' />
           <meta
@@ -199,8 +199,7 @@ const HomePage = () => {
           <meta
             property='og:image'
             content='https://uwatchfreeonline.vercel.app/og_image.jpg'
-            style={{ borderRadius: '10%' }}
-          />
+             />
           <meta property='og:image:width' content='1280' />
           <meta property='og:image:height' content='720' />
           <meta property='og:image:type' content='image/webp' />
