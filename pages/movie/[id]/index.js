@@ -356,10 +356,10 @@ const MovieDetail = ({ movie }) => {
           property='article:modified_time'
           content='2024-01-01T13:13:13+00:00'
         />
-        <meta property='og:image' content={`${movie && movie.image}`}  />
+        <meta property='og:image' content={`${movie && movie.backimage}`}  />
 
-        <meta property='og:image:width' content='303px' />
-        <meta property='og:image:height' content='430px' />
+        <meta property='og:image:width' content='1080px' />
+        <meta property='og:image:height' content='720px' />
         <meta property='og:image:type' content='image/webp' />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:label1' content='Est. reading time' />
