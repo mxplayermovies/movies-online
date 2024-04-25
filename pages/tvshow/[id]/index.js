@@ -164,7 +164,7 @@ const tvshowDetail = ({ tvshow }) => {
       },
       {
         '@type': 'WebPage',
-        '@id': `/${tvshow['tvshow.watch']}#webpage`,
+         '@id': `/${tvshow['tvshow.watch']}#webpage`,
         url: `/${tvshow['tvshow.watch']}`,
         name: `${tvshow.name} | Uwatchfree Online™`,
         datePublished: '2024-01-13T13:00:00+00:00',
@@ -190,7 +190,7 @@ const tvshowDetail = ({ tvshow }) => {
       },
       {
         '@type': 'Article',
-        '@id': `/${tvshow['tvshow.watch']}#article`,
+         '@id': `/${tvshow['tvshow.watch']}#article`,
         headline: `Watch ${tvshow.name} | Uwatchfree Online™`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
@@ -206,16 +206,16 @@ const tvshowDetail = ({ tvshow }) => {
         image: tvshow.image,
         name: `Watch ${tvshow.name} | Uwatchfree Online™`,
         isPartOf: {
-          '@id': `/${tvshow['tvshow.watch']}#webpage`
+           '@id': `/${tvshow['tvshow.watch']}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `/${tvshow['tvshow.watch']}#webpage`
+           '@id': `/${tvshow['tvshow.watch']}#webpage`
         }
       },
       {
         '@type': 'BlogPosting',
-        '@id': `/${tvshow['tvshow.watch']}#blogPost`,
+         '@id': `/${tvshow['tvshow.watch']}#blogPost`,
         headline: `Watch ${tvshow.name} | Uwatchfree Online™`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
@@ -230,13 +230,13 @@ const tvshowDetail = ({ tvshow }) => {
         description: `Uwatchfree Online | ${tvshow.name} for free. Where you can find tvshows of your interest in full HD quality updated on a daily basis. Watch Now or Download Now to Watch Later!`,
         image: tvshow.image,
         name: `Watch ${tvshow.name} | Uwatchfree Online™`,
-        '@id': `/${tvshow['tvshow.watch']}#richSnippet`,
+         '@id': `/${tvshow['tvshow.watch']}#richSnippet`,
         isPartOf: {
-          '@id': `/${tvshow['tvshow.watch']}#webpage`
+           '@id': `/${tvshow['tvshow.watch']}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `/${tvshow['tvshow.watch']}#webpage`
+           '@id': `/${tvshow['tvshow.watch']}#webpage`
         }
       }
     ]
@@ -244,8 +244,8 @@ const tvshowDetail = ({ tvshow }) => {
 
   const ldJsonData = JSON.stringify({
     '@context': 'https://schema.org',
-    '@type': 'tvshow',
-    '@id': `${tvshow['tvshow.url']}`,
+    '@type': 'TVSeries',
+    '@id': `/${tvshow['tvshow.watch']}`,
     name: tvshow.name,
     url: `/${tvshow['tvshow.watch']}`,
     description: tvshow.synopsis,
