@@ -1490,11 +1490,8 @@ Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to 
         `}</style>
 
         <div class='container1'>
-        <ShareButtons
-  url='https://watchonlineadults.vercel.app'
-  title='The Best adults Platform HD adults'
-  image={`${adult && adult.url}`}
-/>
+       <ShareButtons image={adult && adult.url} />
+
 
         </div>
         <h2
@@ -1514,11 +1511,8 @@ Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to 
         <TrendingMovies />
         <Max />
         <div class='container1'>
-        <ShareButtons
-  url='https://watchonlineadults.vercel.app'
-  title='The Best adults Platform HD adults'
-  image={`${adult && adult.url}`}
-/>
+       <ShareButtons image={movie && movie.url} />
+
         </div>
       </div>
     </div>

@@ -1474,11 +1474,8 @@ Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to 
         `}</style>
 
         <div class='container1'>
-        <ShareButtons
-  url='https://uwatchfreeonline.vercel.app'
-  title='The Best Movies Platform HD Movies'
-  image={`${movie && movie.url}`}
-/>
+       <ShareButtons image={movie && movie.url} />
+
 
         </div>
         <h2
@@ -1498,11 +1495,8 @@ Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to 
         <TrendingMovies />
         <Max />
         <div class='container1'>
-        <ShareButtons
-  url='https://uwatchfreeonline.vercel.app'
-  title='The Best Movies Platform HD Movies'
-  image={`${movie && movie.url}`}
-/>
+       <ShareButtons image={movie && movie.url} />
+
         </div>
       </div>
     </div>

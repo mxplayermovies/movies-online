@@ -1467,11 +1467,8 @@ Overall, "Uwatchfree Online™ - The Best tvshows Platform HD tvshows" strives t
         `}</style>
 
         <div class='container1'>
-        <ShareButtons
-  url='https://uwatchfreeonline.vercel.app'
-  title='The Best tvshows Platform HD tvshows'
-  image={`${tvshow && tvshow.url}`}
-/>
+      <ShareButtons image={tvshow && tvshow.url} />
+
 
         </div>
         <h2
@@ -1491,11 +1488,8 @@ Overall, "Uwatchfree Online™ - The Best tvshows Platform HD tvshows" strives t
         <TrendingMovies />
         <Max />
         <div class='container1'>
-        <ShareButtons
-  url='https://uwatchfreeonline.vercel.app'
-  title='The Best tvshows Platform HD tvshows'
-  image={`${tvshow && tvshow.url}`}
-/>
+      <ShareButtons image={movie && movie.url} />
+
         </div>
       </div>
     </div>

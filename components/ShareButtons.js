@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   FacebookShareButton,
   LinkedinShareButton,
@@ -11,34 +12,31 @@ import {
   EmailIcon,
 } from 'react-share';
 
+const ShareButtons = ({ title, image }) => {
+  const url = typeof window !== 'undefined' ? window.location.href : '';
 
-const ShareButtons = ({ url, title, image }) => {
-
-  
   return (
-    <>
     <div className="bg-transparent flex gap-2 justify-center p-2">
       <FacebookShareButton url={url} quote={title} hashtag="#drtrailer">
-        <FacebookIcon size={48} round  />
+        <FacebookIcon size={48} round />
       </FacebookShareButton>
 
       <TwitterShareButton url={url} title={title}>
-        <TwitterIcon size={48} round  />
+        <TwitterIcon size={48} round />
       </TwitterShareButton>
 
       <LinkedinShareButton url={url}>
-        <LinkedinIcon size={48} round  />
+        <LinkedinIcon size={48} round />
       </LinkedinShareButton>
 
       <WhatsappShareButton url={url} title={title}>
-        <WhatsappIcon size={48} round  />
+        <WhatsappIcon size={48} round />
       </WhatsappShareButton>
 
       <EmailShareButton url={url} subject={title} body="Check this out!">
-        <EmailIcon size={48} round  />
+        <EmailIcon size={48} round />
       </EmailShareButton>
-      </div>
-    </>
+    </div>
   );
 };
 
