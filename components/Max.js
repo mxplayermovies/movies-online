@@ -1,6 +1,7 @@
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import Image from 'next/image'
 
 const Max = ({}) => {
   const images = [
@@ -85,12 +86,13 @@ const Max = ({}) => {
                   'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
               }}
             >
-              <img
+              <Image
                 className='scale-100 hover:scale-105 ease-in duration-500 cursor-pointer rounded-3xl blur-invert drop-shadowrounded-3xl'
                 src={image.src}
                 alt={image.alt}
-                width={400}
-                height={400}
+                width={500}
+                height={500}
+                priority
               />
             </div>
             <div
