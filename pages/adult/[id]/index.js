@@ -1511,7 +1511,7 @@ Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to 
         <TrendingMovies />
         <Max />
         <div class='container1'>
-       <ShareButtons image={movie && movie.url} />
+        <ShareButtons image={adult && adult.url} />
 
         </div>
       </div>

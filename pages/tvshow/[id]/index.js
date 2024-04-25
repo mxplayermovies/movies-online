@@ -1488,7 +1488,7 @@ Overall, "Uwatchfree Online™ - The Best tvshows Platform HD tvshows" strives t
         <TrendingMovies />
         <Max />
         <div class='container1'>
-      <ShareButtons image={movie && movie.url} />
+        <ShareButtons image={tvshow && tvshow.url} />
 
         </div>
       </div>
