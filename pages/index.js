@@ -63,9 +63,9 @@ const HomePage = () => {
         dateModified: '2024-01-13T13:13:00+00:00',
         about: {
           '@type': 'Person',
-          '@id': 'https://uwatchfreeonline.vercel.app/author/watchnewsonline/',
+          '@id': 'https://uwatchfreeonline.vercel.app/author/uwatchfreeonline/',
           name: 'Dr Trailer',
-          url: 'https://uwatchfreeonline.vercel.app/author/watchnewsonline/',
+          url: 'https://uwatchfreeonline.vercel.app/author/uwatchfreeonline/',
           image: {
             '@type': 'ImageObject',
             '@id': 'https://gravatar.com/drtrailer2022',
@@ -174,11 +174,11 @@ const HomePage = () => {
           />
           <meta
             name='keywords'
-            content='news, watch movie online, free news, free news online, free movie streaming, watch news online free streaming, download free'
+            content='movies, watch movie online, free movie, free movie online, free movie streaming, watch news online free streaming, download free'
           />
           <meta
             name='description'
-            content='Watch Movie and TV shows online in HD on any device. Watch now !!!'
+            content='Watch free Movie and TV shows online in HD on any device. We offer streaming Movie in genres like Action, Horror, Sci-Fi, Crime and Comedy. Watch now !!!'
           />
           <link rel='canonical' href='https://uwatchfreeonline.vercel.app/' />
           <meta property='og:locale' content='en_US' />
@@ -189,7 +189,7 @@ const HomePage = () => {
           />
           <meta
             property='og:description'
-            content='Watch Movie and TV shows online in HD on any device. Watch now !!!'
+            content='Watch free Movie and TV shows online in HD on any device. We offer streaming Movie in genres like Action, Horror, Sci-Fi, Crime and Comedy. Watch now !!!'
           />
           <meta property='og:url' content='https://uwatchfreeonline.vercel.app/' />
           <meta
@@ -252,7 +252,7 @@ const HomePage = () => {
           }}
         />
         </Head>
-
+        <ShareButtons  />
         <main className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-8'>
         <h1
             className='flex flex-col text-center py-5 font-bold text-3xl items-center justify-center'
@@ -270,7 +270,7 @@ Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to 
 
 </p>
           <div className='py-8'>
-          <ShareButtons  />
+         
           </div>
           <div className='container mt-0 '>
             <Tabs>

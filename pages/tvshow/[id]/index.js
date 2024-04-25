@@ -336,7 +336,7 @@ const tvshowDetail = ({ tvshow }) => {
         />
             <meta
             property='og:description'
-            content='Watch Movie and TV shows online in HD on any device. Watch now !!!'
+            content='Watch free Movie and TV shows online in HD on any device. We offer streaming Movie in genres like Action, Horror, Sci-Fi, Crime and Comedy. Watch now !!!'
           />
       
         <meta property='og:url' content={`${tvshow && tvshow.url}`} />
