@@ -9,7 +9,7 @@
     "poster": "The_Indrani_Mukerjea_Story_2024.webp",
     "image": "/wp-content/uploads/2023/06/The_Indrani_Mukerjea_Story_2024.webp",
     "backimage": "https://m.media-amazon.com/images/M/MV5BMGQxYjVhOTctODIxNi00NGRkLWFhNGQtYTgxNzJmNzJkMWNjXkEyXkFqcGdeQXVyNjgwMjk1MjA@._V1_FMjpg_UX1000_.jpg",
-    "movie.watch": "../tvshow/the-indrani-mukerjea-story-s01-2024/",
+    "tvshow.watch": "../tvshow/the-indrani-mukerjea-story-s01-2024/",
     "thumbnailUrl": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p9181462_b_h10_ab.jpg",
     "numberOfEpisodes": 4,
     "partOfSeries": {
@@ -138,7 +138,7 @@
     "poster": "Big_Girls_Don't_Cry_2024.webp",
     "image": "/wp-content/uploads/2023/06/Big_Girls_Don't_Cry_2024.webp",
     "backimage": "https://media.themoviedb.org/t/p/w500/xWyQuJZeLip1XICnCaM3ltcLVc7.jpg",
-    "movie.watch": "../tvshow/big-girls-dont-cry-s01-2024/",
+    "tvshow.watch": "../tvshow/big-girls-dont-cry-s01-2024/",
     "numberOfEpisodes": 7,
     "partOfSeries": {
       "@type": "TVSeries",
@@ -302,7 +302,7 @@
     "poster": "Sunflower_S02_2024.webp",
     "image": "/wp-content/uploads/2023/06/Sunflower_S02_2024.webp",
     "backimage": "https://www.iwmbuzz.com/wp-content/uploads/2024/02/zee5s-most-anticipated-show-sunflower-season-2-gets-a-date-march-1-2-920x920.jpeg",
-    "movie.watch": "../tvshow/sunflower-s02-2024/",
+    "tvshow.watch": "../tvshow/sunflower-s02-2024/",
     "numberOfEpisodes": 8,
     "partOfSeries": {
       "@type": "TVSeries",
@@ -478,7 +478,7 @@
     "poster": "Turning_Point_The_Bomb_And_The_Cold_War.webp",
     "image": "/wp-content/uploads/2023/06/Turning_Point_The_Bomb_And_The_Cold_War.webp",
     "backimage": "https://dnm.nflximg.net/api/v6/WNk1mr9x_Cd_2itp6pUM7-lXMJg/AAAABS8Y2rDrQspuHgV0Jiyka5e-wAtAg0-TVKUdSMSnFyvT29rRhJ2uTh6-w4RHU1nu9qSw0jmlvVVDHHNWB3sV-YgI0XRzhoa6j_l8t7h7mn8cj0EVCxbAbd-e0dMU11D8xoyNIw.jpg?r=d32",
-    "movie.watch": "../tvshow/turning-point-the-bomb-and-the-cold-war-s01-2024/",
+    "tvshow.watch": "../tvshow/turning-point-the-bomb-and-the-cold-war-s01-2024/",
     "numberOfEpisodes": 16,
     "partOfSeries": {
       "@type": "TVSeries",
@@ -750,7 +750,7 @@
     "poster": "Breaking_Bad_2013.webp",
     "image": "/wp-content/uploads/2023/06/Breaking_Bad_2013.webp",
     "backimage": "https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265110/Breaking_Bad_05_vptlgm.jpg",
-    "movie.watch": "../tvshow/watch-online-breaking-bad-s05-2024/",
+    "tvshow.watch": "../tvshow/watch-online-breaking-bad-s05-2024/",
     "thumbnailUrl": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p9181462_b_h10_ab.jpg",
     "numberOfEpisodes": 16,
     "partOfSeries": {
@@ -1023,7 +1023,7 @@
     "poster": "dead_hot_s01_2024.webp",
     "backimage": "https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265112/dead_shot_nd7oti.jpg",
     "image": "/wp-content/uploads/2023/06/dead_hot_s01_2024.webp",
-    "movie.watch": "../tvshow/watch-online-dead-hot-s01-2024/",
+    "tvshow.watch": "../tvshow/watch-online-dead-hot-s01-2024/",
     "numberOfEpisodes": 6,
     "partOfSeries": {
       "@type": "TVSeries",
@@ -1188,7 +1188,7 @@
     "poster": "Shogun_2024.webp",
     "image": "/wp-content/uploads/2023/06/Shogun_2024.webp",
     "backimage": "https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265124/Shogun_2024_rizxdl.jpg",
-    "movie.watch": "../tvshow/watch-online-shogun-s01-2024/",
+    "tvshow.watch": "../tvshow/watch-online-shogun-s01-2024/",
     "numberOfEpisodes": 10,
     "partOfSeries": {
       "@type": "TVSeries",
@@ -1370,7 +1370,7 @@
     "poster": "Tracker_2024.webp",
     "image": "/wp-content/uploads/2023/06/Tracker_2024.webp",
     "backimage": "https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265146/Tracker_2024_wgq1rs.jpg",
-    "movie.watch": "../tvshow/watch-online-tracker-s01-2024/",
+    "tvshow.watch": "../tvshow/watch-online-tracker-s01-2024/",
     "numberOfEpisodes": 13,
     "partOfSeries": {
       "@type": "TVSeries",
@@ -1561,7 +1561,7 @@
     "poster": "True_Detective_S04.webp",
     "image": "/wp-content/uploads/2023/06/True_Detective_S04.webp",
     "backimage": "https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265146/True_Detective_S04_g1zcok.jpg",
-    "movie.watch": "../tvshow/watch-online-true-detective-s04-2024/",
+    "tvshow.watch": "../tvshow/watch-online-true-detective-s04-2024/",
     "numberOfEpisodes": 6,
     "partOfSeries": {
       "@type": "TVSeries",
@@ -1720,7 +1720,7 @@
     "poster": "Halo_2024.webp",
     "image": "/wp-content/uploads/2023/06/Halo_2024.webp",
     "backimage": "https://res.cloudinary.com/dyx3mjea6/image/upload/v1711272931/Halo-Season-2_nvss5q.webp",
-    "movie.watch": "../tvshow/watch-online-halo-s02-2024/",
+    "tvshow.watch": "../tvshow/watch-online-halo-s02-2024/",
     "thumbnailUrl": "https://res.cloudinary.com/dyx3mjea6/image/upload/v1711272931/Halo-Season-2_nvss5q.webp",
     "numberOfEpisodes": 8,
     "partOfSeries": {
@@ -1895,7 +1895,7 @@
     "poster": "Mr&Mrs_Smith_2024.webp",
     "image": "/wp-content/uploads/2023/06/Mr&Mrs_Smith_2024.webp",
     "backimage": "https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265120/Mr_Mrs_Smith_2024_njfrco.jpg",
-    "movie.watch": "../tvshow/watch-online-mr-mrs-smith-2024/",
+    "tvshow.watch": "../tvshow/watch-online-mr-mrs-smith-2024/",
     "numberOfEpisodes": 8,
     "partOfSeries": {
       "@type": "TVSeries",
@@ -2072,7 +2072,7 @@
     "poster": "zorro_2024.webp",
     "image": "/wp-content/uploads/2023/06/zorro_2024.webp",
     "backimage": "https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265147/zorro_2024_wrpw57.jpg",
-    "movie.watch": "../tvshow/watch-online-zorro-s01-2024/",
+    "tvshow.watch": "../tvshow/watch-online-zorro-s01-2024/",
     "numberOfEpisodes": 10,
     "partOfSeries": {
       "@type": "TVSeries",
@@ -2272,7 +2272,7 @@
     "poster": "Indian_Police_force_2024.webp",
     "image": "/wp-content/uploads/2023/06/Indian_Police_force_2024.webp",
     "backimage": "https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265116/Indian_Police_force_2024_wa6bxl.jpg",
-    "movie.watch": "../tvshow/watch-online-indian-police-force-s01-2024/",
+    "tvshow.watch": "../tvshow/watch-online-indian-police-force-s01-2024/",
     "numberOfEpisodes": 7,
     "partOfSeries": {
       "@type": "TVSeries",
@@ -2436,7 +2436,7 @@
     "poster": "Killer_Soup_2024.webp",
     "image": "/wp-content/uploads/2023/06/Killer_Soup_2024.webp",
     "backimage": "https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265118/Killer_Soup_2024_orpjep.jpg",
-    "movie.watch": "../tvshow/watch-online-killer-soup-s01-2024/",
+    "tvshow.watch": "../tvshow/watch-online-killer-soup-s01-2024/",
     "numberOfEpisodes": 8,
     "partOfSeries": {
       "@type": "TVSeries",
@@ -2613,7 +2613,7 @@
     "poster": "Transplant_S03.webp",
     "image": "/wp-content/uploads/2023/06/Transplant_S04.webp",
     "backimage": "https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265146/Transplant_S04_os3hcy.jpg",
-    "movie.watch": "../tvshow/watch-online-transplant-s04-2023/",
+    "tvshow.watch": "../tvshow/watch-online-transplant-s04-2023/",
     "numberOfEpisodes": 10,
     "partOfSeries": {
       "@type": "TVSeries",
@@ -2813,7 +2813,7 @@
     "poster": "For.All.Mankind._S04.webp",
     "image": "/wp-content/uploads/2023/06/For.All.Mankind._S04.webp",
     "backimage": "https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265115/For_All_Mankind_S04_wmjayo.jpg",
-    "movie.watch": "../tvshow/watch-online-for-all-mankind-s4-2023/",
+    "tvshow.watch": "../tvshow/watch-online-for-all-mankind-s4-2023/",
     "numberOfEpisodes": 10,
     "partOfSeries": {
       "@type": "TVSeries",
@@ -3042,7 +3042,7 @@
     "poster": "upload-2023.webp",
     "image": "/wp-content/uploads/2023/06/upload-2023.webp",
     "backimage": "https://res.cloudinary.com/dyx3mjea6/image/upload/v1711265147/upload_2023_eik6y6.jpg",
-    "movie.watch": "../tvshow/watch-online-upload-s03-2023/",
+    "tvshow.watch": "../tvshow/watch-online-upload-s03-2023/",
     "numberOfEpisodes": 8,
     "partOfSeries": {
       "@type": "TVSeries",
