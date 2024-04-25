@@ -270,12 +270,7 @@ Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to 
 
 </p>
           <div className='py-8'>
-            <ShareButtons
-              url='https://uwatchfreeonline.vercel.app'
-              title='The Best news Platform HD news'
-              image='https://uwatchfreeonline.vercel.app/og_image.jpg'
-              style={{ marginBottom: '20px' }}
-            />
+          <ShareButtons  />
           </div>
           <div className='container mt-0 '>
             <Tabs>
