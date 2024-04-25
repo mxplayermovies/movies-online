@@ -8,7 +8,7 @@ import 'react-tabs/style/react-tabs.css'
 import HomeStyles from '@styles/styles.module.css'
 import ShareButtons from '@components/ShareButtons'
 import Rating from '@components/Rating'
-import TrendingMovies from '@components/TrendingMovies'
+import Trendingadults from '@components/Trendingadults'
 import AdultSkipAds from '@components/AdultSkipAds'
 import Max from '@components/Max'
 import Script from 'next/script'
@@ -171,8 +171,8 @@ const adultDetail = ({ adult }) => {
       },
       {
         '@type': 'WebPage',
-        '@id': `/${adult['movie.watch']}#webpage`,
-        url: `/${adult['movie.watch']}`,
+        '@id': `/${adult['adult.watch']}#webpage`,
+        url: `/${adult['adult.watch']}`,
         name: `${adult.title} | Uwatchfree Online™`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
@@ -197,7 +197,7 @@ const adultDetail = ({ adult }) => {
       },
       {
         '@type': 'Article',
-        '@id': `/${adult['movie.watch']}#article`,
+        '@id': `/${adult['adult.watch']}#article`,
         headline: `Watch ${adult.title} | Uwatchfree Online™`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
@@ -212,16 +212,16 @@ const adultDetail = ({ adult }) => {
         image: adult.image,
         name: `Watch ${adult.title} | Uwatchfree Online™`,
         isPartOf: {
-          '@id': `/${adult['movie.watch']}#webpage`
+          '@id': `/${adult['adult.watch']}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `/${adult['movie.watch']}#webpage`
+          '@id': `/${adult['adult.watch']}#webpage`
         }
       },
       {
         '@type': 'BlogPosting',
-        '@id': `/${adult['movie.watch']}#blogPost`,
+        '@id': `/${adult['adult.watch']}#blogPost`,
         headline: `Watch ${adult.title} | Uwatchfree Online™`,
         datePublished: '2024-01-13T13:00:00+00:00',
         dateModified: '2024-01-13T13:13:00+00:00',
@@ -235,13 +235,13 @@ const adultDetail = ({ adult }) => {
         description: `Uwatchfree Online | ${adult.title} for free. Where you can find adults of your interest in full HD quality updated on a daily basis. Watch Now or Download Now to Watch Later!`,
         image: adult.image,
         name: `Watch ${adult.title} | Uwatchfree Online™`,
-        '@id': `/${adult['movie.watch']}#richSnippet`,
+        '@id': `/${adult['adult.watch']}#richSnippet`,
         isPartOf: {
-          '@id': `/${adult['movie.watch']}#webpage`
+          '@id': `/${adult['adult.watch']}#webpage`
         },
         inLanguage: 'en-US',
         mainEntityOfPage: {
-          '@id': `/${adult['movie.watch']}#webpage`
+          '@id': `/${adult['adult.watch']}#webpage`
         }
       }
     ]
@@ -250,9 +250,9 @@ const adultDetail = ({ adult }) => {
   const ldJsonData = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Movie',
-    '@id': `${adult['movie.url']}`,
+    '@id': `${adult['adult.url']}`,
     name: adult.title,
-    url: `/${adult['movie.watch']}`,
+    url: `/${adult['adult.watch']}`,
     description: adult.synopsis,
     image: adult.poster,
     genre: adult.genre,
@@ -289,7 +289,7 @@ const adultDetail = ({ adult }) => {
         {
           '@type': 'EntryPoint',
           name: adult.title,
-          urlTemplate: `${adult['movie.url']}`
+          urlTemplate: `${adult['adult.url']}`
         }
       ]
     },
@@ -376,7 +376,7 @@ const adultDetail = ({ adult }) => {
 
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />
-        <meta property='og:image:type' content='image/webp' />
+        <meta property='og:image:type' content='image/jpeg' />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:label1' content='Est. reading time' />
         <meta name='twitter:data1' content='1 minute' />
@@ -452,15 +452,15 @@ const adultDetail = ({ adult }) => {
             className='flex flex-col text-center py-5 font-bold text-3xl items-center justify-center'
             style={{ color: '#40D7BC',  textShadow: '5px 5px 2px #000' }}
           >
-            Uwatchfree Online™ - The Best Movies Platform HD Movies.  </h2>
+            Uwatchfree Online™ - The Best adults Platform HD adults.  </h2>
          <p className='flex flex-col text-center py-5 font-bold text-xl items-center justify-center'
             style={{ color: '#40D7BC',  textShadow: '5px 5px 2px #000' }}
           > 
-"Uwatchfree Online™ - The Best Movies Platform HD Movies" is a platform that provides access to a wide range of high-definition movies for streaming online. With this platform, users can enjoy a diverse selection of movies spanning various genres, including action, drama, comedy, thriller, romance, and more.
+"Uwatchfree Online™ - The Best adults Platform HD adults" is a platform that provides access to a wide range of high-definition adults for streaming online. With this platform, users can enjoy a diverse selection of adults spanning various genres, including action, drama, comedy, thriller, romance, and more.
 
-The platform aims to offer a seamless and enjoyable movie-watching experience, allowing users to browse through a vast collection of films and watch them instantly without the need for downloading. Additionally, it may provide features such as personalized recommendations, user ratings, and reviews to help users discover new movies tailored to their preferences.
+The platform aims to offer a seamless and enjoyable adult-watching experience, allowing users to browse through a vast collection of films and watch them instantly without the need for downloading. Additionally, it may provide features such as personalized recommendations, user ratings, and reviews to help users discover new adults tailored to their preferences.
 
-Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to be a go-to destination for movie enthusiasts looking for convenient and high-quality streaming options for their entertainment needs.
+Overall, "Uwatchfree Online™ - The Best adults Platform HD adults" strives to be a go-to destination for adult enthusiasts looking for convenient and high-quality streaming options for their entertainment needs.
 
 </p>
         <div style={{ maxWidth: '800px', width: '100%', marginBottom: '20px' }}>
@@ -1511,7 +1511,7 @@ Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to 
           &#x1F604;Trending adults &#128515;
         </h2>
 
-        <TrendingMovies />
+        <Trendingadults />
         <Max />
         <div class='container1'>
         <ShareButtons
