@@ -349,11 +349,11 @@ const tvshowDetail = ({ tvshow }) => {
           property='article:modified_time'
           content='2024-01-01T13:13:13+00:00'
         />
-        <meta property='og:image' content={`${tvshow && tvshow.image}`}  />
+        <meta property='og:image' content={`${tvshow && tvshow.backimage}`}  />
 
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />
-        <meta property='og:image:type' content='image/webp' />
+        <meta property='og:image:type' content='image/jpeg' />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:label1' content='Est. reading time' />
         <meta name='twitter:data1' content='1 minute' />
