@@ -355,12 +355,9 @@ const adultDetail = ({ adult }) => {
         />
         <meta
           property='og:description'
-          content={`${adult && adult.name} | Top adult & TV Show Platform HD`}
+          content={`${adult && adult.name} | Best Movie & TV Show Platform HD`}
         />
-        <meta
-          name='description'
-          content='Uwatchfree Online™ We offer streaming adults in genres like Action, Horror, Sci-Fi, Crime and Comedy. Watch now !!!'
-        />
+     
         <meta property='og:url' content={`${adult && adult.url}`} />
         <meta name='keywords' content={`${adult && adult.keywords}`} />
         <meta property='og:site_name' content='Uwatchfree Online' />

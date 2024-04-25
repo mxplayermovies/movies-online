@@ -332,12 +332,10 @@ const tvshowDetail = ({ tvshow }) => {
         />
         <meta
           property='og:description'
-          content={`${tvshow && tvshow.name} | Top tvshow & TV Show Platform HD`}
+          content={`${tvshow && tvshow.name} | Best Movie & TV Show Platform HD`}
         />
-        <meta
-          name='description'
-          content='Uwatchfree Online™ We offer streaming tvshows in genres like Action, Horror, Sci-Fi, Crime and Comedy. Watch now !!!'
-        />
+        
+      
         <meta property='og:url' content={`${tvshow && tvshow.url}`} />
         <meta name='keywords' content={`${tvshow && tvshow.keywords}`} />
         <meta property='og:site_name' content='Uwatchfree Online' />

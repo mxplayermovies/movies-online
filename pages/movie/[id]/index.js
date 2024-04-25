@@ -339,12 +339,9 @@ const MovieDetail = ({ movie }) => {
         />
         <meta
           property='og:description'
-          content={`${ movie && movie.name} | Top Movie & TV Show Platform HD`}
+          content={`${ movie && movie.name} | Best Movie & TV Show Platform HD`}
         />
-        <meta
-          name='description'
-          content='Uwatchfree Online™ We offer streaming movies in genres like Action, Horror, Sci-Fi, Crime and Comedy. Watch now !!!'
-        />
+      
         <meta property='og:url' content={`${movie && movie.url}`} />
         <meta name='keywords' content={`${movie && movie.keywords}`} />
         <meta property='og:site_name' content='Uwatchfree Online' />

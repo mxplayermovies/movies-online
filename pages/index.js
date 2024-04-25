@@ -131,7 +131,7 @@ const HomePage = () => {
         <Head>
         <title>
             {' '}
-            Uwatchfree Online™ - Top Movie & TV Show Platform HD{' '}
+            Uwatchfree Online™ - Best Movie & TV Show Platform HD{' '}
           </title>
           <link
             rel='sitemap'
@@ -185,7 +185,7 @@ const HomePage = () => {
           <meta property='og:type' content='website' />
           <meta
             property='og:title'
-            content='Uwatchfree Online™ - Top Movie & TV Show Platform HD'
+            content='Uwatchfree Online™ - Best Movie & TV Show Platform HD'
           />
           <meta
             property='og:description'
@@ -194,7 +194,7 @@ const HomePage = () => {
           <meta property='og:url' content='https://uwatchfreeonline.vercel.app/' />
           <meta
             property='og:site_name'
-            content='Uwatchfree Online™ - Top Movie & TV Show Platform HD'
+            content='Uwatchfree Online™ - Best Movie & TV Show Platform HD'
           />
           <meta
             property='og:image'
@@ -206,7 +206,7 @@ const HomePage = () => {
           <meta property='og:image:type' content='image/webp' />
           <meta
             name='application-name'
-            content='Uwatchfree Online™ - Top Movie & TV Show Platform HD'
+            content='Uwatchfree Online™ - Best Movie & TV Show Platform HD'
           />
           <meta
             property='article:modified_time'
