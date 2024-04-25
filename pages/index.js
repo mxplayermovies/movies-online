@@ -5,7 +5,7 @@ import adultData from '../public/adult.json'
 import Head from 'next/head'
 import ShareButtons from '@components/ShareButtons'
 import styles from '../styles/Home.module.css'
-
+import Image from 'next/image'
 import { useState } from 'react'
 import Script from 'next/script'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
@@ -374,11 +374,14 @@ Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to 
       <div key={movieItem.id} className='flex flex-col justify-between'>
         <a href={`/movie/${movieItem.id}`}>
           <div className='relative'>
-            <img
+            <Image
               src={movieItem.image}
               alt={movieItem.title}
               className='w-full '
-              loading='lazy'
+              // loading='lazy'
+              width={500}
+              height={500}
+              priority
               style={{
                 maxWidth: '100%',
                 margin: 'auto',
@@ -444,11 +447,13 @@ Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to 
       <div key={tvshowItem.id} className='flex flex-col justify-between'>
         <a href={`/tvshow/${tvshowItem.id}`}>
           <div className='relative'>
-            <img
+            <Image
               src={tvshowItem.image}
               alt={tvshowItem.title}
               className='w-full '
-              loading='lazy'
+              width={500}
+              height={500}
+              priority
               style={{
                 maxWidth: '100%',
                 margin: 'auto',
@@ -514,11 +519,13 @@ Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to 
       <div key={adultItem.id} className='flex flex-col justify-between'>
         <a href={`/adult/${adultItem.id}`}>
           <div className='relative'>
-            <img
+            <Image
               src={adultItem.image}
               alt={adultItem.title}
               className='w-full '
-              loading='lazy'
+              width={500}
+              height={500}
+              priority
               style={{
                 maxWidth: '100%',
                 margin: 'auto',

@@ -3,6 +3,7 @@ import moviesData from '../../../public/movie.json'
 import { useEffect, useState, useRef } from 'react'
 import Styles from '@styles/video-player.module.css'
 import Head from 'next/head'
+import Image from 'next/image'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
 import HomeStyles from '@styles/styles.module.css'
@@ -448,11 +449,14 @@ Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to 
 
 </p>
         <div style={{ maxWidth: '800px', width: '100%', marginBottom: '20px' }}>
-          <img
+          <Image
             src={movie.image}
             alt={movie.title}
+            width={500}
+            height={500}
+            priority
             style={{
-              maxWidth: '100%',
+              maxWidth: '50%',
               margin: 'auto',
               marginBottom: '20px',
               borderRadius: '50px',

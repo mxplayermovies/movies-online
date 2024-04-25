@@ -3,6 +3,7 @@ import tvshowsData from '../../../public/tvshow.json'
 import { useEffect, useState, useRef } from 'react'
 import Styles from '@styles/video-player.module.css'
 import Head from 'next/head'
+import Image from 'next/image'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import 'react-tabs/style/react-tabs.css'
 import HomeStyles from '@styles/styles.module.css'
@@ -445,8 +446,11 @@ Overall, "Uwatchfree Online™ - The Best tvshows Platform HD tvshows" strives t
           <img
             src={tvshow.image}
             alt={tvshow.title}
+            width={500}
+            height={500}
+            priority
             style={{
-              maxWidth: '100%',
+              maxWidth: '50%',
               margin: 'auto',
               marginBottom: '20px',
               borderRadius: '50px',
