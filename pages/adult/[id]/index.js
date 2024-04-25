@@ -372,7 +372,7 @@ const adultDetail = ({ adult }) => {
           property='article:modified_time'
           content='2024-01-01T13:13:13+00:00'
         />
-        <meta property='og:image' content={`${adult && adult.image}`}  />
+        <meta property='og:image' content={`${adult && adult.backimage}`}  />
 
         <meta property='og:image:width' content='1280' />
         <meta property='og:image:height' content='720' />
