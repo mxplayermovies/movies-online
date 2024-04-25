@@ -252,7 +252,7 @@ const MovieDetail = ({ movie }) => {
   const ldJsonData = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Movie',
-    '@id': `${movie['movie.url']}`,
+    '@id': `/${movie['movie.watch']}`,
     name: movie.name,
     url: `/${movie['movie.watch']}`,
     description: movie.synopsis,
@@ -360,7 +360,7 @@ const MovieDetail = ({ movie }) => {
 
         <meta property='og:image:width' content='1080px' />
         <meta property='og:image:height' content='720px' />
-        <meta property='og:image:type' content='image/webp' />
+        <meta property='og:image:type' content='image/jpeg' />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:label1' content='Est. reading time' />
         <meta name='twitter:data1' content='1 minute' />
