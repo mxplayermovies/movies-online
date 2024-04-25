@@ -341,7 +341,10 @@ const MovieDetail = ({ movie }) => {
           property='og:description'
           content={`${ movie && movie.name} | Best Movie & TV Show Platform HD`}
         />
-      
+       <meta
+            property='og:description'
+            content='Watch free news and TV shows online in HD on any device. We offer streaming news in genres like Action, Horror, Sci-Fi, Crime and Comedy. Watch now !!!'
+          />
         <meta property='og:url' content={`${movie && movie.url}`} />
         <meta name='keywords' content={`${movie && movie.keywords}`} />
         <meta property='og:site_name' content='Uwatchfree Online' />
