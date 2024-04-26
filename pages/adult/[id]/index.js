@@ -1539,7 +1539,7 @@ Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to 
             textShadow: '3px 5px 5px #000'
           }}
         >
-          &#x1F604;Trending adults &#128515;
+          &#x1F604;Trending Adult &#128515;
         </h2>
 
         <TrendingMovies />

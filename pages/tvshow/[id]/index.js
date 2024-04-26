@@ -1529,7 +1529,7 @@ Overall, "Uwatchfree Online™ - Best Movie & TV Show Platform HD" strives to be
             textShadow: '3px 5px 5px #000'
           }}
         >
-          &#x1F604;Trending tvshows &#128515;
+          &#x1F604;Trending TvShow &#128515;
         </h2>
 
         <TrendingMovies />
