@@ -328,11 +328,6 @@ const tvshowDetail = ({ tvshow }) => {
       value: ['Desktop Web Platform', 'iOS Platform', 'Android Platform']
     },
     numberOfEpisodes: tvshow.episodes.length,
-    partOfSeries: {
-      '@type': 'TVSeries',
-      name: "Big Girls Don't Cry S01",
-      url: "https://uwatchfreeonline.vercel.app/tvshow/big-girls-dont-cry-s01-2024-tvshow-online"
-    },
     containsSeason: {
       '@type': 'TVSeason',
       seasonNumber: 1,
