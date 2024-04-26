@@ -270,7 +270,7 @@ const tvshowDetail = ({ tvshow }) => {
     ]
   })
 
-  const ldJsonData = JSON.stringify({
+  const ldJsonData = {
     '@context': 'https://schema.org',
     '@type': 'TVSeries',
     '@id': `/${tvshow['tvshow.watch']}`,
@@ -293,8 +293,8 @@ const tvshowDetail = ({ tvshow }) => {
       target: [
         {
           '@type': 'EntryPoint',
-          name: tvshow.name, // Removed unnecessary conditional
-          urlTemplate: `${tvshow['tvshow.url']}` // Updated to use tvshow.watch
+          name: tvshow.name,
+          urlTemplate: `${tvshow['tvshow.url']}`
         }
       ]
     },
@@ -310,7 +310,7 @@ const tvshowDetail = ({ tvshow }) => {
       ratingCount: tvshow.aggregateRating.ratingCount
     },
     author: {
-      '@type': 'Person', // Updated to remove unnecessary array
+      '@type': 'Person',
       name: 'DrTrailer',
       url: 'https://gravatar.com/drtrailer2022'
     },
@@ -326,9 +326,26 @@ const tvshowDetail = ({ tvshow }) => {
       '@type': 'PropertyValue',
       name: 'Action Platform',
       value: ['Desktop Web Platform', 'iOS Platform', 'Android Platform']
+    },
+    numberOfEpisodes: tvshow.episodes.length,
+    partOfSeries: {
+      '@type': 'TVSeries',
+      name: "Big Girls Don't Cry S01",
+      url: "https://uwatchfreeonline.vercel.app/tvshow/big-girls-dont-cry-s01-2024-tvshow-online"
+    },
+    containsSeason: {
+      '@type': 'TVSeason',
+      seasonNumber: 1,
+      numberOfEpisodes: 7,
+      episodes: tvshow.episodes.map(episode => ({
+        '@type': 'TVEpisode',
+        episodeNumber: episode.episodeNumber,
+        name: episode.name,
+        description: episode.description
+      }))
     }
-  })
-
+  };
+  
   const trailerSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'VideoObject',
@@ -461,15 +478,15 @@ const tvshowDetail = ({ tvshow }) => {
             className='flex flex-col text-center py-5 font-bold text-3xl items-center justify-center'
             style={{ color: '#40D7BC',  textShadow: '5px 5px 2px #000' }}
           >
-            Uwatchfree Online™ - The Best tvshows Platform HD tvshows.  </h2>
+            Uwatchfree Online™ - Best Movie & TV Show Platform HD.  </h2>
          <p className='flex flex-col text-center py-5 font-bold text-xl items-center justify-center'
             style={{ color: '#40D7BC',  textShadow: '5px 5px 2px #000' }}
           > 
-"Uwatchfree Online™ - The Best tvshows Platform HD tvshows" is a platform that provides access to a wide range of high-definition tvshows for streaming online. With this platform, users can enjoy a diverse selection of tvshows spanning various genres, including action, drama, comedy, thriller, romance, and more.
+"Uwatchfree Online™ - Best Movie & TV Show Platform HD" is a platform that provides access to a wide range of high-definition tvshows for streaming online. With this platform, users can enjoy a diverse selection of tvshows spanning various genres, including action, drama, comedy, thriller, romance, and more.
 
 The platform aims to offer a seamless and enjoyable tvshow-watching experience, allowing users to browse through a vast collection of films and watch them instantly without the need for downloading. Additionally, it may provide features such as personalized recommendations, user ratings, and reviews to help users discover new tvshows tailored to their preferences.
 
-Overall, "Uwatchfree Online™ - The Best tvshows Platform HD tvshows" strives to be a go-to destination for tvshow enthusiasts looking for convenient and high-quality streaming options for their entertainment needs.
+Overall, "Uwatchfree Online™ - Best Movie & TV Show Platform HD" strives to be a go-to destination for tvshow enthusiasts looking for convenient and high-quality streaming options for their entertainment needs.
 
 </p>
         <div style={{ maxWidth: '800px', width: '100%', marginBottom: '20px' }}>
