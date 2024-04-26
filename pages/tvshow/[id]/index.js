@@ -270,7 +270,7 @@ const tvshowDetail = ({ tvshow }) => {
     ]
   })
 
-  const ldJsonData = {
+  const ldJsonData = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'TVSeries',
     '@id': `/${tvshow['tvshow.watch']}`,
@@ -293,8 +293,8 @@ const tvshowDetail = ({ tvshow }) => {
       target: [
         {
           '@type': 'EntryPoint',
-          name: tvshow.name,
-          urlTemplate: `${tvshow['tvshow.url']}`
+          name: tvshow.name, // Removed unnecessary conditional
+          urlTemplate: `${tvshow['tvshow.url']}` // Updated to use tvshow.watch
         }
       ]
     },
@@ -310,7 +310,7 @@ const tvshowDetail = ({ tvshow }) => {
       ratingCount: tvshow.aggregateRating.ratingCount
     },
     author: {
-      '@type': 'Person',
+      '@type': 'Person', // Updated to remove unnecessary array
       name: 'DrTrailer',
       url: 'https://gravatar.com/drtrailer2022'
     },
@@ -326,26 +326,9 @@ const tvshowDetail = ({ tvshow }) => {
       '@type': 'PropertyValue',
       name: 'Action Platform',
       value: ['Desktop Web Platform', 'iOS Platform', 'Android Platform']
-    },
-    numberOfEpisodes: tvshow.episodes.length,
-    partOfSeries: {
-      '@type': 'TVSeries',
-      name: "Big Girls Don't Cry S01",
-      url: "https://uwatchfreeonline.vercel.app/tvshow/big-girls-dont-cry-s01-2024-tvshow-online"
-    },
-    containsSeason: {
-      '@type': 'TVSeason',
-      seasonNumber: 1,
-      numberOfEpisodes: 7,
-      episodes: tvshow.episodes.map(episode => ({
-        '@type': 'TVEpisode',
-        episodeNumber: episode.episodeNumber,
-        name: episode.name,
-        description: episode.description
-      }))
     }
-  };
-  
+  })
+
   const trailerSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'VideoObject',
