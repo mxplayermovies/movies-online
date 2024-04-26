@@ -152,6 +152,33 @@ const adultDetail = ({ adult }) => {
       alert('Video loading canceled.')
     }
   }
+
+  const uwatchfreeSchema = JSON.stringify([
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Uwatchfree Online",
+      "url": "https://uwatchfreeonline.vercel.app",
+      "image": ["https://uwatchfreeonline.vercel.app/wp-content/uploads/2023/05/favicon.ico"],
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://uwatchfreeonline.vercel.app/logo.png",
+        "width": 280,
+        "height": 80
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://uwatchfreeonline.vercel.app",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://uwatchfreeonline.vercel.app/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]);
+
   const rankMathSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@graph': [
@@ -395,7 +422,10 @@ const adultDetail = ({ adult }) => {
         />
 
         {/* <script src='https://www.youtube.com/iframe_api' /> */}
-
+        <script
+            type='application/ld+json'
+            dangerouslySetInnerHTML={{ __html: uwatchfreeSchema }}
+          />
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: ldJsonData }}
@@ -468,11 +498,11 @@ Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to 
           <Image
             src={adult.image}
             alt={adult.title}
-            width={500}
+            width={300}
             height={500}
             priority
             style={{
-              maxWidth: '50%',
+              // maxWidth: '50%',
               margin: 'auto',
               marginBottom: '20px',
               borderRadius: '50px',

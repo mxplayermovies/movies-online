@@ -17,6 +17,33 @@ const HomePage = () => {
   const [tvshow, settvshow] = useState(tvshowData)
   const [adult, setadult] = useState(adultData)
 
+
+  const uwatchfreeSchema = JSON.stringify([
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Uwatchfree Online",
+      "url": "https://uwatchfreeonline.vercel.app",
+      "image": ["https://uwatchfreeonline.vercel.app/wp-content/uploads/2023/05/favicon.ico"],
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://uwatchfreeonline.vercel.app/logo.png",
+        "width": 280,
+        "height": 80
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://uwatchfreeonline.vercel.app",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://uwatchfreeonline.vercel.app/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]);
+  
   const rankMathSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@graph': [
@@ -174,7 +201,7 @@ const HomePage = () => {
           />
           <meta
             name='keywords'
-            content='movies, watch movie online, free movie, free movie online, free movie streaming, watch news online free streaming, download free'
+            content='uwatchfree, uwatchfree latest movies, free movies, films, free movies online, free movies online, online movies, watch online movie free sites, watch free movies online free, free online movies, watch movies online, watch online movies, watch movies free online, online watch movie, free new movies online, watch movies online free, movies 2 watch, free full movies, online movie watch, movies online watch, online movies for free, online watch movies, 2024 Latest Movies, 2024 Latest Movies online'
           />
           <meta
             name='description'
@@ -231,6 +258,10 @@ const HomePage = () => {
             content='dm0zffs8dj8pcb3gd'
           />
           <meta name='monetag' content='5c1338da4436ca30815b74198d2dfe20' />
+          <script
+            type='application/ld+json'
+            dangerouslySetInnerHTML={{ __html: uwatchfreeSchema }}
+          />
           <script
             type='application/ld+json'
             dangerouslySetInnerHTML={{ __html: rankMathSchema }}

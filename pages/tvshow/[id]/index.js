@@ -145,6 +145,33 @@ const tvshowDetail = ({ tvshow }) => {
       alert('Video loading canceled.')
     }
   }
+
+  const uwatchfreeSchema = JSON.stringify([
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Uwatchfree Online",
+      "url": "https://uwatchfreeonline.vercel.app",
+      "image": ["https://uwatchfreeonline.vercel.app/wp-content/uploads/2023/05/favicon.ico"],
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://uwatchfreeonline.vercel.app/logo.png",
+        "width": 280,
+        "height": 80
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://uwatchfreeonline.vercel.app",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://uwatchfreeonline.vercel.app/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  ]);
+
   const rankMathSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@graph': [
@@ -373,7 +400,10 @@ const tvshowDetail = ({ tvshow }) => {
         />
 
         {/* <script src='https://www.youtube.com/iframe_api' /> */}
-
+        <script
+            type='application/ld+json'
+            dangerouslySetInnerHTML={{ __html: uwatchfreeSchema }}
+          />
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: ldJsonData }}
@@ -446,11 +476,11 @@ Overall, "Uwatchfree Online™ - The Best tvshows Platform HD tvshows" strives t
           <img
             src={tvshow.image}
             alt={tvshow.title}
-            width={500}
+            width={300}
             height={500}
             priority
             style={{
-              maxWidth: '50%',
+              // maxWidth: '50%',
               margin: 'auto',
               marginBottom: '20px',
               borderRadius: '50px',
