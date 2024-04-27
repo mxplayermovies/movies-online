@@ -483,10 +483,19 @@ const tvshowDetail = ({ tvshow }) => {
 The platform aims to offer a seamless and enjoyable tvshow-watching experience, allowing users to browse through a vast collection of films and watch them instantly without the need for downloading. Additionally, it may provide features such as personalized recommendations, user ratings, and reviews to help users discover new tvshows tailored to their preferences.
 
 Overall, "Uwatchfree Online™ - Best Movie & TV Show Platform HD" strives to be a go-to destination for tvshow enthusiasts looking for convenient and high-quality streaming options for their entertainment needs.
-
+<style jsx>{`
+        @media (max-width: 768px) {
+          h1 {
+            font-size: 2rem; // Adjust font size for smaller screens
+          }
+          p {
+            font-size: 1rem; // Adjust font size for smaller screens
+          }
+        }
+      `}</style>
 </p>
         <div style={{ maxWidth: '800px', width: '100%', marginBottom: '20px' }}>
-          <img
+          <Image
             src={tvshow.image}
             alt={tvshow.title}
             width={300}
