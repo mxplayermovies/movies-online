@@ -478,7 +478,7 @@ The platform aims to offer a seamless and enjoyable movie-watching experience, a
 Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to be a go-to destination for movie enthusiasts looking for convenient and high-quality streaming options for their entertainment needs.
 
 </p>
-<style jsx>{`
+{/* <style jsx>{`
         @media (max-width: 768px) {
           h1 {
             font-size: 2rem; // Adjust font size for smaller screens
@@ -487,7 +487,7 @@ Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to 
             font-size: 1rem; // Adjust font size for smaller screens
           }
         }
-      `}</style>
+      `}</style> */}
         <div style={{ maxWidth: '800px', width: '100%', marginBottom: '20px' }}>
           <Image
             src={movie.image}

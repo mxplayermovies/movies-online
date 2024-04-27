@@ -485,7 +485,7 @@ The platform aims to offer a seamless and enjoyable tvshow-watching experience, 
 Overall, "Uwatchfree Online™ - Best Movie & TV Show Platform HD" strives to be a go-to destination for tvshow enthusiasts looking for convenient and high-quality streaming options for their entertainment needs.
 
 </p>
-<style jsx>{`
+{/* <style jsx>{`
         @media (max-width: 768px) {
           h1 {
             font-size: 2rem; // Adjust font size for smaller screens
@@ -494,7 +494,7 @@ Overall, "Uwatchfree Online™ - Best Movie & TV Show Platform HD" strives to be
             font-size: 1rem; // Adjust font size for smaller screens
           }
         }
-      `}</style>
+      `}</style> */}
         <div style={{ maxWidth: '800px', width: '100%', marginBottom: '20px' }}>
           <Image
             src={tvshow.image}
