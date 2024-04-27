@@ -298,9 +298,7 @@ const HomePage = () => {
 The platform aims to offer a seamless and enjoyable movie-watching experience, allowing users to browse through a vast collection of films and watch them instantly without the need for downloading. Additionally, it may provide features such as personalized recommendations, user ratings, and reviews to help users discover new movies tailored to their preferences.
 
 Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to be a go-to destination for movie enthusiasts looking for convenient and high-quality streaming options for their entertainment needs.
-
-</p>
-{/* <style jsx>{`
+<style jsx>{`
         @media (max-width: 768px) {
           h1 {
             font-size: 2rem; // Adjust font size for smaller screens
@@ -309,7 +307,8 @@ Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to 
             font-size: 1rem; // Adjust font size for smaller screens
           }
         }
-      `}</style> */}
+      `}</style>
+</p>
           <div className='py-8'>
          
           </div>
