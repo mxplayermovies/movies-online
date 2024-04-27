@@ -290,7 +290,7 @@ const HomePage = () => {
             style={{ color: '#40D7BC',  textShadow: '5px 5px 2px #000' }}
           >
             Uwatchfree Online™ - The Best Movies Platform HD Movies.  </h1>
-         <p className=' text-center font-bold text-xl items-center justify-center' preload='true'
+         <p className=' text-center font-bold text-lg items-center justify-center' preload='true'
             style={{ color: '#40D7BC',  textShadow: '5px 5px 2px #000' }}
           > 
 "Uwatchfree Online™ - The Best Movies Platform HD Movies" is a platform that provides access to a wide range of high-definition movies for streaming online. With this platform, users can enjoy a diverse selection of movies spanning various genres, including action, drama, comedy, thriller, romance, and more.
@@ -300,6 +300,16 @@ The platform aims to offer a seamless and enjoyable movie-watching experience, a
 Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to be a go-to destination for movie enthusiasts looking for convenient and high-quality streaming options for their entertainment needs.
 
 </p>
+<style jsx>{`
+        @media (max-width: 768px) {
+          h1 {
+            font-size: 2rem; // Adjust font size for smaller screens
+          }
+          p {
+            font-size: 1rem; // Adjust font size for smaller screens
+          }
+        }
+      `}</style>
           <div className='py-8'>
          
           </div>
