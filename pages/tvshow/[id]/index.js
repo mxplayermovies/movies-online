@@ -501,8 +501,7 @@ Overall, "Uwatchfree Online™ - Best Movie & TV Show Platform HD" strives to be
             alt={tvshow.title}
             width={300}
             height={500}
-            loading='lazy'
-            // priority
+            priority
             style={{
               // maxWidth: '50%',
               margin: 'auto',
