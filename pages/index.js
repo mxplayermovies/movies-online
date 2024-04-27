@@ -286,7 +286,7 @@ const HomePage = () => {
         <ShareButtons  />
         <main className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-8'>
         <h1
-            className=' text-center py-5 font-bold text-3xl items-center justify-center'preload='true'
+            className=' text-center py-5 font-bold text-3xl items-center justify-center' preload='true'
             style={{ color: '#40D7BC',  textShadow: '5px 5px 2px #000' }}
           >
             Uwatchfree Online™ - The Best Movies Platform HD Movies.  </h1>

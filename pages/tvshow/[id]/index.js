@@ -475,7 +475,7 @@ const tvshowDetail = ({ tvshow }) => {
            style={{ color: '#40D7BC',  textShadow: '5px 5px 2px #000' }}
          >
            Uwatchfree Online™ - The Best Movies Platform HD Movies.  </h2>
-        <p className=' text-center font-bold text-lg items-center justify-center' preload='true'
+        <p className=' py-5 text-center font-bold text-lg items-center justify-center' preload='true'
            style={{ color: '#40D7BC',  textShadow: '5px 5px 2px #000' }}
          > 
 "Uwatchfree Online™ - Best Movie & TV Show Platform HD" is a platform that provides access to a wide range of high-definition tvshows for streaming online. With this platform, users can enjoy a diverse selection of tvshows spanning various genres, including action, drama, comedy, thriller, romance, and more.
