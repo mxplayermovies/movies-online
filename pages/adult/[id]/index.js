@@ -510,7 +510,8 @@ Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to 
             alt={adult.title}
             width={300}
             height={500}
-            priority
+            loading='lazy'
+            // priority
             style={{
               // maxWidth: '50%',
               margin: 'auto',
