@@ -237,7 +237,7 @@ const MovieDetail = ({ movie }) => {
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
-        description: `Uwatchfree Online | ${movie.name} for free. Where you can find movies of your interest in full HD quality updated on a daily basis. Watch Now or Download Now to Watch Later!`,
+        description: `Watch free Movies, TV shows & Sports online on any device. We offer streaming on any Platform. Watch now !!!`,
         image: movie.image,
         name: `Watch ${movie.name} | Uwatchfree Online™`,
         isPartOf: {
@@ -262,7 +262,7 @@ const MovieDetail = ({ movie }) => {
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
-        description: `Uwatchfree Online | ${movie.name} for free. Where you can find movies of your interest in full HD quality updated on a daily basis. Watch Now or Download Now to Watch Later!`,
+        description: `Watch free Movies, TV shows & Sports online on any device. We offer streaming on any Platform. Watch now !!!`,
         image: movie.image,
         name: `Watch ${movie.name} | Uwatchfree Online™`,
         '@id': `/${movie['movie.watch']}#richSnippet`,
@@ -367,11 +367,11 @@ const MovieDetail = ({ movie }) => {
         />
         <meta
           property='og:description'
-          content={`${ movie && movie.name} | Best Movie & TV Show Platform HD`}
+          content={`${ movie && movie.name} | For Movies, TV Show & Sports`}
         />
        <meta
             property='og:description'
-            content='Watch free Movie and TV shows online in HD on any device. We offer streaming Movie in genres like Action, Horror, Sci-Fi, Crime and Comedy. Watch now !!!'
+            content='Watch free Movies, TV shows & Sports online on any device. We offer streaming on any Platform. Watch now !!!'
           />
         <meta property='og:url' content={`${movie && movie.url}`} />
         <meta name='keywords' content={`${movie && movie.keywords}`} />
@@ -464,30 +464,20 @@ const MovieDetail = ({ movie }) => {
         }}
       >
              <h2
-             className=' text-center py-5 font-bold text-3xl items-center justify-center'preload='true'
-             style={{ color: '#40D7BC',  textShadow: '5px 5px 2px #000' }}
-           >
-             Uwatchfree Online™ - The Best Movies Platform HD Movies.  </h2>
-          <p className=' py-5 text-center font-bold text-lg items-center justify-center' preload='true'
-             style={{ color: '#40D7BC',  textShadow: '5px 5px 2px #000' }}
-           > 
-"Uwatchfree Online™ - The Best Movies Platform HD Movies" is a platform that provides access to a wide range of high-definition movies for streaming online. With this platform, users can enjoy a diverse selection of movies spanning various genres, including action, drama, comedy, thriller, romance, and more.
+            className='flex flex-col text-center py-5 font-bold text-3xl items-center justify-center'
+            style={{ color: '#40D7BC',  textShadow: '5px 5px 2px #000' }}
+          >
+            Uwatchfree Online™ - For Movies, TV Show & Sports.  </h2>
+         <p className='flex flex-col text-center py-5 font-bold text-xl items-center justify-center'
+            style={{ color: '#40D7BC',  textShadow: '5px 5px 2px #000' }}
+          > 
+"Uwatchfree Online™ - For Movies, TV Show & Sports" is a platform that provides access to a wide range of high-definition movies for streaming online. With this platform, users can enjoy a diverse selection of movies spanning various genres, including action, drama, comedy, thriller, romance, and more.
 
 The platform aims to offer a seamless and enjoyable movie-watching experience, allowing users to browse through a vast collection of films and watch them instantly without the need for downloading. Additionally, it may provide features such as personalized recommendations, user ratings, and reviews to help users discover new movies tailored to their preferences.
 
-Overall, "Uwatchfree Online™ - The Best Movies Platform HD Movies" strives to be a go-to destination for movie enthusiasts looking for convenient and high-quality streaming options for their entertainment needs.
+Overall, "Uwatchfree Online™ - For Movies, TV Show & Sports" strives to be a go-to destination for movie enthusiasts looking for convenient and high-quality streaming options for their entertainment needs.
 
 </p>
-{/* <style jsx>{`
-        @media (max-width: 768px) {
-          h1 {
-            font-size: 2rem; // Adjust font size for smaller screens
-          }
-          p {
-            font-size: 1rem; // Adjust font size for smaller screens
-          }
-        }
-      `}</style> */}
         <div style={{ maxWidth: '800px', width: '100%', marginBottom: '20px' }}>
           <Image
             src={movie.image}

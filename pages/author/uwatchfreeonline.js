@@ -22,7 +22,7 @@ export default function WatchMoviesOnline ({ movie }) {
             <Head>
                 <meta charSet="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <title>Watch Movies Online™ - The Best Movies Platform HD Movies</title>
+                <title>Watch Movies Online™ - For Movies, Tv Shows & Sports Live</title>
                 {/* Add your other meta tags here */}
                 <script
                     type="application/ld+json"
@@ -84,7 +84,7 @@ export default function WatchMoviesOnline ({ movie }) {
                 ></script>
             </Head>
             <div id="main">
-            <h1 className="flex flex-col text-center py-5 font-bold text-3xl items-center justify-center" style={{ color: "#40D7BC", textShadow: "5px 5px 2px #000" }}>Watch Movies Online™ - The Best Movies Platform HD Movies {movie && movie.title} </h1>
+            <h1 className="flex flex-col text-center py-5 font-bold text-3xl items-center justify-center" style={{ color: "#40D7BC", textShadow: "5px 5px 2px #000" }}>Watch Movies Online™ - For Movies, Tv Shows & Sports Live {movie && movie.title} </h1>
                 <div className="container" style={{justifyContent: 'center', alignItems: 'center', height: '10vh', marginTop: '100px', }}>
                     <div className="home-main">
                         <div className="hm-logo"><a title="" href="https://uwatchfreeonline.vercel.app" id="logo-home"></a></div>
