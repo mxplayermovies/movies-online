@@ -464,13 +464,13 @@ const MovieDetail = ({ movie }) => {
         }}
       >
              <h2
-            className='flex flex-col text-center py-5 font-bold text-3xl items-center justify-center'
-            style={{ color: '#40D7BC',  textShadow: '5px 5px 2px #000' }}
-          >
-            Uwatchfree Online™ - The Best Movies Platform HD Movies.  </h2>
-         <p className='flex flex-col text-center py-5 font-bold text-xl items-center justify-center'
-            style={{ color: '#40D7BC',  textShadow: '5px 5px 2px #000' }}
-          > 
+             className=' text-center py-5 font-bold text-3xl items-center justify-center'preload='true'
+             style={{ color: '#40D7BC',  textShadow: '5px 5px 2px #000' }}
+           >
+             Uwatchfree Online™ - The Best Movies Platform HD Movies.  </h2>
+          <p className=' text-center font-bold text-lg items-center justify-center' preload='true'
+             style={{ color: '#40D7BC',  textShadow: '5px 5px 2px #000' }}
+           > 
 "Uwatchfree Online™ - The Best Movies Platform HD Movies" is a platform that provides access to a wide range of high-definition movies for streaming online. With this platform, users can enjoy a diverse selection of movies spanning various genres, including action, drama, comedy, thriller, romance, and more.
 
 The platform aims to offer a seamless and enjoyable movie-watching experience, allowing users to browse through a vast collection of films and watch them instantly without the need for downloading. Additionally, it may provide features such as personalized recommendations, user ratings, and reviews to help users discover new movies tailored to their preferences.
