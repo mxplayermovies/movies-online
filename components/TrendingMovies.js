@@ -2,15 +2,20 @@ import { useState, useEffect } from 'react';
 import movieData from '../public/movie.json';
 import tvshowData from '../public/tvshow.json';
 import adultData from '../public/adult.json';
-
+import sportsData from '../public/sports.json';
+import Image from 'next/image'
 
 const Trendingmovie = () => {
   const [movie, setmovie] = useState([]);
   const [tvshow, settvshow] = useState([]);
+  const [sports, setsports] = useState([]);
+
 
   useEffect(() => {
     setmovie(movieData);
     settvshow(tvshowData);
+    setsports(sportsData);
+
   }, []);
 
   return (
@@ -20,11 +25,24 @@ const Trendingmovie = () => {
           {movie.map((movieItem) => (
             <li key={movieItem.id} className="playlist-video">
               <a href={`/movie/${movieItem.id}`} className='w-img'>
-                <img
+                <Image
                   src={`/wp-content/uploads/2023/06/${movieItem.poster}`}
                   alt={movieItem.title}
                   className="rounded-md border"
+                  width={500}
+                  height={500}
+                  priority
+                  style={{
+                    // maxWidth: '100%',
+                    // margin: 'auto',
+                    // marginBottom: '20px',
+                    // borderRadius: '25px',
+                    // boxShadow: '0 0 10px 0 #40D7BC',
+                    filter:
+                      'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
+                  }}
                 />
+             
                 <div className="badge">{movieItem.badge}</div>
                 {/* <div className="genre">{movieItem.genre}</div> */}
               </a>
@@ -33,24 +51,69 @@ const Trendingmovie = () => {
           {tvshow.map((tvshowItem) => (
             <li key={tvshowItem.id} className="playlist-video">
               <a href={`/tvshow/${tvshowItem.id}`} className='w-img'>
-                <img
+                <Image
                   src={`/wp-content/uploads/2023/06/${tvshowItem.poster}`}
                   alt={tvshowItem.title}
                   className="rounded-md border"
+                  width={500}
+                  height={500}
+                  priority
+                  style={{
+                    // maxWidth: '100%',
+                    // margin: 'auto',
+                    // marginBottom: '20px',
+                    // borderRadius: '25px',
+                    // boxShadow: '0 0 10px 0 #40D7BC',
+                    filter:
+                      'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
+                  }}
                 />
+              
                 <div className="badge">{tvshowItem.badge}</div>
                 {/* <div className="genre">{tvshowItem.genre}</div> */}
               </a>
             </li>
           ))}
+         {sportsData.map((sportsItem) => (
+  <li key={sportsItem.id} className="playlist-video">
+    <a href={`/sports/${sportsItem.id}`} className='w-img'>
+      <Image
+        src={`/wp-content/uploads/2023/06/${sportsItem.poster}`}
+        alt={sportsItem.title}
+        className="rounded-md border"
+        width={500}
+        height={500}
+        priority
+        style={{
+          filter: 'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)',
+        }}
+      />
+      <div className="badge">{sportsItem.badge}</div>
+    </a>
+  </li>
+))}
+
           {adultData.map((adultItem) => (
             <li key={adultItem.id} className="playlist-video">
               <a href={`/adult/${adultItem.id}`} className='w-img'>
-                <img
+                <Image
                   src={`/wp-content/uploads/2023/06/${adultItem.poster}`}
                   alt={adultItem.title}
                   className="rounded-md border"
+                  width={500}
+                  height={500}
+                  priority
+                  style={{
+                    // maxWidth: '100%',
+                    // margin: 'auto',
+                    // marginBottom: '20px',
+                    // borderRadius: '25px',
+                    // boxShadow: '0 0 10px 0 #40D7BC',
+                    filter:
+                      'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
+                  }}
                 />
+             
                 <div className="badge">{adultItem.badge}</div>
                 {/* <div className="genre">{adultItem.genre}</div> */}
               </a>
