@@ -667,8 +667,7 @@ Overall, "Uwatchfree Online™ - For sportss, Tv Shows & Sports Live" strives to
                                 fontWeight: 'bold'
                               }}
                             >
-                              *Note: Use Setting in Player to improve the
-                              Quality of video to HD Quality 1080p.
+                              *Note: Please Use VPN Services for Mobile devices to get your channel to work.
                             </p>
                           </div>
                         </div>
@@ -762,8 +761,7 @@ Overall, "Uwatchfree Online™ - For sportss, Tv Shows & Sports Live" strives to
                                 fontWeight: 'bold'
                               }}
                             >
-                              *Note: Use Setting in Player to improve the
-                              Quality of video to HD Quality 1080p.
+                              *Note: Please Use VPN Services for Mobile devices to get your channel to work.
                             </p>
                           </div>
                         </div>
@@ -857,8 +855,7 @@ Overall, "Uwatchfree Online™ - For sportss, Tv Shows & Sports Live" strives to
                                 fontWeight: 'bold'
                               }}
                             >
-                              *Note: Use Setting in Player to improve the
-                              Quality of video to HD Quality 1080p.
+                              *Note: Please Use VPN Services for Mobile devices to get your channel to work.
                             </p>
                           </div>
                         </div>
@@ -1026,9 +1023,7 @@ Overall, "Uwatchfree Online™ - For sportss, Tv Shows & Sports Live" strives to
                                 fontWeight: 'bold'
                               }}
                             >
-                              *Note: Use Setting in Player to improve the
-                              Quality of video to HD Quality 1080p.
-                            </p>
+                              *Note: Please Use VPN Services for Mobile devices to get your channel to work.                            </p>
                           </div>
                         </div>
                       )}
@@ -1120,8 +1115,7 @@ Overall, "Uwatchfree Online™ - For sportss, Tv Shows & Sports Live" strives to
                                 fontWeight: 'bold'
                               }}
                             >
-                              *Note: Use Setting in Player to improve the
-                              Quality of video to HD Quality 1080p.
+                              *Note: Please Use VPN Services for Mobile devices to get your channel to work.
                             </p>
                           </div>
                         </div>
@@ -1215,8 +1209,7 @@ Overall, "Uwatchfree Online™ - For sportss, Tv Shows & Sports Live" strives to
                                 fontWeight: 'bold'
                               }}
                             >
-                              *Note: Use Setting in Player to improve the
-                              Quality of video to HD Quality 1080p.
+                              *Note: Please Use VPN Services for Mobile devices to get your channel to work.
                             </p>
                           </div>
                         </div>
