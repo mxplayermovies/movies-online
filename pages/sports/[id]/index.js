@@ -529,7 +529,7 @@ Overall, "Uwatchfree Online™ - For sportss, Tv Shows & Sports Live" strives to
           className='flex flex-col text-center py-5 font-bold text-3xl items-center justify-center'
           style={{ color: '#40D7BC', textShadow: '5px 5px 2px #000' }}
         >
-          Watch Online sports {sports && sports.title}{' '}
+          Watch Online Sports {sports && sports.title}{' '}
         </h1> */}
 
 
@@ -639,7 +639,7 @@ Overall, "Uwatchfree Online™ - For sportss, Tv Shows & Sports Live" strives to
                                 textShadow: '3px 5px 5px #000'
                               }}
                             >
-                              Watch Online sports {sports && sports.name}
+                              Watch Online Sports {sports && sports.name}
                             </h2>
                             <div className={Styles['iframe-container']}>
                               <iframe
@@ -734,7 +734,7 @@ Overall, "Uwatchfree Online™ - For sportss, Tv Shows & Sports Live" strives to
                                 textShadow: '3px 5px 5px #000'
                               }}
                             >
-                              Watch Online sports {sports && sports.name}
+                              Watch Online Sports {sports && sports.name}
                             </h2>
                             <div className={Styles['iframe-container']}>
                               <iframe
@@ -829,7 +829,7 @@ Overall, "Uwatchfree Online™ - For sportss, Tv Shows & Sports Live" strives to
                                 textShadow: '3px 5px 5px #000'
                               }}
                             >
-                              Watch Online sports {sports && sports.name}
+                              Watch Online Sports {sports && sports.name}
                             </h2>
                             <div className={Styles['iframe-container']}>
                               <iframe
@@ -998,7 +998,7 @@ Overall, "Uwatchfree Online™ - For sportss, Tv Shows & Sports Live" strives to
                                 textShadow: '3px 5px 5px #000'
                               }}
                             >
-                              Watch Online sports {sports && sports.name}
+                              Watch Online Sports {sports && sports.name}
                             </h2>
                             <div className={Styles['iframe-container']}>
                               <iframe
@@ -1092,7 +1092,7 @@ Overall, "Uwatchfree Online™ - For sportss, Tv Shows & Sports Live" strives to
                                 textShadow: '3px 5px 5px #000'
                               }}
                             >
-                              Watch Online sports {sports && sports.name}
+                              Watch Online Sports {sports && sports.name}
                             </h2>
                             <div className={Styles['iframe-container']}>
                               <iframe
@@ -1187,7 +1187,7 @@ Overall, "Uwatchfree Online™ - For sportss, Tv Shows & Sports Live" strives to
                                 textShadow: '3px 5px 5px #000'
                               }}
                             >
-                              Watch Online sports {sports && sports.name}
+                              Watch Online Sports {sports && sports.name}
                             </h2>
                             <div className={Styles['iframe-container']}>
                               <iframe
