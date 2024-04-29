@@ -185,11 +185,11 @@ const liveDetail = ({ live }) => {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Uwatchfree Online",
-      "url": "https://uwatchfreeonline.vercel.app",
+      "url": "https://uwatchfreeonline.vercel.app/",
       "image": ["https://uwatchfreeonline.vercel.app/wp-content/uploads/2023/05/favicon.ico"],
       "logo": {
         "@type": "ImageObject",
-        "url": "https://uwatchfreeonline.vercel.app/logo.png",
+        "url": "https://uwatchfreeonline.vercel.app//logo.png",
         "width": 280,
         "height": 80
       }
@@ -197,7 +197,7 @@ const liveDetail = ({ live }) => {
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
-      "url": "https://uwatchfreeonline.vercel.app",
+      "url": "https://uwatchfreeonline.vercel.app/",
       "potentialAction": {
         "@type": "SearchAction",
         "target": "https://uwatchfreeonline.vercel.app/search?q={search_term_string}",
