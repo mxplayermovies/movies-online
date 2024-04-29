@@ -2,19 +2,19 @@ import { useState, useEffect } from 'react';
 import movieData from '../public/movie.json';
 import tvshowData from '../public/tvshow.json';
 import adultData from '../public/adult.json';
-import sportsData from '../public/sports.json';
+import liveData from '../public/live.json';
 import Image from 'next/image'
 
 const Trendingmovie = () => {
   const [movie, setmovie] = useState([]);
   const [tvshow, settvshow] = useState([]);
-  const [sports, setsports] = useState([]);
+  const [live, setlive] = useState([]);
 
 
   useEffect(() => {
     setmovie(movieData);
     settvshow(tvshowData);
-    setsports(sportsData);
+    setlive(liveData);
 
   }, []);
 
@@ -74,12 +74,12 @@ const Trendingmovie = () => {
               </a>
             </li>
           ))}
-         {sportsData.map((sportsItem) => (
-  <li key={sportsItem.id} className="playlist-video">
-    <a href={`/sports/${sportsItem.id}`} className='w-img'>
+         {liveData.map((liveItem) => (
+  <li key={liveItem.id} className="playlist-video">
+    <a href={`/live/${liveItem.id}`} className='w-img'>
       <Image
-        src={`/wp-content/uploads/2023/06/${sportsItem.poster}`}
-        alt={sportsItem.title}
+        src={`/wp-content/uploads/2023/06/${liveItem.poster}`}
+        alt={liveItem.title}
         className="rounded-md border"
         width={500}
         height={500}
@@ -88,7 +88,7 @@ const Trendingmovie = () => {
           filter: 'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)',
         }}
       />
-      <div className="badge">{sportsItem.badge}</div>
+      <div className="badge">{liveItem.badge}</div>
     </a>
   </li>
 ))}
@@ -215,8 +215,8 @@ export async function getStaticPaths() {
     params: { id: adultItem.id },
   }));
 
-  const sportsPaths = sportsData.map((sportsItem) => ({
-    params: { id: sportsItem.id },
+  const livePaths = liveData.map((liveItem) => ({
+    params: { id: liveItem.id },
   }));
 
   const debatePaths = debateData.map((debateItem) => ({
@@ -248,7 +248,7 @@ export async function getStaticPaths() {
       ...moviePaths,
       ...tvshowPaths,
       ...adultPaths,
-      ...sportsPaths,
+      ...livePaths,
       ...debatePaths,
       ...discoverPaths,
       ...entertainmentPaths,
