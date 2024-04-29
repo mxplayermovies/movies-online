@@ -189,7 +189,7 @@ const liveDetail = ({ live }) => {
       "image": ["https://uwatchfreeonline.vercel.app/wp-content/uploads/2023/05/favicon.ico"],
       "logo": {
         "@type": "ImageObject",
-        "url": "https://uwatchfreeonline.vercel.app//logo.png",
+        "url": "https://uwatchfreeonline.vercel.app/logo.png",
         "width": 280,
         "height": 80
       }
