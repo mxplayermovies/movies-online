@@ -7,13 +7,16 @@ class MyDocument extends Document {
         
         <Head>
           
-          <link
+        <link
             rel='sitemap'
             type='application/xml'
             title='Sitemap'
-            href='https://uwatchfreeonline.vercel.appsitemap.xml'
+            href='https://uwatchfreeonline.vercel.app/sitemap.xml'
           />
-        
+          <meta
+            name='viewport'
+            content='width=device-width, initial-scale=1.0'
+          />
           <link
             rel='icon'
             type='image/x-icon'
@@ -45,41 +48,39 @@ class MyDocument extends Document {
           />
           <meta
             name='keywords'
-            content='movies, watch movie online, free movies, free movies online, free movie streaming, watch movies online free streaming, download free'
+            content='uwatchfree, uwatchfree latest movies, free movies, films, free movies online, free movies online, online movies, watch online movie free sites, watch free movies online free, free online movies, watch movies online, watch online movies, watch movies free online, online watch movie, free new movies online, watch movies online free, movies 2 watch, free full movies, online movie watch, movies online watch, online movies for free, online watch movies, 2024 Latest Movies, 2024 Latest Movies online'
           />
           <meta
             name='description'
-            content='Watch free movies and TV shows online in HD on any device. We offer streaming movies in genres like Action, Horror, Sci-Fi, Crime and Comedy. Watch now !!!'
+            content='Watch free Movies, TV shows & Sports online on any device. We offer streaming on any Platform. Watch now !!!'
           />
-          <link rel='canonical' href='https://uwatchfreeonline.vercel.app' />
+          <link rel='canonical' href='https://uwatchfreeonline.vercel.app/' />
           <meta property='og:locale' content='en_US' />
           <meta property='og:type' content='website' />
           <meta
             property='og:title'
-            content='Watch Movies Online™ - Free Download Movies HD Platform'
+            content='Uwatchfree Online™ - For Movies, TV Show & Sports Live.'
           />
           <meta
             property='og:description'
-            content='Watch free movies and TV shows online in HD on any device. We offer streaming movies in genres like Action, Horror, Sci-Fi, Crime and Comedy. Watch now !!!'
+            content='Watch free Movies, TV shows & Sports online on any device. We offer streaming on any Platform. Watch now !!!'
           />
-          <meta
-            property='og:url'
-            content='https://uwatchfreeonline.vercel.app'
-          />
+          <meta property='og:url' content='https://uwatchfreeonline.vercel.app/' />
           <meta
             property='og:site_name'
-            content='Watch Movies Online™ - Free Download Movies HD Platform'
+            content='Uwatchfree Online™ - For Movies, TV Show & Sports Live.'
           />
           <meta
             property='og:image'
-            content='https://uwatchfreeonline.vercel.appog_image.jpg'
-            style={{ borderRadius: '10%' }}
-          />
+            content='https://uwatchfreeonline.vercel.app/og_image.jpg'
+             />
           <meta property='og:image:width' content='1280' />
           <meta property='og:image:height' content='720' />
           <meta property='og:image:type' content='image/webp' />
-          <meta name='application-name' content='Watch Movies Online™ - Free Download Movies HD Platform' />
-          <meta property="article:publisher" content="https://www.facebook.com/watchonlinemovies.vercel.app" />
+          <meta
+            name='application-name'
+            content='Uwatchfree Online™ - For Movies, TV Show & Sports Live.'
+          />
           <meta
             property='article:modified_time'
             content='2024-01-01T13:13:13+00:00'
@@ -88,7 +89,7 @@ class MyDocument extends Document {
             rel='sitemap'
             type='application/xml'
             title='Sitemap'
-            href='https://uwatchfreeonline.vercel.appsitemap.xml'
+            href='https://uwatchfreeonline.vercel.app/sitemap.xml'
           />
           <meta name='twitter:card' content='summary_large_image' />
           <meta
@@ -103,7 +104,6 @@ class MyDocument extends Document {
             name='dailymotion-domain-verification'
             content='dm0zffs8dj8pcb3gd'
           />
-          <meta name='monetag' content='d37258c385441961edc42bec3fb9b7e8' />
        
         </Head>
        

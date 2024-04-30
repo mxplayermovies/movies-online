@@ -25,7 +25,7 @@ const MovieDetail = ({ movie }) => {
   const [showPopup3, setShowPopup3] = useState(false)
   const [showPopupTrailer, setShowPopupTrailer] = useState(false)
 
-  const shareMessage = 'Watch Now !!! Uwatchfree Online™ - For Movies, TV Show & Sports!';
+  const shareMessage = 'Watch Now !!! Uwatchfree Online™ - For Movies, TV Show & Sports Live.!';
   
   const togglePopup = () => {
     setShowPopup(!showPopup)
@@ -369,7 +369,7 @@ const MovieDetail = ({ movie }) => {
         />
         <meta
           property='og:description'
-          content={`${ movie && movie.name} | For Movies, TV Show & Sports`}
+          content={`${ movie && movie.name} | For Movies, TV Show & Sports Live.`}
         />
        <meta
             property='og:description'
@@ -469,7 +469,7 @@ const MovieDetail = ({ movie }) => {
             className='flex flex-col text-center py-5 font-bold text-3xl items-center justify-center'
             style={{ color: '#40D7BC',  textShadow: '5px 5px 2px #000' }}
           >
-            Uwatchfree Online™ - For Movies, TV Show & Sports.  </h2>
+            Uwatchfree Online™ - For Movies, TV Show & Sports Live..  </h2>
          <p className='flex flex-col text-center py-5 font-bold text-xl items-center justify-center'
             style={{ color: '#40D7BC',  textShadow: '5px 5px 2px #000' }}
           > 
@@ -1513,7 +1513,7 @@ Overall, "Uwatchfree Online™ - For Movies, Tv Shows & Sports Live" strives to 
         <div class='container1'>
         <ShareButtons
         title="Uwatchfree Online™"
-        description="For Movies, TV Show & Sports social platform"
+        description="For Movies, TV Show & Sports Live. social platform"
         shareMessage={shareMessage}
         image={movie && movie.url}
       />
@@ -1539,7 +1539,7 @@ Overall, "Uwatchfree Online™ - For Movies, Tv Shows & Sports Live" strives to 
         <div class='container1'>
         <ShareButtons
         title="Uwatchfree Online™"
-        description="For Movies, TV Show & Sports social platform"
+        description="For Movies, TV Show & Sports Live. social platform"
         shareMessage={shareMessage}
         image={movie && movie.url}
       />

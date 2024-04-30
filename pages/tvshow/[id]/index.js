@@ -25,7 +25,7 @@ const tvshowDetail = ({ tvshow }) => {
   const [showPopup3, setShowPopup3] = useState(false)
   const [showPopupTrailer, setShowPopupTrailer] = useState(false)
 
-  const shareMessage = 'Watch Now !!! Uwatchfree Online™ - For Movies, TV Show & Sports!';
+  const shareMessage = 'Watch Now !!! Uwatchfree Online™ - For Movies, TV Show & Sports Live.!';
   
   const togglePopup = () => {
     setShowPopup(!showPopup)
@@ -375,7 +375,7 @@ const tvshowDetail = ({ tvshow }) => {
         />
         <meta
           property='og:description'
-          content={`${tvshow && tvshow.name} | For Movies, TV Show & Sports`}
+          content={`${tvshow && tvshow.name} | For Movies, TV Show & Sports Live.`}
         />
             <meta
             property='og:description'
@@ -476,7 +476,7 @@ const tvshowDetail = ({ tvshow }) => {
             className='flex flex-col text-center py-5 font-bold text-3xl items-center justify-center'
             style={{ color: '#40D7BC',  textShadow: '5px 5px 2px #000' }}
           >
-            Uwatchfree Online™ - For Movies, TV Show & Sports.  </h2>
+            Uwatchfree Online™ - For Movies, TV Show & Sports Live..  </h2>
          <p className='flex flex-col text-center py-5 font-bold text-xl items-center justify-center'
             style={{ color: '#40D7BC',  textShadow: '5px 5px 2px #000' }}
           > 
@@ -1519,7 +1519,7 @@ Overall, "Uwatchfree Online™ - For Movies, Tv Shows & Sports Live" strives to 
         <div class='container1'>
         <ShareButtons
         title="Uwatchfree Online™"
-        description="For Movies, TV Show & Sports social platform"
+        description="For Movies, TV Show & Sports Live."
         shareMessage={shareMessage}
         image={tvshow && tvshow.url}
       />
@@ -1546,7 +1546,7 @@ Overall, "Uwatchfree Online™ - For Movies, Tv Shows & Sports Live" strives to 
    
         <ShareButtons
         title="Uwatchfree Online™"
-        description="For Movies, TV Show & Sports social platform"
+        description="For Movies, TV Show & Sports Live."
         shareMessage={shareMessage}
         image={tvshow && tvshow.url}
       />

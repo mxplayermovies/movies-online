@@ -385,7 +385,7 @@ const adultDetail = ({ adult }) => {
         />
         <meta
           property='og:description'
-          content={`${adult && adult.name} | Best Movie & TV Show Platform HD`}
+          content={`${adult && adult.name} | For Movies, TV Show & Sports Live.`}
         />
       <meta
             property='og:description'

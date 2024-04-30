@@ -174,7 +174,7 @@ const HomePage = () => {
         <Head>
         <title>
             {' '}
-            Uwatchfree Online™ - Best Movie & TV Show Platform HD{' '}
+            Uwatchfree Online™ - For Movies, TV Show & Sports Live.{' '}
           </title>
           <link
             rel='sitemap'
@@ -221,23 +221,23 @@ const HomePage = () => {
           />
           <meta
             name='description'
-            content='Watch free Movie and TV shows online in HD on any device. We offer streaming Movie in genres like Action, Horror, Sci-Fi, Crime and Comedy. Watch now !!!'
+            content='Watch free Movies, TV shows & Sports online on any device. We offer streaming on any Platform. Watch now !!!'
           />
           <link rel='canonical' href='https://uwatchfreeonline.vercel.app/' />
           <meta property='og:locale' content='en_US' />
           <meta property='og:type' content='website' />
           <meta
             property='og:title'
-            content='Uwatchfree Online™ - Best Movie & TV Show Platform HD'
+            content='Uwatchfree Online™ - For Movies, TV Show & Sports Live.'
           />
           <meta
             property='og:description'
-            content='Watch free Movie and TV shows online in HD on any device. We offer streaming Movie in genres like Action, Horror, Sci-Fi, Crime and Comedy. Watch now !!!'
+            content='Watch free Movies, TV shows & Sports online on any device. We offer streaming on any Platform. Watch now !!!'
           />
           <meta property='og:url' content='https://uwatchfreeonline.vercel.app/' />
           <meta
             property='og:site_name'
-            content='Uwatchfree Online™ - Best Movie & TV Show Platform HD'
+            content='Uwatchfree Online™ - For Movies, TV Show & Sports Live.'
           />
           <meta
             property='og:image'
@@ -248,7 +248,7 @@ const HomePage = () => {
           <meta property='og:image:type' content='image/webp' />
           <meta
             name='application-name'
-            content='Uwatchfree Online™ - Best Movie & TV Show Platform HD'
+            content='Uwatchfree Online™ - For Movies, TV Show & Sports Live.'
           />
           <meta
             property='article:modified_time'
