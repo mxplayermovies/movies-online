@@ -30,6 +30,8 @@ const liveDetail = ({ live }) => {
   const [showPopupTrailer, setShowPopupTrailer] = useState(false)
   const [flashing, setFlashing] = useState(true);
 
+  const shareMessage = 'Watch Now !!! Uwatchfree Online™ - For Movies, TV Show & Sports!';
+  
   useEffect(() => {
     // Flashing effect interval (toggle flashing state every 500ms)
     const interval = setInterval(() => {
@@ -1290,7 +1292,12 @@ Overall, "Uwatchfree Online™ - For Movies, Tv Shows & Sports Live" strives to 
         
 
         <div class='container1'>
-       <ShareButtons image={live && live.url} />
+        <ShareButtons
+        title="Uwatchfree Online™"
+        description="For Movies, TV Show & Sports social platform"
+        shareMessage={shareMessage}
+        image={live && live.url}
+      />
 
 
         </div>
@@ -1312,8 +1319,13 @@ Overall, "Uwatchfree Online™ - For Movies, Tv Shows & Sports Live" strives to 
         <TrendingMovies />
         <Max />
         <div class='container1'>
-       <ShareButtons image={live && live.url} />
-
+    
+       <ShareButtons
+        title="Uwatchfree Online™"
+        description="For Movies, TV Show & Sports social platform"
+        shareMessage={shareMessage}
+        image={live && live.url}
+      />
         </div>
       </div>
     </div>

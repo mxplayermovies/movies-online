@@ -25,6 +25,8 @@ const tvshowDetail = ({ tvshow }) => {
   const [showPopup3, setShowPopup3] = useState(false)
   const [showPopupTrailer, setShowPopupTrailer] = useState(false)
 
+  const shareMessage = 'Watch Now !!! Uwatchfree Online™ - For Movies, TV Show & Sports!';
+  
   const togglePopup = () => {
     setShowPopup(!showPopup)
   }
@@ -1515,7 +1517,12 @@ Overall, "Uwatchfree Online™ - For Movies, Tv Shows & Sports Live" strives to 
         `}</style>
 
         <div class='container1'>
-      <ShareButtons image={tvshow && tvshow.url} />
+        <ShareButtons
+        title="Uwatchfree Online™"
+        description="For Movies, TV Show & Sports social platform"
+        shareMessage={shareMessage}
+        image={tvshow && tvshow.url}
+      />
 
 
         </div>
@@ -1536,8 +1543,13 @@ Overall, "Uwatchfree Online™ - For Movies, Tv Shows & Sports Live" strives to 
         <TrendingMovies />
         <Max />
         <div class='container1'>
-        <ShareButtons image={tvshow && tvshow.url} />
-
+   
+        <ShareButtons
+        title="Uwatchfree Online™"
+        description="For Movies, TV Show & Sports social platform"
+        shareMessage={shareMessage}
+        image={tvshow && tvshow.url}
+      />
         </div>
       </div>
     </div>

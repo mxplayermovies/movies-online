@@ -21,6 +21,8 @@ const HomePage = () => {
   const [adult, setadult] = useState(adultData)
   const [flashing, setFlashing] = useState(true);
 
+  const shareMessage = 'Watch Now !!! Uwatchfree Online™ - For Movies, TV Show & Sports!';
+
   useEffect(() => {
     // Flashing effect interval (toggle flashing state every 500ms)
     const interval = setInterval(() => {
@@ -298,7 +300,11 @@ const HomePage = () => {
         />
         </Head>
         {/* <ExtensionInstallation /> */}
-        <ShareButtons  />
+    <ShareButtons
+        title="Uwatchfree Online™"
+        description="For Movies, TV Show & Sports social platform"
+        shareMessage={shareMessage}
+      />
         <main className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-8'>
         <h1
             className=' text-center py-5 font-bold text-3xl items-center justify-center'
