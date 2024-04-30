@@ -413,8 +413,7 @@ const liveDetail = ({ live }) => {
           property='article:modified_time'
           content='2024-01-01T13:13:13+00:00'
         />
-        <meta property='og:image' content={`${live && live.backimage}`}  />
-
+        <meta property='og:image' content={live && live.backimage} style={{ filter: 'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)' }} />
         <meta property='og:image:width' content='1080px' />
         <meta property='og:image:height' content='720px' />
         <meta property='og:image:type' content='image/jpeg' />
