@@ -21,7 +21,7 @@ function Application({ Component, pageProps }) {
         data-admpid="82683"
         strategy="afterInteractive"
       /> */}
-        <GoogleAnalytics measurementId="G-NRD78VK7WV" />
+        <GoogleAnalytics measurementId="G-3DHHHPZ1LV" />
         {/* <Script async data-id="101405628" src="//static.getclicky.com/js"></Script> */}
      
         <PageTransition>  
