@@ -217,7 +217,7 @@ const HomePage = () => {
           />
           <meta
             name='keywords'
-            content='uwatchfree, uwatchfree latest movies, free movies, films, free movies online, free movies online, online movies, watch online movie free sites, watch free movies online free, free online movies, watch movies online, watch online movies, watch movies free online, online watch movie, free new movies online, watch movies online free, movies 2 watch, free full movies, online movie watch, movies online watch, online movies for free, online watch movies, 2024 Latest Movies, 2024 Latest Movies online'
+            content='uwatchfree, watch free online movie, watchfree to, ufree, uwatchfreemovies, watchfreemovi.es, u watch free, uwatch free, uwatch, uwatchfree., umovies, . watchfree, watch4free, watch bollywood movies online free, online watch movies, uwatchfree movies, free movie.com, uwatchfree movie, youwatchfree, watchfree., uwatchmovie'
           />
           <meta
             name='description'
