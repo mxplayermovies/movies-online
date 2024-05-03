@@ -176,8 +176,8 @@ const HomePage = () => {
       <div className='container mx-auto'>
         <Head>
         <title>
-            {' '}
-            Uwatchfree Online™ - For Movies, TV Show & Sports Live.{' '}
+           
+            Uwatchfree Online™ - For Movies, TV Show & Sports Live.
           </title>
           <link
             rel='sitemap'
