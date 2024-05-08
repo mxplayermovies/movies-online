@@ -342,7 +342,7 @@ const HomePage = () => {
                     height={720}
                     layout='responsive'
                     objectFit='cover'
-                    priority
+                    loading='lazy'
                     className='rounded-lg'
                     style={{
                        filter:
@@ -375,7 +375,7 @@ const HomePage = () => {
                     height={720}
                     layout='responsive'
                     objectFit='cover'
-                    priority
+                    loading='lazy'
                     className='rounded-lg'
                     style={{
                       filter:
@@ -409,7 +409,7 @@ const HomePage = () => {
                     height={720}
                     layout='responsive'
                     objectFit='cover'
-                    priority
+                    loading='lazy'
                     className='rounded-lg'
                     style={{
                       filter:
@@ -442,7 +442,7 @@ const HomePage = () => {
                     height={720}
                     layout='responsive'
                     objectFit='cover'
-                    priority
+                    loading='lazy'
                     className='rounded-lg'
                     style={{
                       filter:
