@@ -535,8 +535,8 @@ Overall, "Uwatchfree Online™ - For Movies, Tv Shows & Sports Live" strives to 
           <Image
             src={live.backimage}
             alt={live.title}
-            width={300}
-            height={500}
+            width={1280}
+            height={720}
             priority
             style={{
               // maxWidth: '50%',
