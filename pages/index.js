@@ -349,7 +349,7 @@ const HomePage = () => {
                         'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
                     }}
                   />
-                  <div className='badge'>{movieItem.badge}</div>
+                  {/* <div className='badge'>{movieItem.badge}</div> */}
                 </div>
                 <h2 className='text-white text-lg font-semibold mt-2'>{movieItem.name}</h2>
               </a>
@@ -382,7 +382,7 @@ const HomePage = () => {
                        'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
                    }}
                   />
-                  <div className='badge'>{tvshowItem.badge}</div>
+                  {/* <div className='badge'>{tvshowItem.badge}</div> */}
                 </div>
                 <h2 className='text-white text-lg font-semibold mt-2'>{tvshowItem.name}</h2>
               </a>
@@ -416,7 +416,7 @@ const HomePage = () => {
                        'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
                    }}
                   />
-                  <div className='badge'>{liveItem.badge}</div>
+                  {/* <div className='badge'>{liveItem.badge}</div> */}
                 </div>
                 <h2 className='text-white text-lg font-semibold mt-2'>{liveItem.name}</h2>
               </a>
@@ -449,7 +449,7 @@ const HomePage = () => {
                        'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
                    }}
                   />
-                  <div className='badge'>{adultItem.badge}</div>
+                  {/* <div className='badge'>{adultItem.badge}</div> */}
                 </div>
                 <h2 className='text-white text-lg font-semibold mt-2'>{adultItem.name}</h2>
               </a>

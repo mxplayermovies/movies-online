@@ -466,7 +466,7 @@ const Trendingmovie = () => {
                     marginTop:'10px'
                   }}
                 />
-                <div className="badge">{item.badge}</div>
+                {/* <div className="badge">{item.badge}</div> */}
               </a>
             </li>
           ))}
