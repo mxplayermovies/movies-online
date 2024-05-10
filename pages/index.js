@@ -19,50 +19,54 @@ const HomePage = () => {
   const [movie, setmovie] = useState(movieData)
   const [tvshow, settvshow] = useState(tvshowData)
   const [adult, setadult] = useState(adultData)
-  const [flashing, setFlashing] = useState(true);
+  const [flashing, setFlashing] = useState(true)
 
-  const shareMessage = 'Watch Now !!! Uwatchfree Online™ - For movie, TV Show & Sports!';
+  const shareMessage =
+    'Watch Now !!! Uwatchfree Online™ - For movie, TV Show & Sports!'
 
   useEffect(() => {
     // Flashing effect interval (toggle flashing state every 500ms)
     const interval = setInterval(() => {
-      setFlashing((prevFlashing) => !prevFlashing);
-    }, 500);
+      setFlashing(prevFlashing => !prevFlashing)
+    }, 500)
 
     return () => {
-      clearInterval(interval); // Clean up interval on component unmount
-    };
-  }, []);
+      clearInterval(interval) // Clean up interval on component unmount
+    }
+  }, [])
 
   const uwatchfreeSchema = JSON.stringify([
     {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Uwatchfree Online",
-      "url": "https://uwatchfreeonline.vercel.app/",
-      "image": ["https://uwatchfreeonline.vercel.app/wp-content/uploads/2023/05/favicon.ico"],
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://uwatchfreeonline.vercel.app/logo.png",
-        "width": 280,
-        "height": 80
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'Uwatchfree Online',
+      url: 'https://uwatchfreeonline.vercel.app/',
+      image: [
+        'https://uwatchfreeonline.vercel.app/wp-content/uploads/2023/05/favicon.ico'
+      ],
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://uwatchfreeonline.vercel.app/logo.png',
+        width: 280,
+        height: 80
       }
     },
     {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "url": "https://uwatchfreeonline.vercel.app/",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://uwatchfreeonline.vercel.app/search?q={search_term_string}"
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      url: 'https://uwatchfreeonline.vercel.app/',
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: {
+          '@type': 'EntryPoint',
+          urlTemplate:
+            'https://uwatchfreeonline.vercel.app/search?q={search_term_string}'
         },
-        "query-input": "required name=search_term_string"
+        'query-input': 'required name=search_term_string'
       }
     }
-  ]);
-  
+  ])
+
   const rankMathSchema = JSON.stringify({
     '@context': 'https://schema.org',
     '@graph': [
@@ -134,7 +138,8 @@ const HomePage = () => {
             dateModified: '2024-01-13T13:13:00+00:00',
             author: {
               '@type': 'Person',
-              '@id': 'https://uwatchfreeonline.vercel.app/author/watchnewsonline/',
+              '@id':
+                'https://uwatchfreeonline.vercel.app/author/watchnewsonline/',
               name: 'Dr Trailer',
               url: 'https://uwatchfreeonline.vercel.app/author/watchnewsonline/',
               image: {
@@ -175,7 +180,7 @@ const HomePage = () => {
 
       <div className='container mx-auto'>
         <Head>
-        <title>
+          <title>
             {' '}
             Uwatchfree Online™ - For movie, TV Show & Sports Live.{' '}
           </title>
@@ -237,7 +242,10 @@ const HomePage = () => {
             property='og:description'
             content='Watch free movie, TV shows & Sports online on any device. We offer streaming on any Platform. Watch now !!!'
           />
-          <meta property='og:url' content='https://uwatchfreeonline.vercel.app/' />
+          <meta
+            property='og:url'
+            content='https://uwatchfreeonline.vercel.app/'
+          />
           <meta
             property='og:site_name'
             content='Uwatchfree Online™ - For movie, TV Show & Sports Live.'
@@ -245,7 +253,7 @@ const HomePage = () => {
           <meta
             property='og:image'
             content='https://uwatchfreeonline.vercel.app/og_image.jpg'
-             />
+          />
           <meta property='og:image:width' content='1280' />
           <meta property='og:image:height' content='720' />
           <meta property='og:image:type' content='image/webp' />
@@ -285,9 +293,9 @@ const HomePage = () => {
             type='application/ld+json'
             dangerouslySetInnerHTML={{ __html: rankMathSchema }}
           />
-             <script
-          dangerouslySetInnerHTML={{
-            __html: `
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
             (function (w, d, s, id) {
               if (typeof (w.webpushr) !== 'undefined') return;
               w.webpushr = w.webpushr || function () { (w.webpushr.q = w.webpushr.q || []).push(arguments) };
@@ -299,246 +307,329 @@ const HomePage = () => {
 
             webpushr('setup', { 'key': 'BE7nJtBNDdnHROheP35JwxbD_bYWc6Bl61DGE66CggOuCevUvW4LyjGVbUQAwj7ZKlYupLJAf13_G0OBQ_Ne7Eg' });
           `
-          }}
-        />
+            }}
+          />
         </Head>
         {/* <ExtensionInstallation /> */}
-    <ShareButtons
-        title="Uwatchfree Online™"
-        description="For movie, TV Show & Sports social platform"
-        shareMessage={shareMessage}
-      />
-  <main className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-8'>
-      <h1 className='text-center py-5 font-bold text-3xl' style={{ color: '#40D7BC', textShadow: '5px 5px 2px #000' }}>
-        Uwatchfree Online™ - For movie, TV Shows & Sports Live
-      </h1>
+        <ShareButtons
+          title='Uwatchfree Online™'
+          description='For movie, TV Show & Sports social platform'
+          shareMessage={shareMessage}
+        />
+        <main className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-8'>
+          <h1
+            className='text-center py-5 font-bold text-3xl'
+            style={{ color: '#40D7BC', textShadow: '5px 5px 2px #000' }}
+          >
+            Uwatchfree Online™ - For movie, TV Shows & Sports Live
+          </h1>
 
-      <p className='text-center font-bold text-lg' style={{ color: '#40D7BC', textShadow: '5px 5px 2px #000' }}>
-        "Uwatchfree Online™ - For movie, TV Shows & Sports Live" is a platform that provides access to a wide range of high-definition movie, TV shows & live streaming online. With this platform, users can enjoy a diverse selection of content spanning various genres, including action, drama, comedy, thriller, romance, and more.
-      </p>
+          <p
+            className='text-center font-bold text-lg'
+            style={{ color: '#40D7BC', textShadow: '5px 5px 2px #000' }}
+          >
+            "Uwatchfree Online™ - For movie, TV Shows & Sports Live" is a
+            platform that provides access to a wide range of high-definition
+            movie, TV shows & live streaming online. With this platform, users
+            can enjoy a diverse selection of content spanning various genres,
+            including action, drama, comedy, thriller, romance, and more.
+          </p>
 
-      <p className='text-center font-bold text-lg' style={{ color: '#FF0000', textShadow: '5px 5px 2px #000', marginTop: '20px' }}>
-        To enhance your experience on our website, please install the SquareX - Be Secure & Anonymous Chrome extension from the Chrome Web Store:
-        <br />
-        <a href="https://chrome.google.com/webstore/detail/squarex-be-secure-anonymo/kapjaoifikajdcdehfdlmojlepfpkpoe" className='text-center font-bold text-lg' style={{ color: '#40D7BC', textShadow: '5px 5px 2px #000', marginTop: '20px' }} target="_blank" rel="noopener noreferrer">
-          Install SquareX
-        </a>
-      </p>
+          <p
+            className='text-center font-bold text-lg'
+            style={{
+              color: '#FF0000',
+              textShadow: '5px 5px 2px #000',
+              marginTop: '20px'
+            }}
+          >
+            To enhance your experience on our website, please install the
+            SquareX - Be Secure & Anonymous Chrome extension from the Chrome Web
+            Store:
+            <br />
+            <a
+              href='https://chrome.google.com/webstore/detail/squarex-be-secure-anonymo/kapjaoifikajdcdehfdlmojlepfpkpoe'
+              className='text-center font-bold text-lg'
+              style={{
+                color: '#40D7BC',
+                textShadow: '5px 5px 2px #000',
+                marginTop: '20px'
+              }}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              Install SquareX
+            </a>
+          </p>
 
-      <h3 className='text-center font-bold text-3xl mt-8' style={{ color: '#40D7BC', fontSize: '30px', textShadow: '5px 5px 2px #000' }}>
-      LATEST MOVIES
-      </h3>
+          <h3
+            className='text-center font-bold text-3xl mt-8'
+            style={{
+              color: '#40D7BC',
+              fontSize: '30px',
+              textShadow: '5px 5px 2px #000'
+            }}
+          >
+            LATEST MOVIES
+          </h3>
 
-      <div className='category-container'>
-        <div className='card-container'>
-          {movie.map((movieItem) => (
-            <div key={movieItem.id} className='card'>
-              <a href={`/movie/${movieItem.id}`}>
-                <div className='relative'>
-                  <Image
-                    src={movieItem.backimage}
-                    alt={movieItem.title}
-                    width={1280}
-                    height={720}
-                    layout='responsive'
-                    objectFit='cover'
-                    loading='lazy'
-                    className='rounded-lg'
-                    style={{
-                       filter:
-                        'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
-                    }}
-                  />
-                  {/* <div className='badge'>{movieItem.badge}</div> */}
+          <div className='category-container'>
+            <div className='card-container'>
+              {movie.map(movieItem => (
+                <div key={movieItem.id} className='card'>
+                  <a href={`/movie/${movieItem.id}`}>
+                    <div className='relative'>
+                      <Image
+                        src={movieItem.backimage}
+                        alt={movieItem.title}
+                        width={1280}
+                        height={720}
+                        layout='responsive'
+                        objectFit='cover'
+                        loading='lazy'
+                        className='rounded-lg'
+                        style={{
+                          filter:
+                            'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
+                        }}
+                      />
+                      {/* <div className='badge'>{movieItem.badge}</div> */}
+                    </div>
+                    <h2
+                      className='text-lg font-semibold mt-2'
+                      style={{ color: '#40D7BC' }}
+                    >
+                      {movieItem.name}
+                    </h2>
+                  </a>
                 </div>
-                <h2 className='text-white text-lg font-semibold mt-2'>{movieItem.name}</h2>
-              </a>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
-     
-      <h3 className='text-center font-bold text-3xl mt-8' style={{ color: '#40D7BC', fontSize: '30px', textShadow: '5px 5px 2px #000' }}>
-    LATEST TV SHOW
-      </h3>
-     
-      <div className='category-container'>
-        <div className='card-container'>
-          {tvshow.map((tvshowItem) => (
-            <div key={tvshowItem.id} className='card'>
-              <a href={`/tvshow/${tvshowItem.id}`}>
-                <div className='relative'>
-                  <Image
-                    src={tvshowItem.backimage}
-                    alt={tvshowItem.title}
-                    width={1280}
-                    height={720}
-                    layout='responsive'
-                    objectFit='cover'
-                    loading='lazy'
-                    className='rounded-lg'
-                    style={{
-                      filter:
-                       'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
-                   }}
-                  />
-                  {/* <div className='badge'>{tvshowItem.badge}</div> */}
+          </div>
+
+          <h3
+            className='text-center font-bold text-3xl mt-8'
+            style={{
+              color: '#40D7BC',
+              fontSize: '30px',
+              textShadow: '5px 5px 2px #000'
+            }}
+          >
+            LATEST TV SHOW
+          </h3>
+
+          <div className='category-container'>
+            <div className='card-container'>
+              {tvshow.map(tvshowItem => (
+                <div key={tvshowItem.id} className='card'>
+                  <a href={`/tvshow/${tvshowItem.id}`}>
+                    <div className='relative'>
+                      <Image
+                        src={tvshowItem.backimage}
+                        alt={tvshowItem.title}
+                        width={1280}
+                        height={720}
+                        layout='responsive'
+                        objectFit='cover'
+                        loading='lazy'
+                        className='rounded-lg'
+                        style={{
+                          filter:
+                            'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
+                        }}
+                      />
+                      {/* <div className='badge'>{tvshowItem.badge}</div> */}
+                    </div>
+                    <h2
+                      className='text-lg font-semibold mt-2'
+                      style={{ color: '#40D7BC' }}
+                    >
+                      {tvshowItem.name}
+                    </h2>
+                  </a>
                 </div>
-                <h2 className='text-white text-lg font-semibold mt-2'>{tvshowItem.name}</h2>
-              </a>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
-      <h3 className='text-center font-bold text-3xl mt-8' style={{ color: '#40D7BC', fontSize: '30px', textShadow: '5px 5px 2px #000' }}>
-    LATEST LIVE SHOWS
-      </h3>
-      <h3 className='text-center font-bold text-3xl mt-8' style={{ color: '#40D7BC', fontSize: '20px', textShadow: '5px 5px 2px #000' }}>
-      Wednesday 08th May 2024 - Schedule Time UK GMT+5
-      </h3>
-      <div className='category-container'>
-        <div className='card-container'>
-          {live.map((liveItem) => (
-            <div key={liveItem.id} className='card'>
-              <a href={`/live/${liveItem.id}`}>
-                <div className='relative'>
-                  <Image
-                    src={liveItem.backimage}
-                    alt={liveItem.title}
-                    width={1280}
-                    height={720}
-                    layout='responsive'
-                    objectFit='cover'
-                    loading='lazy'
-                    className='rounded-lg'
-                    style={{
-                      filter:
-                       'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
-                   }}
-                  />
-                  {/* <div className='badge'>{liveItem.badge}</div> */}
+          </div>
+          <h3
+            className='text-center font-bold text-3xl mt-8'
+            style={{
+              color: '#40D7BC',
+              fontSize: '30px',
+              textShadow: '5px 5px 2px #000'
+            }}
+          >
+            LATEST LIVE SHOWS
+          </h3>
+          <h3
+            className='text-center font-bold text-3xl mt-8'
+            style={{
+              color: '#40D7BC',
+              fontSize: '20px',
+              textShadow: '5px 5px 2px #000'
+            }}
+          >
+            Wednesday 08th May 2024 - Schedule Time UK GMT+5
+          </h3>
+          <div className='category-container'>
+            <div className='card-container'>
+              {live.map(liveItem => (
+                <div key={liveItem.id} className='card'>
+                  <a href={`/live/${liveItem.id}`}>
+                    <div className='relative'>
+                      <Image
+                        src={liveItem.backimage}
+                        alt={liveItem.title}
+                        width={1280}
+                        height={720}
+                        layout='responsive'
+                        objectFit='cover'
+                        loading='lazy'
+                        className='rounded-lg'
+                        style={{
+                          filter:
+                            'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
+                        }}
+                      />
+                      {/* <div className='badge'>{liveItem.badge}</div> */}
+                    </div>
+                    <h2
+                      className='text-lg font-semibold mt-2'
+                      style={{ color: '#40D7BC' }}
+                    >
+                      {liveItem.name}
+                    </h2>
+                  </a>
                 </div>
-                <h2 className='text-white text-lg font-semibold mt-2'>{liveItem.name}</h2>
-              </a>
+              ))}
             </div>
-          ))}
-        </div>
-      </div>
+          </div>
 
-      <h3 className='text-center font-bold text-3xl mt-8' style={{ color: '#40D7BC', fontSize: '30px', textShadow: '5px 5px 2px #000' }}>
-    LATEST ADULT MOVIE
-      </h3>
+          <h3
+            className='text-center font-bold text-3xl mt-8'
+            style={{
+              color: '#40D7BC',
+              fontSize: '30px',
+              textShadow: '5px 5px 2px #000'
+            }}
+          >
+            LATEST ADULT MOVIE
+          </h3>
 
-      <div className='category-container'>
-        <div className='card-container'>
-          {adult.map((adultItem) => (
-            <div key={adultItem.id} className='card'>
-              <a href={`/adult/${adultItem.id}`}>
-                <div className='relative'>
-                  <Image
-                    src={adultItem.backimage}
-                    alt={adultItem.title}
-                    width={1280}
-                    height={720}
-                    layout='responsive'
-                    objectFit='cover'
-                    loading='lazy'
-                    className='rounded-lg'
-                    style={{
-                      filter:
-                       'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
-                   }}
-                  />
-                  {/* <div className='badge'>{adultItem.badge}</div> */}
+          <div className='category-container'>
+            <div className='card-container'>
+              {adult.map(adultItem => (
+                <div key={adultItem.id} className='card'>
+                  <a href={`/adult/${adultItem.id}`}>
+                    <div className='relative'>
+                      <Image
+                        src={adultItem.backimage}
+                        alt={adultItem.title}
+                        width={1280}
+                        height={720}
+                        layout='responsive'
+                        objectFit='cover'
+                        loading='lazy'
+                        className='rounded-lg'
+                        style={{
+                          filter:
+                            'contrast(1.2) saturate(1.5) brightness(1.4) hue-rotate(0deg)'
+                        }}
+                      />
+                      {/* <div className='badge'>{adultItem.badge}</div> */}
+                    </div>
+                    <h2
+                      className='text-lg font-semibold mt-2'
+                      style={{ color: '#40D7BC' }}
+                    >
+                      {adultItem.name}
+                    </h2>
+                  </a>
                 </div>
-                <h2 className='text-white text-lg font-semibold mt-2'>{adultItem.name}</h2>
-              </a>
+              ))}
             </div>
-          ))}
-        </div>
-        
+          </div>
+          <style jsx>{`
+            /* Global styles */
+            body {
+              font-family: 'Poppins', sans-serif;
+              font-weight: 400;
+              margin: 0;
+              padding: 0;
+              background-color: #f8f9fa;
+            }
+
+            .max-w-screen-xl {
+              max-width: 1280px;
+            }
+
+            .py-8 {
+              padding-top: 2rem;
+              padding-bottom: 2rem;
+            }
+
+            .text-center {
+              text-align: center;
+            }
+
+            .font-bold {
+              font-weight: bold;
+            }
+
+            .text-3xl {
+              font-size: 1.875rem; /* 30px */
+            }
+
+            .text-lg {
+              font-size: 1.125rem; /* 18px */
+            }
+
+            .text-white {
+              color: #fff;
+            }
+
+            .rounded-lg {
+              border-radius: 0.5rem;
+            }
+
+            .category-container {
+              margin-top: 2.5rem;
+            }
+
+            .card-container {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              gap: 1.25rem; /* 20px */
+            }
+
+            .card {
+              width: 100%; /* Card width will automatically adapt */
+              max-width: 300px; /* Limit max width for larger screens */
+              border: 1px solid #ccc;
+              border-radius: 0.5rem;
+              overflow: hidden;
+            }
+
+            .relative {
+              position: relative;
+            }
+
+            .badge {
+              position: absolute;
+              top: 0.625rem; /* 10px */
+              right: 0.625rem; /* 10px */
+              background-color: rgba(0, 0, 0, 0.4);
+              color: #40d7bc;
+              padding: 0.3125rem 0.625rem; /* 5px 10px */
+              border-radius: 0.3125rem; /* 5px */
+              font-weight: bold;
+            }
+          `}</style>
+        </main>
       </div>
-      <style jsx>{`
-        /* Global styles */
-        body {
-          font-family: 'Poppins', sans-serif;
-          font-weight: 400;
-          margin: 0;
-          padding: 0;
-          background-color: #f8f9fa;
-        }
-
-        .max-w-screen-xl {
-          max-width: 1280px;
-        }
-
-        .py-8 {
-          padding-top: 2rem;
-          padding-bottom: 2rem;
-        }
-
-        .text-center {
-          text-align: center;
-        }
-
-        .font-bold {
-          font-weight: bold;
-        }
-
-        .text-3xl {
-          font-size: 1.875rem; /* 30px */
-        }
-
-        .text-lg {
-          font-size: 1.125rem; /* 18px */
-        }
-
-        .text-white {
-          color: #fff;
-        }
-
-        .rounded-lg {
-          border-radius: 0.5rem;
-        }
-
-        .category-container {
-          margin-top: 2.5rem;
-        }
-
-        .card-container {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 1.25rem; /* 20px */
-        }
-
-        .card {
-          width: 100%; /* Card width will automatically adapt */
-          max-width: 300px; /* Limit max width for larger screens */
-          border: 1px solid #ccc;
-          border-radius: 0.5rem;
-          overflow: hidden;
-        }
-
-        .relative {
-          position: relative;
-        }
-
-        .badge {
-          position: absolute;
-          top: 0.625rem; /* 10px */
-          right: 0.625rem; /* 10px */
-          background-color: rgba(0, 0, 0, 0.4);
-          color: #40d7bc;
-          padding: 0.3125rem 0.625rem; /* 5px 10px */
-          border-radius: 0.3125rem; /* 5px */
-          font-weight: bold;
-        }
-      `}</style>
-    </main>
     </div>
-      </div>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage
