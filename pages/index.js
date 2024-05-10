@@ -324,7 +324,7 @@ const HomePage = () => {
              Uwatchfree Online™ - For Movie, TV Show & Sports Live.
           </h1>
 
-          <p
+          {/* <p
             className='text-center font-bold text-lg'
             style={{ color: '#40D7BC', textShadow: '5px 5px 2px #000' }}
           >
@@ -333,7 +333,7 @@ const HomePage = () => {
             movie, TV shows & live streaming online. With this platform, users
             can enjoy a diverse selection of content spanning various genres,
             including action, drama, comedy, thriller, romance, and more.
-          </p>
+          </p> */}
 
           <p
             className='text-center font-bold text-lg'
