@@ -45,11 +45,11 @@ class MyDocument extends Document {
           />
           <meta
             name='keywords'
-            content='uwatchfree, uwatchfree latest movies, free movies, films, free movies online, free movies online, online movies, watch online movie free sites, watch free movies online free, free online movies, watch movies online, watch online movies, watch movies free online, online watch movie, free new movies online, watch movies online free, movies 2 watch, free full movies, online movie watch, movies online watch, online movies for free, online watch movies, 2024 Latest Movies, 2024 Latest Movies online'
+            content='uwatchfree, uwatchfree latest movies, free movies, films, free movies online, free movies online, online movies, watch online movie free sites,  Uwatchfree Online online free, free online movies, watch movies online, watch online movies, watch movies free online, online watch movie, free new movies online, watch movies online free, movies 2 watch, free full movies, online movie watch, movies online watch, online movies for free, online watch movies, 2024 Latest Movies, 2024 Latest Movies online'
           />
           <meta
             name='description'
-            content='Watch free Movies, TV shows & Sports online on any device. We offer streaming on any Platform. Watch now !!!'
+            content=' Uwatchfree Online, TV shows & Sports online on any device. We offer streaming on any Platform. Watch now !!!'
           />
           <link rel='canonical' href='https://uwatchfreeonline.vercel.app/' />
           <meta property='og:locale' content='en_US' />
@@ -60,7 +60,7 @@ class MyDocument extends Document {
           />
           <meta
             property='og:description'
-            content='Watch free Movies, TV shows & Sports online on any device. We offer streaming on any Platform. Watch now !!!'
+            content=' Uwatchfree Online, TV shows & Sports online on any device. We offer streaming on any Platform. Watch now !!!'
           />
           <meta property='og:url' content='https://uwatchfreeonline.vercel.app/' />
           <meta

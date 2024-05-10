@@ -241,7 +241,7 @@ const adultDetail = ({ adult }) => {
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
-        description: `Watch free Movies, TV shows & Sports online on any device. We offer streaming on any Platform. Watch now !!!`,
+        description: ` Uwatchfree Online, TV shows & Sports online on any device. We offer streaming on any Platform. Watch now !!!`,
         image: adult.image,
         name: `Watch ${adult.title} | Uwatchfree Online™`,
         isPartOf: {
@@ -265,7 +265,7 @@ const adultDetail = ({ adult }) => {
         publisher: {
           '@id': 'https://gravatar.com/drtrailer2022/#person'
         },
-        description: `Watch free Movies, TV shows & Sports online on any device. We offer streaming on any Platform. Watch now !!!`,
+        description: ` Uwatchfree Online, TV shows & Sports online on any device. We offer streaming on any Platform. Watch now !!!`,
         image: adult.image,
         name: `Watch ${adult.title} | Uwatchfree Online™`,
         '@id': `/${adult['adult.watch']}#richSnippet`,
@@ -392,7 +392,7 @@ const adultDetail = ({ adult }) => {
         />
       <meta
             property='og:description'
-            content='Watch free Movies, TV shows & Sports online on any device. We offer streaming on any Platform. Watch now !!!'
+            content=' Uwatchfree Online, TV shows & Sports online on any device. We offer streaming on any Platform. Watch now !!!'
           />
         <meta property='og:url' content={`${adult && adult.url}`} />
         <meta name='keywords' content={`${adult && adult.keywords}`} />

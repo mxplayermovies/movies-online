@@ -182,7 +182,7 @@ const HomePage = () => {
         <Head>
           <title>
             {' '}
-            Uwatchfree Online™ - For movie, TV Show & Sports Live.{' '}
+            Uwatchfree Online™ - For Movie, TV Show & Sports Live.{' '}
           </title>
           <link
             rel='sitemap'
