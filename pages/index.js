@@ -321,14 +321,14 @@ const HomePage = () => {
             className='text-center py-5 font-bold text-3xl'
             style={{ color: '#40D7BC', textShadow: '5px 5px 2px #000' }}
           >
-            Uwatchfree Online™ - For movie, TV Shows & Sports Live
+             Uwatchfree Online™ - For Movie, TV Show & Sports Live.
           </h1>
 
           <p
             className='text-center font-bold text-lg'
             style={{ color: '#40D7BC', textShadow: '5px 5px 2px #000' }}
           >
-            "Uwatchfree Online™ - For movie, TV Shows & Sports Live" is a
+            " Uwatchfree Online™ - For Movie, TV Show & Sports Live." is a
             platform that provides access to a wide range of high-definition
             movie, TV shows & live streaming online. With this platform, users
             can enjoy a diverse selection of content spanning various genres,
