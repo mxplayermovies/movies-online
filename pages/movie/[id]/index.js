@@ -468,9 +468,9 @@ const MovieDetail = ({ movie }) => {
       },
       {
         '@type': 'VideoObject',
-        name: movie.name,
+        name: movie.videoname,
         url: movie.contentUrl[1],
-        description: movie.synopsis,
+        description: movie.videosynopsis,
         uploadDate: movie.uploadDay[1],
         thumbnailUrl: movie.thumbnailUrl[1],
         contentUrl: movie.contentUrl[1],
@@ -489,9 +489,9 @@ const MovieDetail = ({ movie }) => {
       },
       {
         '@type': 'VideoObject',
-        name: movie.name,
+        name: movie.videoname,
         url: movie.contentUrl[2],
-        description: movie.synopsis,
+        description: movie.videosynopsis,
         uploadDate: movie.uploadDay[2],
         thumbnailUrl: movie.thumbnailUrl[2],
         contentUrl: movie.contentUrl[2],
