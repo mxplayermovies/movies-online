@@ -38,12 +38,12 @@ const HomePage = () => {
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "Watch Online movie",
-      "url": "https://watchonlinemovie.vercel.app/",
-      "image": ["https://watchonlinemovie.vercel.app/wp-content/uploads/2023/05/favicon.ico"],
+      "name": "Uwatchfree Online",
+      "url": "https://uwatchfreeonline.vercel.app/",
+      "image": ["https://uwatchfreeonline.vercel.app/wp-content/uploads/2023/05/favicon.ico"],
       "logo": {
         "@type": "ImageObject",
-        "url": "https://watchonlinemovie.vercel.app/logo.png",
+        "url": "https://uwatchfreeonline.vercel.app/logo.png",
         "width": 280,
         "height": 80
       }
@@ -456,6 +456,7 @@ const HomePage = () => {
             </div>
           ))}
         </div>
+        
       </div>
       <style jsx>{`
         /* Global styles */
