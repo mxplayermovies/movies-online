@@ -338,7 +338,7 @@ const HomePage = () => {
           <p
             className='text-center font-bold text-lg'
             style={{
-              color: '#FF0000',
+              color: '#40D7BC',
               textShadow: '5px 5px 2px #000',
               marginTop: '20px'
             }}
