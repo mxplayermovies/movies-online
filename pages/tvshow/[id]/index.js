@@ -648,7 +648,7 @@ const tvshowDetail = ({ tvshow }) => {
         >
           Uwatchfree Online™ - For Movies, TV Show & Sports Live..{' '}
         </h2>
-        <p
+        {/* <p
           className='flex flex-col text-center py-5 font-bold text-xl items-center justify-center'
           style={{ color: '#40D7BC', textShadow: '5px 5px 2px #000' }}
         >
@@ -667,7 +667,7 @@ const tvshowDetail = ({ tvshow }) => {
           Movies, Tv Shows & Sports Live" strives to be a go-to destination for
           enthusiasts looking for convenient and high-quality streaming options
           for their entertainment needs.
-        </p>
+        </p> */}
         <div style={{ maxWidth: '800px', width: '100%', marginBottom: '20px' }}>
           <img
             src={tvshow.backimage}
