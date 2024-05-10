@@ -311,17 +311,13 @@ const HomePage = () => {
           />
         </Head>
         {/* <ExtensionInstallation /> */}
-        <ShareButtons
-          title='Uwatchfree Online™'
-          description='For movie, TV Show & Sports social platform'
-          shareMessage={shareMessage}
-        />
+
         <main className='max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-8'>
           <h1
             className='text-center py-5 font-bold text-3xl'
             style={{ color: '#40D7BC', textShadow: '5px 5px 2px #000' }}
           >
-             Uwatchfree Online™ - For Movie, TV Show & Sports Live.
+            Uwatchfree Online™ - For Movie, TV Show & Sports Live.
           </h1>
 
           {/* <p
@@ -340,7 +336,8 @@ const HomePage = () => {
             style={{
               color: '#40D7BC',
               textShadow: '5px 5px 2px #000',
-              marginTop: '20px'
+              marginTop: '20px',
+              fontSize: '20px'
             }}
           >
             To enhance your experience on our website, please install the
@@ -351,9 +348,10 @@ const HomePage = () => {
               href='https://chrome.google.com/webstore/detail/squarex-be-secure-anonymo/kapjaoifikajdcdehfdlmojlepfpkpoe'
               className='text-center font-bold text-lg'
               style={{
-                color: '#40D7BC',
+                color: '#FF0000',
                 textShadow: '5px 5px 2px #000',
-                marginTop: '20px'
+                marginTop: '20px',
+                fontSize: '30px'
               }}
               target='_blank'
               rel='noopener noreferrer'
@@ -361,7 +359,17 @@ const HomePage = () => {
               Install SquareX
             </a>
           </p>
-
+          <div
+            style={{
+              marginTop: '20px'
+            }}
+          >
+            <ShareButtons
+              title='Uwatchfree Online™'
+              description='For movie, TV Show & Sports social platform'
+              shareMessage={shareMessage}
+            />
+          </div>
           <h3
             className='text-center font-bold text-3xl mt-8'
             style={{

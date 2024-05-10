@@ -503,7 +503,7 @@ const liveDetail = ({ live }) => {
           className='flex flex-col text-center py-5 font-bold text-3xl items-center justify-center'
           style={{ color: '#40D7BC', textShadow: '5px 5px 2px #000' }}
         >
-          Uwatchfree Online™ - For Movies, TV Show & Sports Live..{' '}
+          Uwatchfree Online™ - For Movies, TV Show & Sports Live.{' '}
         </h2>
         {/* <p className='flex flex-col text-center py-5 font-bold text-xl items-center justify-center'
             style={{ color: '#40D7BC',  textShadow: '5px 5px 2px #000' }}
@@ -516,17 +516,19 @@ Overall, "Uwatchfree Online™ - For Movies, Tv Shows & Sports Live" strives to 
 
 
 </p> */}
-        <p
-          className=' text-center font-bold text-lg items-center justify-center'
-          style={{
-            color: '#FF0000',
-            textShadow: '5px 5px 2px #000',
-            marginBottom: '20px'
-          }}
-        >
-          To enhance your experience on our website, please install the SquareX
-          - Be Secure & Anonymous Chrome extension from the Chrome Web Store:
-          <br />
+      <p
+            className='text-center font-bold text-lg'
+            style={{
+              color: '#40D7BC',
+              textShadow: '5px 5px 2px #000',
+              marginTop: '20px',
+              fontSize: '20px'
+            }}
+          >
+            To enhance your experience on our website, please install the
+            SquareX - Be Secure & Anonymous Chrome extension from the Chrome Web
+            Store:
+            <br />
           <button
             className={`btn btn-success ${flashing ? 'btn-flashing' : ''}`}
             onClick={() => {
@@ -537,9 +539,10 @@ Overall, "Uwatchfree Online™ - For Movies, Tv Shows & Sports Live" strives to 
               href='https://chrome.google.com/webstore/detail/squarex-be-secure-anonymo/kapjaoifikajdcdehfdlmojlepfpkpoe'
               className=' text-center font-bold text-lg items-center justify-center'
               style={{
-                color: '#40D7BC',
+                color: '#FF0000',
                 textShadow: '5px 5px 2px #000',
-                marginBottom: '20px'
+                marginTop: '20px',
+                fontSize: '30px'
               }}
               target='_blank'
               rel='noopener noreferrer'
@@ -549,7 +552,7 @@ Overall, "Uwatchfree Online™ - For Movies, Tv Shows & Sports Live" strives to 
           </button>
         </p>
 
-        <div style={{ maxWidth: '800px', width: '100%', marginBottom: '20px' }}>
+        <div style={{ maxWidth: '800px', width: '100%',     marginTop: '20px', marginBottom: '20px' }}>
           <Image
             src={live.backimage}
             alt={live.title}
