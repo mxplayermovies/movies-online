@@ -35,13 +35,13 @@ export default function Footer () {
                   style={{
                     color: '#40D7BC',
                     letterSpacing: 'widest',
-                    fontSize: 'sm',
+                    fontSize: '20px',
                     marginBottom: '3px',
                     fontWeight: 'bold',
                     textAlign: 'center'
                   }}
                 >
-                  HOLLYWOOD MOVIES
+                  HOLLYWOOD 
                 </h2>
 
                 <nav className='list-none mb-10'>
@@ -89,13 +89,13 @@ export default function Footer () {
                   style={{
                     color: '#40D7BC',
                     letterSpacing: 'widest',
-                    fontSize: 'sm',
+                    fontSize: '20px',
                     marginBottom: '3px',
                     fontWeight: 'bold',
                     textAlign: 'center'
                   }}
                 >
-                  BOLLYWOOD MOVIES
+                  BOLLYWOOD 
                 </h2>
 
                 <nav className='list-none mb-10'>
@@ -143,13 +143,13 @@ export default function Footer () {
                   style={{
                     color: '#40D7BC',
                     letterSpacing: 'widest',
-                    fontSize: 'sm',
+                    fontSize: '20px',
                     marginBottom: '3px',
                     fontWeight: 'bold',
                     textAlign: 'center'
                   }}
                 >
-                  ADULT MOVIES
+                  ADULT 
                 </h2>
                 <nav className='list-none mb-10'>
                   <li>
@@ -196,7 +196,7 @@ export default function Footer () {
                   style={{
                     color: '#40D7BC',
                     letterSpacing: 'widest',
-                    fontSize: 'sm',
+                    fontSize: '20px',
                     marginBottom: '3px',
                     fontWeight: 'bold',
                     textAlign: 'center'
