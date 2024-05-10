@@ -448,9 +448,9 @@ const tvshowDetail = ({ tvshow }) => {
     trailer: [
       {
         '@type': 'VideoObject',
-        name: tvshow.name,
+        name: tvshow.videoname,
         url: tvshow.contentUrl[0],
-        description: tvshow.synopsis,
+        description: tvshow.videosynopsis,
         uploadDate: tvshow.uploadDay[0],
         thumbnailUrl: tvshow.thumbnailUrl[0],
         contentUrl: tvshow.contentUrl[0],
@@ -469,9 +469,9 @@ const tvshowDetail = ({ tvshow }) => {
       },
       {
         '@type': 'VideoObject',
-        name: tvshow.name,
+        name: tvshow.videoname,
         url: tvshow.contentUrl[1],
-        description: tvshow.synopsis,
+        description: tvshow.videosynopsis,
         uploadDate: tvshow.uploadDay[1],
         thumbnailUrl: tvshow.thumbnailUrl[1],
         contentUrl: tvshow.contentUrl[1],
@@ -490,9 +490,9 @@ const tvshowDetail = ({ tvshow }) => {
       },
       {
         '@type': 'VideoObject',
-        name: tvshow.name,
+        name: tvshow.videoname,
         url: tvshow.contentUrl[2],
-        description: tvshow.synopsis,
+        description: tvshow.videosynopsis,
         uploadDate: tvshow.uploadDay[2],
         thumbnailUrl: tvshow.thumbnailUrl[2],
         contentUrl: tvshow.contentUrl[2],
