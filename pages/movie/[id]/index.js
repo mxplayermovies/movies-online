@@ -447,9 +447,9 @@ const MovieDetail = ({ movie }) => {
     trailer: [
       {
         '@type': 'VideoObject',
-        name: movie.name,
+        name: movie.videoname,
         url: movie.contentUrl[0],
-        description: movie.synopsis,
+        description: movie.videosynopsis,
         uploadDate: movie.uploadDay[0],
         thumbnailUrl: movie.thumbnailUrl[0],
         contentUrl: movie.contentUrl[0],
