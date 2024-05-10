@@ -19,7 +19,7 @@ export default function Footer() {
     <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
       <div className="lg:w-1/4 md:w-1/2 w-full px-4">
     
-      <h2 className="title-font text-blue-600 tracking-widest text-sm mb-3 font-bold md:text-sm">HOLLYWOOD MOVIES</h2>
+      <h2 className="title-font text-white tracking-widest text-sm mb-3 font-bold md:text-sm">HOLLYWOOD MOVIES</h2>
         <nav className="list-none mb-10">
           <li>
             <a className="text-white text-xl font-bold hover:text-blue-800">ACTION</a>
@@ -37,7 +37,7 @@ export default function Footer() {
       </div>
       <div className="lg:w-1/4 md:w-1/2 w-full px-4">
     
-        <h2 className="title-font text-blue-600 tracking-widest text-sm mb-3 font-bold md:text-sm">BOLLYWOOD MOVIES</h2>
+        <h2 className="title-font text-white tracking-widest text-sm mb-3 font-bold md:text-sm">BOLLYWOOD MOVIES</h2>
         <nav className="list-none mb-10">
         <li>
             <a className="text-white text-xl font-bold hover:text-blue-800">ACTION</a>
@@ -54,7 +54,7 @@ export default function Footer() {
         </nav>
       </div>
       <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-        <h2 className="title-font  text-blue-600 tracking-widest text-sm mb-3 font-bold md:text-sm">ADULT MOVIES</h2>
+        <h2 className="title-font  text-white tracking-widest text-sm mb-3 font-bold md:text-sm">ADULT MOVIES</h2>
         <nav className="list-none mb-10">
           <li>
             <a className="text-white text-xl font-bold hover:text-blue-800">GENERAL</a>
@@ -71,7 +71,7 @@ export default function Footer() {
         </nav>
       </div>
       <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-        <h2 className="title-font  text-blue-600 tracking-widest text-sm mb-3 font-bold md:text-sm">ABOUT US</h2>
+        <h2 className="title-font  text-white tracking-widest text-sm mb-3 font-bold md:text-sm">ABOUT US</h2>
         <nav className="list-none mb-10">
           <li>
           <a href="../../../intro/contact" className="text-white text-xl font-bold hover:text-blue-800">Contact</a>
