@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { v4 as uuidv4 } from 'uuid';
 
-const commentsFilePath = path.resolve('./public/comments.json');
+const commentsFilePath = path.resolve('../public/comments.json');
 
 export default function handler(req, res) {
   if (req.method === 'GET') {
