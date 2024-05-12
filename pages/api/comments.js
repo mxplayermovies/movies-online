@@ -53,7 +53,7 @@ import path from 'path';
 
 const app = express();
 const port = process.env.PORT || 3000;
-const commentsFilePath = path.resolve('./public/comments.json');
+const commentsFilePath = path.resolve('../public/comments.json');
 
 app.use(express.json());
 
