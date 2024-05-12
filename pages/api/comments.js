@@ -4,13 +4,14 @@ import { v4 as uuidv4 } from 'uuid';
 
 const commentsFilePath = path.resolve('./public/comments.json');
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   if (req.method === 'GET') {
     try {
-      const commentsData = fs.readFileSync(commentsFilePath, 'utf-8');
+      const commentsData = await fs.promises.readFile(commentsFilePath, 'utf-8');
       const comments = JSON.parse(commentsData);
       res.status(200).json(comments);
     } catch (error) {
+      console.error('Failed to fetch comments:', error);
       res.status(500).json({ error: 'Failed to fetch comments' });
     }
   } else if (req.method === 'POST') {
@@ -29,15 +30,16 @@ export default function handler(req, res) {
         timestamp,
       };
 
-      const commentsData = fs.readFileSync(commentsFilePath, 'utf-8');
+      const commentsData = await fs.promises.readFile(commentsFilePath, 'utf-8');
       const comments = JSON.parse(commentsData);
 
       comments.push(newComment);
 
-      fs.writeFileSync(commentsFilePath, JSON.stringify(comments));
+      await fs.promises.writeFile(commentsFilePath, JSON.stringify(comments, null, 2));
 
       res.status(201).json(newComment);
     } catch (error) {
+      console.error('Failed to post comment:', error);
       res.status(500).json({ error: 'Failed to post comment' });
     }
   } else {
