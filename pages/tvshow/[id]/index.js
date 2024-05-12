@@ -58,21 +58,22 @@ const tvshowDetail = ({ tvshow }) => {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ ...commentData, tvshowId: tvshow.id }),
+          body: JSON.stringify(commentData),
         });
-  
+    
         if (response.ok) {
           const newComment = await response.json();
-          setComments(prevComments => [...prevComments, newComment]);
+          setComments((prevComments) => [...prevComments, newComment]);
           alert('Comment posted successfully!');
         } else {
-          throw new Error('Failed to post comment');
+          throw new Error('Failed to post comment: ' + response.statusText);
         }
       } catch (error) {
         console.error('Error posting comment:', error);
-        alert('Failed to post comment');
+        alert('Failed to post comment. Please try again later.');
       }
     };
+    
   
     const renderComments = () => {
       return comments.length > 0 ? (
