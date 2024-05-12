@@ -46,44 +46,53 @@
 //   }
 // }
 
+import express from 'express';
 import { v4 as uuidv4 } from 'uuid';
 import { readFile, writeFile } from 'fs/promises';
 import path from 'path';
 
+const app = express();
+const port = process.env.PORT || 3000;
 const commentsFilePath = path.resolve('./public/comments.json');
 
-export default async function handler(req, res) {
-  if (req.method === 'POST') {
-    try {
-      const { pageType, movieId, commentText } = req.body;
+app.use(express.json());
 
-      // Read existing comments from comments.json
-      const commentsData = await readFile(commentsFilePath, 'utf-8');
-      const comments = JSON.parse(commentsData);
+app.post('/api/comments', async (req, res) => {
+  try {
+    const { pageType, movieId, commentText } = req.body;
 
-      // Create new comment object
-      const newComment = {
-        id: uuidv4(), // Generate a unique ID
-        pageType,
-        movieId,
-        commentText,
-        timestamp: new Date().toISOString(),
-      };
+    // Read existing comments from comments.json
+    const commentsData = await readFile(commentsFilePath, 'utf-8');
+    const comments = JSON.parse(commentsData);
 
-      // Append new comment to existing comments array
-      comments.push(newComment);
+    // Create new comment object
+    const newComment = {
+      id: uuidv4(), // Generate a unique ID
+      pageType,
+      movieId,
+      commentText,
+      timestamp: new Date().toISOString(),
+    };
 
-      // Write updated comments back to comments.json
-      await writeFile(commentsFilePath, JSON.stringify(comments, null, 2));
+    // Append new comment to existing comments array
+    comments.push(newComment);
 
-      // Send response with the new comment
-      res.status(201).json(newComment);
-    } catch (error) {
-      console.error('Failed to post comment:', error);
-      res.status(500).send('Failed to post comment. Please try again later.');
-    }
-  } else {
-    res.setHeader('Allow', ['POST']);
-    res.status(405).end(`Method ${req.method} Not Allowed`);
+    // Write updated comments back to comments.json
+    await writeFile(commentsFilePath, JSON.stringify(comments, null, 2));
+
+    // Send response with the new comment
+    res.status(201).json(newComment);
+  } catch (error) {
+    console.error('Failed to post comment:', error);
+    res.status(500).send('Failed to post comment. Please try again later.');
   }
-}
+});
+
+// Handle GET requests to /api/comments (optional)
+app.get('/api/comments', async (req, res) => {
+  res.status(405).send('Method GET Not Allowed');
+});
+
+app.listen(port, () => {
+  console.log(`Server listening at http://localhost:${port}`);
+});
