@@ -74,6 +74,53 @@ class MyDocument extends Document {
           <meta property='og:image:width' content='1280' />
           <meta property='og:image:height' content='720' />
           <meta property='og:image:type' content='image/webp' />
+          
+          <link
+            rel="alternate"
+            hrefLang="en-us"
+            href="/"
+          />
+          <link
+            rel="alternate"
+            hrefLang="en-gb"
+            href="/"
+          />
+          <link
+            rel="alternate"
+            hrefLang="en-ca"
+            href="/"
+          />
+          <link
+            rel="alternate"
+            hrefLang="en-au"
+            href="/"
+          />
+          <link
+            rel="alternate"
+            hrefLang="en-se"
+            href="/"
+          />
+          <link
+            rel="alternate"
+            hrefLang="en-fr"
+            href="/"
+          />
+          <link
+            rel="alternate"
+            hrefLang="en-dk"
+            href="/"
+          />
+          <link
+            rel="alternate"
+            hrefLang="en-no"
+            href="/"
+          />
+          <link
+            rel="alternate"
+            hrefLang="x-default"
+            href="/"
+          />
+
           <meta
             name='application-name'
             content='Uwatchfree Online™ - For Movies, TV Show & Sports Live.'
