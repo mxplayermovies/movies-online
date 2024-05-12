@@ -261,6 +261,53 @@ const HomePage = () => {
             name='application-name'
             content='Uwatchfree Online™ - For movie, TV Show & Sports Live.'
           />
+          
+          <link
+            rel="alternate"
+            hrefLang="en-us"
+            href="/"
+          />
+          <link
+            rel="alternate"
+            hrefLang="en-gb"
+            href="/"
+          />
+          <link
+            rel="alternate"
+            hrefLang="en-ca"
+            href="/"
+          />
+          <link
+            rel="alternate"
+            hrefLang="en-au"
+            href="/"
+          />
+          <link
+            rel="alternate"
+            hrefLang="en-se"
+            href="/"
+          />
+          <link
+            rel="alternate"
+            hrefLang="en-fr"
+            href="/"
+          />
+          <link
+            rel="alternate"
+            hrefLang="en-dk"
+            href="/"
+          />
+          <link
+            rel="alternate"
+            hrefLang="en-no"
+            href="/"
+          />
+          <link
+            rel="alternate"
+            hrefLang="x-default"
+            href="/"
+          />
+
           <meta
             property='article:modified_time'
             content='2024-01-01T13:13:13+00:00'

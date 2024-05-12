@@ -569,6 +569,53 @@ const MovieDetail = ({ movie }) => {
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:label1' content='Est. reading time' />
         <meta name='twitter:data1' content='1 minute' />
+        
+        <link
+            rel="alternate"
+            hrefLang="en-us"
+            href="/"
+          />
+          <link
+            rel="alternate"
+            hrefLang="en-gb"
+            href="/"
+          />
+          <link
+            rel="alternate"
+            hrefLang="en-ca"
+            href="/"
+          />
+          <link
+            rel="alternate"
+            hrefLang="en-au"
+            href="/"
+          />
+          <link
+            rel="alternate"
+            hrefLang="en-se"
+            href="/"
+          />
+          <link
+            rel="alternate"
+            hrefLang="en-fr"
+            href="/"
+          />
+          <link
+            rel="alternate"
+            hrefLang="en-dk"
+            href="/"
+          />
+          <link
+            rel="alternate"
+            hrefLang="en-no"
+            href="/"
+          />
+          <link
+            rel="alternate"
+            hrefLang="x-default"
+            href="/"
+          />
+
         <meta
           name='google-site-verification'
           content='4dFu4PUk1pc1IYqU6Brt84akCwNxaoUpKSO3gDW0kJ0'
