@@ -18,16 +18,16 @@
 //       const { pageType, movieId, tvshowId, liveId, adultId, commentText } = req.body;
 //       const timestamp = new Date().toISOString();
 
-//       const newComment = {
-//         id: uuidv4(),
-//         pageType,
-//         movieId,
-//         tvshowId,
-//         liveId,
-//         adultId,
-//         commentText,
-//         timestamp,
-//       };
+    //   const newComment = {
+    //     id: uuidv4(),
+    //     pageType,
+    //     movieId,
+    //     tvshowId,
+    //     liveId,
+    //     adultId,
+    //     commentText,
+    //     timestamp,
+    //   };
 
 //       const commentsData = fs.readFileSync(commentsFilePath, 'utf-8');
 //       const comments = JSON.parse(commentsData);
@@ -59,17 +59,24 @@ app.use(express.json());
 
 app.post('/api/comments', async (req, res) => {
   try {
-    const { pageType, movieId, commentText } = req.body;
+    const { pageType, movieId, tvshowId, liveId, adultId, commentText } = req.body;
+
+    // Validate request data (adjust based on your requirements)
+    if (!pageType || !commentText) {
+      return res.status(400).json({ error: 'Invalid request. Missing required data.' });
+    }
 
     // Read existing comments from comments.json
     const commentsData = await readFile(commentsFilePath, 'utf-8');
     const comments = JSON.parse(commentsData);
 
-    // Create new comment object
     const newComment = {
-      id: uuidv4(), // Generate a unique ID
+      id: uuidv4(),
       pageType,
       movieId,
+      tvshowId,
+      liveId,
+      adultId,
       commentText,
       timestamp: new Date().toISOString(),
     };
@@ -90,9 +97,17 @@ app.post('/api/comments', async (req, res) => {
 
 // Handle GET requests to /api/comments (optional)
 app.get('/api/comments', async (req, res) => {
-  res.status(405).send('Method GET Not Allowed');
+  try {
+    const commentsData = await readFile(commentsFilePath, 'utf-8');
+    const comments = JSON.parse(commentsData);
+    res.status(200).json(comments);
+  } catch (error) {
+    console.error('Failed to fetch comments:', error);
+    res.status(500).send('Failed to fetch comments.');
+  }
 });
 
+// Start the server
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });
