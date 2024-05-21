@@ -4,6 +4,7 @@ import Hamburger from '../components/Hamburger';
 import { PageTransition } from "../components/PageTransition";
 import GoogleAnalytics from "@bradgarropy/next-google-analytics";
 import Script from 'next/script';
+import TawkTo from '../components/TawkTo';
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -26,6 +27,7 @@ function Application({ Component, pageProps }) {
      
         <PageTransition>  
           <Hamburger />
+          <TawkTo />
          <Component {...pageProps} />
           <Footer />
         </PageTransition>
