@@ -266,7 +266,7 @@ const cookiepolicy = () => {
         <meta name='twitter:card' content='summary_large_image' />
         <meta
           name='google-site-verification'
-          content='RNN2teFhD-lV1TQ9qcLQiSO5BLBB4DmztyYJS6QLqDg'
+          content=''
         />
         <meta
           name='facebook-domain-verification'

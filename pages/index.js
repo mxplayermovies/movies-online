@@ -177,7 +177,7 @@ export default function HomePage() {
         />
         <meta
           name="google-site-verification"
-          content="RNN2teFhD-lV1TQ9qcLQiSO5BLBB4DmztyYJS6QLqDg"
+          content=""
         />
 
         <meta

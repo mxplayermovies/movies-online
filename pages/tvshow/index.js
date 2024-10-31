@@ -203,7 +203,7 @@ const HomePage = ({ categorizedItems }) => {
         <meta name="twitter:data1" content="1 minute" />
         <meta
           name="google-site-verification"
-          content="RNN2teFhD-lV1TQ9qcLQiSO5BLBB4DmztyYJS6QLqDg"
+          content=""
         />
        
       </Head>
