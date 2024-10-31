@@ -86,7 +86,7 @@ export default function HomePage() {
   return (
     <>
       <Head>
-        <title>Soap2Day HD™ - Online. Stream. Download.</title>
+        <title>Soap2Day HD™ - Top Best Free Movies & Tv Shows Online</title>
 
         <link
           rel="sitemap"
