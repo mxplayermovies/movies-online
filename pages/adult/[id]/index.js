@@ -390,7 +390,7 @@ export default function MovieDetail({ movie }) {
         <meta name="twitter:data1" content="1 minute" />
         <meta
           name="google-site-verification"
-          content=""
+          content="o8uNsADswyHnNPA69n9gI7u6L4_cdjN4iT5lRhHHtMU"
         />
         <meta property="og:type" content="video.tv_show" />
         <meta property="fb:app_id" content="141280979243998" />

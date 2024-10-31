@@ -204,7 +204,7 @@ const HomePage = ({ categorizedItems }) => {
         <meta name="twitter:data1" content="1 minute" />
         <meta
           name="google-site-verification"
-          content=""
+          content="o8uNsADswyHnNPA69n9gI7u6L4_cdjN4iT5lRhHHtMU"
         />
         <script
           type="application/ld+json"
