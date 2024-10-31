@@ -381,6 +381,7 @@ export default function MovieDetail({ movie }) {
           name="twitter:title"
           content="Soap2Day HD™ - Explore. Discover. Online."
         />
+        <meta property="og:description" content="Watch free movies and TV shows online—explore top titles, discover new releases, and start streaming now!" />
         <meta
           name="twitter:description"
           content="Stream HD movies and TV series for free on Soap2Day HD™. Online. Stream. Download. full-length movies and shows in HD quality without registration."

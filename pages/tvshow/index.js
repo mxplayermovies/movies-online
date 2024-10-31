@@ -180,6 +180,7 @@ const HomePage = ({ categorizedItems }) => {
             name='keywords'
              content="soap2day, soap2dayto, soap2days, soap2day apk, soap2day hd, soap2day id, soap2day rs, soap2day movies, official soap2day, soap2day free, Soap2Day HD, movies online, watch movies online, watch movies free, 123movies, gomovies, putlocker, putlockers, hdtoday"
           />
+          <meta property="og:description" content="Watch free movies and TV shows online—explore top titles, discover new releases, and start streaming now!" />
         <meta
           name='description'
           content='Stream HD movies and TV series for free on Soap2Day HD. Explore, stream, and download full-length movies and shows in HD quality without registration.'
