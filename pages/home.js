@@ -171,7 +171,7 @@ const HomePage = ({ categorizedItems }) => {
   return (
     <>
       <Head>
-      <title>Soap2Day HD™ - Home Page.</title>
+        <title>Soap2Day HD™ - Home Page.</title>
         <meta
           name="description"
           content="Watch and download movies, TV shows, and adult content online for free. Join the Soap2Day HD™ community now!"
@@ -185,19 +185,23 @@ const HomePage = ({ categorizedItems }) => {
           href="https://soap2dayhd.vercel.app/home"
           hreflang="en-us"
         />
-          <meta property="og:url" content="https://soap2dayhd.vercel.app/home" />
+        <meta property="og:url" content="https://soap2dayhd.vercel.app/home" />
         <meta
           property="og:image"
           content="https://soap2dayhd.vercel.app/og_image.jpg"
         />
-          <meta
-            name='keywords'
-            content="soap2day, soap2dayto, soap2days, soap2day apk, soap2day hd, soap2day id, soap2day rs, soap2day movies, official soap2day, soap2day free, Soap2Day HD, movies online, watch movies online, watch movies free, 123movies, gomovies, putlocker, putlockers, hdtoday"
-          />
-          <meta property="og:description" content="Watch free movies and TV shows online—explore top titles, discover new releases, and start streaming now!" />
+        <meta property="og:site_name" content="Soap2Day HD™" />
         <meta
-          name='description'
-          content='Stream HD movies and TV series for free on Soap2Day HD. Explore, stream, and download full-length movies and shows in HD quality without registration.'
+          name="keywords"
+          content="soap2day, soap2dayto, soap2days, soap2day apk, soap2day hd, soap2day id, soap2day rs, soap2day movies, official soap2day, soap2day free, Soap2Day HD, movies online, watch movies online, watch movies free, 123movies, gomovies, putlocker, putlockers, hdtoday"
+        />
+        <meta
+          property="og:description"
+          content="Watch free movies and TV shows online—explore top titles, discover new releases, and start streaming now!"
+        />
+        <meta
+          name="description"
+          content="Stream HD movies and TV series for free on Soap2Day HD. Explore, stream, and download full-length movies and shows in HD quality without registration."
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -221,7 +225,6 @@ const HomePage = ({ categorizedItems }) => {
           name="google-site-verification"
           content="o8uNsADswyHnNPA69n9gI7u6L4_cdjN4iT5lRhHHtMU"
         />
-      
       </Head>
       <SocialSharing />
       <Script src="../../../propler/ads.js" defer />
@@ -287,7 +290,10 @@ const HomePage = ({ categorizedItems }) => {
           <div className="flex justify-center mt-4">
             <button
               onClick={() =>
-                handlePageChange(currentCategory, pageStates[currentCategory] - 1)
+                handlePageChange(
+                  currentCategory,
+                  pageStates[currentCategory] - 1
+                )
               }
               disabled={pageStates[currentCategory] === 1}
               className="px-3 py-1 mx-1 border rounded disabled:opacity-100 bg-green-500 text-white hover:bg-green-800"
@@ -299,7 +305,10 @@ const HomePage = ({ categorizedItems }) => {
             <span className="px-4">{`Page ${pageStates[currentCategory]} of ${totalPages}`}</span>
             <button
               onClick={() =>
-                handlePageChange(currentCategory, pageStates[currentCategory] + 1)
+                handlePageChange(
+                  currentCategory,
+                  pageStates[currentCategory] + 1
+                )
               }
               disabled={pageStates[currentCategory] === totalPages}
               className="px-3 py-1 mx-1 border rounded disabled:opacity-100 bg-blue-500 text-white hover:bg-blue-800"
@@ -318,7 +327,10 @@ const HomePage = ({ categorizedItems }) => {
           <div className="flex justify-center mt-4">
             <button
               onClick={() =>
-                handlePageChange(currentCategory, pageStates[currentCategory] - 1)
+                handlePageChange(
+                  currentCategory,
+                  pageStates[currentCategory] - 1
+                )
               }
               disabled={pageStates[currentCategory] === 1}
               className="px-3 py-1 mx-1 border rounded disabled:opacity-100 bg-green-500 text-white hover:bg-green-800"
@@ -330,7 +342,10 @@ const HomePage = ({ categorizedItems }) => {
             <span className="px-4">{`Page ${pageStates[currentCategory]} of ${totalPages}`}</span>
             <button
               onClick={() =>
-                handlePageChange(currentCategory, pageStates[currentCategory] + 1)
+                handlePageChange(
+                  currentCategory,
+                  pageStates[currentCategory] + 1
+                )
               }
               disabled={pageStates[currentCategory] === totalPages}
               className="px-3 py-1 mx-1 border rounded disabled:opacity-100 bg-blue-500 text-white hover:bg-blue-800"

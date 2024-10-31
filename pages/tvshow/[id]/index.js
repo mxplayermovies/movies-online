@@ -474,7 +474,7 @@ export default function MovieDetail({ movie }) {
       </div> */}
       {/* <div className='flex flex-col items-center justify-center'> */}
       <div
-        className={`w-full`}
+        // className={`w-full`}
         style={{
           display: "flex",
           flexDirection: "column",
@@ -692,7 +692,7 @@ export default function MovieDetail({ movie }) {
               <div className={styles.centeredDetails}>
                 {/* <div className='flex flex-col items-center justify-center'> */}
                 <div
-                  className={`w-full`}
+                  // className={`w-full`}
                   style={{
                     display: "flex",
                     flexDirection: "column",
