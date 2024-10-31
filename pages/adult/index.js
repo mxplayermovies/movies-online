@@ -135,7 +135,8 @@ const HomePage = ({ categorizedItems }) => {
             height={300}
             quality={90}
             title={item.title}
-            priority
+            // priority
+            loading="lazy"
             className="border-2 border-blue-500 object-cover w-full h-48"
             style={{
               width: "100%",
