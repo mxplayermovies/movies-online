@@ -92,7 +92,6 @@ const adultSchema = JSON.stringify({
   ],
 });
 
-
 const HomePage = ({ categorizedItems }) => {
   const [currentCategory, setCurrentCategory] = useState("adult"); // Current tab
   const [currentPage, setCurrentPage] = useState(1); // Current page for pagination
@@ -172,18 +171,19 @@ const HomePage = ({ categorizedItems }) => {
           href="https://soap2dayhd.vercel.app/adult"
           hreflang="en-us"
         />
-          <meta property="og:url" content="https://soap2dayhd.vercel.app/adult" />
+        <meta property="og:url" content="https://soap2dayhd.vercel.app/adult" />
+        <meta property="og:title" content="Soap2Day HD™ - Adult Page." />
         <meta
           property="og:image"
           content="https://soap2dayhd.vercel.app/og_image.jpg"
         />
-          <meta
-            name='keywords'
-            content="soap2day, soap2dayto, soap2days, soap2day apk, soap2day hd, soap2day id, soap2day rs, soap2day movies, official soap2day, soap2day free, Soap2Day HD, movies online, watch movies online, watch movies free, 123movies, gomovies, putlocker, putlockers, hdtoday"
-          />
         <meta
-          name='description'
-          content='Stream HD movies and TV series for free on Soap2Day HD. Explore, stream, and download full-length movies and shows in HD quality without registration.'
+          name="keywords"
+          content="soap2day, soap2dayto, soap2days, soap2day apk, soap2day hd, soap2day id, soap2day rs, soap2day movies, official soap2day, soap2day free, Soap2Day HD, movies online, watch movies online, watch movies free, 123movies, gomovies, putlocker, putlockers, hdtoday"
+        />
+        <meta
+          name="description"
+          content="Stream HD movies and TV series for free on Soap2Day HD. Explore, stream, and download full-length movies and shows in HD quality without registration."
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -193,7 +193,10 @@ const HomePage = ({ categorizedItems }) => {
           name="twitter:title"
           content="Soap2Day HD™ - Explore. Discover. Online."
         />
-        <meta property="og:description" content="Watch free movies and TV shows online—explore top titles, discover new releases, and start streaming now!" />
+        <meta
+          property="og:description"
+          content="Watch free movies and TV shows online—explore top titles, discover new releases, and start streaming now!"
+        />
         <meta
           name="twitter:description"
           content="Stream HD movies and TV series for free on Soap2Day HD™. Online. Stream. Download. full-length movies and shows in HD quality without registration."
@@ -212,10 +215,9 @@ const HomePage = ({ categorizedItems }) => {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: adultSchema }}
         />
-      
       </Head>
       <SocialSharing />
-      <Script src="../../../propler/ads.js" defer />
+      {/* <Script src="../../../propler/ads.js" defer /> */}
       <Script src="../../../propler/ads2.js" defer />
       <div
         className="container mx-auto mt-3 text-center"
@@ -255,7 +257,7 @@ const HomePage = ({ categorizedItems }) => {
         {/* Category Tabs */}
         <ul className="flex justify-around border-b border-gray-300 mb-4 font-bold text-2xl">
           {/* {["movie", "tvshow", "adult"].map((category) => ( */}
-            {["adult", ].map((category) => (
+          {["adult"].map((category) => (
             <li key={category} className="flex-1">
               <button
                 className={`py-2 ${
@@ -276,8 +278,8 @@ const HomePage = ({ categorizedItems }) => {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: adultSchema }}
         />
-            {/* Pagination */}
-            {totalPages > 1 && (
+        {/* Pagination */}
+        {totalPages > 1 && (
           <div className="flex justify-center mt-4">
             <button
               onClick={() => handlePageChange(currentPage - 1)}
@@ -300,7 +302,7 @@ const HomePage = ({ categorizedItems }) => {
             </button>
           </div>
         )}
-              {/* Movie Grid */}
+        {/* Movie Grid */}
         <div className="flex flex-wrap">{renderItems()}</div>
 
         {/* Pagination */}
@@ -376,7 +378,7 @@ const HomePage = ({ categorizedItems }) => {
 export async function getStaticProps() {
   // Categorize items from the JSON
   // const categorizedItems = { movie: [], tvshow: [], adult: [] };
-  const categorizedItems = { adult: [], };
+  const categorizedItems = { adult: [] };
   movies.forEach((item) => {
     if (item.badge && item.badge.includes("[ Movie ]")) {
       categorizedItems.movie.push({ id: item.id, image: item.image });

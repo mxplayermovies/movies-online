@@ -172,6 +172,7 @@ const HomePage = ({ categorizedItems }) => {
           hreflang="en-us"
         />
           <meta property="og:url" content="https://soap2dayhd.vercel.app/tvshow" />
+          <meta property="og:title" content="Soap2Day HD™ - TvShow Page." />
         <meta
           property="og:image"
           content="https://soap2dayhd.vercel.app/og_image.jpg"
@@ -210,7 +211,7 @@ const HomePage = ({ categorizedItems }) => {
        
       </Head>
       <SocialSharing />
-      <Script src="../../../propler/ads.js" defer />
+      {/* <Script src="../../../propler/ads.js" defer /> */}
       <Script src="../../../propler/ads2.js" defer />
       <div
         className="container mx-auto mt-3 text-center"

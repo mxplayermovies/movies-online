@@ -380,7 +380,6 @@ export default function MovieDetail({ movie }) {
           name="twitter:title"
           content="Soap2Day HD™ - Explore. Discover. Online."
         />
-        <meta property="og:description" content="Watch free movies and TV shows online—explore top titles, discover new releases, and start streaming now!" />
         <meta
           name="twitter:description"
           content="Stream HD movies and TV series for free on Soap2Day HD™. Online. Stream. Download. full-length movies and shows in HD quality without registration."
@@ -417,7 +416,7 @@ export default function MovieDetail({ movie }) {
       </Head>
       <SocialSharing />
       {isAdult && <AdultSkipAds movie={movie} />}
-      <Script src="../../../propler/ads.js" defer />
+      {/* <Script src="../../../propler/ads.js" defer /> */}
       <Script src="../../../propler/ads2.js" defer />
       <a
         href="https://t.me/watchmovietvshow/"
@@ -466,7 +465,7 @@ export default function MovieDetail({ movie }) {
 
       {/* <div className='flex flex-col items-center justify-center'> */}
       <div
-        
+        // className={`w-full`}
         style={{
           display: "flex",
           flexDirection: "column",

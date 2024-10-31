@@ -172,6 +172,8 @@ const HomePage = ({ categorizedItems }) => {
     <>
       <Head>
         <title>Soap2Day HD™ - Home Page.</title>
+        <meta property="og:title" content="Soap2Day HD™ - Home Page." />
+
         <meta
           name="description"
           content="Watch and download movies, TV shows, and adult content online for free. Join the Soap2Day HD™ community now!"
@@ -227,7 +229,7 @@ const HomePage = ({ categorizedItems }) => {
         />
       </Head>
       <SocialSharing />
-      <Script src="../../../propler/ads.js" defer />
+      {/* <Script src="../../../propler/ads.js" defer /> */}
       <Script src="../../../propler/ads2.js" defer />
       <div
         className="container mx-auto mt-3 text-center"
